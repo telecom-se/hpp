@@ -1,4 +1,4 @@
-package fr.tse.fi2.hpp.labs.parser.beans;
+package fr.tse.fi2.hpp.labs.beans;
 
 public class Route {
 	/**
