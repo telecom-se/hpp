@@ -29,7 +29,24 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.12</version>
 		</dependency>
-
+		<dependency>
+			<!-- Google Guava: Bloom Filters and other data structures -->
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
+		</dependency>
+		<!-- Colt: primitive collections -->
+		<dependency>
+			<groupId>net.sourceforge.parallelcolt</groupId>
+			<artifactId>parallelcolt</artifactId>
+			<version>0.10.1</version>
+		</dependency>
+		<!-- Sux: succint data structure -->
+		<dependency>
+			<groupId>it.unimi.dsi</groupId>
+			<artifactId>sux4j</artifactId>
+			<version>3.2.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
