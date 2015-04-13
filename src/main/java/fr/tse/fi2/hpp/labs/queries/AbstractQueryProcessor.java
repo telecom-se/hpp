@@ -1,10 +1,20 @@
 package fr.tse.fi2.hpp.labs.queries;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import fr.tse.fi2.hpp.labs.beans.DebsRecord;
 import fr.tse.fi2.hpp.labs.beans.GridPoint;
 import fr.tse.fi2.hpp.labs.beans.Route;
+import fr.tse.fi2.hpp.labs.parser.DefaultParser;
 
 /**
  * Every query must extend this class that provides basic functionalities such
@@ -18,6 +28,10 @@ import fr.tse.fi2.hpp.labs.beans.Route;
  * 
  */
 public abstract class AbstractQueryProcessor {
+
+	final static Logger logger = LoggerFactory
+			.getLogger(AbstractQueryProcessor.class);
+
 	/**
 	 * Counter to uniquely identify the query processors
 	 */
@@ -26,13 +40,45 @@ public abstract class AbstractQueryProcessor {
 	 * Unique ID of the query processor
 	 */
 	private int id = counter.incrementAndGet();
+	/**
+	 * Writer to write the output of the queries
+	 */
+	private BufferedWriter outputWriter;
+	/**
+	 * Internal queue of events
+	 */
+	private Queue<DebsRecord> eventqueue;
+
+	public AbstractQueryProcessor() {
+		try {
+			outputWriter = new BufferedWriter(new FileWriter(new File(
+					"result/query" + id + ".txt")));
+		} catch (IOException e) {
+			logger.error("Cannot open output file for " + id, e);
+		}
+	}
 
 	/**
 	 * Process an event that is received from the dispatcher
 	 * 
 	 * @param record
 	 */
-	public abstract void onReceiveMessage(DebsRecord record);
+	public void onReceiveMessage(DebsRecord record) {
+		// If this is the last record, shut down the thread
+		if (record.isPoisonPill()) {
+			finish();
+			return;
+		}
+		// Otherwise process the record
+		process(record);
+	}
+
+	/**
+	 * 
+	 * @param record
+	 *            record to be processed
+	 */
+	protected abstract void process(DebsRecord record);
 
 	/**
 	 * 
@@ -102,6 +148,27 @@ public abstract class AbstractQueryProcessor {
 	 */
 	public final int getId() {
 		return id;
+	}
+
+	/**
+	 * 
+	 * @param line
+	 *            the line to write as an answer
+	 */
+	protected void writeLine(String line) {
+
+	}
+
+	/**
+	 * Poison pill has been received, close output
+	 */
+	protected void finish() {
+		try {
+			outputWriter.close();
+		} catch (IOException e) {
+			logger.error("Cannot property close the output file for query "
+					+ id, e);
+		}
 	}
 
 }

@@ -75,6 +75,10 @@ public class DebsRecord {
 
 	/** bridge and tunnel tolls in dollars. */
 	final float tolls_amount;
+	/**
+	 * Indicate if this is the end of the event stream
+	 */
+	final private boolean poisonPill;
 
 	/**
 	 * Instantiates a new debs record.
@@ -118,7 +122,7 @@ public class DebsRecord {
 			float pickup_longitude, float pickup_latitude,
 			float dropoff_longitude, float dropoff_latitude,
 			String payment_type, float fare_amount, float surcharge, float mta,
-			float tip_amount, float tolls_amount) {
+			float tip_amount, float tolls_amount, boolean poisonPill) {
 		super();
 		this.medallion = medallion;
 		this.hack_license = hack_license;
@@ -136,6 +140,7 @@ public class DebsRecord {
 		this.mta = mta;
 		this.tip_amount = tip_amount;
 		this.tolls_amount = tolls_amount;
+		this.poisonPill = poisonPill;
 	}
 
 	/**
@@ -248,6 +253,15 @@ public class DebsRecord {
 	 */
 	public final float getTolls_amount() {
 		return tolls_amount;
+	}
+
+	/**
+	 * 
+	 * @return <code>true</code> if the event stream has finished
+	 */
+	public boolean isPoisonPill() {
+
+		return poisonPill;
 	}
 
 }
