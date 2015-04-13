@@ -2,8 +2,6 @@
 
 You find here all the necessary materials for the labs of the High Performance Programming Course.
 
-## Goal
-
 For each session of the course, a notion will be introduced (Data Structure, Algorithms, Archictecture) and will be applied in the following lab.
 
 The general framework of the lab is a maven project that process data from the [DEBS 2015 Grand Challenge](http://www.debs2015.org/call-grand-challenge.html). This challenge contains data from taxi trips in NYC.
@@ -20,10 +18,7 @@ Clone the forked project on your computer. Import the project in Eclipse via Imp
 
 Two main classes are at your disposition, the first one , [`MainNoNStreaming`](https://github.com/telecom-se/hpp/blob/master/src/main/java/fr/tse/fi2/hpp/labs/main/MainNonStreaming.java) first loads all data in memory then sends the data to each query processor. The second one, [`MainStreaming`](https://github.com/telecom-se/hpp/blob/master/src/main/java/fr/tse/fi2/hpp/labs/main/MainStreaming.java)streams the data to the query processors.
 
-By 
-
-
-## Creating a query processor
+## Create a query processor
 
 To create a new query processor, create a new class in the package [`fr.tse.fi2.hpp.labs.queries.impl`](https://github.com/telecom-se/hpp/tree/master/src/main/java/fr/tse/fi2/hpp/labs/queries/impl). Your class must extend [`AbstractQueryProcessor`](https://github.com/telecom-se/hpp/blob/master/src/main/java/fr/tse/fi2/hpp/labs/queries/AbstractQueryProcessor.java).
 
@@ -41,8 +36,15 @@ An exemple of an empty class:
 	 }
     
     }
+### Register your query processor
 
-### Writing Output
+To be executed, an instance query processor must be registered in one (or both) main classes. Edit the files to add your own query processor:
+
+		List<AbstractQueryProcessor> processors = new ArrayList<>();
+		// Add you query processor here
+		processors.add(new SimpleQuerySumEvent(measure));
+
+### Write Output
 
 To add a result to the output file simply use the `writeLine(String line)` method. It will automatically append a line in the `results/queryN.txt` file, where `N` is the identifier of your query processor (automatically generated).
 
