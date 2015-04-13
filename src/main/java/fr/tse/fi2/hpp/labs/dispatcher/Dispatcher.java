@@ -14,7 +14,11 @@ import fr.tse.fi2.hpp.labs.beans.DebsRecord;
 import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 
 /**
- * Dispatch receveid messages to the different queries
+ * Dispatch receveid messages to the different queries.
+ * 
+ * Suitable for huge data processing. Records are immutable and are processed in
+ * a streaming fashion. As soon as a record has been processed by every active
+ * query, it is candidate for garbage collection.
  * 
  * @author Julien
  * 
@@ -57,6 +61,25 @@ public class Dispatcher implements Runnable {
 		}
 	}
 
+	@Override
+	public void run() {
+		try (BufferedReader br = new BufferedReader(new FileReader(new File(
+				fileLocation)))) {
+			for (String line; (line = br.readLine()) != null;) {
+				DebsRecord record = process(line);
+				if (record != null) {
+					notifyAllProcessors(record);
+				}
+			}
+			// line is not visible here.
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.exit(-1);
+		}
+		// Send the poison pill
+		notifyAllProcessors(poisonpill());
+	}
+
 	/**
 	 * Convert a CSV line into a {@link DebsRecord}
 	 * 
@@ -82,21 +105,17 @@ public class Dispatcher implements Runnable {
 		return record;
 	}
 
-	@Override
-	public void run() {
-		try (BufferedReader br = new BufferedReader(new FileReader(new File(
-				fileLocation)))) {
-			for (String line; (line = br.readLine()) != null;) {
-				DebsRecord record = process(line);
-				if (record != null) {
-					notifyAllProcessors(record);
-				}
-			}
-			// line is not visible here.
-		} catch (IOException e) {
-			e.printStackTrace();
-			System.exit(-1);
-		}
+	/**
+	 * Convert a CSV line into a {@link DebsRecord}
+	 * 
+	 * @param line
+	 * @return the {@link DebsRecord} of this line
+	 */
+	private DebsRecord poisonpill() {
+		// Immutable is somewhat a pain here
+		return new DebsRecord("", "", 0, 0, 0, 0, 0, 0, 0, 0, "", 0, 0, 0, 0,
+				0, true);
+
 	}
 
 }

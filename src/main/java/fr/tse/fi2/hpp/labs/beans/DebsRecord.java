@@ -264,4 +264,25 @@ public class DebsRecord {
 		return poisonPill;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "DebsRecord [medallion=" + medallion + ", hack_license="
+				+ hack_license + ", pickup_datetime=" + pickup_datetime
+				+ ", dropoff_datetime=" + dropoff_datetime
+				+ ", trip_time_in_secs=" + trip_time_in_secs
+				+ ", trip_distance=" + trip_distance + ", pickup_longitude="
+				+ pickup_longitude + ", pickup_latitude=" + pickup_latitude
+				+ ", dropoff_longitude=" + dropoff_longitude
+				+ ", dropoff_latitude=" + dropoff_latitude + ", payment_type="
+				+ payment_type + ", fare_amount=" + fare_amount
+				+ ", surcharge=" + surcharge + ", mta=" + mta + ", tip_amount="
+				+ tip_amount + ", tolls_amount=" + tolls_amount
+				+ ", poisonPill=" + poisonPill + "]";
+	}
+
 }
