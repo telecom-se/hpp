@@ -2,11 +2,9 @@ package fr.tse.fi2.hpp.labs.queries;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -16,7 +14,7 @@ import org.slf4j.LoggerFactory;
 import fr.tse.fi2.hpp.labs.beans.DebsRecord;
 import fr.tse.fi2.hpp.labs.beans.GridPoint;
 import fr.tse.fi2.hpp.labs.beans.Route;
-import fr.tse.fi2.hpp.labs.parser.DefaultParser;
+import fr.tse.fi2.hpp.labs.beans.measure.QueryProcessorMeasure;
 
 /**
  * Every query must extend this class that provides basic functionalities such
@@ -29,7 +27,7 @@ import fr.tse.fi2.hpp.labs.parser.DefaultParser;
  * @author Julien
  * 
  */
-public abstract class AbstractQueryProcessor implements Runnable{
+public abstract class AbstractQueryProcessor implements Runnable {
 
 	final static Logger logger = LoggerFactory
 			.getLogger(AbstractQueryProcessor.class);
@@ -37,11 +35,11 @@ public abstract class AbstractQueryProcessor implements Runnable{
 	/**
 	 * Counter to uniquely identify the query processors
 	 */
-	private static AtomicInteger counter = new AtomicInteger();
+	private final static AtomicInteger COUNTER = new AtomicInteger();
 	/**
 	 * Unique ID of the query processor
 	 */
-	private int id = counter.incrementAndGet();
+	private final int id = COUNTER.incrementAndGet();
 	/**
 	 * Writer to write the output of the queries
 	 */
@@ -49,16 +47,21 @@ public abstract class AbstractQueryProcessor implements Runnable{
 	/**
 	 * Internal queue of events
 	 */
-	public Queue<DebsRecord> eventqueue;
-	
-	
+	public final BlockingQueue<DebsRecord> eventqueue;
+	/**
+	 * Global measurement
+	 */
+	private final QueryProcessorMeasure measure;
+
 	/**
 	 * Default constructor. Initialize event queue and writer
 	 */
-	public AbstractQueryProcessor() {
-		//Initialize queue
-		eventqueue = new LinkedBlockingQueue<>();
-		//Initialize writer
+	public AbstractQueryProcessor(QueryProcessorMeasure measure) {
+		// Set the global measurement instance
+		this.measure = measure;
+		// Initialize queue
+		this.eventqueue = new LinkedBlockingQueue<>();
+		// Initialize writer
 		try {
 			outputWriter = new BufferedWriter(new FileWriter(new File(
 					"result/query" + id + ".txt")));
@@ -68,7 +71,28 @@ public abstract class AbstractQueryProcessor implements Runnable{
 		}
 	}
 
-	
+	@Override
+	public void run() {
+		// Notify beginning of processing
+		measure.notifyStart(this.id);
+		while (true) {
+			try {
+				DebsRecord record = eventqueue.take();
+				if (record.isPoisonPill()) {
+					break;
+				} else {
+					process(record);
+				}
+			} catch (InterruptedException e) {
+				logger.error(
+						"Error taking element from internal queue, processor "
+								+ id, e);
+				break;
+			}
+		}
+		// Finish, close the writer and notify the measurement
+		finish();
+	}
 
 	/**
 	 * 
@@ -160,12 +184,15 @@ public abstract class AbstractQueryProcessor implements Runnable{
 	 * Poison pill has been received, close output
 	 */
 	protected void finish() {
+
 		try {
 			outputWriter.close();
 		} catch (IOException e) {
 			logger.error("Cannot property close the output file for query "
 					+ id, e);
 		}
+		// Notify time
+		measure.notifyFinish(this.id);
 	}
 
 }
