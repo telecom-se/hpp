@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -15,12 +16,15 @@ import fr.tse.fi2.hpp.labs.beans.DebsRecord;
 import fr.tse.fi2.hpp.labs.beans.GridPoint;
 import fr.tse.fi2.hpp.labs.beans.Route;
 import fr.tse.fi2.hpp.labs.beans.measure.QueryProcessorMeasure;
+import fr.tse.fi2.hpp.labs.dispatcher.Dispatcher;
 
 /**
  * Every query must extend this class that provides basic functionalities such
  * as :
  * <ul>
- * <li>Receives notification from the</li>
+ * <li>Receives event from {@link Dispatcher}</li>
+ * <li>Notify start/end time</li>
+ * <li>Manages thread synchronization</li>
  * <li>Grid mapping: maps lat/long to x,y in a discrete grid of given size</li>
  * </ul>
  * 
@@ -52,15 +56,22 @@ public abstract class AbstractQueryProcessor implements Runnable {
 	 * Global measurement
 	 */
 	private final QueryProcessorMeasure measure;
+	/**
+	 * For synchronisation purpose
+	 */
+	private final CountDownLatch latch;
 
 	/**
 	 * Default constructor. Initialize event queue and writer
 	 */
-	public AbstractQueryProcessor(QueryProcessorMeasure measure) {
+	public AbstractQueryProcessor(QueryProcessorMeasure measure,
+			CountDownLatch latch) {
 		// Set the global measurement instance
 		this.measure = measure;
 		// Initialize queue
 		this.eventqueue = new LinkedBlockingQueue<>();
+		// Set latch
+		this.latch = latch;
 		// Initialize writer
 		try {
 			outputWriter = new BufferedWriter(new FileWriter(new File(
@@ -73,6 +84,7 @@ public abstract class AbstractQueryProcessor implements Runnable {
 
 	@Override
 	public void run() {
+		logger.info("Starting query processor " + id);
 		// Notify beginning of processing
 		measure.notifyStart(this.id);
 		while (true) {
@@ -92,6 +104,7 @@ public abstract class AbstractQueryProcessor implements Runnable {
 		}
 		// Finish, close the writer and notify the measurement
 		finish();
+		logger.info("Closing query processor " + id);
 	}
 
 	/**
@@ -177,6 +190,13 @@ public abstract class AbstractQueryProcessor implements Runnable {
 	 *            the line to write as an answer
 	 */
 	protected void writeLine(String line) {
+		try {
+			outputWriter.write(line);
+			outputWriter.newLine();
+		} catch (IOException e) {
+			logger.error("Could not write new line for query processor " + id
+					+ ", line content " + line, e);
+		}
 
 	}
 
@@ -184,14 +204,17 @@ public abstract class AbstractQueryProcessor implements Runnable {
 	 * Poison pill has been received, close output
 	 */
 	protected void finish() {
-
+		// Decrease latch count
+		latch.countDown();
+		// Close writer
 		try {
+			outputWriter.flush();
 			outputWriter.close();
 		} catch (IOException e) {
 			logger.error("Cannot property close the output file for query "
 					+ id, e);
 		}
-		// Notify time
+		// Notify finish time
 		measure.notifyFinish(this.id);
 	}
 

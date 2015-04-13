@@ -33,7 +33,7 @@ public class Main {
 		// Query processors
 		List<AbstractQueryProcessor> processors = new ArrayList<>();
 		// Add you query processor here
-		
+
 		// Register query processors
 		for (AbstractQueryProcessor queryProcessor : processors) {
 			dispatch.registerQueryProcessor(queryProcessor);
@@ -43,6 +43,9 @@ public class Main {
 		latch = new CountDownLatch(processors.size());
 		// Start everything
 		dispatch.run();
+		for (AbstractQueryProcessor queryProcessor : processors) {
+			queryProcessor.run();
+		}
 		// Wait for the latch
 		try {
 			latch.await();
@@ -52,7 +55,5 @@ public class Main {
 		}
 
 	}
-	
-	
 
 }

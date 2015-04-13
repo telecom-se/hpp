@@ -58,25 +58,35 @@ public class Dispatcher implements Runnable {
 	private void notifyAllProcessors(DebsRecord record) {
 		for (AbstractQueryProcessor processors : registeredProcessors) {
 			processors.eventqueue.add(record);
+			if (logger.isTraceEnabled()) {
+				logger.trace("Notified " + processors.getId() + " with record "
+						+ record.getMedallion() + ","
+						+ record.getHack_license());
+			}
 		}
 	}
 
 	@Override
 	public void run() {
+		logger.info("Starting dispatcher");
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(
 				fileLocation)))) {
 			for (String line; (line = br.readLine()) != null;) {
 				DebsRecord record = process(line);
+				if (logger.isTraceEnabled()) {
+					logger.trace("Parsed " + record);
+				}
 				if (record != null) {
 					notifyAllProcessors(record);
 				}
 			}
 			// line is not visible here.
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Error while parsing record file", e);
 			System.exit(-1);
 		}
 		// Send the poison pill
+		logger.info("Sending poison pill");
 		notifyAllProcessors(poisonpill());
 	}
 
