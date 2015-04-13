@@ -41,9 +41,13 @@ An exemple of an empty class:
 	 }
     
     }
+    
+You must complete the `process` method to implement the queries. This method is called for each [DebsRecord](https://github.com/telecom-se/hpp/blob/master/src/main/java/fr/tse/fi2/hpp/labs/beans/DebsRecord.java) that is sent by the framework. A `DebsRecord` contains information for one taxi trip: coordinates for pickup and dropoff, price paid, tip, ... The full list is available in the file as well as [here](http://www.debs2015.org/call-grand-challenge.html) (Data Section).
+
+
 ### Register your query processor
 
-To be executed, an instance query processor must be registered in one (or both) main classes. Edit the files to add your own query processor:
+To be executed, your query processor must be registered in one (or both) main classes. Edit the files to add your own query processor:
 
 		List<AbstractQueryProcessor> processors = new ArrayList<>();
 		// Add you query processor here
@@ -65,7 +69,11 @@ For some labs, specific instructions will be given to produce measure with [JMH]
 
 #### Lab 1: Discovery. 
 
-Follow the installation instruction. Verify that everything is ok with a `mvn install`. Install the extra data in your project. Modify the main classes to parse the `sorted_data.csv` file. To compare performance for two implementations of the same feature, create the following queries:
+Follow the installation instruction. Verify that everything is ok with a `mvn install`. Install the extra data in your project. Modify the main classes to parse the `sorted_data.csv` file.
+
+Remove the existing query that counts the events.
+
+To compare performance for two implementations of the same feature, create the following queries:
 * `StupidAveragePrice` that puts every new trip price into a list and compute the average based on every number in the list
 * `IncrementalAveragePrice` that uses the previous results to incrementally compute the average.
 
@@ -81,4 +89,4 @@ TBD
 
 ## Evaluation
 
-Evaluation will be made based on the code available on forked version of this project. No additional material will be accepted.
+Evaluation will be made based on the code available on your forked version of this project. No additional material will be accepted.
