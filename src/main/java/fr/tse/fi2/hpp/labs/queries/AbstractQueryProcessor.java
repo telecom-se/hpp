@@ -59,19 +59,17 @@ public abstract class AbstractQueryProcessor implements Runnable {
 	/**
 	 * For synchronisation purpose
 	 */
-	private final CountDownLatch latch;
+	private CountDownLatch latch;
 
 	/**
 	 * Default constructor. Initialize event queue and writer
 	 */
-	public AbstractQueryProcessor(QueryProcessorMeasure measure,
-			CountDownLatch latch) {
+	public AbstractQueryProcessor(QueryProcessorMeasure measure) {
 		// Set the global measurement instance
 		this.measure = measure;
 		// Initialize queue
 		this.eventqueue = new LinkedBlockingQueue<>();
-		// Set latch
-		this.latch = latch;
+
 		// Initialize writer
 		try {
 			outputWriter = new BufferedWriter(new FileWriter(new File(
@@ -80,6 +78,10 @@ public abstract class AbstractQueryProcessor implements Runnable {
 			logger.error("Cannot open output file for " + id, e);
 			System.exit(-1);
 		}
+	}
+
+	public void setLatch(CountDownLatch latch) {
+		this.latch = latch;
 	}
 
 	@Override

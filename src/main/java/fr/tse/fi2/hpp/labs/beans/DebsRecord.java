@@ -75,6 +75,8 @@ public class DebsRecord {
 
 	/** bridge and tunnel tolls in dollars. */
 	final float tolls_amount;
+	/** total paid amount in dollars **/
+	final float total_amount;
 	/**
 	 * Indicate if this is the end of the event stream
 	 */
@@ -122,7 +124,8 @@ public class DebsRecord {
 			float pickup_longitude, float pickup_latitude,
 			float dropoff_longitude, float dropoff_latitude,
 			String payment_type, float fare_amount, float surcharge, float mta,
-			float tip_amount, float tolls_amount, boolean poisonPill) {
+			float tip_amount, float tolls_amount, float total_amount,
+			boolean poisonPill) {
 		super();
 		this.medallion = medallion;
 		this.hack_license = hack_license;
@@ -140,6 +143,7 @@ public class DebsRecord {
 		this.mta = mta;
 		this.tip_amount = tip_amount;
 		this.tolls_amount = tolls_amount;
+		this.total_amount = total_amount;
 		this.poisonPill = poisonPill;
 	}
 
@@ -271,18 +275,23 @@ public class DebsRecord {
 	 */
 	@Override
 	public String toString() {
-		return "DebsRecord [medallion=" + medallion + ", hack_license="
-				+ hack_license + ", pickup_datetime=" + pickup_datetime
-				+ ", dropoff_datetime=" + dropoff_datetime
-				+ ", trip_time_in_secs=" + trip_time_in_secs
-				+ ", trip_distance=" + trip_distance + ", pickup_longitude="
-				+ pickup_longitude + ", pickup_latitude=" + pickup_latitude
-				+ ", dropoff_longitude=" + dropoff_longitude
-				+ ", dropoff_latitude=" + dropoff_latitude + ", payment_type="
-				+ payment_type + ", fare_amount=" + fare_amount
-				+ ", surcharge=" + surcharge + ", mta=" + mta + ", tip_amount="
-				+ tip_amount + ", tolls_amount=" + tolls_amount
-				+ ", poisonPill=" + poisonPill + "]";
+		if (isPoisonPill()) {
+			return "Poison Pill";
+		} else {
+			return "DebsRecord [medallion=" + medallion + ", hack_license="
+					+ hack_license + ", pickup_datetime=" + pickup_datetime
+					+ ", dropoff_datetime=" + dropoff_datetime
+					+ ", trip_time_in_secs=" + trip_time_in_secs
+					+ ", trip_distance=" + trip_distance
+					+ ", pickup_longitude=" + pickup_longitude
+					+ ", pickup_latitude=" + pickup_latitude
+					+ ", dropoff_longitude=" + dropoff_longitude
+					+ ", dropoff_latitude=" + dropoff_latitude
+					+ ", payment_type=" + payment_type + ", fare_amount="
+					+ fare_amount + ", surcharge=" + surcharge + ", mta=" + mta
+					+ ", tip_amount=" + tip_amount + ", tolls_amount="
+					+ tolls_amount + ", poisonPill=" + poisonPill + "]";
+		}
 	}
 
 }

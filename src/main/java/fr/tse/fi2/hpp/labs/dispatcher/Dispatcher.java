@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -26,6 +28,11 @@ import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 public class Dispatcher implements Runnable {
 
 	final static Logger logger = LoggerFactory.getLogger(Dispatcher.class);
+	/**
+	 * Date parser, to convert to unix timestamp
+	 */
+	final SimpleDateFormat dateFormat = new SimpleDateFormat(
+			"yyyy-MM-dd HH:mm:ss");
 
 	/**
 	 * List of registered query processors
@@ -59,9 +66,7 @@ public class Dispatcher implements Runnable {
 		for (AbstractQueryProcessor processors : registeredProcessors) {
 			processors.eventqueue.add(record);
 			if (logger.isTraceEnabled()) {
-				logger.trace("Notified " + processors.getId() + " with record "
-						+ record.getMedallion() + ","
-						+ record.getHack_license());
+				logger.trace("Notified "+record);
 			}
 		}
 	}
@@ -98,21 +103,29 @@ public class Dispatcher implements Runnable {
 	 */
 	private DebsRecord process(String line) {
 		String[] split = line.split(",");
-		if (split.length != 16) {
+		if (split.length != 17) {
 			logger.error("Record does not match the required number of elements:\n"
-					+ line);
+					+ line + " \n" + split.length);
 			return null;
 		}
 		// Hmmm
-		DebsRecord record = new DebsRecord(split[0], split[1],
-				Long.valueOf(split[2]), Long.valueOf(split[3]),
-				Long.valueOf(split[4]), Float.valueOf(split[5]),
-				Float.valueOf(split[6]), Float.valueOf(split[7]),
-				Float.valueOf(split[8]), Float.valueOf(split[9]), split[10],
-				Float.valueOf(split[11]), Float.valueOf(split[12]),
-				Float.valueOf(split[13]), Float.valueOf(split[14]),
-				Float.valueOf(split[15]), false);
-		return record;
+		DebsRecord record;
+		try {
+			record = new DebsRecord(split[0], split[1], dateFormat.parse(
+					split[2]).getTime(), dateFormat.parse(split[3]).getTime(),
+					Long.valueOf(split[4]), Float.valueOf(split[5]),
+					Float.valueOf(split[6]), Float.valueOf(split[7]),
+					Float.valueOf(split[8]), Float.valueOf(split[9]),
+					split[10], Float.valueOf(split[11]),
+					Float.valueOf(split[12]), Float.valueOf(split[13]),
+					Float.valueOf(split[14]), Float.valueOf(split[15]),
+					Float.valueOf(split[16]), false);
+			return record;
+		} catch (NumberFormatException | ParseException e) {
+			logger.error("Unable to parse date for " + line);
+		}
+		return null;
+
 	}
 
 	/**
@@ -124,7 +137,7 @@ public class Dispatcher implements Runnable {
 	private DebsRecord poisonpill() {
 		// Immutable is somewhat a pain here
 		return new DebsRecord("", "", 0, 0, 0, 0, 0, 0, 0, 0, "", 0, 0, 0, 0,
-				0, true);
+				0, 0, true);
 
 	}
 
