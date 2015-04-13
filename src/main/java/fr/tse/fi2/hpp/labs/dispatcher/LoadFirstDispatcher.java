@@ -19,7 +19,7 @@ import fr.tse.fi2.hpp.labs.beans.DebsRecord;
 public class LoadFirstDispatcher extends AbstractDispatcher implements
 		DispatcherI {
 
-	List<DebsRecord> records = new LinkedList<>();
+	List<DebsRecord> recordsList = new LinkedList<>();
 
 	public LoadFirstDispatcher(String string) {
 		super(string);
@@ -28,7 +28,7 @@ public class LoadFirstDispatcher extends AbstractDispatcher implements
 
 	@Override
 	public void run() {
-		for (DebsRecord record : records) {
+		for (DebsRecord record : recordsList) {
 			notifyAllProcessors(record);
 		}
 		// Poison pill
@@ -41,7 +41,8 @@ public class LoadFirstDispatcher extends AbstractDispatcher implements
 			for (String line; (line = br.readLine()) != null;) {
 				DebsRecord record = process(line);
 				if (record != null) {
-					records.add(record);
+					records++;
+					recordsList.add(record);
 				}
 			}
 			// line is not visible here.

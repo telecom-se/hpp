@@ -37,7 +37,7 @@ public class MainNonStreaming {
 		// Init dispatcher and load everything
 		LoadFirstDispatcher dispatch = new LoadFirstDispatcher(
 				"src/main/resources/data/sorted_data.csv");
-
+		logger.info("Finished parsing");
 		// Query processors
 		List<AbstractQueryProcessor> processors = new ArrayList<>();
 		// Add you query processor here
@@ -59,8 +59,7 @@ public class MainNonStreaming {
 		}
 		// Start everything dispatcher first, not as a thread
 		dispatch.run();
-		logger.info("Finished parsing");
-
+		logger.info("Finished Dispatching");
 		// Wait for the latch
 		try {
 			latch.await();
@@ -69,7 +68,6 @@ public class MainNonStreaming {
 		}
 		// Output measure and ratio per query processor
 		measure.setProcessedRecords(dispatch.getRecords());
-
 		measure.outputMeasure();
 
 	}

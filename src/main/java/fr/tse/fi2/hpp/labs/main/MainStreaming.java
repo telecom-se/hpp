@@ -70,7 +70,6 @@ public class MainStreaming {
 		}
 		// Output measure and ratio per query processor
 		measure.setProcessedRecords(dispatch.getRecords());
-	
 		measure.outputMeasure();
 
 	}
