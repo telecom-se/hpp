@@ -63,5 +63,22 @@ For some labs, specific instructions will be given to produce measure with [JMH]
 ## Queries per Session
 
 
-* Lab 1: Discovery of the material.
+#### Lab 1: Discovery. 
 
+Follow the installation instruction. Verify that everything is ok with a `mvn install`. Install the extra data in your project. Modify the main classes to parse the `sorted_data.csv` file. To compare performance for two implementations of the same feature, create the following queries:
+* `StupidAveragePrice` that puts every new trip price into a list and compute the average based on every number in the list
+* `IncrementalAveragePrice` that uses the previous results to incrementally compute the average.
+
+Execute both queries and measure the difference of running time and throughput, for both streaming and non streaming case.
+
+#### Lab 2: JMH.
+
+TBD
+
+#### Lab 3: Sorting Algorithms.
+
+TBD
+
+## Evaluation
+
+Evaluation will be made based on the code available on forked version of this project. No additional material will be accepted.
