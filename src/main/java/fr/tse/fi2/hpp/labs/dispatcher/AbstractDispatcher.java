@@ -1,9 +1,5 @@
 package fr.tse.fi2.hpp.labs.dispatcher;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,19 +11,10 @@ import org.slf4j.LoggerFactory;
 import fr.tse.fi2.hpp.labs.beans.DebsRecord;
 import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 
-/**
- * Dispatch receveid messages to the different queries.
- * 
- * Suitable for huge data processing. Records are immutable and are processed in
- * a streaming fashion. As soon as a record has been processed by every active
- * query, it is candidate for garbage collection.
- * 
- * @author Julien
- * 
- */
-public class Dispatcher implements Runnable {
+public abstract class AbstractDispatcher implements Runnable {
 
-	final static Logger logger = LoggerFactory.getLogger(Dispatcher.class);
+	final static Logger logger = LoggerFactory
+			.getLogger(StreamingDispatcher.class);
 	/**
 	 * Date parser, to convert to unix timestamp
 	 */
@@ -43,56 +30,13 @@ public class Dispatcher implements Runnable {
 	 * Files containing one event per line
 	 */
 	final String fileLocation;
-
-	public Dispatcher(String fileLocation) {
-		super();
-		this.fileLocation = fileLocation;
-	}
-
 	/**
-	 * 
-	 * @param queryProcessor
+	 * Number of records
 	 */
-	public void registerQueryProcessor(AbstractQueryProcessor queryProcessor) {
-		registeredProcessors.add(queryProcessor);
-	}
+	protected long records = 0;
 
-	/**
-	 * Notify the
-	 * 
-	 * @param record
-	 */
-	private void notifyAllProcessors(DebsRecord record) {
-		for (AbstractQueryProcessor processors : registeredProcessors) {
-			processors.eventqueue.add(record);
-			if (logger.isTraceEnabled()) {
-				logger.trace("Notified "+record);
-			}
-		}
-	}
-
-	@Override
-	public void run() {
-		logger.info("Starting dispatcher");
-		try (BufferedReader br = new BufferedReader(new FileReader(new File(
-				fileLocation)))) {
-			for (String line; (line = br.readLine()) != null;) {
-				DebsRecord record = process(line);
-				if (logger.isTraceEnabled()) {
-					logger.trace("Parsed " + record);
-				}
-				if (record != null) {
-					notifyAllProcessors(record);
-				}
-			}
-			// line is not visible here.
-		} catch (IOException e) {
-			logger.error("Error while parsing record file", e);
-			System.exit(-1);
-		}
-		// Send the poison pill
-		logger.info("Sending poison pill");
-		notifyAllProcessors(poisonpill());
+	public AbstractDispatcher(String string) {
+		this.fileLocation = string;
 	}
 
 	/**
@@ -101,7 +45,7 @@ public class Dispatcher implements Runnable {
 	 * @param line
 	 * @return the {@link DebsRecord} of this line
 	 */
-	private DebsRecord process(String line) {
+	protected DebsRecord process(String line) {
 		String[] split = line.split(",");
 		if (split.length != 17) {
 			logger.error("Record does not match the required number of elements:\n"
@@ -134,11 +78,36 @@ public class Dispatcher implements Runnable {
 	 * @param line
 	 * @return the {@link DebsRecord} of this line
 	 */
-	private DebsRecord poisonpill() {
+	protected DebsRecord poisonpill() {
 		// Immutable is somewhat a pain here
 		return new DebsRecord("", "", 0, 0, 0, 0, 0, 0, 0, 0, "", 0, 0, 0, 0,
 				0, 0, true);
 
 	}
 
+	public void registerQueryProcessor(AbstractQueryProcessor queryProcessor) {
+		registeredProcessors.add(queryProcessor);
+	}
+
+	/**
+	 * Notify the
+	 * 
+	 * @param record
+	 */
+	protected void notifyAllProcessors(DebsRecord record) {
+		for (AbstractQueryProcessor processors : registeredProcessors) {
+			processors.eventqueue.add(record);
+			if (logger.isTraceEnabled()) {
+				logger.trace("Notified " + record);
+			}
+		}
+	}
+
+	/**
+	 * 
+	 * @return the number of parsed records
+	 */
+	public long getRecords() {
+		return records;
+	}
 }

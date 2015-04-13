@@ -47,6 +47,12 @@
 			<artifactId>sux4j</artifactId>
 			<version>3.2.2</version>
 		</dependency>
+		<!-- Commons io for writing some files -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
 	</dependencies>
 
 	<build>

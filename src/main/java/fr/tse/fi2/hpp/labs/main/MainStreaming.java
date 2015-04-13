@@ -1,5 +1,6 @@
 package fr.tse.fi2.hpp.labs.main;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -8,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import fr.tse.fi2.hpp.labs.beans.measure.QueryProcessorMeasure;
-import fr.tse.fi2.hpp.labs.dispatcher.Dispatcher;
+import fr.tse.fi2.hpp.labs.dispatcher.StreamingDispatcher;
 import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 import fr.tse.fi2.hpp.labs.queries.impl.SimpleQuerySumEvent;
 
@@ -21,19 +22,21 @@ import fr.tse.fi2.hpp.labs.queries.impl.SimpleQuerySumEvent;
  * @author Julien
  * 
  */
-public class Main {
+public class MainStreaming {
 
-	final static Logger logger = LoggerFactory.getLogger(Main.class);
+	final static Logger logger = LoggerFactory.getLogger(MainStreaming.class);
 
 	/**
 	 * @param args
+	 * @throws IOException
 	 */
-	public static void main(String[] args) {
-		// Init dispatcher
-		Dispatcher dispatch = new Dispatcher(
-				"src/main/resources/data/1000Records.csv");
+	public static void main(String[] args) throws IOException {
 		// Init query time measure
 		QueryProcessorMeasure measure = new QueryProcessorMeasure();
+		// Init dispatcher
+		StreamingDispatcher dispatch = new StreamingDispatcher(
+				"src/main/resources/data/sorted_data.csv");
+
 		// Query processors
 		List<AbstractQueryProcessor> processors = new ArrayList<>();
 		// Add you query processor here
@@ -49,16 +52,26 @@ public class Main {
 			queryProcessor.setLatch(latch);
 		}
 		// Start everything
-		dispatch.run();
 		for (AbstractQueryProcessor queryProcessor : processors) {
-			queryProcessor.run();
+			// queryProcessor.run();
+			Thread t = new Thread(queryProcessor);
+			t.setName("QP" + queryProcessor.getId());
+			t.start();
 		}
+		Thread t1 = new Thread(dispatch);
+		t1.setName("Dispatcher");
+		t1.start();
+
 		// Wait for the latch
 		try {
 			latch.await();
 		} catch (InterruptedException e) {
 			logger.error("Error while waiting for the program to end", e);
 		}
+		// Output measure and ratio per query processor
+		measure.setProcessedRecords(dispatch.getRecords());
+	
+		measure.outputMeasure();
 
 	}
 

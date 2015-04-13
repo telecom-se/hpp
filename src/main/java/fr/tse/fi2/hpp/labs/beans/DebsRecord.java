@@ -1,7 +1,8 @@
 package fr.tse.fi2.hpp.labs.beans;
 
 /**
- * Immutable Bean that maps (with no processing) a CSV record.
+ * Immutable Bean that maps (with almost no processing) a CSV record. The only
+ * processing is the pickup/dropoff dates being transformed into unix timestamps.
  * 
  * <pre>
  * medallion	an md5sum of the identifier of the taxi - vehicle bound

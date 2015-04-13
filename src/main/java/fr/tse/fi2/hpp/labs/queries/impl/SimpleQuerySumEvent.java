@@ -22,7 +22,7 @@ public class SimpleQuerySumEvent extends AbstractQueryProcessor {
 
 	@Override
 	protected void process(DebsRecord record) {
-		writeLine("" + sum++);
+		//writeLine("" + sum++);
 
 	}
 

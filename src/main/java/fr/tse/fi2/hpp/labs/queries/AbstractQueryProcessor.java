@@ -16,13 +16,13 @@ import fr.tse.fi2.hpp.labs.beans.DebsRecord;
 import fr.tse.fi2.hpp.labs.beans.GridPoint;
 import fr.tse.fi2.hpp.labs.beans.Route;
 import fr.tse.fi2.hpp.labs.beans.measure.QueryProcessorMeasure;
-import fr.tse.fi2.hpp.labs.dispatcher.Dispatcher;
+import fr.tse.fi2.hpp.labs.dispatcher.StreamingDispatcher;
 
 /**
  * Every query must extend this class that provides basic functionalities such
  * as :
  * <ul>
- * <li>Receives event from {@link Dispatcher}</li>
+ * <li>Receives event from {@link StreamingDispatcher}</li>
  * <li>Notify start/end time</li>
  * <li>Manages thread synchronization</li>
  * <li>Grid mapping: maps lat/long to x,y in a discrete grid of given size</li>
@@ -206,8 +206,6 @@ public abstract class AbstractQueryProcessor implements Runnable {
 	 * Poison pill has been received, close output
 	 */
 	protected void finish() {
-		// Decrease latch count
-		latch.countDown();
 		// Close writer
 		try {
 			outputWriter.flush();
@@ -218,6 +216,8 @@ public abstract class AbstractQueryProcessor implements Runnable {
 		}
 		// Notify finish time
 		measure.notifyFinish(this.id);
+		// Decrease latch count
+		latch.countDown();
 	}
 
 }
