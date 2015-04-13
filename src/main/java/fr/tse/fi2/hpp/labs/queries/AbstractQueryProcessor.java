@@ -97,4 +97,11 @@ public abstract class AbstractQueryProcessor {
 
 	}
 
+	/**
+	 * @return the id of the query processor
+	 */
+	public final int getId() {
+		return id;
+	}
+
 }
