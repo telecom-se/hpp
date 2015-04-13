@@ -1,7 +1,7 @@
 package fr.tse.fi2.hpp.labs.beans;
 
 /**
- * Beans that maps (with no processing) a CSV record.
+ * Immutable Bean that maps (with no processing) a CSV record.
  * 
  * <pre>
  * medallion	an md5sum of the identifier of the taxi - vehicle bound
@@ -29,59 +29,52 @@ package fr.tse.fi2.hpp.labs.beans;
 public class DebsRecord {
 
 	/** an md5sum of the identifier of the taxi - vehicle bound. */
-	String medallion;
+	final String medallion;
 
 	/** an md5sum of the identifier for the taxi license. */
-	String hack_license;
+	final String hack_license;
 
 	/** time when the passenger(s) were picked up. */
-	long pickup_datetime;
+	final long pickup_datetime;
 
 	/** time when the passenger(s) were dropped off. */
-	long dropoff_datetime;
+	final long dropoff_datetime;
 
 	/** duration of the trip. */
-	long trip_time_in_secs;
+	final long trip_time_in_secs;
 
 	/** trip distance in miles. */
-	float trip_distance;
+	final float trip_distance;
 
 	/** longitude coordinate of the pickup location. */
-	float pickup_longitude;
+	final float pickup_longitude;
 
 	/** latitude coordinate of the pickup location. */
-	float pickup_latitude;
+	final float pickup_latitude;
 
 	/** longitude coordinate of the drop-off location. */
-	float dropoff_longitude;
+	final float dropoff_longitude;
 
 	/** latitude coordinate of the drop-off location. */
-	float dropoff_latitude;
+	final float dropoff_latitude;
 
 	/** the payment method - credit card or cash. */
-	String payment_type;
+	final String payment_type;
 
 	/** fare amount in dollars. */
-	float fare_amount;
+	final float fare_amount;
 
 	/** surcharge in dollars. */
-	float surcharge;
+	final float surcharge;
 
 	/** tax in dollars. */
-	float mta;
+	final float mta;
 
 	/** tip in dollars. */
-	float tip_amount;
+	final float tip_amount;
 
 	/** bridge and tunnel tolls in dollars. */
-	float tolls_amount;
-
-	/**
-	 * Empty constructor.
-	 */
-	public DebsRecord() {
-		super();
-	}
+	final float tolls_amount;
 
 	/**
 	 * Instantiates a new debs record.
@@ -148,241 +141,113 @@ public class DebsRecord {
 	/**
 	 * @return the medallion
 	 */
-	public String getMedallion() {
+	public final String getMedallion() {
 		return medallion;
-	}
-
-	/**
-	 * @param medallion
-	 *            the medallion to set
-	 */
-	public void setMedallion(String medallion) {
-		this.medallion = medallion;
 	}
 
 	/**
 	 * @return the hack_license
 	 */
-	public String getHack_license() {
+	public final String getHack_license() {
 		return hack_license;
-	}
-
-	/**
-	 * @param hack_license
-	 *            the hack_license to set
-	 */
-	public void setHack_license(String hack_license) {
-		this.hack_license = hack_license;
 	}
 
 	/**
 	 * @return the pickup_datetime
 	 */
-	public long getPickup_datetime() {
+	public final long getPickup_datetime() {
 		return pickup_datetime;
-	}
-
-	/**
-	 * @param pickup_datetime
-	 *            the pickup_datetime to set
-	 */
-	public void setPickup_datetime(long pickup_datetime) {
-		this.pickup_datetime = pickup_datetime;
 	}
 
 	/**
 	 * @return the dropoff_datetime
 	 */
-	public long getDropoff_datetime() {
+	public final long getDropoff_datetime() {
 		return dropoff_datetime;
-	}
-
-	/**
-	 * @param dropoff_datetime
-	 *            the dropoff_datetime to set
-	 */
-	public void setDropoff_datetime(long dropoff_datetime) {
-		this.dropoff_datetime = dropoff_datetime;
 	}
 
 	/**
 	 * @return the trip_time_in_secs
 	 */
-	public long getTrip_time_in_secs() {
+	public final long getTrip_time_in_secs() {
 		return trip_time_in_secs;
-	}
-
-	/**
-	 * @param trip_time_in_secs
-	 *            the trip_time_in_secs to set
-	 */
-	public void setTrip_time_in_secs(long trip_time_in_secs) {
-		this.trip_time_in_secs = trip_time_in_secs;
 	}
 
 	/**
 	 * @return the trip_distance
 	 */
-	public float getTrip_distance() {
+	public final float getTrip_distance() {
 		return trip_distance;
-	}
-
-	/**
-	 * @param trip_distance
-	 *            the trip_distance to set
-	 */
-	public void setTrip_distance(float trip_distance) {
-		this.trip_distance = trip_distance;
 	}
 
 	/**
 	 * @return the pickup_longitude
 	 */
-	public float getPickup_longitude() {
+	public final float getPickup_longitude() {
 		return pickup_longitude;
-	}
-
-	/**
-	 * @param pickup_longitude
-	 *            the pickup_longitude to set
-	 */
-	public void setPickup_longitude(float pickup_longitude) {
-		this.pickup_longitude = pickup_longitude;
 	}
 
 	/**
 	 * @return the pickup_latitude
 	 */
-	public float getPickup_latitude() {
+	public final float getPickup_latitude() {
 		return pickup_latitude;
-	}
-
-	/**
-	 * @param pickup_latitude
-	 *            the pickup_latitude to set
-	 */
-	public void setPickup_latitude(float pickup_latitude) {
-		this.pickup_latitude = pickup_latitude;
 	}
 
 	/**
 	 * @return the dropoff_longitude
 	 */
-	public float getDropoff_longitude() {
+	public final float getDropoff_longitude() {
 		return dropoff_longitude;
-	}
-
-	/**
-	 * @param dropoff_longitude
-	 *            the dropoff_longitude to set
-	 */
-	public void setDropoff_longitude(float dropoff_longitude) {
-		this.dropoff_longitude = dropoff_longitude;
 	}
 
 	/**
 	 * @return the dropoff_latitude
 	 */
-	public float getDropoff_latitude() {
+	public final float getDropoff_latitude() {
 		return dropoff_latitude;
-	}
-
-	/**
-	 * @param dropoff_latitude
-	 *            the dropoff_latitude to set
-	 */
-	public void setDropoff_latitude(float dropoff_latitude) {
-		this.dropoff_latitude = dropoff_latitude;
 	}
 
 	/**
 	 * @return the payment_type
 	 */
-	public String getPayment_type() {
+	public final String getPayment_type() {
 		return payment_type;
-	}
-
-	/**
-	 * @param payment_type
-	 *            the payment_type to set
-	 */
-	public void setPayment_type(String payment_type) {
-		this.payment_type = payment_type;
 	}
 
 	/**
 	 * @return the fare_amount
 	 */
-	public float getFare_amount() {
+	public final float getFare_amount() {
 		return fare_amount;
-	}
-
-	/**
-	 * @param fare_amount
-	 *            the fare_amount to set
-	 */
-	public void setFare_amount(float fare_amount) {
-		this.fare_amount = fare_amount;
 	}
 
 	/**
 	 * @return the surcharge
 	 */
-	public float getSurcharge() {
+	public final float getSurcharge() {
 		return surcharge;
-	}
-
-	/**
-	 * @param surcharge
-	 *            the surcharge to set
-	 */
-	public void setSurcharge(float surcharge) {
-		this.surcharge = surcharge;
 	}
 
 	/**
 	 * @return the mta
 	 */
-	public float getMta() {
+	public final float getMta() {
 		return mta;
-	}
-
-	/**
-	 * @param mta
-	 *            the mta to set
-	 */
-	public void setMta(float mta) {
-		this.mta = mta;
 	}
 
 	/**
 	 * @return the tip_amount
 	 */
-	public float getTip_amount() {
+	public final float getTip_amount() {
 		return tip_amount;
-	}
-
-	/**
-	 * @param tip_amount
-	 *            the tip_amount to set
-	 */
-	public void setTip_amount(float tip_amount) {
-		this.tip_amount = tip_amount;
 	}
 
 	/**
 	 * @return the tolls_amount
 	 */
-	public float getTolls_amount() {
+	public final float getTolls_amount() {
 		return tolls_amount;
-	}
-
-	/**
-	 * @param tolls_amount
-	 *            the tolls_amount to set
-	 */
-	public void setTolls_amount(float tolls_amount) {
-		this.tolls_amount = tolls_amount;
 	}
 
 }

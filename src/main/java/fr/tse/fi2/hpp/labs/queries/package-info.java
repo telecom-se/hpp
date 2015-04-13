@@ -1,7 +1,7 @@
 /**
  * @author Julien
  *
- * Queries to be processed for the various labs.
+ * Abstract classes that must be extended to process queries
  *
  */
 package fr.tse.fi2.hpp.labs.queries;

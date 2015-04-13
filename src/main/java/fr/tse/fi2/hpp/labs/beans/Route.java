@@ -1,5 +1,14 @@
 package fr.tse.fi2.hpp.labs.beans;
 
+/**
+ * A route consists in two {@link GridPoint}, the pickup and the dropoff ones.
+ * Each of this {@link GridPoint} are within a grid. The method
+ * {@link #isValid(int)} can be used to check the validity of the route in the
+ * grid system.
+ * 
+ * @author Julien
+ * 
+ */
 public class Route {
 	/**
 	 * Pickup location (where the route starts)
@@ -52,6 +61,28 @@ public class Route {
 	 */
 	public void setDropoff(GridPoint dropoff) {
 		this.dropoff = dropoff;
+	}
+
+	/**
+	 * 
+	 * @param gridsize
+	 * @return <code>true</code> if the pickup and dropoff location lie within
+	 *         the grid
+	 */
+	public boolean isValid(int gridsize) {
+		if (!valid(pickup.getX(), gridsize))
+			return false;
+		if (!valid(pickup.getX(), gridsize))
+			return false;
+		if (!valid(dropoff.getX(), gridsize))
+			return false;
+		if (!valid(dropoff.getY(), gridsize))
+			return false;
+		return true;
+	}
+
+	private boolean valid(int x, int gridsize) {
+		return x > 0 && x <= gridsize;
 	}
 
 }
