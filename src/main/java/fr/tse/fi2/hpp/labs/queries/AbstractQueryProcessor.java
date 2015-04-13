@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.slf4j.Logger;
@@ -27,7 +29,7 @@ import fr.tse.fi2.hpp.labs.parser.DefaultParser;
  * @author Julien
  * 
  */
-public abstract class AbstractQueryProcessor {
+public abstract class AbstractQueryProcessor implements Runnable{
 
 	final static Logger logger = LoggerFactory
 			.getLogger(AbstractQueryProcessor.class);
@@ -47,31 +49,26 @@ public abstract class AbstractQueryProcessor {
 	/**
 	 * Internal queue of events
 	 */
-	private Queue<DebsRecord> eventqueue;
-
+	public Queue<DebsRecord> eventqueue;
+	
+	
+	/**
+	 * Default constructor. Initialize event queue and writer
+	 */
 	public AbstractQueryProcessor() {
+		//Initialize queue
+		eventqueue = new LinkedBlockingQueue<>();
+		//Initialize writer
 		try {
 			outputWriter = new BufferedWriter(new FileWriter(new File(
 					"result/query" + id + ".txt")));
 		} catch (IOException e) {
 			logger.error("Cannot open output file for " + id, e);
+			System.exit(-1);
 		}
 	}
 
-	/**
-	 * Process an event that is received from the dispatcher
-	 * 
-	 * @param record
-	 */
-	public void onReceiveMessage(DebsRecord record) {
-		// If this is the last record, shut down the thread
-		if (record.isPoisonPill()) {
-			finish();
-			return;
-		}
-		// Otherwise process the record
-		process(record);
-	}
+	
 
 	/**
 	 * 

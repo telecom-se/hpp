@@ -34,7 +34,7 @@ public class Dispatcher {
 	 */
 	private void notifyAllProcessors(DebsRecord record) {
 		for (AbstractQueryProcessor processors : registeredProcessors) {
-			processors.onReceiveMessage(record);
+			processors.eventqueue.add(record);
 		}
 	}
 
