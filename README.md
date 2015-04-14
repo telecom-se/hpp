@@ -20,7 +20,7 @@ Two main classes are at your disposition, the first one , [`MainNoNStreaming`](h
 
 ### Additional data
 
-The repository contains a small data file with 1000 records. This file is sufficient for test purpose but is too limited for large scale processing. You need to download the 2 millions records file from [here](https://drive.google.com/file/d/0B0TBL8JNn3JgTGNJTEJaQmFMbk0/view?usp=sharing) (130Mb). Unzip it in `src/main/resources`.
+The repository contains a small data file with 1000 records. This file is sufficient for test purpose but is too limited for large scale processing. You need to download the 2 millions records file from [here](https://drive.google.com/file/d/0B0TBL8JNn3JgTGNJTEJaQmFMbk0/view?usp=sharing) (130Mb). Unzip it in `src/main/resources/data`.
 
 
 ## Create a query processor
