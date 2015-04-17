@@ -1,8 +1,5 @@
 # TP2 : Don't predict, measure !
 
-
-## Benchmarking in Java
-
 ## Discover JMH
 
 ### Introduction
