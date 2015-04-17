@@ -11,7 +11,7 @@ In this lab, we will benchmark two ways of computing the sum of a [List](http://
 We will actually compare naive implementations on digit lists that are implemented using for the first solution [ArrayList](http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html) and for the second [LinkedList](http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html).
 
 
-### Work to do
+### Work to do 1/2 : Use JMH in a stand alone project
 
 1. Create a JMH project using the 1.8 JMH online archetype.
 
@@ -41,9 +41,18 @@ We will actually compare naive implementations on digit lists that are implement
 7. Create another benchmark in order to study the impact of initializing the `ArrayList` with a default value instead of size `n` at instanciation.
 
 
-## JMH et le projet DEBS du module
+## Work to do 2/2: JMH et le projet DEBS du module
 
+You are to use JMH in the main lab project provided to you at TP1.
 
+The lab project provided to you already includes JMH dependency, as it can be tricky to do without using the archetype -- we did it for you !
+
+You are to benchmark using JMH the queries you made at lab #1.
+
+For this, consider :
+1. How to modify the program to make use of JMH ?
+2. What do we need to measure ?
+3. Implement your solution.
 
 <a name="references"></a>
 ### JMH References
@@ -51,4 +60,4 @@ We will actually compare naive implementations on digit lists that are implement
 - http://nitschinger.at/Using-JMH-for-Java-Microbenchmarking
 - http://java-performance.info/jmh/
 - http://openjdk.java.net/projects/code-tools/jmh/
-
+- http://shipilev.net/talks/devoxx-Nov2013-benchmarking.pdf
