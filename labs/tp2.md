@@ -30,10 +30,11 @@ We will actually compare naive implementations on digit lists that are implement
   8. Add another benchmark in your project that will do just the same operation but using a `LinkedList` implementation for the List on which we want to compute the mean.
   9. For each benchmarked solution (with `ArrayList` and with `LinkedList`), plot in MS Excel the operations per seconds with respect to the number of item in the list. Add the linear regression serie in each graph (hint: if you do not know how to add the linear regression in an Excel gaph, you can refer to [this](http://www-physique.u-strasbg.fr/~udp/articles/www-clepsydre/Excel-how-to-II.pdf)).
   10. Answer the following questions :
-    1. Les relations vous paraissent-elles empiriquement linéaires ?
+    1. Does the complexities of each method seems linear from an empirical point of view ?
     2. Why did you receive an out of memory exception for the solution using LinkedList for smaller values of `n` that when it starts to occur for the solution using `ArrayList` ?
     3. Why the solution using `ArrayList` is far better ?
   11. Create another benchmark in order to study the impact of initializing the `ArrayList` with a default value instead of size `n` at instanciation.
+
 
 ## JMH et le projet DEBS du module
 
