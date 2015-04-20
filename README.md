@@ -73,7 +73,7 @@ For some labs, specific instructions will be given to produce measure with [JMH]
 
 #### Lab 1: Discovery. 
 
-Follow the installation instruction. Verify that everything is ok with a `mvn install`. Install the extra data in your project. Modify the main classes to parse the `sorted_data.csv` file.
+Follow the installation instruction. Verify that everything is ok with a `mvn install`. Install the extra data in your project. Modify the main classes to parse the `100k.csv` file.
 
 Remove the existing query that counts the events.
 
