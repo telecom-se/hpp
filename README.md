@@ -6,6 +6,8 @@ For each session of the course, a notion will be introduced (Data Structure, Alg
 
 The general framework of the lab is a maven project that process data from the [DEBS 2015 Grand Challenge](http://www.debs2015.org/call-grand-challenge.html). This challenge contains data from taxi trips in NYC.
 
+The framework reads trips from the file and sends them to the different registered query processors. Query processors process the data to produce 
+
 You will be asked to answer queries on the data. Each query will reflect the notions seen during the course.
 The goal being to answer these queries as fast as possible.
 
@@ -20,7 +22,9 @@ Two main classes are at your disposition, the first one , [`MainNoNStreaming`](h
 
 ### Additional data
 
-The repository contains a small data file with 1000 records. This file is sufficient for test purpose but is too limited for large scale processing. You need to download the 2 millions records file from [here](https://drive.google.com/file/d/0B0TBL8JNn3JgTGNJTEJaQmFMbk0/view?usp=sharing) (130Mb). Unzip it in `src/main/resources/data`.
+The repository contains a small data file with 1000 records. This file is sufficient for test purpose but is too limited for large scale processing. 
+
+You will need to download the different files from [here](http://datasets-satin.telecom-st-etienne.fr/jsubercaze/hpp). Unzip them in `src/main/resources/data`.
 
 
 ## Create a query processor
