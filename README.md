@@ -24,7 +24,7 @@ Two main classes are at your disposition, the first one , [`MainNoNStreaming`](h
 
 The repository contains a small data file with 1000 records. This file is sufficient for test purpose but is too limited for large scale processing. 
 
-You will need to download the different files from [here](http://datasets-satin.telecom-st-etienne.fr/jsubercaze/hpp). Unzip them in `src/main/resources/data`.
+You will need to download the different files from [here](http://datasets-satin.telecom-st-etienne.fr/jsubercaze/hpp). Unzip them in `src/main/resources/data`. 
 
 
 ## Create a query processor
@@ -87,9 +87,11 @@ Execute both queries and measure the difference of running time and throughput, 
 
 TBD
 
-#### Lab 3: Sorting Algorithms.
+#### Lab 3: Fixing I/O bound
 
-TBD
+Using JMH, seen at the previous lab, measure the performance of the `IncrementalAveragePrice` with and without `writeLine`.
+As you should see, the I/O is limiting the performance of your program. Use a thread to externalize the output of the query processor. Modify [AbstractQueryProcessor](https://github.com/telecom-se/hpp/blob/master/src/main/java/fr/tse/fi2/hpp/labs/queries/AbstractQueryProcessor.java) to manage the thread creation and management.
+Measure the performance against the previous version.
 
 ## Evaluation
 
