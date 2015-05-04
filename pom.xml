@@ -68,11 +68,18 @@
 			<version>${jmh.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk14</artifactId>
+			<version>${bouncycastle.version}</version>
+			<type>jar</type>
+		</dependency>
 	</dependencies>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jmh.version>1.8</jmh.version>
+		<bouncycastle.version>1.49</bouncycastle.version>
 		<javac.target>1.7</javac.target>
 		<uberjar.name>benchmarks</uberjar.name>
 	</properties>
