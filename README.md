@@ -19,7 +19,7 @@ The two instructors for this course are (by order of appearance) :
 - Julien Subercaze <julien.subercaze@univ-st-etienne.fr>
 
 The timeframe for the aforementionned activities is as provided by the following picture :
-
+![]({{site.baseurl}}/./resources/figures/organisation.png)
 ## Labs materials
 
 [Mechanical sympathy](./lab1/README.md)
@@ -29,5 +29,3 @@ The timeframe for the aforementionned activities is as provided by the following
 [Advanced multithreading](./lab3/README.md)
 
 [Project instructions](./project/README.md)
-
-
