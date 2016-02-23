@@ -12,7 +12,7 @@ The first part (Mechanical Sympathy) will be offered in **C++**, while the latte
 
 Following those two main course part, you will be invited to then experiment the thrill of high performance programming by trying to optimize an open source library, from a hand-picked list that we will provide to you (you will be able to choose between **C++** or **Java** library, in order to match your programming language tastes).
 
-## Organsiation
+## Organization
 
 The two instructors for this course are (by order of appearance) :
 - Christophe Gravier <christophe.gravier@univ-st-etienne.fr>
