@@ -57,7 +57,7 @@ Alternatives exists in order to count (well ... estimate) the number of CPU *cyc
 - [perl](https://perf.wiki.kernel.org/index.php/Main_Page)
 - [Valgrind](http://valgrind.org/)
 - [VTune amplifier XE](https://software.intel.com/en-us/intel-vtune-amplifier-xe)
-- ...
+- ["optimize"](http://www.agner.org/optimize/)
 
 As we are relying on free software and we want to measure the number of CPU cycles for a single function, we will opt for another alternative offered by the [FTTW software](http://www.fftw.org/download.html), that is its Cycles counter module.
 
