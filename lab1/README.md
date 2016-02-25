@@ -51,7 +51,7 @@ In order to sequentially walk this linked list of values "packed" into a contigu
 
 Next, in order to actually measure the sequential read walk 'time' for various value for `k`, we will need to able to "measure" the elasped time for such a sequential read walk. Here things becomes to be quite messy !
 
-> Task : Consider what can happen if we measure the elapased time for running a method in our program.
+> Task : Consider what can happen if we measure the elapased time for running a method in our program. Even doing something like `double elapsedTime = static_cast<double>(clock() - start) / CLOCKS_PER_SEC;`
 
 Alternatives exists in order to count (well ... estimate) the number of CPU *cycles* taken by a program : 
 - [perl](https://perf.wiki.kernel.org/index.php/Main_Page)
