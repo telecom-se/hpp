@@ -26,7 +26,42 @@ As a large number of modern processors, its architecture uses three level of cac
 
 > Task : Why does it matter ? (_we will discuss some numbers every programmers should know_)
 
-## Penalty from cache misses
+## Play time !
+
+In what follows, we will create some C++ programs in order to observe the effect of the cache hierarchy on simple data structure tasks.
+
+For this, we will use the following data structure (borrowed, like most of thisp art of the labs, [from a nice document from U. Drepper](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf)).
+
+    const int NPAD = 0;
+    
+    struct l {
+	   struct l *n;
+	   long int pad[NPAD];
+    };
+
+This structure represents a cell in a linked list (The field `n` points to the next cell). The field `pad` will be of various size controlled by `NPAD` integer. When `NPAD` is `0`, `sizeof(struct l)` equals `sizeof(l*)`. More generally, `sizeof(struct l) == (NPAD+1)*sizeof(l*)`. We will be using this to make a cell more or less big, but for now `NPAD == 0`.
+
+> Task : Write a C++ program that create a array of variable of type `l` so that the dimension of the array is 2^k bytes (k is an argument).
+
+Given what's before, this can be misleading. This will make perfect sense in the next task. This program will be used to measure the _time_ needed to sequentially walk every value in a 2^k bytes array.
+
+In order to sequentially walk this linked list of values "packed" into a contiguous memory area (which was been forced as we put all cells into a array), we will restrict ourself to traverse the array using the pointers in each cell (and not the `[]` notation).
+
+Next, in order to actually measure the sequential read walk 'time' for various value for `k`, we will need to able to "measure" the elasped time for such a sequential read walk. Here things becomes to be quite messy !
+
+> Task : Consider what can happen if we measure the elapased time for running a method in our program.
+
+Alternatives exists in order to count (well ... estimate) the number of CPU *cycles* taken by a program : 
+- [perl](https://perf.wiki.kernel.org/index.php/Main_Page)
+- [Valgrind](http://valgrind.org/)
+- [VTune amplifier XE](https://software.intel.com/en-us/intel-vtune-amplifier-xe)
+- ...
+
+As we are relying on free software and we want to measure the number of CPU cycles for a single function, we will opt for another alternative offered by the [FTTW software](http://www.fftw.org/download.html), that is its Cycles counter module.
+
+> Task : For k in {10 .. 28}, measure the estimated CPU cycles per linked list element required to traverse the linked list of memory size 2^k - as built at the previous task.
+
+
 
 ## Prefecthing and CPU pipelines
 
@@ -35,3 +70,10 @@ As a large number of modern processors, its architecture uses three level of cac
 ## Random read vs sequential read
 
 ## Side remarks on instructions caches
+
+
+
+
+
+
+
