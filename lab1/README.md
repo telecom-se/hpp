@@ -1,6 +1,6 @@
 # Mechanical Sympathy
 
-It is quite obvious that when the CPU execute an instruction, it does not fecth the data each time from memory - this will make it wait too many cycles to actually get the data (waiting for it) before actually processing it.
+It is quite obvious that when the CPU execute an instruction, it does not fecth the data each time from memory - this will make it wait too many cycles to actually get the data (waiting for it) before actually processing it. This observation is even more true considering the _Memory Wall_.
 
 You can have the intuition that different levels of _caches_ store those data so that the CPU can have a fast access to them when required.
 
@@ -16,11 +16,15 @@ In what follows, different programming activities will make your observe and the
 
 As a warm-up, we want to get an idea on the architecture of our CPU(s) that is actually handling data in our algorithms. All CPUs are not the same, right ?
 
-Take the example of my own processor, a [Intel 5820k](http://ark.intel.com/fr/products/82932/Intel-Core-i7-5820K-Processor-15M-Cache-up-to-3_60-GHz) processor. 
+Take the example of a "old" [Intel i5 760](http://ark.intel.com/fr/products/48496/Intel-Core-i5-760-Processor-8M-Cache-2_80-GHz) processor. It is based on a Nehalem microarchitecture, and a block schema for this architecture is provided by Texa A&M University :
 
-As a large number of modern processors, its architecture uses three level of cache : Level 1 (L1), Level 2 (L2), and Level 3 (L3 -- sometimes: Last Level Cach (LLC)). Level 1 is within each core (whose support 2-threads multithreading) and each core has its dedicated L2 cache. L3 cache is shared accross all cores. The resulting "cache block diagram" look as follows :
+![]({{site.baseurl}}/http://sc.tamu.edu/Images/NehalemMemBlock.PNG)
 
-todo
+As a large number of modern processors, its architecture uses three level of cache : Level 1 (L1), Level 2 (L2), and Level 3 (L3 -- sometimes: Last Level Cach (LLC)). This is a very common cache hierarchy architecture.
+
+> Task : What is your processor ? What is its cache hierarchy ? What are the sizes and latencies of each data storage units (cache and main memory) ?
+
+> Task : Why does it matter ? (_we will discuss some numbers every programmers should know_)
 
 ## Penalty from cache misses
 
