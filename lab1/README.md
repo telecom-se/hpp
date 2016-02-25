@@ -45,6 +45,8 @@ This structure represents a cell in a linked list (The field `n` points to the n
 
 Given what's before, this can be misleading. This will make perfect sense in the next task. This program will be used to measure the _time_ needed to sequentially walk every value in a 2^k bytes array.
 
+## Sequential Read Walks and block size influence
+
 In order to sequentially walk this linked list of values "packed" into a contiguous memory area (which was been forced as we put all cells into a array), we will restrict ourself to traverse the array using the pointers in each cell (and not the `[]` notation).
 
 Next, in order to actually measure the sequential read walk 'time' for various value for `k`, we will need to able to "measure" the elasped time for such a sequential read walk. Here things becomes to be quite messy !
@@ -59,17 +61,34 @@ Alternatives exists in order to count (well ... estimate) the number of CPU *cyc
 
 As we are relying on free software and we want to measure the number of CPU cycles for a single function, we will opt for another alternative offered by the [FTTW software](http://www.fftw.org/download.html), that is its Cycles counter module.
 
-> Task : For k in {10 .. 28}, measure the estimated CPU cycles per linked list element required to traverse the linked list of memory size 2^k - as built at the previous task.
+> Task : For k in {10 .. 28}, measure the estimated CPU cycles per linked list element required to traverse the linked list of memory size 2^k - as built at the previous task. What do you observe ? Why ?
+
+You will now try to see how the size of the structure influence this result.
+
+> Task : Same as previous task BUT change `NPAD` from `0` to `15`. What do you observe w.r.t. the figure when `NPAD == 0`? What can you make as a hypothesis ?
+
+> Task : In order to confirm your thought - or guide you if you are clueless - plot the cache-misses ratio using the `perf` software. Hint: you can make stat on the events `cache-misses` and `cache-references` in order to have the ratio of cache-misses. What do you conclude ? What is the additional observation you couldn't make in the previous task ?
+
+## From left-to-right or right-to-left ?
+
+We want to compare the previous results for a different traversal of the linked list. We have traverse the link sequentially, from left to right. The question is whether the direction of the walk influence the results.
+
+> Task : Re-run the previous experiments for both `NPAD`values, but sequentially traverse the linked list from end to start. What do you conclude ?
+
+## Sequential vs Random Read Walks and influence of prefetching
+
+Would it be from left-to-right or right-to-left, we have traverse the linked list in a predictable pattern. What happens if you randomly traverse that list, i.e. we jump from one cell to another with no specific predictable order ?
+
+In order to do so, you will have to first "shuffle" the linked list (i.e. to wire the cells in no particular predicable order).
+
+> Task : Set `NPAD`to `0`, and see for the different values of `k`, the correlation between CPU cycles and cache-misses ratio. Plot the differences between sequential and random walks in the list. Can you explain what you get ?
+
+## Branch prediction
 
 
-
-## Prefecthing and CPU pipelines
-
-## Cache page size and line length through padding effects
-
-## Random read vs sequential read
-
-## Side remarks on instructions caches
+## Side remarks
+On instruction caches.
+On write behaviours.
 
 
 
