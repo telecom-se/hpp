@@ -18,7 +18,7 @@ As a warm-up, we want to get an idea on the architecture of our CPU(s) that is a
 
 Take the example of a "old" [Intel i5 760](http://ark.intel.com/fr/products/48496/Intel-Core-i5-760-Processor-8M-Cache-2_80-GHz) processor. It is based on a Nehalem microarchitecture, and a block schema for this architecture is provided by Texa A&M University :
 
-![]({{site.baseurl}}/http://sc.tamu.edu/Images/NehalemMemBlock.PNG)
+![](http://sc.tamu.edu/Images/NehalemMemBlock.PNG)
 
 As a large number of modern processors, its architecture uses three level of cache : Level 1 (L1), Level 2 (L2), and Level 3 (L3 -- sometimes: Last Level Cach (LLC)). This is a very common cache hierarchy architecture.
 
