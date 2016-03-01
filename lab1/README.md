@@ -125,7 +125,8 @@ On write behaviours.
 On TLBs.
 
 
-
+## Links
+[Every number latency a programmer should know](https://gist.github.com/hellerbarde/2843375)
 
 
 
