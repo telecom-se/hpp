@@ -56,7 +56,7 @@ Next, in order to actually measure the sequential read walk 'time' for various v
 > Task : Consider what can happen if we measure the elapased time for running a method in our program. Even doing something like `double elapsedTime = static_cast<double>(clock() - start) / CLOCKS_PER_SEC;`
 
 Alternatives exists in order to count (well ... estimate) the number of CPU *cycles* taken by a program : 
-- [perl](https://perf.wiki.kernel.org/index.php/Main_Page)
+- [perf](https://perf.wiki.kernel.org/index.php/Main_Page)
 - [Valgrind](http://valgrind.org/)
 - [VTune amplifier XE](https://software.intel.com/en-us/intel-vtune-amplifier-xe)
 - ["optimize"](http://www.agner.org/optimize/)
