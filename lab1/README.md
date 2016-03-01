@@ -146,7 +146,7 @@ On TLBs.
 
 ### About CPU counters
 
-[Intel 64IA32 architectures for software developers Vol 3B, page 297](file:///Users/cgravier/Downloads/64-ia-32-architectures-software-developer-vol-3b-part-2-manual.pdf)
+[Intel architectures for software developers Vol 3B, p297](http://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-software-developer-vol-3b-part-2-manual.html)
 
 
 ### About branch prediction :
