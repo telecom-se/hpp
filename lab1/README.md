@@ -144,6 +144,11 @@ On TLBs.
 [Every number latency a programmer should know](https://gist.github.com/hellerbarde/2843375)
 
 
+### About CPU counters
+
+[Intel 64IA32 architectures for software developers Vol 3B, page 297 ](file:///Users/cgravier/Downloads/64-ia-32-architectures-software-developer-vol-3b-part-2-manual.pdf)
+
+
 ### About branch prediction :
 
 [Branch pediction : performance of some mergesort implementations](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-172-performance-engineering-of-software-systems-fall-2010/video-lectures/lecture-5-performance-engineering-with-profiling-tools/MIT6_172F10_lec05.pdf)
