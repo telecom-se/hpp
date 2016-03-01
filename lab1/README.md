@@ -127,9 +127,13 @@ On TLBs.
 
 ## Links
 [Every number latency a programmer should know](https://gist.github.com/hellerbarde/2843375)
+
 [The Haswell Microarchitecture - 4th Generation Processor] (http://www.ijcsit.com/docs/Volume%204/vol4Issue3/ijcsit2013040321.pdf)
+
 [Haswell wikipedia] (https://en.wikipedia.org/wiki/Haswell_(microarchitecture))
+
 [Haswell readworldtech](http://www.realworldtech.com/haswell-cpu/5/)
+
 [CPU world](http://www.cpu-world.com/sspec/SR/SR1QH.html)
 
 
