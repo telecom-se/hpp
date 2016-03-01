@@ -127,9 +127,9 @@ On write behaviours.
 On TLBs.
 
 
-## Links
+## Useful and additional links
 
-Task 1 :
+### About your CPU  :
 
 [The Haswell Microarchitecture - 4th Generation Processor] (http://www.ijcsit.com/docs/Volume%204/vol4Issue3/ijcsit2013040321.pdf)
 
@@ -142,3 +142,9 @@ Task 1 :
 [Haswell 7-cpu](http://www.7-cpu.com/cpu/Haswell.html) latencies !
 
 [Every number latency a programmer should know](https://gist.github.com/hellerbarde/2843375)
+
+
+### About branch prediction :
+
+[Branch pediction : performance of some mergesort implementations](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-172-performance-engineering-of-software-systems-fall-2010/video-lectures/lecture-5-performance-engineering-with-profiling-tools/MIT6_172F10_lec05.pdf)
+
