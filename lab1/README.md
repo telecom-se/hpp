@@ -24,6 +24,8 @@ As a large number of modern processors, its architecture uses three level of cac
 
 > Task : What is your processor ? What is its cache hierarchy ? What are the sizes and latencies of each data storage units (cache and main memory) ?
 
+> Task : Create a simple block diagram of your processor, including all its cores, all level of cache, main memory and disk. Add latency and size numbers. Optionally, include TLB information if you happen to have read on it and get the idea. Students will present their perception of your processor, we will disucss it and I will draw my own schema.
+
 > Task : Why does it matter ? (_we will discuss some numbers every programmers should know_)
 
 ## Play time !
