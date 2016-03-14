@@ -67,7 +67,7 @@ As we are relying on free software and we want to measure the number of CPU cycl
 
 You will now try to see how the size of the structure influence this result.
 
-> Task : Same as previous task BUT change `NPAD` from `0` to `15`. What do you observe w.r.t. the figure when `NPAD == 0`? What can you make as a hypothesis ?
+> Task : Same as previous task BUT change `NPAD` for values : `0`,`7`,`15`,`31`. What do you observe w.r.t. the figure when `NPAD == 0`? What can you make as a hypothesis ?
 
 > Task : In order to confirm your thought - or guide you if you are clueless - plot the cache-misses ratio using the `perf` software. Hint: you can make stat on the events `cache-misses` and `cache-references` in order to have the ratio of cache-misses. What do you conclude ? What is the additional observation you couldn't make in the previous task ?
 
