@@ -218,6 +218,9 @@ We will try to understand if this code was actually vectorized by the compiler.
 
 In order to help reading Intel Vector instrinsics instructions, you can refer to [this](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)
 
+Trick: you can also insert comments in the assembler code using `asm volatile ("# my comment");`
+If you insert such comment before and after the loop you want to check, it makes it easier to locate the loop in the assembler code ...
+
 
 ## Manual Mandelbrot computation
 
