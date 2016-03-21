@@ -241,9 +241,27 @@ Imagine (pun intended) that we have four complex numbers :
 - i3 = x +zi
 - i4 = y + wi
 
+For the two first complex numbers, their product is `i1*i2 = (a+bi)(c+di) = (ac -bd) + (ad + bc)i`
 
+We want to devise a way to compute complex numbers multiplications using AVX (255 bits registers as on your 4770 processor) intrinsics.
 
+We expected to be provided a array of complex numbers. Each complex number are represented in the array of int's using two consecutive numbers. For instance, the four aforementionned complex numbers will be represented as follows :
 
+```
+| a | b | c | d | x | z | y | w |
+```
+
+We will be working on arrays of size `1,000` complex numbers (hence a array of `2,000` numbers).
+
+For this, we suggest the following tasks :
+
+> Task : Provide a scalar algorithm to compute the `500` multiplications for these `1,000` complex numbers.
+
+> Task : Devise ( = draw on a paper !) a strategy to do the same algorithm using AVX intrinsics and its registers.
+
+You can think of the intrinsics (there is not a single solution !) starting with `_mm256_*` (those are AVX intrinsics).
+
+> Task : Provide a benchmark in order to measure how much you win/loose for the scalar and vector versions.
 
 
 
