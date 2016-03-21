@@ -222,7 +222,7 @@ In order to help reading Intel Vector instrinsics instructions, you can refer to
 
 Trick: you can also insert comments in the assembler code using `asm volatile ("# my comment");`
 If you insert such comment before and after the loop you want to check, it makes it easier to locate the loop in the assembler code ...
-
+(in this case compile with `gcc -o loop -O3 ./loop.cpp -lstdc++`)
 
 ## Manual Mandelbrot computation
 
