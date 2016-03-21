@@ -153,3 +153,74 @@ On TLBs.
 
 [Branch pediction : performance of some mergesort implementations](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-172-performance-engineering-of-software-systems-fall-2010/video-lectures/lecture-5-performance-engineering-with-profiling-tools/MIT6_172F10_lec05.pdf)
 
+
+
+# SIMD
+
+## What is SIMD ?
+
+SIMD means Single Instruction Multiple Data. The objective is apply a single operation on multiple data at the same time. This is sometimes referred as vectorization (as opposed to "scalar" operations).
+
+Think about slicing a cake : using a knife, you make one slice at a time (this is like a scalar operation in programming world). Would you have a knife that makes it possible to create 4 slices with one cut, you would do vectorization.
+
+These instruction are CPU vendor specific (Intel, ARM, AMD, ...)
+
+Maybe you already read some acronyms, without knowing that they are actually the Intel Vector Instructions :
+- MMX (1996, Pentium)
+- SSE (1999, Pentium 3)
+- SSE2 (2001, Pentium 4)
+- SSE3 (2004, Pentium 4E)
+- SSSE3 (2006 ,Core Duo)
+- SSE4 (2007, Core 2 Duo Penryn)
+- AVX (2008, Sandy Bridge)
+- TSX (2011, Haswell)
+
+The question is first WHO perform the vectorization of the code ?
+- compiler performs auto-vectorization
+- you can also do it "by hand" when necessary.
+
+
+## A first example with auto-vectorization
+
+Here is a first program that you will compile :
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	const int ArraySize = 8;
+	int a[ArraySize] = {2, 2, 3, 4, 5, 5, 2, 6};
+	int b[ArraySize] = {1, 3, 6, 3, 3, 1, 7, 2};
+	int c[ArraySize] = {0};
+
+	for ( unsigned int i = 0; i < ArraySize; ++i)
+	{
+	     c[i] = a[i] * b[i];
+	}
+
+	cout << "First value : " << c[0];
+}
+```
+
+Compile this program using :
+
+```
+g++ -O3 -ftree-vectorize -ftree-vectorizer-verbose=2 -mavx -march=native -o main main.cpp
+```
+
+> Task : Why do we activate the following options : the `-mavx`, the `-ftree-vectorize`, and the `-ftree-vectorizer-verbose=2` ?
+
+We will try to understand if this code was actually vectorized by the compiler.
+
+> Task : Run the following command : `objdump -d main`. Do you think your programm was vectorize ? Why ?
+
+In order to help reading Intel Vector instrinsics instructions, you can refer to [this](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)
+
+
+
+
+
+
+
