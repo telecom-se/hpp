@@ -229,6 +229,18 @@ The source code is available [as a gist](https://gist.github.com/cgravier/efc208
 
 > Task : Compile and run. Explain the difference of order of magnitude in performance of the different versions.
 
+## Your turn
+
+We will know create our own implementation of an algorithm using AVX intrinsics.
+
+The algorithm we want to implement is complex number multiplication.
+
+Imagine (pun intended) that we have four complex numbers :
+- i1 = a + bi
+- i2 = c + di
+- i3 = x +zi
+- i4 = y + wi
+
 
 
 
