@@ -219,6 +219,19 @@ We will try to understand if this code was actually vectorized by the compiler.
 In order to help reading Intel Vector instrinsics instructions, you can refer to [this](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)
 
 
+## Manual Mandelbrot computation
+
+We will see here a complex example where the compiler failed to auto vectorize.
+
+This example is directly inspired from [Intel guide](https://software.intel.com/en-us/articles/introduction-to-intel-advanced-vector-extensions), but adapted for gcc compilation.
+
+The source code is available [as a gist](https://gist.github.com/cgravier/efc208fab365104e8224).
+
+> Task : Compile and run. Explain the difference of order of magnitude in performance of the different versions.
+
+
+
+
 
 
 
