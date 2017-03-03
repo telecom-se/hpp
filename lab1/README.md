@@ -30,22 +30,16 @@ As a large number of modern processors, its architecture uses three level of cac
 
 ## Play time !
 
-In what follows, we will create some C++ programs in order to observe the effect of the cache hierarchy on simple data structure tasks.
+In what follows, we will create some Java programs in order to observe the effect of the cache hierarchy on simple data structure tasks.
 
-For this, we will use the following data structure (borrowed, like most of thisp art of the labs, [from a nice document from U. Drepper](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf)).
+You are strongly encourage to first read [a very nice document from U. Drepper](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf)).
 
-    const int NPAD = 0;
-    
-    struct l {
-	   struct l *n;
-	   long int pad[NPAD];
-    };
+In what follows, we will need to be able to build fxed-size arraysof 2^k bytes.
+For this purpose, we will be creating arrays of random `int`s, provided that your JVM stores `int`s as 32 bits (4 bytes).
+When we want to build arrays of 2^k bytes, we will be building arrays of (2^k) / 4 random `ìnt`'s.
 
-This structure represents a cell in a linked list (The field `n` points to the next cell). The field `pad` will be of various size controlled by `NPAD` integer. When `NPAD` is `0`, `sizeof(struct l)` equals `sizeof(l*)`. More generally, `sizeof(struct l) == (NPAD+1)*sizeof(l*)`. We will be using this to make a cell more or less big, but for now `NPAD == 0`.
+> Task : Write a Java class that expose a single static function to create such an array, whose size is given as parameter. That is write `public static int[] makeArray(int k)`.
 
-> Task : Write a C++ program that create a array of variable of type `l` so that the dimension of the array is 2^k bytes (k is an argument).
-
-Given what's before, this can be misleading. This will make perfect sense in the next task. This program will be used to measure the _time_ needed to sequentially walk every value in a 2^k bytes array.
 
 ## Sequential Read Walks and block size influence
 
