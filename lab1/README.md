@@ -69,6 +69,9 @@ We want to measure the elasped time for walking the entire arrays of the followi
 
 > Task : Code the sequential array traversal and measuring the elapsed time for each values of k. Plot the results and make a guess on execution time for greater values. At each operation make something of `yourArray[i]`, for instance I suggest that you compute the cumulated sum of int in the table (let's ignore `ìnt`overflows as we won't do anything with this value).
 
+> Task : Do the same thing but traversing the array sequentially from end to start.
+
+
 ### random read walk
 
 We now want to walk `(2^k / 4`) random values from the array (maybe with repetitions). `(2^k / 4)` is the number of `int`'s in the array, so we want to fetch as many `int`from the array while preventing a sequential access. At each iteration, you will be choosing the index `i` of the array cell you want to pick from a pseudo random generator bounded in `[0; 2^k / 4 -1])`. For such generator, looking on stackoverflow can lead you to [interesting piece of code](http://stackoverflow.com/questions/363681/generating-random-integers-in-a-specific-range).
@@ -83,49 +86,60 @@ We now want to walk `(2^k / 4`) random values from the array (maybe with repetit
 
 
 
-## Read Walks using list
+## Read Walks using linked list
+
+In this part we will be interested in traversing a linked list in a sequential manner for varying cell size in bytes. We will study the impact of traversing a linkedlist that lies in a contiguous memory space with respect to a a linkedlist that lies in a non contiguous space. Remember that traversing a linkedlist is not prefetched by current CPUs -- although you can see [some proposal in the academic litterature](Dependence Based Prefetching for Linked Data Structures).
+
+### Our linkedlist
+
+We will be using a simple LinkedList that we provide below :
+
+	class Liste {
+		int[] array = { 1, 2, 3, 4 };
+		Liste next;
+	}
+
+Each cell holds a 4-`int` 's array along the pointer to the next cell. This is the pointer we will be using to travers the linkedlist sequentially.
+
+### Linkedlist in a contiguous memory space
+
+> Task : Provide a method to build a `Liste`of `2^k`bytes. (provided each cell contains 5 `ìnt`s, that is 4 `int`'s for the array and one as the pointer to the next cell), the number of cells is `2^k / 4 / 5` (derived from previous tasks).
+In order to realize this task, you have to make sure that all cells lies in a contiguous memory space. To perfrom this, it is possible to create an array of `size`Liste elements (the elemnts will be contiguous as proporty of an array). Then you can wire each cells to the next one in the array so that you can later measure the traversal of the linkedlist using its pointers `next`, while being sure that all elements are contiguous.
+
+> Task : Observe the execution time for `k = {20 .. 32}`
+
+
+### LinkedList in a non-contiguous space
+
+> Task : Provide another method to build a `Liste` so that you are no longer guarantee that the `liste`elements lie in a contiguous memory space. 
+
+It is possible that, although not instanciated within an aray, that the consecutive call to `new Liste`will tend to instanciate the Liste elements in a contiguous manner. But know that having a garbage collector call will rearrange those lements in an unpredictable maner, and especially less likely to be contiguous. Usually we call `System.gc()`when we want to have the garbage collector called. This is a bit tricky because this actually means to favour a garbage collection but do not ensure it to be syncrhonous with the call to this function. Instead, to enforce the garbage colleciton when called, we will called the following function (to add in your code base) as a neat solution to perform this pause the world to garbage collection (taken from [here](http://stackoverflow.com/questions/10039474/java-guaranteed-garbage-collection-using-jlibs)) :
+
+	/**
+	 * This method guarantees that garbage collection is done unlike
+	 * <code>{@link System#gc()}</code>
+	 */
+	public static void gc() {
+		Object obj = new Object();
+		@SuppressWarnings("rawtypes")
+		WeakReference ref = new WeakReference<Object>(obj);
+		obj = null;
+		while (ref.get() != null) {
+			System.gc();
+		}
+	}
+
+> Task : Observe the execution time for `k = {20 .. 32}`
+
+### Analyse
+
+> Task : Compare the results for both contiguous linkedlist and non contiguous linkedlist. Can you make an educated guess on what you observe ?
+
+> Task : Use `perf` software to look at different CPU counters values. Can you spot the ones that explain the observed behavior ?
 
 
 
 
-
-
-
-In order to sequentially walk this linked list of values "packed" into a contiguous memory area (which was been forced as we put all cells into a array), we will restrict ourself to traverse the array using the pointers in each cell (and not the `[]` notation).
-
-Next, in order to actually measure the sequential read walk 'time' for various value for `k`, we will need to able to "measure" the elasped time for such a sequential read walk. Here things becomes to be quite messy !
-
-> Task : Consider what can happen if we measure the elapased time for running a method in our program. Even doing something like `double elapsedTime = static_cast<double>(clock() - start) / CLOCKS_PER_SEC;`
-
-Alternatives exists in order to count (well ... estimate) the number of CPU *cycles* taken by a program : 
-- [perf](https://perf.wiki.kernel.org/index.php/Main_Page)
-- [Valgrind](http://valgrind.org/)
-- [VTune amplifier XE](https://software.intel.com/en-us/intel-vtune-amplifier-xe)
-- ["optimize"](http://www.agner.org/optimize/)
-
-As we are relying on free software and we want to measure the number of CPU cycles for a single function, we will opt for another alternative offered by the [FTTW software](http://www.fftw.org/download.html), that is its Cycles counter module.
-
-> Task : For k in {10 .. 28}, measure the estimated CPU cycles per linked list element required to traverse the linked list of memory size 2^k - as built at the previous task. What do you observe ? Why ?
-
-You will now try to see how the size of the structure influence this result.
-
-> Task : Same as previous task BUT change `NPAD` for values : `0`,`7`,`15`,`31`. What do you observe w.r.t. the figure when `NPAD == 0`? What can you make as a hypothesis ?
-
-> Task : In order to confirm your thought - or guide you if you are clueless - plot the cache-misses ratio using the `perf` software. Hint: you can make stat on the events `cache-misses` and `cache-references` in order to have the ratio of cache-misses. What do you conclude ? What is the additional observation you couldn't make in the previous task ?
-
-## From left-to-right or right-to-left ?
-
-We want to compare the previous results for a different traversal of the linked list. We have traverse the link sequentially, from left to right. The question is whether the direction of the walk influence the results.
-
-> Task : Re-run the previous experiments for both `NPAD`values, but sequentially traverse the linked list from end to start. What do you conclude ?
-
-## Sequential vs Random Read Walks and influence of prefetching
-
-Would it be from left-to-right or right-to-left, we have traverse the linked list in a predictable pattern. What happens if you randomly traverse that list, i.e. we jump from one cell to another with no specific predictable order ?
-
-In order to do so, you will have to first "shuffle" the linked list (i.e. to wire the cells in no particular predicable order).
-
-> Task : Set `NPAD`to `0`, and see for the different values of `k`, the correlation between CPU cycles and cache-misses ratio. Plot the differences between sequential and random walks in the list. Can you explain what you get ?
 
 ## Branch predictions and compiler optimisations.
 
