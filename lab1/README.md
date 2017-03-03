@@ -57,7 +57,7 @@ By measuring the time before running your code traversing the array, and compute
 	// ... traversing each item of the array ...    
 	long estimatedTime = System.nanoTime() - startTime;
 
-2) CPU time using jvisualvm.
+2) CPU time using `jvisualvm`.
 
 Along your JDK comes a nice tools to profile your running java program which is called `jvisualvm`. If you got the the `bin`folder of your installed JVM, you can launch it from there. For profiling CPU, the basis of what we'll need are [here](https://blogs.oracle.com/nbprofiler/entry/profiling_with_visualvm_part_1). 
 
