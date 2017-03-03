@@ -34,14 +34,62 @@ In what follows, we will create some Java programs in order to observe the effec
 
 You are strongly encourage to first read [a very nice document from U. Drepper](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf)).
 
-In what follows, we will need to be able to build fxed-size arraysof 2^k bytes.
+
+## Read Walks using arrays
+
+### Utility function
+In what follows, we will need to be able to build fxed-size arraysof `2^k` bytes.
 For this purpose, we will be creating arrays of random `int`s, provided that your JVM stores `int`s as 32 bits (4 bytes).
-When we want to build arrays of 2^k bytes, we will be building arrays of (2^k) / 4 random `ìnt`'s.
+When we want to build arrays of `2^k` bytes, we will be building arrays of `(2^k) / 4` random `ìnt`'s.
 
 > Task : Write a Java class that expose a single static function to create such an array, whose size is given as parameter. That is write `public static int[] makeArray(int k)`.
 
+### On measuring execution time
 
-## Sequential Read Walks and block size influence
+We want to measure the time needed to walk the entire array from the begining to its end, in a sequential way. In order to measure the time spent, we will be using two methods :
+
+1) A first approximation using `System.nanoTime()`
+
+By measuring the time before running your code traversing the array, and compute the difference with the time after your program terminates.
+
+	// ... Building the 2^k array
+	long startTime = System.nanoTime();    
+	// ... traversing each item of the array ...    
+	long estimatedTime = System.nanoTime() - startTime;
+
+2) CPU time using jvisualvm.
+
+Along your JDK comes a nice tools to profile your running java program which is called `jvisualvm`. If you got the the `bin`folder of your installed JVM, you can launch it from there. For profiling CPU, the basis of what we'll need are [here](https://blogs.oracle.com/nbprofiler/entry/profiling_with_visualvm_part_1). 
+
+> Task : Explain the difference between the two ways of measuring elapsed time.
+
+### sequential read walk
+
+We want to measure the elasped time for walking the entire arrays of the following dimensions : `k = {20 .. 32}`.
+
+> Task : Code the sequential array traversal and measuring the elapsed time for each values of k. Plot the results and make a guess on execution time for greater values. At each operation make something of `yourArray[i]`, for instance I suggest that you compute the cumulated sum of int in the table (let's ignore `ìnt`overflows as we won't do anything with this value).
+
+### random read walk
+
+We now want to walk `(2^k / 4`) random values from the array (maybe with repetitions). `(2^k / 4)` is the number of `int`'s in the array, so we want to fetch as many `int`from the array while preventing a sequential access. At each iteration, you will be choosing the index `i` of the array cell you want to pick from a pseudo random generator bounded in `[0; 2^k / 4 -1])`. For such generator, looking on stackoverflow can lead you to [interesting piece of code](http://stackoverflow.com/questions/363681/generating-random-integers-in-a-specific-range).
+
+> Task : Code the random (with possible repetitions) walk of arrays with different values for k, i.e.  `k = {20 .. 32}`.
+
+> Task : How do a sequential and a random walk compares ? What is your intuition behind this ? (next activity covers the study of your possible intuition(s).
+
+### CPU counters using perf
+
+> Task : Run both a sequential and random walk of the array (for instance for k = 24) and observe CPU cycles using the [perf](https://perf.wiki.kernel.org/index.php/Main_Page) linux tool installed on your machines.
+
+
+
+## Read Walks using list
+
+
+
+
+
+
 
 In order to sequentially walk this linked list of values "packed" into a contiguous memory area (which was been forced as we put all cells into a array), we will restrict ourself to traverse the array using the pointers in each cell (and not the `[]` notation).
 
