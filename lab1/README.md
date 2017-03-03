@@ -169,10 +169,28 @@ For this, you can refer to [This guide on x86 assembly code](http://www.cs.virgi
 * In all case, remember that the actual instructions executed by your processor never exactly match what you did wrote in your programming language ! -- though you should now be no longer be destabilized by this statement. *
 
 
-## Side remarks without tasks if time allows
-On instruction caches.
-On write behaviours.
-On TLBs.
+
+## On optimisation automation
+
+Until now, what we have discovered suggest that the developper must be aware on how he/she store and traverse data, which implies a careful trade-off between data layout and algorithms being used.
+
+This trade-off require important knowledge and thorough ebnchmarking to get all the juice out of it.
+Thankfully, part part of these CPU and cache-aware optimisation techniques can be automatically optimze, and actually are without you to know until now. You will come to understand in this activity that the code that is actually run as assembly (in C/C++ or Java) is never the code that you actually wrote in your high lelve language (C/C++ or Java). Quite disturbing, isn't it ? :-)
+
+> Task : You are invited to look at the following automatic optimilsation techniques (what are they ?) : 
+- Null Check Elimination
+- Branch prediction
+- Loop unrolling
+- Inlining methods
+- Thread Local Storage
+- Dead code elimination
+
+[A good startign point](http://blog.takipi.com/java-on-steroids-5-super-useful-jit-optimization-techniques/).
+
+Can you see some similitudes for instructions from what we have observed on data layout in the array and linkedlist use case, speaking of CPU and cache friendliness ?
+
+> Task : *When* does these optimisations appear in the interpretation/compilation/runtime for C/C++ on one hand, and Java on the other ?
+Hint: it is significantly different for C/C++ and Java.
 
 
 ## Useful and additional links
@@ -203,9 +221,8 @@ On TLBs.
 
 
 
-# SIMD
 
-## What is SIMD ?
+## SIMD (if time allows)
 
 SIMD means Single Instruction Multiple Data. The objective is apply a single operation on multiple data at the same time. This is sometimes referred as vectorization (as opposed to "scalar" operations).
 
@@ -279,41 +296,6 @@ This example is directly inspired from [Intel guide](https://software.intel.com/
 The source code is available [as a gist](https://gist.github.com/cgravier/efc208fab365104e8224).
 
 > Task : Compile and run. Explain the difference of order of magnitude in performance of the different versions.
-
-## Your turn
-
-We will know create our own implementation of an algorithm using AVX intrinsics.
-
-The algorithm we want to implement is complex number multiplication.
-
-Imagine (pun intended) that we have four complex numbers :
-- i1 = a + bi
-- i2 = c + di
-- i3 = x +zi
-- i4 = y + wi
-
-For the two first complex numbers, their product is `i1*i2 = (a+bi)(c+di) = (ac -bd) + (ad + bc)i`
-
-We want to devise a way to compute complex numbers multiplications using AVX (255 bits registers as on your 4770 processor) intrinsics.
-
-We expected to be provided a array of complex numbers. Each complex number are represented in the array of int's using two consecutive numbers. For instance, the four aforementionned complex numbers will be represented as follows :
-
-```
-| a | b | c | d | x | z | y | w |
-```
-
-We will be working on arrays of size `1,000` complex numbers (hence a array of `2,000` numbers).
-
-For this, we suggest the following tasks :
-
-> Task : Provide a scalar algorithm to compute the `500` multiplications for these `1,000` complex numbers.
-
-> Task : Devise ( = draw on a paper !) a strategy to do the same algorithm using AVX intrinsics and its registers.
-
-You can think of the intrinsics (there is not a single solution !) starting with `_mm256_*` (those are AVX intrinsics).
-
-> Task : Provide a benchmark in order to measure how much you win/loose for the scalar and vector versions.
-
 
 
 
