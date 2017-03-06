@@ -1,30 +1,30 @@
 # Mechanical Sympathy
 
-It is quite obvious that when the CPU execute an instruction, it does not fecth the data each time from memory - this will make it wait too many cycles to actually get the data (waiting for it) before actually processing it. This observation is even more true considering the _Memory Wall_.
+It is quite obvious that when the CPU execute an instruction, it does not fetch the data each time from memory - this will make it wait too many cycles to actually get the data (waiting for it) before actually processing it. This observation is even more true considering the _Memory Wall_.
 
 You can have the intuition that different levels of _caches_ store those data so that the CPU can have a fast access to them when required.
 
 The real questions are :
 - How many levels of caches does a CPU have ?
 - How many times (number of CPU cycles) does it take to fetch a data from the memory to each of these cache ?
-- How the CPU handle cache accesses while still actually executing instructions ?
+- How the CPU handle cache accesses while still actually executing instructions?
 - Last but not least : **Why do these low-level considerations are of the utmost practical interest for the programmer ?**
 
 In what follows, different programming activities will make your observe and then conclude on answers to those questions.
 
-## Who is actually executing your instructions ?
+## Who is actually executing your instructions?
 
-As a warm-up, we want to get an idea on the architecture of our CPU(s) that is actually handling data in our algorithms. All CPUs are not the same, right ?
+As a warm-up, we want to get an idea on the architecture of our CPU(s) that is actually handling data in our algorithms. All CPUs are not the same, right?
 
-Take the example of a "old" [Intel i5 760](http://ark.intel.com/fr/products/48496/Intel-Core-i5-760-Processor-8M-Cache-2_80-GHz) processor. It is based on a Nehalem microarchitecture, and a block schema for this architecture is provided by Texa A&M University :
+Take the example of a "old" [Intel i5 760](http://ark.intel.com/fr/products/48496/Intel-Core-i5-760-Processor-8M-Cache-2_80-GHz) processor. It is based on a Nehalem microarchitecture, and a block schema for this architecture is provided by Texa A&M University:
 
 ![](http://sc.tamu.edu/Images/NehalemMemBlock.PNG)
 
-As a large number of modern processors, its architecture uses three level of cache : Level 1 (L1), Level 2 (L2), and Level 3 (L3 -- sometimes: Last Level Cach (LLC)). This is a very common cache hierarchy architecture.
+As a large number of modern processors, its architecture uses three level of cache : Level 1 (L1), Level 2 (L2), and Level 3 (L3 -- sometimes: Last Level Cache (LLC)). This is a very common cache hierarchy architecture.
 
 > Task : What is your processor ? What is its cache hierarchy ? What are the sizes and latencies of each data storage units (cache and main memory) ?
 
-> Task : Create a simple block diagram of your processor, including all its cores, all level of cache, main memory and disk. Add latency and size numbers. Optionally, include TLB information if you happen to have read on it and get the idea. Students will present their perception of your processor, we will disucss it and I will draw my own schema.
+> Task : Create a simple block diagram of your processor, including all its cores, all level of cache, main memory and disk. Add latency and size numbers. Optionally, include TLB information if you happen to have read on it and get the idea. Students will present their perception of your processor, we will discuss it and I will draw my own schema.
 
 > Task : Why does it matter ? (_we will discuss some numbers every programmers should know_)
 
@@ -38,7 +38,7 @@ You are strongly encourage to first read [a very nice document from U. Drepper](
 ## Read Walks using arrays
 
 ### Utility function
-In what follows, we will need to be able to build fxed-size arraysof `2^k` bytes.
+In what follows, we will need to be able to build fxed-size arrays of `2^k` bytes.
 For this purpose, we will be creating arrays of random `int`s, provided that your JVM stores `int`s as 32 bits (4 bytes).
 When we want to build arrays of `2^k` bytes, we will be building arrays of `(2^k) / 4` random `ìnt`'s.
 
@@ -46,7 +46,7 @@ When we want to build arrays of `2^k` bytes, we will be building arrays of `(2^k
 
 ### On measuring execution time
 
-We want to measure the time needed to walk the entire array from the begining to its end, in a sequential way. In order to measure the time spent, we will be using two methods :
+We want to measure the time needed to walk the entire array from the beginning to its end, in a sequential way. In order to measure the time spent, we will be using two methods :
 
 1) A first approximation using `System.nanoTime()`
 
@@ -65,7 +65,7 @@ Along your JDK comes a nice tools to profile your running java program which is 
 
 ### sequential read walk
 
-We want to measure the elasped time for walking the entire arrays of the following dimensions : `k = {20 .. 32}`.
+We want to measure the elapsed time for walking the entire arrays of the following dimensions : `k = {20 .. 32}`.
 
 > Task : Code the sequential array traversal and measuring the elapsed time for each values of k. Plot the results and make a guess on execution time for greater values. At each operation make something of `yourArray[i]`, for instance I suggest that you compute the cumulated sum of int in the table (let's ignore `ìnt`overflows as we won't do anything with this value).
 
@@ -82,13 +82,13 @@ We now want to walk `(2^k / 4`) random values from the array (maybe with repetit
 
 ### CPU counters using perf
 
-> Task : Run both a sequential and random walk of the array (for instance for k = 24) and observe CPU cycles using the [perf](https://perf.wiki.kernel.org/index.php/Main_Page) linux tool installed on your machines.
+> Task : Run both a sequential and random walk of the array (for instance for k = 24) and observe CPU cycles using the [perf](https://perf.wiki.kernel.org/index.php/Main_Page) Linux tool installed on your machines.
 
 
 
 ## Read Walks using linked list
 
-In this part we will be interested in traversing a linked list in a sequential manner for varying cell size in bytes. We will study the impact of traversing a linkedlist that lies in a contiguous memory space with respect to a a linkedlist that lies in a non contiguous space. Remember that traversing a linkedlist is not prefetched by current CPUs -- although you can see [some proposal in the academic litterature](Dependence Based Prefetching for Linked Data Structures).
+In this part we will be interested in traversing a linked list in a sequential manner for varying cell size in bytes. We will study the impact of traversing a linkedlist that lies in a contiguous memory space with respect to a a linkedlist that lies in a noncontiguous space. Remember that traversing a linkedlist is not prefetched by current CPUs -- although you can see [some proposal in the academic literature](Dependence Based Prefetching for Linked Data Structures).
 
 ### Our linkedlist
 
@@ -104,7 +104,7 @@ Each cell holds a 4-`int` 's array along the pointer to the next cell. This is t
 ### Linkedlist in a contiguous memory space
 
 > Task : Provide a method to build a `Liste`of `2^k`bytes. (provided each cell contains 5 `ìnt`s, that is 4 `int`'s for the array and one as the pointer to the next cell), the number of cells is `2^k / 4 / 5` (derived from previous tasks).
-In order to realize this task, you have to make sure that all cells lies in a contiguous memory space. To perfrom this, it is possible to create an array of `size`Liste elements (the elemnts will be contiguous as proporty of an array). Then you can wire each cells to the next one in the array so that you can later measure the traversal of the linkedlist using its pointers `next`, while being sure that all elements are contiguous.
+In order to realize this task, you have to make sure that all cells lies in a contiguous memory space. To perform this, it is possible to create an array of `size`Liste elements (the elements will be contiguous as property of an array). Then you can wire each cells to the next one in the array so that you can later measure the traversal of the linkedlist using its pointers `next`, while being sure that all elements are contiguous.
 
 > Task : Observe the execution time for `k = {20 .. 32}`
 
@@ -113,7 +113,7 @@ In order to realize this task, you have to make sure that all cells lies in a co
 
 > Task : Provide another method to build a `Liste` so that you are no longer guarantee that the `liste`elements lie in a contiguous memory space. 
 
-It is possible that, although not instanciated within an aray, that the consecutive call to `new Liste`will tend to instanciate the Liste elements in a contiguous manner. But know that having a garbage collector call will rearrange those lements in an unpredictable maner, and especially less likely to be contiguous. Usually we call `System.gc()`when we want to have the garbage collector called. This is a bit tricky because this actually means to favour a garbage collection but do not ensure it to be syncrhonous with the call to this function. Instead, to enforce the garbage colleciton when called, we will called the following function (to add in your code base) as a neat solution to perform this pause the world to garbage collection (taken from [here](http://stackoverflow.com/questions/10039474/java-guaranteed-garbage-collection-using-jlibs)) :
+It is possible that, although not instanciated within an aray, that the consecutive call to `new Liste` will tend to instanciate the Liste elements in a contiguous manner. But know that having a garbage collector call will rearrange those elements in an unpredictable maner, and especially less likely to be contiguous. Usually we call `System.gc()`when we want to have the garbage collector called. This is a bit tricky because this actually means to favour a garbage collection but do not ensure it to be synchronous with the call to this function. Instead, to enforce the garbage collection when called, we will called the following function (to add in your code base) as a neat solution to perform this pause the world to garbage collection (taken from [here](http://stackoverflow.com/questions/10039474/java-guaranteed-garbage-collection-using-jlibs)) :
 
 	/**
 	 * This method guarantees that garbage collection is done unlike
@@ -138,7 +138,7 @@ It is possible that, although not instanciated within an aray, that the consecut
 > Task : Use `perf` software to look at different CPU counters values. Can you spot the ones that explain the observed behavior ?
 
 
-## Branch predictions and compiler optimisations.
+## Branch predictions and compiler optimizations.
 
 I first want you to read about branch prediction from this [legendary stackoverflow answer](http://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array).
 
@@ -148,16 +148,16 @@ Once you get through that answer, you should be eager to perform the following t
 
 What do yo observe and what can you assume ?
 
-> Task : We will test further this assumption by making the same test as above but when data are in a 2D array (int[][]) and see if this affects the behaviour of the perforamnce penaloty.
+> Task : We will test further this assumption by making the same test as above but when data are in a 2D array (int[][]) and see if this affects the behavior of the performance penalty.
 
-## On optimisation automation
+## On optimization automation
 
-Until now, what we have discovered suggest that the developper must be aware on how he/she store and traverse data, which implies a careful trade-off between data layout and algorithms being used.
+Until now, what we have discovered suggest that the developer must be aware on how he/she store and traverse data, which implies a careful trade-off between data layout and algorithms being used.
 
 This trade-off require important knowledge and thorough benchmarking to get all the juice out of it.
-Thankfully, part part of these CPU and cache-aware optimisation techniques can be automatically optimze, and actually are without you to know until now. You will come to understand in this activity that the code that is actually run as assembly (in C/C++ or Java) is never the code that you actually wrote in your high lelve language (C/C++ or Java). Quite disturbing, isn't it ? :-)
+Thankfully, part part of these CPU and cache-aware optimization techniques can be automatically optimize, and actually are without you to know until now. You will come to understand in this activity that the code that is actually run as assembly (in C/C++ or Java) is never the code that you actually wrote in your high lelve language (C/C++ or Java). Quite disturbing, isn't it ? :-)
 
-> Task : You are invited to look at the following automatic optimilsation techniques (what are they ?) : 
+> Task : You are invited to look at the following automatic optimization techniques (what are they ?) : 
 - Branch prediction (you should now be familiar with this one)
 - Null Check Elimination
 - Loop unrolling
@@ -165,11 +165,11 @@ Thankfully, part part of these CPU and cache-aware optimisation techniques can b
 - Thread Local Storage
 - Dead code elimination
 
-[A good startign point](http://blog.takipi.com/java-on-steroids-5-super-useful-jit-optimization-techniques/).
+[A good starting point](http://blog.takipi.com/java-on-steroids-5-super-useful-jit-optimization-techniques/).
 
 Can you see some similitudes for instructions from what we have observed on data layout in the array and linkedlist use case, speaking of CPU and cache friendliness ?
 
-> Task : *When* does these optimisations appear in the interpretation/compilation/runtime for C/C++ on one hand, and Java on the other ?
+> Task : *When* does these optimizations appear in the interpretation/compilation/runtime for C/C++ on one hand, and Java on the other ?
 Hint: it is significantly different for C/C++ and Java.
 
 
@@ -197,7 +197,7 @@ Hint: it is significantly different for C/C++ and Java.
 
 ### About branch prediction :
 
-[Branch pediction : performance of some mergesort implementations](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-172-performance-engineering-of-software-systems-fall-2010/video-lectures/lecture-5-performance-engineering-with-profiling-tools/MIT6_172F10_lec05.pdf)
+[Branch prediction : performance of some mergesort implementations](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-172-performance-engineering-of-software-systems-fall-2010/video-lectures/lecture-5-performance-engineering-with-profiling-tools/MIT6_172F10_lec05.pdf)
 
 
 
@@ -261,7 +261,7 @@ We will try to understand if this code was actually vectorized by the compiler.
 
 > Task : Run the following command : `objdump -d main`. Do you think your programm was vectorize ? Why ?
 
-In order to help reading Intel Vector instrinsics instructions, you can refer to [this](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)
+In order to help reading Intel Vector intrinsic instructions, you can refer to [this](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)
 
 Trick: you can also insert comments in the assembler code using `asm volatile ("# my comment");`
 If you insert such comment before and after the loop you want to check, it makes it easier to locate the loop in the assembler code ...
