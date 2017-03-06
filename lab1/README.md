@@ -138,24 +138,28 @@ It is possible that, although not instanciated within an aray, that the consecut
 > Task : Use `perf` software to look at different CPU counters values. Can you spot the ones that explain the observed behavior ?
 
 
-
-
-
 ## Branch predictions and compiler optimisations.
 
+I first want you to read about branch prediction from this [legendary stackoverflow answer](http://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array).
 
+Once you get through that answer, you should be eager to perform the following task :
 
+> Task : Implement the test from the stackoverflow answer in order to observe branch mispredictions penalties when data are unsorted.
+
+What do yo observe and what can you assume ?
+
+> Task : We will test further this assumption by making the same test as above but when data are in a 2D array (int[][]) and see if this affects the behaviour of the perforamnce penaloty.
 
 ## On optimisation automation
 
 Until now, what we have discovered suggest that the developper must be aware on how he/she store and traverse data, which implies a careful trade-off between data layout and algorithms being used.
 
-This trade-off require important knowledge and thorough ebnchmarking to get all the juice out of it.
+This trade-off require important knowledge and thorough benchmarking to get all the juice out of it.
 Thankfully, part part of these CPU and cache-aware optimisation techniques can be automatically optimze, and actually are without you to know until now. You will come to understand in this activity that the code that is actually run as assembly (in C/C++ or Java) is never the code that you actually wrote in your high lelve language (C/C++ or Java). Quite disturbing, isn't it ? :-)
 
 > Task : You are invited to look at the following automatic optimilsation techniques (what are they ?) : 
+- Branch prediction (you should now be familiar with this one)
 - Null Check Elimination
-- Branch prediction
 - Loop unrolling
 - Inlining methods
 - Thread Local Storage
