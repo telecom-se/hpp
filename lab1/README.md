@@ -173,32 +173,6 @@ Can you see some similitudes for instructions from what we have observed on data
 Hint: it is significantly different for C/C++ and Java.
 
 
-## Useful and additional links
-
-### About your CPU  :
-
-[The Haswell Microarchitecture - 4th Generation Processor] (http://www.ijcsit.com/docs/Volume%204/vol4Issue3/ijcsit2013040321.pdf)
-
-[Haswell wikipedia] (https://en.wikipedia.org/wiki/Haswell_(microarchitecture))
-
-[Haswell readworldtech](http://www.realworldtech.com/haswell-cpu/5/)
-
-[CPU world](http://www.cpu-world.com/sspec/SR/SR1QH.html)
-
-[Haswell 7-cpu](http://www.7-cpu.com/cpu/Haswell.html) latencies !
-
-[Every number latency a programmer should know](https://gist.github.com/hellerbarde/2843375)
-
-
-### About CPU counters
-
-[Intel architectures for software developers Vol 3B, p297](http://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-software-developer-vol-3b-part-2-manual.html)
-
-
-### About branch prediction :
-
-[Branch prediction : performance of some mergesort implementations](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-172-performance-engineering-of-software-systems-fall-2010/video-lectures/lecture-5-performance-engineering-with-profiling-tools/MIT6_172F10_lec05.pdf)
-
 
 
 # Discover JMH : Don't predict, measure !
@@ -318,4 +292,30 @@ The source code is available [as a gist](https://gist.github.com/cgravier/efc208
 
 
 
+
+## Useful and additional links
+
+### About your CPU  :
+
+[The Haswell Microarchitecture - 4th Generation Processor] (http://www.ijcsit.com/docs/Volume%204/vol4Issue3/ijcsit2013040321.pdf)
+
+[Haswell wikipedia] (https://en.wikipedia.org/wiki/Haswell_(microarchitecture))
+
+[Haswell readworldtech](http://www.realworldtech.com/haswell-cpu/5/)
+
+[CPU world](http://www.cpu-world.com/sspec/SR/SR1QH.html)
+
+[Haswell 7-cpu](http://www.7-cpu.com/cpu/Haswell.html) latencies !
+
+[Every number latency a programmer should know](https://gist.github.com/hellerbarde/2843375)
+
+
+### About CPU counters
+
+[Intel architectures for software developers Vol 3B, p297](http://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-software-developer-vol-3b-part-2-manual.html)
+
+
+### About branch prediction :
+
+[Branch prediction : performance of some mergesort implementations](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-172-performance-engineering-of-software-systems-fall-2010/video-lectures/lecture-5-performance-engineering-with-profiling-tools/MIT6_172F10_lec05.pdf)
 
