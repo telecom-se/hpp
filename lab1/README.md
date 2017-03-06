@@ -174,8 +174,20 @@ Hint: it is significantly different for C/C++ and Java.
 
 
 
-
 # Discover JMH : Don't predict, measure !
+
+From previous activities, you may have understood that running several times the same code does not yield the same execution time. There are indeed some variations between two runs that are natural. This is however not the only reason in the variance you observe and the problem posed by `nanoTime()`.
+
+First, we had learn that the JIT compiler made it so that it not very likely that the code you write is actually what is executed. When we are using `nanoTime()`function, we expect to measure what is between the two timestamp `start`and `end`. Actually, the JIT can go as far as deleting some part of our code that is unnecessary (see [dead code elimination ](http://www.compileroptimizations.com/category/dead_code_elimination.htm)). By comparing two pieces of code using this method, we may have surprising results just because the JIT compiler made optimisations that ruins the benchmark.
+
+Second, `nanoTime()`is not precise enough to measure operations that run in ... nanoseconds. This method is not made to be used for benchmarking things, because (see [Nanotrusting the Nanotime](https://shipilev.net/blog/2014/nanotrusting-nanotime/))):
+* It has a cost (15 to 30 ns per call)
+* Its resolution is *not* nanoseconds but a 30 ns resolution.
+* It's a scalability bottleneck
+
+As a consequence, benchmarking framework exists not only to ease the development of benchmarks but also to act to fight the pitfalls of JIT optimisations and `nanoTime()`when it comes to benchmarking.
+
+What we couldn't encompass everything at the beginig of this course, this is now the right time to get our hands on a practical and efficient benchmarking framework. In what follows, we will investigate and practice one of the most popular Java microbenchmarking framework, aka [JMH](http://openjdk.java.net/projects/code-tools/jmh/).
 
 ### Introduction
 This is the main part of the work in this lab.
@@ -186,7 +198,7 @@ In this lab, we will benchmark two ways of computing the sum of a [List](http://
 We will actually compare naive implementations on digit lists that are implemented using for the first solution [ArrayList](http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html) and for the second [LinkedList](http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html).
 
 
-### Work to do 1/2 : Use JMH in a stand alone project
+### JMH example
 
 1. Create a JMH project using the 1.8 JMH online archetype.
 
