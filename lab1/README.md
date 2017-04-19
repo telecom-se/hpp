@@ -202,6 +202,14 @@ We will actually compare naive implementations on digit lists that are implement
 
 1. Create a JMH project using the 1.8 JMH online archetype.
 
+		  mvn archetype:generate \
+          -DinteractiveMode=false \
+          -DarchetypeGroupId=org.openjdk.jmh \
+          -DarchetypeArtifactId=jmh-java-benchmark-archetype \
+          -DgroupId=org.sample \
+          -DartifactId=test \
+          -Dversion=1.0
+
 2. Annotate the generated `MyBenchmark` class generated for your benchmarks :
   1. Add the `Scope` to `MyBenchmark`class.
   2. Create a private member of type `List<Integer` and initialize it to null;
