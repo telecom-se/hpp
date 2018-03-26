@@ -1,23 +1,12 @@
 # Module FISE2 - HPP 2016-2017
 
-## Versions
-
-This course was introduced in 2014-2015 at @telecom-se and evolves with time.
-
-Each year lectures, exercices, solutions and assignments are stored in dedicated branches:
-- [2014-2015 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2014-2015)
-- [2015-2016 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2015-2016)
-- [2016-2017 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2016-2017)
-- [2017-2018 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2017-2018) (latest)
-
-
 ## Introduction to this course
 
 This course introduces paradigms, concepts and tools for creating and benchmarking high-performance computer programs.
 For the past years, the trend has been to scale by distributing applications to different servers.
 While this is of the utmost practical interest for large-scale applications, it also comes with a significant I/O penalty as we will see in this module.
 
-In this cours, we will be focusing on how to make a single node (your laptop, a commoditiy server, ...) applications efficient in terms of performances.
+In this course, we will be focusing on how to make a single node (your laptop, a commoditiy server, ...) applications efficient in terms of performances.
 
 For this, we will explore optimlizations techniques based on two main paradigms :
 - [Mechanical Sympathy](http://mechanical-sympathy.blogspot.fr/) : we will see on modern computer architecture can influence the pratical efficiency of various algorithms. We will especially study the effect of the cache hierarchy, the CPU pipelines mechanisms, and the usage of CPU instruction sets (especially [SIMD instructions](https://www.kernel.org/pub/linux/kernel/people/geoff/cell/ps3-linux-docs/CellProgrammingTutorial/BasicsOfSIMDProgramming.html)).
@@ -27,7 +16,7 @@ For this, we will explore optimlizations techniques based on two main paradigms 
 Earlier, the first part (Mechanical Sympathy) will be offered in **C++**, while the latter (Multithreading) will be offered in **Java**.
 This year, both are given in **Java** with respect to feedback of former students.
 
-Ultimately, you will put your nacquired skills and mindset to a HPP project running after the HPP course itself (see organization of the module below).
+Ultimately, you will put your newly acquired skills and mindset to a HPP project running after the HPP course itself (see organization of the module below).
 
 
 ## Organization
@@ -57,7 +46,7 @@ HPP Project :
 
 ## Labs materials
 
-[Mechanical sympathy](./lab1/README.md)
-[Multithreading](./lab2/README.md)
-[New hardware for HPP](./lab3/README.md)
-[HPP Project](./project/README.md)
+- [Mechanical sympathy](./lab1/README.md)
+- [Multithreading](./lab2/README.md)
+- [New hardware for HPP](./lab3/README.md)
+- [HPP Project](./project/README.md)
