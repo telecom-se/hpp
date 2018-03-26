@@ -1,4 +1,4 @@
-# Project
+# New hardware for HPP
 
 ## Lab Objectives
 

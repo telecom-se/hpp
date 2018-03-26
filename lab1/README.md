@@ -22,7 +22,7 @@ As a warm-up, we want to get an idea on the architecture of our CPU(s) that is a
 
 Take the example of a "old" [Intel i5 760](http://ark.intel.com/fr/products/48496/Intel-Core-i5-760-Processor-8M-Cache-2_80-GHz) processor. It is based on a Nehalem microarchitecture, and a block schema for this architecture is provided by Texa A&M University:
 
-![](http://sc.tamu.edu/Images/NehalemMemBlock.PNG)
+![](http://talmar.masteride.cz/Modul_EP_pf/img/Paralelizace/NehalemMemBlock.PNG)
 
 As a large number of modern processors, its architecture uses three level of cache : Level 1 (L1), Level 2 (L2), and Level 3 (L3 -- sometimes: Last Level Cache (LLC)). This is a very common cache hierarchy architecture.
 
@@ -34,21 +34,23 @@ As a large number of modern processors, its architecture uses three level of cac
 
 > Task : Connect the dots: Watch the following awesome videos on CPU pipeline : [pipelining](https://www.youtube.com/watch?v=AgpW0SDtqC8&index=44&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP), [Pipelining in a processor](https://www.youtube.com/watch?v=otSXgSp-8EY&index=60&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP) - Look also at the additional quizzes on pipelining for laundry and instructions in the same videos series.
 
+> Draw a 5-stages pipeline where to instructions are in that order : 1) load something from emmory in register 1, add what is in register 1 and register 2, add what is in register 2 and register 3.What are modern number of pipeline stages ? What is a a pipeline stall ?
+
 
 
 ## Play time !
 
 In what follows, we will create some Java programs in order to observe the effect of the cache hierarchy on simple data structure tasks.
 
-You are strongly encourage to first read [a very nice document from U. Drepper](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf)).
+You are strongly encourage to first read [a very nice document from U. Drepper](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf).
 
 
 ## Read Walks using arrays
 
 ### Utility function
-In what follows, we will need to be able to build fxed-size arrays of `2^k` bytes.
+In what follows, we will need to be able to build fixed-size arrays of `2^k` bytes.
 For this purpose, we will be creating arrays of random `int`s, provided that your JVM stores `int`s as 32 bits (4 bytes).
-When we want to build arrays of `2^k` bytes, we will be building arrays of `(2^k) / 4` random `ìnt`'s.
+When we want to build arrays of `2^k` bytes, we will be building arrays of `(2^k) / 4` random `int`'s.
 
 > Task : Write a Java class that expose a single static function to create such an array, whose size is given as parameter. That is write `public static int[] makeArray(int k)`.
 
@@ -71,7 +73,7 @@ Along your JDK comes a nice tools to profile your running java program which is 
 
 > Task : Explain the difference between the two ways of measuring elapsed time.
 
-### sequential read walk
+### Sequential read walk
 
 We want to measure the elapsed time for walking the entire arrays of the following dimensions : `k = {20 .. 32}`.
 
@@ -80,9 +82,11 @@ We want to measure the elapsed time for walking the entire arrays of the followi
 > Task : Do the same thing but traversing the array sequentially from end to start.
 
 
-### random read walk
+### Random read walk
 
-We now want to walk `(2^k / 4`) random values from the array (maybe with repetitions). `(2^k / 4)` is the number of `int`'s in the array, so we want to fetch as many `int`from the array while preventing a sequential access. At each iteration, you will be choosing the index `i` of the array cell you want to pick from a pseudo random generator bounded in `[0; 2^k / 4 -1])`. For such generator, looking on stackoverflow can lead you to [interesting piece of code](http://stackoverflow.com/questions/363681/generating-random-integers-in-a-specific-range).
+We now want to walk `(2^k / 4`) random values from the array (maybe with repetitions). `(2^k / 4)` is the number of `int`'s in the array, so we want to fetch as many `int`from the array while preventing a sequential access. At each iteration, you will be choosing the index `i` of the array cell you want to pick from a pseudo random generator bounded in `[0; 2^k / 4 -1]`. For such generator, looking on stackoverflow can lead you to [interesting piece of code](http://stackoverflow.com/questions/363681/generating-random-integers-in-a-specific-range).
+
+Or, you are more cleaver and you make an array of the first `(2^k / 4 -1 - 1` integer, shuffle that array, and use the value as the next index to fetch.
 
 > Task : Code the random (with possible repetitions) walk of arrays with different values for k, i.e.  `k = {20 .. 32}`.
 
@@ -345,4 +349,8 @@ The source code is available [as a gist](https://gist.github.com/cgravier/efc208
 ### About branch prediction :
 
 [Branch prediction : performance of some mergesort implementations](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-172-performance-engineering-of-software-systems-fall-2010/video-lectures/lecture-5-performance-engineering-with-profiling-tools/MIT6_172F10_lec05.pdf)
+
+### Lectures
+
+[GeorgiaTech High Performance Computer Architecture lectures](https://www.youtube.com/results?search_query=Georgia+Tech+-+HPCA%3A+Part+1)
 
