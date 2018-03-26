@@ -16,7 +16,7 @@ For this, we will explore optimlizations techniques based on two main paradigms 
 Earlier, the first part (Mechanical Sympathy) will be offered in **C++**, while the latter (Multithreading) will be offered in **Java**.
 This year, both are given in **Java** with respect to feedback of former students.
 
-Ultimately, you will put your nacquired skills and mindset to a HPP project running after the HPP course itself (see organization of the module below).
+Ultimately, you will put your newly acquired skills and mindset to a HPP project running after the HPP course itself (see organization of the module below).
 
 
 ## Organization
