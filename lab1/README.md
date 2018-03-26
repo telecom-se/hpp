@@ -238,13 +238,13 @@ We will actually compare naive implementations on digit lists that are implement
 5. Add another benchmark in your project that will do just the same operation but using a `LinkedList` implementation for the List on which we want to compute the mean.
 
 6. Analyze
-   1. For each benchmarked solution (with `ArrayList` and with `LinkedList`), plot in MS Excel the operations per seconds with respect to the number of item in the list. Add the linear regression serie in each graph (hint: if you do not know how to add the linear regression in an Excel gaph, you can refer to [this](http://www-physique.u-strasbg.fr/~udp/articles/www-clepsydre/Excel-how-to-II.pdf)).
+   1. For each benchmarked solution (with `ArrayList` and with `LinkedList`), plot in MS Excel the operations per seconds with respect to the number of item in the list. Add the linear regression serie in each graph (hint: if you do not know how to add the linear regression in an Excel graph, you can refer to [this](http://www-physique.u-strasbg.fr/~udp/articles/www-clepsydre/Excel-how-to-II.pdf)).
   2. Answer the following questions :
     1. Does the complexities of each method seems linear from an empirical point of view ?
     2. Why did you receive an out of memory exception for the solution using LinkedList for smaller values of `n` that when it starts to occur for the solution using `ArrayList` ?
     3. Why the solution using `ArrayList` seems better ?
 
-7. Create another benchmark in order to study the impact of initializing the `ArrayList` with a default value instead of size `n` at instanciation.
+7. Create another benchmark in order to study the impact of initializing the `ArrayList` with a default value instead of size `n` at instantiation.
 
 # SIMD short intro (if time allows)
 
@@ -265,62 +265,143 @@ Maybe you already read some acronyms, without knowing that they are actually the
 - TSX (2011, Haswell)
 
 The question is first WHO perform the vectorization of the code ?
-- compiler performs auto-vectorization
-- you can also do it "by hand" when necessary.
+- you can do it "by hand" when necessary.
+- compiler sometimes performs auto-vectorization for you !
 
 
-## A first example with auto-vectorization
+## Vectorization by hand
 
-Here is a first program that you will compile :
 
+### First example
+
+Here is a sample C++ code that we will call `copie-naive.cpp`:
+
+```#include <immintrin.h>
+```#include <iostream>
 ```
-#include <iostream>
-using namespace std;
-
-int main() {
-
-	const int ArraySize = 8;
-	int a[ArraySize] = {2, 2, 3, 4, 5, 5, 2, 6};
-	int b[ArraySize] = {1, 3, 6, 3, 3, 1, 7, 2};
-	int c[ArraySize] = {0};
-
-	for ( unsigned int i = 0; i < ArraySize; ++i)
-	{
-	     c[i] = a[i] * b[i];
-	}
-
-	cout << "First value : " << c[0];
-}
+```/* define this somewhere */
+```#ifdef __i386
+```	__inline__ uint64_t rdtsc() {
+```	  uint64_t x;
+```	  __asm__ volatile ("rdtsc" : "=A" (x));
+```	  return x;
+```}
+```#elif __amd64
+```__inline__ uint64_t rdtsc() {
+```	uint64_t a, d;
+```	__asm__ volatile ("rdtsc" : "=a" (a), "=d" (d));
+```	return (d<<32) | a;
+```}
+```#endif
 ```
-
-Compile this program using :
-
+```int main() {
 ```
-g++ -O3 -ftree-vectorize -ftree-vectorizer-verbose=2 -mavx -march=native -o main main.cpp
+```	float array0[ 4 ] __attribute__ ((aligned(16))) = { 0.0f, 1.0f, 2.0f, 3.0f };
+```	float array1[ 4 ] __attribute__ ((aligned(16)));
 ```
+```	uint64_t t;
+```	t = rdtsc();
+```	for (int i = 0; i < 8; i++) {
+```		array1[i] = array0[i];
+```	}
+```	t = rdtsc() - t;
+```
+```	std::cout << t << std::endl;
+```}
 
-> Task : Why do we activate the following options : the `-mavx`, the `-ftree-vectorize`, and the `-ftree-vectorizer-verbose=2` ?
+> Task: What do the `#ifndef`/`#endif` code does and especially what is the `rdtsc()`function ? (I mean, search on the Web, the code won't provide the answer itself).
 
-We will try to understand if this code was actually vectorized by the compiler.
+> Task : What does this program do ?
 
-> Task : Run the following command : `objdump -d main`. Do you think your programm was vectorize ? Why ?
 
-In order to help reading Intel Vector intrinsic instructions, you can refer to [this](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)
 
-Trick: you can also insert comments in the assembler code using `asm volatile ("# my comment");`
-If you insert such comment before and after the loop you want to check, it makes it easier to locate the loop in the assembler code ...
-(in this case compile with `gcc -S -o loop -O3 ./loop.cpp -lstdc++`)
+This code can be vectorized manually. As a first example of vectorization, here is a vectorized version `copie-simd.cpp`:
 
-## Manual Mandelbrot computation
+```#include <immintrin.h>
+```#include <iostream>
+```
+```/* define this somewhere */
+```#ifdef __i386
+```        __inline__ uint64_t rdtsc() {
+```          uint64_t x;
+```          __asm__ volatile ("rdtsc" : "=A" (x));
+```          return x;
+```}
+```#elif __amd64
+```__inline__ uint64_t rdtsc() {
+```        uint64_t a, d;
+```        __asm__ volatile ("rdtsc" : "=a" (a), "=d" (d));
+```        return (d<<32) | a;
+```}
+```#endif
+```
+```int main() {
+```
+```	// Static arrays are stored into the stack thus we need to add an alignment attribute to tell the compiler to correctly align both arrays.
+```	float array0[ 4 ] __attribute__ ((aligned(16))) = { 0.0f, 1.0f, 2.0f, 3.0f };
+```	float array1[ 4 ] __attribute__ ((aligned(16)));
+```
+```	uint64_t t;
+```        t = rdtsc();
+```
+```	// Load 4 values from the first array into a SSE register.
+```	__m128 r0 = _mm_load_ps(array0);
+```
+```	// Store the content of the register into the second array.
+```	_mm_store_ps( array1 , r0 );
+```
+```        t = rdtsc() - t;
+```
+```        std::cout << t << std::endl;
+```
+```
+```	return 0;
+```}
 
-We will see here a complex example where the compiler failed to auto vectorize.
+> Task : What does the `_mm_load_ps`instruction means ? Can you derive what __attribute__ ((aligned(16)))` code fragment does ?
+__Hint__ : Look at what does intrinsics do on the [Intel website](https://software.intel.com/en-us/node/682974)
 
-This example is directly inspired from [Intel guide](https://software.intel.com/en-us/articles/introduction-to-intel-advanced-vector-extensions), but adapted for gcc compilation.
 
-The source code is available [as a gist](https://gist.github.com/cgravier/efc208fab365104e8224).
+> Task : Compile each program using : `g++ -mavx copie-naive.cpp --o naive` and `g++ -mavx copie-simd.cpp --o simd`. Is there any difference ? Can you elaborate ?
+(Why the `mavx`tag by the way ?)
 
-> Task : Compile and run. Explain the difference of order of magnitude in performance of the different versions.
 
+Compile the previous naive version with `g++ -mavx copie-naive.cpp -O3 --o naive` (wee add the `-O3` tag)
+
+> Task : Do you note any difference in CPU ticks for executing this program ? Why ?
+
+
+Note that :
+1. Of course, this is magic but magic as [limits](http://www.user.tu-berlin.de/apohl/sources/wpmvp_SIMDeval.pdf), or [slide 2 here](https://www.hlrn.de/twiki/pub/NewsCenter/ParProgWorkshopFall2017/ws_openmp4_simd_programming.pdf).
+2. But Mister teacher, this is really cumbersome to write such code ! You are right, indeed, you are right. That's why [this library exists](https://github.com/NumScale/boost.simd) and is popular among C++ developers !
+3. Do you know [Amdahl's law for CPU](https://en.wikipedia.org/wiki/Amdahl%27s_law) ? Three is Amdahl's law for SIMD going around ([slide 1 here](https://www.hlrn.de/twiki/pub/NewsCenter/ParProgWorkshopFall2017/ws_openmp4_simd_programming.pdf))
+
+
+### Example in real life
+
+- Librairies for linear algebra computations like [Matlab](https://fr.mathworks.com/help/coder/examples/replacing-math-functions-and-operators-with-implementations-that-require-data-alignment.html) or [BLAS](http://www.netlib.org/blas/).
+
+Such librairies are heavily used for machine learning...
+
+
+- Video games (Look for instance [this presentation](https://www.gdcvault.com/play/1022248/SIMD-at-Insomniac-Games-How) from [insomniac games](https://insomniac.games/), a PlayStation 4 developper studio).
+I guess such a job offers are rekevant too : [Here is one](https://www.smartrecruiters.com/Ubisoft2/92799486-engine-programmer-core-plateforme-h-f-) , and [here is another](https://www.velvetjobs.com/job-posting/core-engineer-485789).
+
+Still not convinced ?
+Watch the `How Overwatch was built to make the most of a wide range of hardware` presentation from R. Greene, developper at Blizzard, about the Overwatch game [here](https://www.twitch.tv/videos/139411097).
+
+
+- Your smartphone because it is constrained device and real-time is an issue. but beware that in this case [the intrinsics are not necessarily from Intel processors...](https://developer.android.com/ndk/guides/cpu-arm-neon.html)
+
+
+Actually, anything that needs high performance, that is low latency/high throughput for data processing. but the algorithm 
+
+
+
+### Your turn
+
+> Task : Can you create a manually vectorize program that multiplies two matrices `A` and `B` such that `A` is of size 12 x 4 and `B` is of size 4 x 12 ?
+I give 2 bonus point in the HPP course for student who provide me an implementation on [mootse](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13598).
 
 
 
