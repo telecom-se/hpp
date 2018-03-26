@@ -6,7 +6,7 @@ This course introduces paradigms, concepts and tools for creating and benchmarki
 For the past years, the trend has been to scale by distributing applications to different servers.
 While this is of the utmost practical interest for large-scale applications, it also comes with a significant I/O penalty as we will see in this module.
 
-In this cours, we will be focusing on how to make a single node (your laptop, a commoditiy server, ...) applications efficient in terms of performances.
+In this course, we will be focusing on how to make a single node (your laptop, a commoditiy server, ...) applications efficient in terms of performances.
 
 For this, we will explore optimlizations techniques based on two main paradigms :
 - [Mechanical Sympathy](http://mechanical-sympathy.blogspot.fr/) : we will see on modern computer architecture can influence the pratical efficiency of various algorithms. We will especially study the effect of the cache hierarchy, the CPU pipelines mechanisms, and the usage of CPU instruction sets (especially [SIMD instructions](https://www.kernel.org/pub/linux/kernel/people/geoff/cell/ps3-linux-docs/CellProgrammingTutorial/BasicsOfSIMDProgramming.html)).
