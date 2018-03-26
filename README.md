@@ -1,16 +1,5 @@
 # Module FISE2 - HPP 2016-2017
 
-## Versions
-
-This course was introduced in 2014-2015 at @telecom-se and evolves with time.
-
-Each year lectures, exercices, solutions and assignments are stored in dedicated branches:
-- [2014-2015 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2014-2015)
-- [2015-2016 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2015-2016)
-- [2016-2017 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2016-2017)
-- [2017-2018 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2017-2018) (latest)
-
-
 ## Introduction to this course
 
 This course introduces paradigms, concepts and tools for creating and benchmarking high-performance computer programs.
@@ -57,7 +46,7 @@ HPP Project :
 
 ## Labs materials
 
-[Mechanical sympathy](./lab1/README.md)
-[Multithreading](./lab2/README.md)
-[New hardware for HPP](./lab3/README.md)
-[HPP Project](./project/README.md)
+- [Mechanical sympathy](./lab1/README.md)
+- [Multithreading](./lab2/README.md)
+- [New hardware for HPP](./lab3/README.md)
+- [HPP Project](./project/README.md)
