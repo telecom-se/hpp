@@ -2,7 +2,11 @@
 
 It is quite obvious that when the CPU execute an instruction, it does not fetch the data each time from memory - this will make it wait too many cycles to actually get the data (waiting for it) before actually processing it. This observation is even more true considering the _Memory Wall_.
 
-You can have the intuition that different levels of _caches_ store those data so that the CPU can have a fast access to them when required.
+
+> Task : Watch [the following video](https://www.youtube.com/watch?v=1_mjiQesgGI) to understand what is the memory wall
+
+
+You can have the intuition that different levels of _caches_ store those data so that the CPU can have a fast access to them when required (aka __Memory Hierarchy__)
 
 The real questions are :
 - How many levels of caches does a CPU have ?
@@ -24,9 +28,13 @@ As a large number of modern processors, its architecture uses three level of cac
 
 > Task : What is your processor ? What is its cache hierarchy ? What are the sizes and latencies of each data storage units (cache and main memory) ?
 
-> Task : Create a simple block diagram of your processor, including all its cores, all level of cache, main memory and disk. Add latency and size numbers. Optionally, include TLB information if you happen to have read on it and get the idea. Students will present their perception of your processor, we will discuss it and I will draw my own schema.
+> Task : Create a simple block diagram of your processor, including all its cores, all level of cache, main memory and disk. Add latency and size numbers.
 
 > Task : Why does it matter ? (_we will discuss some numbers every programmers should know_)
+
+> Task : Connect the dots: Watch the following awesome videos on CPU pipeline : [pipelining](https://www.youtube.com/watch?v=AgpW0SDtqC8&index=44&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP), [Pipelining in a processor](https://www.youtube.com/watch?v=otSXgSp-8EY&index=60&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP) - Look also at the additional quizzes on pipelining for laundry and instructions in the same videos series.
+
+
 
 ## Play time !
 
@@ -83,8 +91,7 @@ We now want to walk `(2^k / 4`) random values from the array (maybe with repetit
 ### CPU counters using perf
 
 > Task : Run both a sequential and random walk of the array (for instance for k = 24) and observe CPU cycles using the [perf](https://perf.wiki.kernel.org/index.php/Main_Page) Linux tool installed on your machines.
-
-
+__Here we will discuss pipeline stalling (bubbles) and NUMA accesses__
 
 ## Read Walks using linked list
 
