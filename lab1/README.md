@@ -50,7 +50,7 @@ ADD R2, R3, 1 // add 1 to R3 and store it into R2
 
 In what follows, we will create some Java programs in order to observe the effect of the cache hierarchy on simple data structure tasks.
 
-You are strongly encourage to first read [a very nice document from U. Drepper](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf).
+You are strongly encourage to first read [a very nice document from U. Drepper](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf). - mostly pages 15 -- 24. Don't expect everything to make sense, but be sure to read again this passage before the "Discover JMH" section.
 
 
 ## Read Walks using arrays
