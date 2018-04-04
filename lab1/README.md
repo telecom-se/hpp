@@ -188,8 +188,12 @@ For those two tasks, we want to complete the following table of running time :
 
 What do yo observe and what can you assume ?
 
+> Now we will implement the C++ version of the algorithm when the data is unsorted.
+Compile it with: `g++ -o main main.cpp` and with `g++ -o main -O3 main.cpp`
 
-> Task : We will test further this assumption by making the same test as above but when data are in a 2D array (int[][]) and see if this affects the behavior of the performance penalty.
+Compare execution time when the tbale is sorted when you compile with or without `-O3` option.
+
+> Task (optional) : What happen in the C++ version if the data are in a 2D array (int[][]) with the `-O3` flag ?
 
 ## On optimization automation
 
