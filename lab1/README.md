@@ -242,7 +242,7 @@ Other useful resources at [the end of this page](#references).
 In this lab, we will benchmark two ways of computing the sum of a [List](http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList.html) of `n` random digits.
 We will actually compare naive implementations on digit lists that are implemented using for the first solution [ArrayList](http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html) and for the second [LinkedList](http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html).
 
-An update short introduction is available [http://www.baeldung.com/java-microbenchmark-harness](here)
+An update short introduction is available [here](http://www.baeldung.com/java-microbenchmark-harness)
 
 ### JMH example
 
