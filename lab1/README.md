@@ -178,6 +178,7 @@ sum += ~t & data[c];
 ```
 
 For those two tasks, we want to complete the following table of running time :
+
 | Sorted (yes/no)        | Condition with bitwise (Yes/No)  | Execution time.     |
 | ---------------------- |----------------------------------| --------------------|
 | No 			 | No			            |   xxxx ms	          |
