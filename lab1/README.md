@@ -165,7 +165,28 @@ Once you get through that answer, you should be eager to perform the following t
 
 > Task : Implement the test from the stackoverflow answer in order to observe branch mispredictions penalties when data are unsorted.
 
+> Task : Do the same for the case when the condition is implemented as : 
+```
+if (data[c] >= 128)
+                    sum += data[c];
+```
+
+or 
+```
+int t = (data[c] - 128) >> 31;
+sum += ~t & data[c];
+```
+
+For those two tasks, we want to complete the following table of running time :
+| Sorted (yes/no)        | Condition with bitwise (Yes/No)  | Execution time.     |
+| ---------------------- |----------------------------------| --------------------|
+| No 			 | No			            |   xxxx ms	          |
+| Yes 			 | No			            |   xxxx ms	          |
+| No 			 | Yes			            |   xxxx ms	          |
+| Yes 			 | Yes			            |   xxxx ms	          |
+
 What do yo observe and what can you assume ?
+
 
 > Task : We will test further this assumption by making the same test as above but when data are in a 2D array (int[][]) and see if this affects the behavior of the performance penalty.
 
