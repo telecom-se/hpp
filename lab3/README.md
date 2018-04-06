@@ -35,11 +35,11 @@ While you are free to propose your own agenda for these presentation, you must p
 
 | Group number  | Assigned topic | List of students |
 | ------------- | -------------- | ---------------- |
-| 1  | x   | COSTES / FOURNIER     |
-| 2  | x   | DHIMADO / COUSIN / BOUIN     |
-| 3  | x   | DU / BENKHEDER / PORTAY     |
-| 4  | x   | YANG / ROUALT / MALHERBE     |
-| 5  | x   | DANSOKHO / HE / LI     |
-| 6  | x   | VAYSSIERE / MION / LU     |
+| 1  | Xeon Phi   | COSTES / FOURNIER     |
+| 2  | NVMe   | DHIMADO / COUSIN / BOUIN     |
+| 3  | MPI   | DU / BENKHEDER / PORTAY     |
+| 4  | GPU   | YANG / ROUALT / MALHERBE     |
+| 5  | Transactional memory   | DANSOKHO / HE / LI     |
+| 6  | Infiniband   | VAYSSIERE / MION / LU     |
 
 (To be completed on the 6th of April together as an optimisation problem to satisfy your wishes to investigate on a topic but also covering all topics by the classroom).
