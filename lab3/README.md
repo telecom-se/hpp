@@ -27,6 +27,7 @@ While you are free to propose your own agenda for these presentation, you must p
 - How does the technology/framework works ?
 - When does it emerged and will it be still usable in the future in your opinion or shall it be supersedes by something else ?
 - What are the situations when to use and when not to use your technology/framework ?
+- How much does it costs ? (in hardware price tags, development time, ...)
 - Provides illustrative tasks where that technology excels and report what can be the gain in such settings (in the best situation for which it has been designed, what can be gained ?)
 
 
