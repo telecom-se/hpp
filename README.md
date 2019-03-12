@@ -1,4 +1,4 @@
-# Module FISE2 - HPP 2016-2017
+# Module FISE2 - HPP 2018-2019
 
 ## Introduction to this course
 
