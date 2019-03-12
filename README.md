@@ -26,6 +26,7 @@ The timeframe for the aforementionned activities is as provided by the following
 
 The two instructors for this course are (by order of appearance) :
 - Christophe Gravier <christophe.gravier@univ-st-etienne.fr>
+- Guillaume Muller <guillaume.muller@univ-st-etienne.fr>
 - Julien Subercaze <julien.subercaze@univ-st-etienne.fr>
 
 
@@ -34,19 +35,21 @@ The two instructors for this course are (by order of appearance) :
 You will have a total of 5 marks as follows (each colour in the previous organization table leads to notation).
 
 HPP course :
-- [30%] Your code on mechanical sympathy delivered for the 15th April 2018 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
-- [30%] Your code on advanced multithreading delivered for the 18th May 2018 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
-- [40%] Your defense on new hardaware for HPP on the 26th April 2018
-
+- [30%] Your code on mechanical sympathy delivered for the 30th April 2019 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
+- [30%] Your code on advanced multithreading delivered for the 10th May 2019 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
+- [40%] Your defense on new hardaware for HPP on the 13rd May 2019
+- possible bonus : up to 2 points over the mean of the previous scores based on yoiur optional SIMD submissions for the 2nd May 2019[here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13598).
 
 HPP Project :
-- [50%] Your code for the project delivered for the 24th May 2018 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13594)
-- [50%] Your defense for the HPP project on the 24th May 2018 (no slides, presentation of architecture and results on your computer)
+- [50%] Your code for the project delivered for the 16th May 2018 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13594)
+- [50%] Your defense for the HPP project on the 16th May 2018 (no slides, presentation of architecture and results on your computer)
+
 
 
 ## Labs materials
 
-- [Mechanical sympathy](./lab1/README.md)
+- [Mechanical sympathy / CPU friendliness](./lab1/README.md)
+- [Mechanical sympathy / SIMD](./lab1simd/README.md)
 - [Multithreading](./lab2/README.md)
 - [New hardware for HPP](./lab3/README.md)
 - [HPP Project](./project/README.md)
