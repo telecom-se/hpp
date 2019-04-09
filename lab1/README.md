@@ -1,5 +1,8 @@
 # Mechanical Sympathy
 
+Disclaimer: In this part, we do not statr with programming. Instead, we first want to have a common background of understanding on how the CPU works, since single computer high performance computing is very dependent on the CPU architecture. This may surprise you to dive into CPU architecture details to begin with but rest assure we will have our share of coding later on :)
+
+
 It is quite obvious that when the CPU execute an instruction, it does not fetch the data each time from memory - this will make it wait too many cycles to actually get the data (waiting for it) before actually processing it. This observation is even more true considering the _Memory Wall_.
 
 
@@ -8,10 +11,19 @@ It is quite obvious that when the CPU execute an instruction, it does not fetch 
 
 You can have the intuition that different levels of _caches_ store those data so that the CPU can have a fast access to them when required (aka __Memory Hierarchy__)
 
-The real questions are :
+To further understand this, read the following :
+
+> Task : Read [this wikipedia article](https://www.extremetech.com/extreme/188776-how-l1-and-l2-cpu-caches-work-and-why-theyre-an-essential-part-of-modern-chips)
+
+> Taks : Read [this blog article] (https://www.extremetech.com/extreme/188776-how-l1-and-l2-cpu-caches-work-and-why-theyre-an-essential-part-of-modern-chips)
+
+What we want to do, is to answer the following questions :
+- Why do we need a cache hierarchy ? 
+- How many times (number of CPU cycles) does it take to fetch a data from the memory to each of these cache ? (hint: google "every number of programmer should know")
 - How many levels of caches does a CPU have ?
-- How many times (number of CPU cycles) does it take to fetch a data from the memory to each of these cache ?
-- How the CPU handle cache accesses while still actually executing instructions?
+- What are the usual way to associate cache lines with the main memory ?
+- What is the virtual memory ?
+- What is a CPU stall and how the CPU handle cache accesses while still actually executing instructions?
 - Last but not least : **Why do these low-level considerations are of the utmost practical interest for the programmer ?**
 
 In what follows, different programming activities will make your observe and then conclude on answers to those questions.
@@ -20,17 +32,11 @@ In what follows, different programming activities will make your observe and the
 
 As a warm-up, we want to get an idea on the architecture of our CPU(s) that is actually handling data in our algorithms. All CPUs are not the same, right?
 
-Take the example of a "old" [Intel i5 760](http://ark.intel.com/fr/products/48496/Intel-Core-i5-760-Processor-8M-Cache-2_80-GHz) processor. It is based on a Nehalem microarchitecture, and a block schema for this architecture is provided by Texa A&M University:
-
-![](http://talmar.masteride.cz/Modul_EP_pf/img/Paralelizace/NehalemMemBlock.PNG)
-
-As a large number of modern processors, its architecture uses three level of cache : Level 1 (L1), Level 2 (L2), and Level 3 (L3 -- sometimes: Last Level Cache (LLC)). This is a very common cache hierarchy architecture.
-
 > Task : What is your processor ? What is its cache hierarchy ? What are the sizes and latencies of each data storage units (cache and main memory) ?
 
 > Task : Create a simple block diagram of your processor, including all its cores, all level of cache, main memory and disk. Add latency and size numbers.
 
-> Task : Why does it matter ? (_we will discuss some numbers every programmers should know_)
+> Reminder : Why does it matter ? (_we will discuss some numbers every programmers should know_)
 
 > Task : Connect the dots: Watch the following awesome videos on CPU pipeline : [pipelining](https://www.youtube.com/watch?v=AgpW0SDtqC8&index=44&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP), [Pipelining in a processor](https://www.youtube.com/watch?v=otSXgSp-8EY&index=60&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP) - Look also at the additional quizzes on pipelining for laundry and instructions in the same videos series.
 
@@ -43,8 +49,6 @@ ADD R2, R3, 1 // add 1 to R3 and store it into R2
 ```
 
 > What are modern numbers of pipeline stages ? 
-
-
 
 ## Play time !
 
