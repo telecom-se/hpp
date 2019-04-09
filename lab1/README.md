@@ -13,7 +13,7 @@ You can have the intuition that different levels of _caches_ store those data so
 
 To further understand this, read the following :
 
-> Task : Read [this wikipedia article](https://www.extremetech.com/extreme/188776-how-l1-and-l2-cpu-caches-work-and-why-theyre-an-essential-part-of-modern-chips)
+> Task : Read [this wikipedia article](https://en.wikipedia.org/wiki/CPU_cache)
 
 > Taks : Read [this blog article] (https://www.extremetech.com/extreme/188776-how-l1-and-l2-cpu-caches-work-and-why-theyre-an-essential-part-of-modern-chips)
 
