@@ -39,7 +39,7 @@ As a warm-up, we want to get an idea on the architecture of our CPU(s) that is a
 
 > Reminder : Why does it matter ? (_we will discuss some numbers every programmers should know_)
 
-> Task : Connect the dots: Watch the following awesome videos on CPU pipeline : [pipelining](https://www.youtube.com/watch?v=AgpW0SDtqC8&index=44&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP), [Pipelining in a processor](https://www.youtube.com/watch?v=otSXgSp-8EY&index=60&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP) - Look also at the additional quizzes on pipelining for laundry and instructions in the same videos series.
+> Task : Connect the dots: Watch the following awesome videos on CPU pipeline : [pipelining](https://www.youtube.com/watch?v=otSXgSp-8EY&index=60&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP), [Pipelining in a processor](https://www.youtube.com/watch?v=otSXgSp-8EY&index=60&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP) - Look also at the additional quizzes on pipelining for laundry and instructions in the same videos series.
 
 > Draw a 5-stages pipeline where to instructions are in that order : 1) load something from memory in register 1, add 1 to R1 and store result in register 2, add 1 to register 2 and store it in register 3. What is a a pipeline stall (aka bubble) ? 
 The instructions sequence can be written as : 
