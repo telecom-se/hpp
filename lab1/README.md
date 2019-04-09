@@ -1,6 +1,6 @@
 # Mechanical Sympathy
 
-Disclaimer: In this part, we do not statr with programming. Instead, we first want to have a common background of understanding on how the CPU works, since single computer high performance computing is very dependent on the CPU architecture. This may surprise you to dive into CPU architecture details to begin with but rest assure we will have our share of coding later on :)
+Disclaimer: In this part, we do not start with programming. Instead, we first want to have a common background of understanding on how the CPU works, since single computer high performance computing is very dependent on the CPU architecture. This may surprise you to dive into CPU architecture details to begin with but rest assure we will have our share of coding later on :)
 
 
 It is quite obvious that when the CPU execute an instruction, it does not fetch the data each time from memory - this will make it wait too many cycles to actually get the data (waiting for it) before actually processing it. This observation is even more true considering the _Memory Wall_.
@@ -23,7 +23,8 @@ What we want to do, is to answer the following questions :
 - How many levels of caches does a CPU have ?
 - What are the usual way to associate cache lines with the main memory ?
 - What is the virtual memory ?
-- What is a CPU stall and how the CPU handle cache accesses while still actually executing instructions?
+- What is a CPU stall and how the CPU handle cache accesses while still actually executing instructions ?
+- A program contains 4 billions instructions, each taking 2 CPU cycles, and the CPU is 3GHz. What is the optimal exectuion time ? (_we wil discuss clock time vs time spent, and cost of chache misses_)
 - Last but not least : **Why do these low-level considerations are of the utmost practical interest for the programmer ?**
 
 In what follows, different programming activities will make your observe and then conclude on answers to those questions.
