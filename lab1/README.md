@@ -24,7 +24,7 @@ What we want to do, is to answer the following questions :
 - What are the usual way to associate cache lines with the main memory ?
 - What is the virtual memory ?
 - What is a CPU stall and how the CPU handle cache accesses while still actually executing instructions ?
-- A program contains 4 billions instructions, each taking 2 CPU cycles, and the CPU is 3GHz. What is the optimal exectuion time ? (_we wil discuss clock time vs time spent, and cost of chache misses_)
+- A program contains 4 billions instructions, each taking 2 CPU cycles, and the CPU is 3GHz. What is the optimal exectuion time ? (_we wil discuss clock time vs time spent, and cost of chache misses, and the fatch that pipeling allows to go faster that the expected optimal throughput_)
 - Last but not least : **Why do these low-level considerations are of the utmost practical interest for the programmer ?**
 
 In what follows, different programming activities will make your observe and then conclude on answers to those questions.
