@@ -14,12 +14,13 @@ Les transparent du cours sont accessibles ici: [lien vers les slides](./Slides/s
 - Taille des différents types de données basiques :
   https://stackoverflow.com/questions/14821738/size-of-basic-data-types-in-c
 
+| Type               | Taille               |
 |--------------------|----------------------|
 | sizeof(uchar/char) | 1 Ui64 (= 1 byte)    |
 | sizeof(short)      | 2 Ui64 (= 2 bytes)   |
-| sizeof(int)        | 4 Ui64 (= 4 bytes)(*)|
+| sizeof(int)        | 4 Ui64 (= 4 bytes)(\*)|
 | sizeof(float)      | 4 Ui64 (= 4 bytes)   |
-| sizeof(long)       | 8 Ui64 (= 8 bytes)(*)|
+| sizeof(long)       | 8 Ui64 (= 8 bytes)(\*)|
 | sizeof(double)     | 8 Ui64 (= 8 bytes)   |
 |--------------------|----------------------|
 
