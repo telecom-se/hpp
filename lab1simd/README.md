@@ -2,9 +2,11 @@
 
 ## Introduction to the course Lab1/SIMD
 
-Dans ce cours, nous allons étudier la technologie SIMD ("Single Instruction Multiple Data), et plus particulièrement l'implémentation dans les architectures Intel : SSE/AVX.
+Dans ce cours, nous allons étudier la technologie SIMD ("Single Instruction Multiple Data), qui permet d'effectuer une **même** opération (addition, soustraction...) sur **plusieurs données** en même temps.
 
 Les transparent du cours sont accessibles ici: [lien vers les slides](./Slides/slides_SIMD.pdf)
+
+Dans la partie pratique, nous optimiserons des programmes en utilisant l'implémentation de SIMD dans les architectures Intel : SSE/AVX.
 
 
 ## TP
@@ -22,9 +24,9 @@ Les transparent du cours sont accessibles ici: [lien vers les slides](./Slides/s
 | sizeof(long)       | 8 Ui64 (= 8 bytes)(\*)|
 | sizeof(double)     | 8 Ui64 (= 8 bytes)   |
 
-  - (*)ATTENTION : toutes ces valeurs dépendent de la plateforme (par exemple, sur mon PC sizeof(int)=sizeof(long)=4bytes)
+  - (\*)**ATTENTION** : toutes ces valeurs dépendent de la plateforme (par exemple, sur mon PC sizeof(int)=sizeof(long)=4bytes)
 
-  - Note: En tappant le code sizeof(<type>) dans VisualStudio et en le survolant avec la souris, un ToolTip apparaît avec la valeur correspondante sur votre machine
+  - Note: En entrant le code `sizeof(<type>)` dans VisualStudio et en le survolant avec la souris, un ToolTip apparaît avec la valeur correspondante sur votre machine
 
 - scalar = 1 valeur seule / vector = plusieurs valeurs
 
@@ -32,37 +34,40 @@ Les transparent du cours sont accessibles ici: [lien vers les slides](./Slides/s
 
   - Nommage des types de données
     
-	`__m<register_length><scalar_type>         // NOTE: il y a 2 '_' pour les types de données`
+	```c
+	__m<register_length><scalar_type>         // NOTE: il y a 2 '_' pour les types de données```
 
   - Nommage des fonctions
     
-	`_mm<output_size>_<operation>_<input_type> // NOTE: il y a 1 seul '_' pour les fonctions`
+	```c
+	_mm<output_size>_<operation>_<input_type> // NOTE: il y a 1 seul '_' pour les fonctions```
 
    - `<input_type>` peut être :
    
-    | `input_type` |
-    | ------------ | -----|
+    | `input_type` | définition |
+    | ------------ | -----------|
     | `s`          | single-precision floating point|
 	| `d`          | double-precision floating point|
-    | `i<val>`     | signed <val>-bit integer (val=8,16,32)|
-	| `u<val>`     | unsigned <val>-bit integer |
+    | `i<val>`     | signed `<val>`-bit integer (`val`=8,16,32)|
+	| `u<val>`     | unsigned `<val>`-bit integer |
 
-  - ATTENTION: toutes les combinaisons n'existent pas!!!
+  - **ATTENTION**: toutes les combinaisons n'existent pas !!!
 
 - [Quels Headers C/C++ insérer pour accéder aux intrinsics](https://stackoverflow.com/questions/11228855/header-files-for-x86-simd-intrinsics#11228864) ?
 
-| Header          | SIMD |
-|-----------------|------|
-| `<mmintrin.h>`  | MMX  |
-| `<xmmintrin.h>` | SSE  |
-| `<emmintrin.h>` | SSE2 |
-| `<pmmintrin.h>` | SSE3 |
-| `<immintrin.h>` | AVX  |
+| SIMD | Header          |
+|------|-----------------|
+| MMX  | `<mmintrin.h>`  |
+| SSE  | `<xmmintrin.h>` |
+| SSE2 | `<emmintrin.h>` |
+| SSE3 | `<pmmintrin.h>` |
+| AVX  | `<immintrin.h>` |
 
 - Alignement mémoire : quand on utilise les instructions vectorielles SSE/AVX, il est généralement nécessaire (ou, des fois, simplement plus rapide) que les données soient alignées en mémoire.
   - Pour forcer l'alignement, on peut utiliser l'instruction `alignas` de C++11 :
     
-	`alignas(4) float a[4] = { 1.0f, 2.0f, 3.0f, 4.0f };`
+	```c
+	alignas(4) float a[4] = { 1.0f, 2.0f, 3.0f, 4.0f };```
 
 
 ### Préparation du TP
@@ -75,35 +80,35 @@ Les transparent du cours sont accessibles ici: [lien vers les slides](./Slides/s
 
 ### Exo1: Premiers pas avec SSE et AVX : projet "1_Basics"
 
-- Préliminaires : choisissez ce projet comme projet de démarrage (Clic droit sur projet > "Set as Startup project")
+- Préliminaires : choisissez ce projet comme projet de démarrage (*Clic droit sur projet > "Set as Startup project"*)
 - Buts :
   - Compiler et exécuter un premier code utilisant des instructions SSE/AVX.
   - Apprendre à rechercher dans la documentation Intel les bons intrinsics.
   - Comparer les performances.
-- Dans cet exercice, vous allez implémenter une fonction qui prend trois entrées A,B,C et calcule A*B+C, de trois manières différentes : (1) en code C normal, (2) avec les optimisation SSE, (3) avec une instruction FMA
+- Dans cet exercice, vous allez implémenter une fonction qui prend trois entrées a,b,c et calcule `a*b+c`, de trois manières différentes : (1) en code C normal, (2) avec les optimisation SSE, (3) avec une instruction FMA
 - On vous donne :
   - Une fonction `printRes()` pour afficher le résultat de vos calculs
 
 > Task Utilisez les resources ci-dessus pour trouver le/les bons headers à inclure
 > Task Utilisez la [documentation Intel](https://software.intel.com/sites/landingpage/IntrinsicsGuide/) pour chercher les intrinsics SSE permettant (1) de charger 4 float dans un registre, (2) d'additionner 4 floats et (3) multiplier 4 floats
-> Task Complétez le code proposé avec les intrinsics trouvés pour calculer a*b+c des trois façons demandées (C, SSE, FMA)
-> Task À votre avis, à quoi peut servir une telle instruction a*b+c ?
+> Task Complétez le code proposé avec les intrinsics trouvés pour calculer `a*b+c` des trois façons demandées (C, SSE, FMA)
+> Task À votre avis, à quoi peut servir une telle instruction `a*b+c` ?
 > Task Utiliser une [high_resolution_clock](http://www.cplusplus.com/reference/chrono/high_resolution_clock/now/) pour évaluer le temps d'exécution des 3 fonctions
-  - NOTE: Cette méthode très basique ne donnera jamais des temps *absolus* d'exécution corrects puisque, dans un OS multithreadé, un processus est régulièrement interrompu, pour une durée indéterminée, par des tâches plus importantes. Cependant, ce qui nous intéresse ici sont les temps d'exécution *relatifs* des différentes fonctions. Ainsi, en exécutant chaque function un grand nombre (par ex: 100) de fois et mesurant le temps d'exécution de l'ensemble, on "lisse" les temps d'interruptions et si les fonctions ont des temps d'exécution très différents, cela se reflètera sur les valeurs relatives (somme/moyenne) des temps d'exécution.
+  - NOTE: Cette méthode très basique ne donnera jamais des temps **absolus** d'exécution corrects puisque, dans un OS multithreadé, un processus est régulièrement interrompu, pour une durée indéterminée, par des tâches plus importantes. Cependant, ce qui nous intéresse ici sont les temps d'exécution **relatifs** des différentes fonctions. Ainsi, en exécutant chaque function un grand nombre (par ex: 100) de fois et mesurant le temps d'exécution de l'ensemble, on "lisse" les temps d'interruptions et si les fonctions ont des temps d'exécution très différents, cela se reflètera sur les valeurs relatives (somme/moyenne) des temps d'exécution.
 > Essayez d'expliquer les similarités/différences dans les temps d'exécution des trois functions, ainsi que les avantages/inconvénients des différentes façons de procéder
 
 
 
 
 ### Exo2: Premier cas concret : projet "2_MatrixMultiplication"
-- Préliminaires : choisissez ce projet comme projet de démarrage (Clic droit sur projet > "Set as Startup project")
+- Préliminaires : choisissez ce projet comme projet de démarrage (*Clic droit sur projet > "Set as Startup project"*)
 - Buts :
   - Employer les intrinsics dans un premier problème concret, en CLI
   - Comparer avec le code généré automatiquement par VisualStudio.
 - Dans cet exercice, on vous propose d'utiliser les mêmes instructions que précédemment pour calculer le produit de deux matrices, de trois manières différentes : (1) en code C normal, (2) avec les optimisation SSE, (3) avec une instruction FMA
 - On vous donne :
   - les constantes ROWS1/COLS1=dimensions de la première matrice, ROWS2/COLS2=dimensions de la seconde matrice. Bien entendu, pour pouvoir effectuer la multiplication, ROWS2=COLS1 et ROWS1/COLS2 sont les dimensions de la matrice résultante.
-  - une structure de données particulière pour stocker les matrices, allouées dynamiquement, de manière continue en mémoire : il s'agit d'un vecteur à *une seule* dimension, où les lignes de la matrice sont stockées les unes dernière les autres. La traduction avec les tableaux à 2D habituels est très simple : on peut accéder à l'élément `a[i][j]` avec `a[i*nbCols(a)+j]`. 
+  - une structure de données particulière pour stocker les matrices, allouées dynamiquement, de manière continue en mémoire : il s'agit d'un vecteur à **une seule** dimension, où les lignes de la matrice sont stockées les unes dernière les autres. La traduction avec les tableaux à 2D habituels est très simple : on peut accéder à l'élément `a[i][j]` avec `a[i*nbCols(a)+j]`. 
 - Intuitivement, à quels gains de performance pourrait-on s'attendre ?
 
 > Task Utilisez les resources ci-dessus pour trouver le/les bons headers à inclure
@@ -113,11 +118,11 @@ Les transparent du cours sont accessibles ici: [lien vers les slides](./Slides/s
   - NOTE: Vous devriez avoir 3 boucles for imbriquées
   - Optimisez cette fonction en utilisant SSE, puis en utilisant FMA
   - NOTE: Attention à choisir le bon axe d'optimisation (=la bonne boucle for) pour gagner au maximum en performance avec SSE/FMA (i.e. charger des données continues en mémoire) !
-> Task Terminez le main() pour tester vos fonctions et vérifier que vous optenez bien les mêmes résultats selon les 3 méthodes.
+> Task Terminez le `main()` pour tester vos fonctions et vérifier que vous optenez bien les mêmes résultats selon les 3 méthodes.
 > Task Regardez ce que le compilateur de VisualStudio avait généré dans le cas 1 et comparez à votre propre code :
   - Pour ce faite, ajouter un Break Point là où sont fait les calculs dans la version C "normale" (i.e. sans intrinsic)
   - Lancer le programme en mode déboggage
-  - Quand ce dernier s'arrête sur le Break Point, faites un Clic Droit dans la fenêtre de code > Goto to disassembly
+  - Quand ce dernier s'arrête sur le Break Point, faites un *Clic droit dans la fenêtre de code > Goto to disassembly*
 > Task Recherchez sur internet comment on pourrait demander à VisualStudio d'améliorer le code qu'il génère.
   - Tester ce que vous avez trouvé
 > Task Si vous avez le temps, ajouter des instructions pour comparer les temps d'exécution sur de grosses matrices
@@ -126,7 +131,7 @@ Les transparent du cours sont accessibles ici: [lien vers les slides](./Slides/s
 
 
 ### Exo3: Exemple concret n°1 : projet "3_MandelbrotSSEAVX"
-- Préliminaires : choisissez ce projet comme projet de démarrage (Clic droit sur projet > "Set as Startup project")
+- Préliminaires : choisissez ce projet comme projet de démarrage (*Clic droit sur projet > "Set as Startup project"*)
 - Buts :
   - Apprendre à coder le plus efficacement possible avec les nouvelles instructions "multimedia"
   - [Dessiner l'ensemble de Mandelbrot, selon l'agorithme "Escape Time"](https://en.wikipedia.org/wiki/Mandelbrot_set#Escape_time_algorithm)
@@ -149,7 +154,7 @@ Les transparent du cours sont accessibles ici: [lien vers les slides](./Slides/s
 
 ### Exo 4: Exemple concret n°2 : projet "4_ImageManipulation"
 - Préliminaires : 
-  - Choisissez ce projet comme projet de démarrage (Clic droit sur projet > "Set as Startup project")
+  - Choisissez ce projet comme projet de démarrage (*Clic droit sur projet > "Set as Startup project"*)
   - Vérifiez que les images `"big_image1.jpg"` et `"big_image2.jpg"` se trouvent bien dans le même répertoire que la solution
 - Buts :
   - Manipuler des images : remplir de 0 (noir), remplir d'une couleur donnée, fade to 0, fade to color, fade to another image
@@ -163,7 +168,7 @@ Les transparent du cours sont accessibles ici: [lien vers les slides](./Slides/s
   - Pour vous simplifier la tâche on a défini les types suivants :
     - `chanType`  (=`float`)  : type pour stocker 1 channel d'un pixel
     - `pixelType` (=`Vec4f`)  : le format d'OpenCV pour représenter un pixel (4 floats)
--  - NOTE : pour accéder/affecter un pixel, on peut utiliser `cv::Mat::at<Vec4b>(line, col)` car elle retourne *reference* sur le pixel à (line, col)
+-  - NOTE : pour accéder/affecter un pixel, on peut utiliser `cv::Mat::at<Vec4b>(line, col)` car elle retourne une **réference** sur le pixel à (line, col)
     - `sseType`   (=`__m128`) : le format pour travailler avec des registres SSE
     - `avxType`   (=`__m256`) : le format pour travailler avec des registres AVX
   - Ainsi que les constantes suivantes :
@@ -177,14 +182,14 @@ Les transparent du cours sont accessibles ici: [lien vers les slides](./Slides/s
 > Task Écrivez les méthodes `fillWithZero()`, `fillWithZeroOptimized()`, `fillWithZeroSSE()` et `fillWithZeroAVX()` pour remplir une image de 0.
   - `fillWithZeroOptimized()` doit manipuler directement le pointeur au lieu d'accéder à `img[i][j]`. On suppose que, comme dans l'exercice de multiplication de matrice, l'image est stockée dans un vecteur 1D où les lignes sont les unes derrière les autres.
 > Task Écrivez les méthodes `fillWithColor()`, `fillWithColorOptimized()`, `fillWithColorSSE()` et `fillWithColorAVX()` pour remplir une image avec la couleur définie par `ImageManipulation::setTargetColor()`.
-> Task Vérifier que vos codes fonctionnent avec le main() fournit dans VisualTesting.cpp
+> Task Vérifier que vos codes fonctionnent avec le `main()` fourni dans VisualTesting.cpp
 > Task Comparer les temps d'exécution des différentes méthodes. Que constatez-vous ?
   - Pour ce faire, exclure VisualTesting.cpp du projet et inclure TimeTesting.cpp 
 > Task Écrivez les méthodes `fadeToZero()` et `fadeToZeroAVX()`, dont le but est d'effectuer une transition d'une couleur à une autre en fonction du paramètre défini par `ImageManipulation::setAlpha()`
   - Notre que le fading vers 0 revient simplement à multiplier la couleur actuelle par alpha.
 > Task Écrivez les méthodes `fadeToColor()` et `fadeToColorAVX()`, qui transitionnent cette fois-ci vers la couleur donnée par `ImageManipulation::setTargetColor()` et utilise le même paramètre défini par `ImageManipulation::setAlpha()`
 > Task Écrivez les méthodes `fadeToImage()` et `fadeToImageAVX()`, qui transitionnent chaque pixel d'une image source vers le pixel correspondant d'une image destination. Ces méthodes supposent que les 2 images sont de mêmes dimensions et utilisent `ImageManipulation::setAlpha()` et `ImageManipulation::setImageDest()`
-> Task Que se passerait-il si le format d'image était CV32FC3?
+> Task Que se passerait-il si le format d'image était CV32FC3 ?
 
 
 
