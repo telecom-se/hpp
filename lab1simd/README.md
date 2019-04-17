@@ -220,6 +220,8 @@ Dans la partie pratique, nous optimiserons des programmes en utilisant l'implém
 
 ### Exo5: Ouverture : Limites de l'approche SIMD
 > **Task** Forts de votre expérience avec les nouvelles instructions "multimédia", listez quelques limites du parallélisme des données.
+
 > **Task** Quelles seraient les caractéristiques d'un algorithme qu'il serait difficile d'optimiser avec SIMD ?
+
 > **Task** En vous inspirant de [cette vidéo](https://www.youtube.com/watch?v=NmarI5ErisE) et des réponses ci-dessus, expliquez pourquoi est-il toujours nécessaire d'intervenir manuellement pour optimiser l'implémentation d'un algorithme avec SIMD/SSE/AVX
 
