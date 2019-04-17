@@ -89,13 +89,18 @@ Dans la partie pratique, nous optimiserons des programmes en utilisant l'implém
 - On vous donne :
   - Une fonction `printRes()` pour afficher le résultat de vos calculs
 
-> Task Utilisez les resources ci-dessus pour trouver le/les bons headers à inclure
-> Task Utilisez la [documentation Intel](https://software.intel.com/sites/landingpage/IntrinsicsGuide/) pour chercher les intrinsics SSE permettant (1) de charger 4 float dans un registre, (2) d'additionner 4 floats et (3) multiplier 4 floats
-> Task Complétez le code proposé avec les intrinsics trouvés pour calculer `a*b+c` des trois façons demandées (C, SSE, FMA)
-> Task À votre avis, à quoi peut servir une telle instruction `a*b+c` ?
-> Task Utiliser une [high_resolution_clock](http://www.cplusplus.com/reference/chrono/high_resolution_clock/now/) pour évaluer le temps d'exécution des 3 fonctions
+> **Task** Utilisez les ressources ci-dessus pour trouver le/les bons headers à inclure
+
+> **Task** Utilisez la [documentation Intel](https://software.intel.com/sites/landingpage/IntrinsicsGuide/) pour chercher les intrinsics SSE permettant (1) de charger 4 float dans un registre, (2) d'additionner 4 floats et (3) multiplier 4 floats
+
+> **Task** Complétez le code proposé avec les intrinsics trouvés pour calculer `a*b+c` des trois façons demandées (C, SSE, FMA)
+
+> **Task** À votre avis, à quoi peut servir une telle instruction `a*b+c` ?
+
+> **Task** Utiliser une [high_resolution_clock](http://www.cplusplus.com/reference/chrono/high_resolution_clock/now/) pour évaluer le temps d'exécution des 3 fonctions
   - NOTE: Cette méthode très basique ne donnera jamais des temps **absolus** d'exécution corrects puisque, dans un OS multithreadé, un processus est régulièrement interrompu, pour une durée indéterminée, par des tâches plus importantes. Cependant, ce qui nous intéresse ici sont les temps d'exécution **relatifs** des différentes fonctions. Ainsi, en exécutant chaque function un grand nombre (par ex: 100) de fois et mesurant le temps d'exécution de l'ensemble, on "lisse" les temps d'interruptions et si les fonctions ont des temps d'exécution très différents, cela se reflètera sur les valeurs relatives (somme/moyenne) des temps d'exécution.
-> Essayez d'expliquer les similarités/différences dans les temps d'exécution des trois functions, ainsi que les avantages/inconvénients des différentes façons de procéder
+
+> **Task** Essayez d'expliquer les similarités/différences dans les temps d'exécution des trois functions, ainsi que les avantages/inconvénients des différentes façons de procéder
 
 
 
@@ -111,21 +116,28 @@ Dans la partie pratique, nous optimiserons des programmes en utilisant l'implém
   - une structure de données particulière pour stocker les matrices, allouées dynamiquement, de manière continue en mémoire : il s'agit d'un vecteur à **une seule** dimension, où les lignes de la matrice sont stockées les unes dernière les autres. La traduction avec les tableaux à 2D habituels est très simple : on peut accéder à l'élément `a[i][j]` avec `a[i*nbCols(a)+j]`. 
 - Intuitivement, à quels gains de performance pourrait-on s'attendre ?
 
-> Task Utilisez les resources ci-dessus pour trouver le/les bons headers à inclure
-> Task Écrivez une fonction pour remplir une matrice ayant ce format. Un booléen est fourni en entrée. S'il est à vrai, la matrice est remplie de 0, sinon elle est remplie de valeurs aléatoires.
-> Task Écrivez une fonction pour afficher une telle matrice.
-> Task Écrivez une fonction pour multiplier deux matrices et stocker le résultat dans une 3ème matrice passée en paramètre, sans chercher à optimiser pour le moment
+> **Task** Utilisez les resources ci-dessus pour trouver le/les bons headers à inclure
+
+> **Task** Écrivez une fonction pour remplir une matrice ayant ce format. Un booléen est fourni en entrée. S'il est à vrai, la matrice est remplie de 0, sinon elle est remplie de valeurs aléatoires.
+
+> **Task** Écrivez une fonction pour afficher une telle matrice.
+
+> **Task** Écrivez une fonction pour multiplier deux matrices et stocker le résultat dans une 3ème matrice passée en paramètre, sans chercher à optimiser pour le moment
   - NOTE: Vous devriez avoir 3 boucles for imbriquées
   - Optimisez cette fonction en utilisant SSE, puis en utilisant FMA
   - NOTE: Attention à choisir le bon axe d'optimisation (=la bonne boucle for) pour gagner au maximum en performance avec SSE/FMA (i.e. charger des données continues en mémoire) !
-> Task Terminez le `main()` pour tester vos fonctions et vérifier que vous optenez bien les mêmes résultats selon les 3 méthodes.
-> Task Regardez ce que le compilateur de VisualStudio avait généré dans le cas 1 et comparez à votre propre code :
-  - Pour ce faite, ajouter un Break Point là où sont fait les calculs dans la version C "normale" (i.e. sans intrinsic)
+
+> **Task** Terminez le `main()` pour tester vos fonctions et vérifier que vous optenez bien les mêmes résultats selon les 3 méthodes.
+
+> **Task** Regardez ce que le compilateur de VisualStudio avait généré dans le cas 1 et comparez à votre propre code :
+  - Pour ce faire, ajouter un Break Point là où sont fait les calculs dans la version C "normale" (i.e. sans intrinsic)
   - Lancer le programme en mode déboggage
   - Quand ce dernier s'arrête sur le Break Point, faites un *Clic droit dans la fenêtre de code > Goto to disassembly*
-> Task Recherchez sur internet comment on pourrait demander à VisualStudio d'améliorer le code qu'il génère.
-  - Tester ce que vous avez trouvé
-> Task Si vous avez le temps, ajouter des instructions pour comparer les temps d'exécution sur de grosses matrices
+
+> **Task** Recherchez sur internet comment on pourrait demander à VisualStudio d'améliorer le code qu'il génère.
+  - Testez la solution que vous avez trouvée
+
+> **Task** Si vous avez le temps, ajouter des instructions pour comparer les temps d'exécution sur de grosses matrices
 
 
 
@@ -143,11 +155,15 @@ Dans la partie pratique, nous optimiserons des programmes en utilisant l'implém
     - Chercher si/où cette bibliothèque est installée
     - Modifier la configuration des variables d'environnement/du projet pour qu'il fonctionne
 
-> Task Écrivez une version de la fonction en utilisant 2 `float`s à la place d'objets `<complex>` pour représenter les nombres complexes.
-> Task Utilisez la [documentation Intel](https://software.intel.com/sites/landingpage/IntrinsicsGuide/) pour ré-écrire cette version en utilisant au maximum des instructions SSE
-> Task Utilisez la [documentation Intel](https://software.intel.com/sites/landingpage/IntrinsicsGuide/) pour ré-écrire cette version en utilisant au maximum des instructions AVX
-> Task Utilisez le code de test donné dans `main()` pour tester vos fonctions
-> Task Si vous avez le temps, ajouter des instructions pour comparer les temps de génération des images selon les différentes méthodes.
+> **Task** Écrivez une version de la fonction en utilisant 2 `float`s à la place d'objets `<complex>` pour représenter les nombres complexes.
+
+> **Task** Utilisez la [documentation Intel](https://software.intel.com/sites/landingpage/IntrinsicsGuide/) pour ré-écrire cette version en utilisant au maximum des instructions SSE
+
+> **Task** Utilisez la [documentation Intel](https://software.intel.com/sites/landingpage/IntrinsicsGuide/) pour ré-écrire cette version en utilisant au maximum des instructions AVX
+
+> **Task** Utilisez le code de test donné dans `main()` pour tester vos fonctions
+
+> **Task** Si vous avez le temps, ajouter des instructions pour comparer les temps de génération des images selon les différentes méthodes.
 
 
 
@@ -178,24 +194,32 @@ Dans la partie pratique, nous optimiserons des programmes en utilisant l'implém
     - `MAX_TIMING_ITERATIONS` : le nombre de répétitions à effectuer pour timer chaque méthode
   - NOTE: [le projet est configuré pour utiliser OpenCV](https://www.opencv-srf.com/2017/11/install-opencv-with-visual-studio.html)
 
-> Task Intuitivement, à quels gains de performance pourrait-on s'attendre ?
-> Task Écrivez les méthodes `fillWithZero()`, `fillWithZeroOptimized()`, `fillWithZeroSSE()` et `fillWithZeroAVX()` pour remplir une image de 0.
+> **Task** Intuitivement, à quels gains de performance pourrait-on s'attendre ?
+
+> **Task** Écrivez les méthodes `fillWithZero()`, `fillWithZeroOptimized()`, `fillWithZeroSSE()` et `fillWithZeroAVX()` pour remplir une image de 0.
   - `fillWithZeroOptimized()` doit manipuler directement le pointeur au lieu d'accéder à `img[i][j]`. On suppose que, comme dans l'exercice de multiplication de matrice, l'image est stockée dans un vecteur 1D où les lignes sont les unes derrière les autres.
-> Task Écrivez les méthodes `fillWithColor()`, `fillWithColorOptimized()`, `fillWithColorSSE()` et `fillWithColorAVX()` pour remplir une image avec la couleur définie par `ImageManipulation::setTargetColor()`.
-> Task Vérifier que vos codes fonctionnent avec le `main()` fourni dans VisualTesting.cpp
-> Task Comparer les temps d'exécution des différentes méthodes. Que constatez-vous ?
-  - Pour ce faire, exclure VisualTesting.cpp du projet et inclure TimeTesting.cpp 
-> Task Écrivez les méthodes `fadeToZero()` et `fadeToZeroAVX()`, dont le but est d'effectuer une transition d'une couleur à une autre en fonction du paramètre défini par `ImageManipulation::setAlpha()`
+
+> **Task** Écrivez les méthodes `fillWithColor()`, `fillWithColorOptimized()`, `fillWithColorSSE()` et `fillWithColorAVX()` pour remplir une image avec la couleur définie par `ImageManipulation::setTargetColor()`.
+
+> **Task** Vérifier que vos codes fonctionnent avec le `main()` fourni dans `VisualTesting.cpp`
+
+> **Task** Comparer les temps d'exécution des différentes méthodes. Que constatez-vous ?
+  - Pour ce faire, exclure `VisualTesting.cpp` du projet et inclure `TimeTesting.cpp` 
+
+> **Task** Écrivez les méthodes `fadeToZero()` et `fadeToZeroAVX()`, dont le but est d'effectuer une transition d'une couleur à une autre en fonction du paramètre défini par `ImageManipulation::setAlpha()`
   - Notre que le fading vers 0 revient simplement à multiplier la couleur actuelle par alpha.
-> Task Écrivez les méthodes `fadeToColor()` et `fadeToColorAVX()`, qui transitionnent cette fois-ci vers la couleur donnée par `ImageManipulation::setTargetColor()` et utilise le même paramètre défini par `ImageManipulation::setAlpha()`
-> Task Écrivez les méthodes `fadeToImage()` et `fadeToImageAVX()`, qui transitionnent chaque pixel d'une image source vers le pixel correspondant d'une image destination. Ces méthodes supposent que les 2 images sont de mêmes dimensions et utilisent `ImageManipulation::setAlpha()` et `ImageManipulation::setImageDest()`
-> Task Que se passerait-il si le format d'image était CV32FC3 ?
+
+> **Task** Écrivez les méthodes `fadeToColor()` et `fadeToColorAVX()`, qui transitionnent cette fois-ci vers la couleur donnée par `ImageManipulation::setTargetColor()` et utilise le même paramètre défini par `ImageManipulation::setAlpha()`
+
+> **Task** Écrivez les méthodes `fadeToImage()` et `fadeToImageAVX()`, qui transitionnent chaque pixel d'une image source vers le pixel correspondant d'une image destination. Ces méthodes supposent que les 2 images sont de mêmes dimensions et utilisent `ImageManipulation::setAlpha()` et `ImageManipulation::setImageDest()`
+
+> **Task** Que se passerait-il si le format d'image était CV32FC3 ?
 
 
 
 
 ### Exo5: Ouverture : Limites de l'approche SIMD
-- Forts de votre expérience avec les nouvelles instructions "multi-média", listez quelques limites du parallélisme des données.
-- Quelles seraient les caractéristiques d'un algorithme qu'il serait difficile d'optimiser avec SIMD ?
-- En vous inspirant de [cette vidéo](https://www.youtube.com/watch?v=NmarI5ErisE) et des réponses ci-dessus, expliquez pourquoi est-il toujours nécessaire d'intervenir manuellement pour optimiser l'implémentation d'un algorithme avec SIMD/SSE/AVX
+> **Task** Forts de votre expérience avec les nouvelles instructions "multimédia", listez quelques limites du parallélisme des données.
+> **Task** Quelles seraient les caractéristiques d'un algorithme qu'il serait difficile d'optimiser avec SIMD ?
+> **Task** En vous inspirant de [cette vidéo](https://www.youtube.com/watch?v=NmarI5ErisE) et des réponses ci-dessus, expliquez pourquoi est-il toujours nécessaire d'intervenir manuellement pour optimiser l'implémentation d'un algorithme avec SIMD/SSE/AVX
 
