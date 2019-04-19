@@ -4,7 +4,10 @@
 
 Dans ce cours, nous allons étudier la technologie SIMD ("Single Instruction Multiple Data), qui permet d'effectuer une **même** opération (addition, soustraction...) sur **plusieurs données** en même temps.
 
-Les transparent du cours sont accessibles ici: [lien vers les slides](./Slides/slides_SIMD.pdf)
+Les transparents du cours sont accessibles ici :
+- [slides d'introduction](./Slides/slides_Intro.pdf)
+- [slides SIMD](./Slides/slides_SIMD.pdf) (cours original de Omur MULTU [slides](http://www.archive.ece.cmu.edu/~ece447/s15/doku.php?id=schedule) [vidéos](https://www.youtube.com/watch?v=zLP_X4wyHbY&list=PL5PHm2jkkXmi5CxxI7b3JCL1TWybTDtKq))
+- [slides SSE/AVX](./Slides/slides_SSE.pdf) ([cours original de Markus PÜSCHEL](http://www-oldurls.inf.ethz.ch/personal/markusp/teaching/263-2300-ETH-spring11/course.html))
 
 Dans la partie pratique, nous optimiserons des programmes en utilisant l'implémentation de SIMD dans les architectures Intel : SSE/AVX.
 
