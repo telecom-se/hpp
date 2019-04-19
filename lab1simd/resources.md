@@ -53,13 +53,14 @@
 
 [source](https://stackoverflow.com/questions/11228855/header-files-for-x86-simd-intrinsics#11228864) ?
 
-| SIMD | Header          |
-|------|-----------------|
-| MMX  | `<mmintrin.h>`  |
-| SSE  | `<xmmintrin.h>` |
-| SSE2 | `<emmintrin.h>` |
-| SSE3 | `<pmmintrin.h>` |
-| AVX  | `<immintrin.h>` |
+| Acronyme   | Nom                         | Processor            | Header          |
+|------------|-----------------------------|----------------------|----------------|
+| MMX/3DNow! | MultiMedia Extension        | Pentium MMX/K6       | `<mmintrin.h>`  |
+| SSE        | Streaming SIMD Extension v1 | Pentium III          | `<xmmintrin.h>` |
+| SSE2       | Streaming SIMD Extension v2 | Pentium 4            | `<emmintrin.h>` |
+| SSE3       | Streaming SIMD Extension v3 | Pentium 4E           | `<pmmintrin.h>` (SSSE3: `<tmmintrin.h>`)|
+| SSE4       | Streaming SIMD Extension v4 | Core 2 Duo (Penryn)  | `<smmintrin.h>` (SSE4.2: `<nmmintrin.h>`) |
+| AVX        | Advanced Vector Extension   | Core i7 (Sandybridge)/Bulldozer | `<immintrin.h>` |
 
 ## Alignement mémoire 
 
