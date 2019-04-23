@@ -114,44 +114,7 @@ __Here we will discuss pipeline stalling (bubbles) and NUMA accesses__
 
 In this part we will be interested in traversing a linked list in a sequential manner for varying cell size in bytes. We will study the impact of traversing a linkedlist that lies in a contiguous memory space with respect to a a linkedlist that lies in a noncontiguous space. Remember that traversing a linkedlist is not prefetched by current CPUs -- although you can see [some proposal in the academic literature](Dependence Based Prefetching for Linked Data Structures).
 
-### Our linkedlist
-
-We will be using a simple LinkedList that we provide below :
-
-	class Liste {
-		int[] array = { 1, 2, 3, 4 };
-		Liste next;
-	}
-
-Each cell holds a 4-`int` 's array along the pointer to the next cell. This is the pointer we will be using to travers the linkedlist sequentially.
-
-### Linkedlist in a contiguous memory space
-
-> Task : Provide a method to build a `Liste`of `2^k`bytes. (provided each cell contains 5 `ìnt`s, that is 4 `int`'s for the array and one as the pointer to the next cell), the number of cells is `2^k / 4 / 5` (derived from previous tasks).
-In order to realize this task, you have to make sure that all cells lies in a contiguous memory space. To perform this, it is possible to create an array of `size`Liste elements (the elements will be contiguous as property of an array). Then you can wire each cells to the next one in the array so that you can later measure the traversal of the linkedlist using its pointers `next`, while being sure that all elements are contiguous.
-
-> Task : Observe the execution time for `k = {20 .. 32}`
-
-
-### LinkedList in a non-contiguous space
-
-> Task : Provide another method to build a `Liste` so that you are no longer guarantee that the `liste`elements lie in a contiguous memory space. 
-
-It is possible that, although not instanciated within an aray, that the consecutive call to `new Liste` will tend to instanciate the Liste elements in a contiguous manner. But know that having a garbage collector call will rearrange those elements in an unpredictable maner, and especially less likely to be contiguous. Usually we call `System.gc()`when we want to have the garbage collector called - use it between two `new Liste()`calls to enforce a non-contiguous memory layout. This is a bit tricky because this actually means to favour a garbage collection but do not ensure it to be synchronous with the call to this function. Instead, to enforce the garbage collection when called, we will called the following function (to add in your code base) as a neat solution to perform this pause the world to garbage collection (taken from [here](http://stackoverflow.com/questions/10039474/java-guaranteed-garbage-collection-using-jlibs)) :
-
-	/**
-	 * This method guarantees that garbage collection is done unlike
-	 * <code>{@link System#gc()}</code>
-	 */
-	public static void gc() {
-		Object obj = new Object();
-		@SuppressWarnings("rawtypes")
-		WeakReference ref = new WeakReference<Object>(obj);
-		obj = null;
-		while (ref.get() != null) {
-			System.gc();
-		}
-	}
+Replace your `ArrayList` by a `LinkedList` in your previous epxeriments and observe/analyse the difference with respect to `ArrayList`.
 
 > Task : Observe the execution time for `k = {20 .. 32}`
 
