@@ -35,7 +35,7 @@ The two instructors for this course are (by order of appearance) :
 You will have a total of 5 marks as follows (each colour in the previous organization table leads to notation).
 
 HPP course :
-- [30%] Your code on mechanical sympathy delivered for the 30th April 2019 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
+- [30%] Your code on mechanical sympathy delivered for the 9th May 2019 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
 - [30%] Your code on advanced multithreading delivered for the 10th May 2019 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
 - [40%] Your defense on new hardaware for HPP on the 13rd May 2019
 - possible bonus : up to 2 points over the mean of the previous scores based on yoiur optional SIMD submissions for the 2nd May 2019[here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13598).
