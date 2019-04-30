@@ -222,7 +222,7 @@ An update short introduction is available [here](http://www.baeldung.com/java-mi
           -Dversion=1.19
 
 2. Annotate the generated `MyBenchmark` class generated for your benchmarks :
-  1. Add the `Scope` to `MyBenchmark`class.
+  1. Add the `@Benchmark` to `MyBenchmark`class (if you did not use the archetype way to create your project)
   2. Create a private member of type `List<Integer` and initialize it to null;
   3. Create a parameter in the benchmark for making the size of the list on which we want to compute the mean vary. For this, create a private member of type `ìnt` called `n`. Annotate the member so that it can take values in the following set : 1000, 10000, 100000, 1000000, 10000000.
 
