@@ -203,9 +203,6 @@ As a consequence, benchmarking framework exists not only to ease the development
 What we couldn't encompass everything at the beginig of this course, this is now the right time to get our hands on a practical and efficient benchmarking framework. In what follows, we will investigate and practice one of the most popular Java microbenchmarking framework, aka [JMH](http://openjdk.java.net/projects/code-tools/jmh/).
 
 ### Introduction
-This is the main part of the work in this lab.
-You are invited to first read the nice introduction from [Mikhail Vorontsov](http://java-performance.info/author/Mike/) located [here](http://java-performance.info/jmh/).
-Other useful resources at [the end of this page](#references).
 
 In this lab, we will benchmark two ways of computing the sum of a [List](http://docs.oracle.com/javase/7/docs/api/java/util/AbstractList.html) of `n` random digits.
 We will actually compare naive implementations on digit lists that are implemented using for the first solution [ArrayList](http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html) and for the second [LinkedList](http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html).
@@ -214,7 +211,7 @@ An update short introduction is available [here](http://www.baeldung.com/java-mi
 
 ### JMH example
 
-1. Create a JMH project using the 1.8 JMH online archetype.
+1. Create a JMH project using the 1.19 JMH online archetype.
 
 		  mvn archetype:generate \
           -DinteractiveMode=false \
@@ -222,7 +219,7 @@ An update short introduction is available [here](http://www.baeldung.com/java-mi
           -DarchetypeArtifactId=jmh-java-benchmark-archetype \
           -DgroupId=org.sample \
           -DartifactId=test \
-          -Dversion=1.0
+          -Dversion=1.19
 
 2. Annotate the generated `MyBenchmark` class generated for your benchmarks :
   1. Add the `Scope` to `MyBenchmark`class.
