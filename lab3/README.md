@@ -6,22 +6,28 @@ HPP is an ever evolving topic, and many approaches at the frontier of this cours
 
 As a consequence, Lab #3 is made for you to dive into *one* of this technology/framework/tool, understand what it does and what it does not, what are its limitations, and then share your knowledge with your peers.
 
-We will build group of 3 students, for each group will be assigned ont of the following topics this year :
+We will build group of 2 students, for each group will be assigned ont of the following topics this year :
 
-- GPUs
-- InfiniBand
-- Non-Volatile Memory (NVMe)
-- Transactional memory
-- Message Passing Interface (MPI)
-- Xeon Phi
-
+- Processors
+  - Other forms/architecture of computing (quantum...)
+  - GPUs
+  - TPUs
+  - Xeon Phi/Platinium
+- Memory
+  - Non-Volatile Memory (NVMe)
+  - Transactional memory
+- Network
+  - InfiniBand
+- Algorithms
+  - Message Passing Interface (MPI) / Parallel Virtual Machine (PVM)
+  - Space–time tradeoff / Rainbow_tables
 
 ## Topics
 
-The session on the 6th of April is made for you to research and understand your assigned topic as a group.
+The session on the 9th of May is made for you to research and understand your assigned topic as a group.
 
-The session on the 26th of April is made for you to present your assign topic to the a group.
-To this end, you will provide a slide deck for an oral presentation of 15 minutes.
+The session on the 13th of May is made for you to present your assigned topic to the rest of the class.
+To this end, you will provide a [slide deck](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=16924) for an oral presentation of 15 minutes.
 
 While you are free to propose your own agenda for these presentation, you must provide the following information to the audience for your assigned topic :
 - How does the technology/framework works ?
@@ -33,13 +39,16 @@ While you are free to propose your own agenda for these presentation, you must p
 
 ## Assignments
 
-| Group number  | Assigned topic | List of students |
-| ------------- | -------------- | ---------------- |
-| 1  | Xeon Phi   | COSTES / FOURNIER     |
-| 2  | NVMe   | DHIMADO / COUSIN / BOUIN     |
-| 3  | MPI   | DU / BENKHEDER / PORTAY     |
-| 4  | GPU   | YANG / ROUALT / MALHERBE     |
-| 5  | Transactional memory   | DANSOKHO / HE / LI     |
-| 6  | Infiniband   | VAYSSIERE / MION / LU     |
-
-(To be completed on the 6th of April together as an optimisation problem to satisfy your wishes to investigate on a topic but also covering all topics by the classroom).
+| Grp nb | Assigned topic     | List of students  |
+| ------ | ------------------ | ----------------- |
+| 1      | Quantum Coputing   | Muller + Joana    |
+| 2      | GPUs               | Binier + Moulaire |
+| 3      | TPU                | Valadares + Yaya  |
+| 4      | FPGAs              | Lilian + Patrick  |
+| 5      | Univ Data Block    | TomasM + Théo     |
+| 6      | NVRAM              | ThomasF + Pierre G|
+| 7      | ecoRAM             | Pierre + Chloé    |
+| 8      | Transactional Memory | Axel + Clément  |
+| 9      | NVMe               | Lucas + Kenza     |
+| 10     | InfiniBand         |  Zhi + Guo        |
+| 11     | Xeon Phi           | Romain + Martin   |
