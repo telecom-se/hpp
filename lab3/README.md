@@ -52,3 +52,4 @@ While you are free to propose your own agenda for these presentation, you must p
 | 9      | NVMe               | Lucas + Kenza     |
 | 10     | InfiniBand         |  Zhi + Guo        |
 | 11     | Xeon Phi           | Romain + Martin   |
+| 12     | Perfect/cuckoo hashing | Rémy |
