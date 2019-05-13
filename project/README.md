@@ -7,7 +7,9 @@ Among them, we will be interested in the 2016 edition. In this edition, we have 
 Q1- Identification of the posts that currently trigger the most activity in the social network
 Q2- Identification of large communities that are currently involved in a topic
 
-The complete description of the data and queries expections is located [here](https://debs.org/grand-challenges/2016/).
+The complete description of the queries expections is located [here](https://debs.org/grand-challenges/2016/).
+Full data are locatd [here](http://datasets-satin.telecom-st-etienne.fr/jsubercaze/wikidump/).
+Mootse contains two unit tests for query 1.
 
 In this project, we want to leverage what we have learnt in this course to provide an accurate and fastest solution possible to the chosen query.
 
