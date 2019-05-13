@@ -1,3 +1,35 @@
 # Project
 
-Placeholder for HPP Project
+### Objective
+In this project, we will be creating a solution to one of the [DEBS grand challenges](https://debs.org/grand-challenges/).
+
+Among them, we will be interested in the 2016 edition. In this edition, we have to process a data stream of social network data. Given a stream of users, comments, likes, and friendships link, we want to answer the following queries :
+Q1- Identification of the posts that currently trigger the most activity in the social network
+Q2- Identification of large communities that are currently involved in a topic
+
+The complete description of the data and queries expections is located [here](https://debs.org/grand-challenges/2016/).
+
+In this project, we want to leverage what we have learnt in this course to provide an accurate and fastest solution possible to the chosen query.
+
+As a consequence, * you are to solve ONE of the two possible queries * (pick the one you prefer, there equally difficult). 
+Note: maybe you would have ilke to apply your new knowledge on HPP to another use case you had in mind (like you have a side project for instance). We may allow you to work on your preferred topic that you bring, provided we discuss/validate it beforehand.
+
+### Rules
+
+There are some contraints :
+- Team of 2 persons
+- The solution has to be a maven Java project.
+- The hardware requirements are 4 CPUs, 8Gb RAM (you cannot store all information in memory ...)
+
+### Recommendations
+Since we participated in this contest, we have a few guidances to help you :
+- Start by creating simple unit tests containing few events (like a dozens or a bit more). This will force you to draw on paper what to do, and understand the subtilities of the queries
+- It is less likely that we will use SIMD in that project (or at least it not as obvious as using multi-threading, choosing thread-safe data structures, devising some algorithms tricks to store/update the data)
+- Start by implementing a naive solution, that will be very suboptimal. Measure the bandwidth and latency to process the dample data file and the full data, and then iterate from this.
+
+### Evaluation
+On the last session of the module, we will ask you to present us :
+- your code architecture, what strategies you use to realize the queries, how it works
+- the performance (bandwidth/latency) that you achieve
+There won't be any presentations using slides, instead we will sit next to your labtop and discuss around your code.
+
