@@ -35,3 +35,17 @@ On the last session of the module, we will ask you to present us :
 - the performance (bandwidth/latency) that you achieve
 There won't be any presentations using slides, instead we will sit next to your labtop and discuss around your code.
 
+
+### Groups
+
+| Grp nb | Query              | List of students  |
+| ------ | ------------------ | ----------------- |
+| 1      |  Q1  |  Poulat / Jarousse / Mercier   |
+| 2      |  Q1  |  Moulaire / Pinier-Rafer  |
+| 3      |  Q1  |  Nsossani / Desclaux   |
+| 4      |  Q1  |  Massad / Yahiaoui / Bernard  |
+| 5      |  Q1  |  Zhizhou / Gukunpeng    |
+| 6      |  Q1  |  Kamissokho / Valadares / Chapuis |
+| 7      |  Q1? |  Ferrand / Giraud |
+| 8      |  Q1  |  Audemard / Muller / Joulin |
+| 9      |  Q2  |  Coudot / Dupuis / Mion  |
