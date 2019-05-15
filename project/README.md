@@ -21,7 +21,7 @@ Note: maybe you would have ilke to apply your new knowledge on HPP to another us
 There are some contraints :
 - Team of 2 persons
 - The solution has to be a maven Java project.
-- The hardware requirements are 4 Threads, 8Gb RAM (you cannot store all information in memory ...)
+- The hardware requirements are 4 CORES, 8Gb RAM (you cannot store all information in memory ...)
 
 ### Recommendations
 Since we participated in this contest, we have a few guidances to help you :
