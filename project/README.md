@@ -38,6 +38,8 @@ There won't be any presentations using slides, instead we will sit next to your 
 
 ### Groups
 
+Defense takes 15 minutes, sitting around your laptop. 5 minutes to switch groups.
+
 | Grp nb | Query              | List of students  | Defence |
 | ------ | ------------------ | ----------------- | ------- |
 | 1      |  Q1  |  Poulat / Jarousse / Mercier   | 9:00 | 
