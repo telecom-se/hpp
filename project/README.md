@@ -40,14 +40,18 @@ There won't be any presentations using slides, instead we will sit next to your 
 
 Defense takes 15 minutes, sitting around your laptop. 5 minutes to switch groups.
 
+Monday, 27th
+
 | Grp nb | Query              | List of students  | Defence |
 | ------ | ------------------ | ----------------- | ------- |
-| 1      |  Q1  |  Poulat / Jarousse / Mercier   | 9:00 | 
-| 2      |  Q1  |  Moulaire / Pinier-Rafer  | 9:20 |
-| 3      |  Q1  |  Nsossani / Desclaux   | 9:40 |
-| 4      |  Q1  |  Massad / Yahiaoui / Bernard  | 10:00 |
-| 5      |  Q1  |  Zhizhou / Gukunpeng    | 10:20 |
-| 6      |  Q1  |  Kamissokho / Valadares / Chapuis | 10:40 |
+| 1      |  Q1  |  Poulat / Jarousse / Mercier   | 10:00 | 
+| 3      |  Q1  |  Nsossani / Desclaux   | 10:20 |
+| 5      |  Q1  |  Zhizhou / Gukunpeng    | 10:40 |
 | 7      |  Q1? |  Ferrand / Giraud | 11:00 |
 | 8      |  Q1  |  Audemard / Muller / Joulin | 11:20 |
 | 9      |  Q2  |  Coudot / Dupuis / Mion  | 11:40 |
+| 2      |  Q1  |  Moulaire / Pinier-Rafer  | 12:00 |
+| 4      |  Q1  |  Massad / Yahiaoui / Bernard  | 12:20 |
+| 6      |  Q1  |  Kamissokho / Valadares / Chapuis | 12:40 |
+
+
