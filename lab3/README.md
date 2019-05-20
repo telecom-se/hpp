@@ -53,3 +53,7 @@ While you are free to propose your own agenda for these presentation, you must p
 | 10     | InfiniBand         |  Zhi + Guo        |
 | 11     | Xeon Phi           | Romain + Martin   |
 | 12     | Perfect/cuckoo hashing | Rémy |
+
+
+## Pour l'année prochaine 2019-2020:
+https://coral.withgoogle.com/
