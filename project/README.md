@@ -42,8 +42,8 @@ Defense takes 15 minutes, sitting around your laptop. 5 minutes to switch groups
 
 Monday, 27th
 
-| Grp nb | Query              | List of students  | Defence | How ot get the code |
-| ------ | ------------------ | ----------------- | ------- | 
+| Grp nb | Query              | List of students  | Defence | How to get the code |
+| ------ | ------------------ | ----------------- | ------- | ------- | 
 | 1      |  Q1  |  Poulat / Jarousse / Mercier   | 10:20 | |
 | 3      |  Q1  |  Nsossani / Desclaux   | 10:40 | |
 | 7      |  Q1? |  Ferrand / Giraud | 11:00 | |
