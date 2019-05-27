@@ -47,7 +47,7 @@ Monday, 27th
 | 1      |  Q1  |  Poulat / Jarousse / Mercier   | 10:20 | |
 | 3      |  Q1  |  Nsossani / Desclaux   | 10:40 | |
 | 7      |  Q1? |  Ferrand / Giraud | 11:00 | |
-| 8      |  Q1  |  Audemard / Muller / Joulin | 11:20 | |
+| 8      |  Q1  |  Audemard / Muller / Joulin | 11:20 | | https://github.com/Lucasaudemard/Projet_HPP.git
 | 9      |  Q2  |  Coudour / Dupuis / Mion  | 11:40 | |
 | 2      |  Q1  |  Moulaire / Pinier-Rafer  | 12:00 | |
 | 4      |  Q1  |  Massad / Yahiaoui / Bernard  | 12:20 | |
