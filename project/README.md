@@ -44,7 +44,7 @@ Monday, 27th
 
 | Grp nb | Query              | List of students  | Defence | How to get the code |
 | ------ | ------------------ | ----------------- | ------- | ------- | 
-| 1      |  Q1  |  Poulat / Jarousse / Mercier   | 10:20 | |
+| 1      |  Q1  |  Poulat / Jarousse / Mercier   | 10:20 | https://github.com/sganayon/HPP_Project |
 | 3      |  Q1  |  Nsossani / Desclaux   | 10:40 | |
 | 7      |  Q1? |  Ferrand / Giraud | 11:00 | |
 | 8      |  Q1  |  Audemard / Muller / Joulin | 11:20 | |
