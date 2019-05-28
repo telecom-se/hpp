@@ -51,7 +51,7 @@ Monday, 27th
 | 9      |  Q2  |  Coudour / Dupuis / Mion  | 11:40 | |
 | 2      |  Q1  |  Moulaire / Pinier-Rafer  | 12:00 | |
 | 4      |  Q1  |  Massad / Yahiaoui / Bernard  | 12:20 | |
-| 6      |  Q1  |  Kamissokho / Valadares / Chapuis | 12:40 | |
+| 6      |  Q1  |  Kamissokho / Valadares / Chapuis | 12:40 | https://github.com/Yaya-k/ProjetHPP |
 | 5      |  Q1  |  Zhizhou / Gukunpeng    | 13:00 | |
 
 
