@@ -52,6 +52,6 @@ Monday, 27th
 | 2      |  Q1  |  Moulaire / Pinier-Rafer  | 12:00 | |
 | 4      |  Q1  |  Massad / Yahiaoui / Bernard  | 12:20 | |
 | 6      |  Q1  |  Kamissokho / Valadares / Chapuis | 12:40 | |
-| 5      |  Q1  |  Zhizhou / Gukunpeng    | 13:00 | |
+| 5      |  Q1  |  Zhizhou / Gukunpeng    | 13:00 |https://github.com/gabinguo/PROJECT_HPP_GROUP_5 |
 
 
