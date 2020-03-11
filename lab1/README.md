@@ -20,9 +20,9 @@ In what follows, different programming activities will make your observe and the
 
 As a warm-up, we want to get an idea on the architecture of our CPU(s) that is actually handling data in our algorithms. All CPUs are not the same, right?
 
-Take the example of a "old" [Intel i5 760](http://ark.intel.com/fr/products/48496/Intel-Core-i5-760-Processor-8M-Cache-2_80-GHz) processor. It is based on a Nehalem microarchitecture, and a block schema for this architecture is provided by Texa A&M University:
+Take the example of the micro architectureof a 2019 intel-based mac notebook :
 
-![](http://talmar.masteride.cz/Modul_EP_pf/img/Paralelizace/NehalemMemBlock.PNG)
+![](./img/die-mac2019.png)
 
 As a large number of modern processors, its architecture uses three level of cache : Level 1 (L1), Level 2 (L2), and Level 3 (L3 -- sometimes: Last Level Cache (LLC)). This is a very common cache hierarchy architecture.
 
