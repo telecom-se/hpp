@@ -35,7 +35,7 @@ As a large number of modern processors, its architecture uses three level of cac
 > Task : What is the virtual memory and what is a cache line ?
 This [link should help you](https://medium.com/software-design/why-software-developers-should-care-about-cpu-caches-8da04355bb8a).
 
-> Task : Connect the dots: Watch the following awesome videos on CPU pipeline : [pipelining](https://www.youtube.com/watch?v=AgpW0SDtqC8&index=44&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP), [Pipelining in a processor](https://www.youtube.com/watch?v=otSXgSp-8EY&index=60&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP) - Look also at the additional quizzes on pipelining for laundry and instructions in the same videos series.
+> Task : Connect the dots: Watch the following awesome videos on CPU pipeline : [pipelining](https://www.youtube.com/watch?v=zN5lg91v40g&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP&index=16), [Pipelining in a processor](https://www.youtube.com/watch?v=otSXgSp-8EY&index=60&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP) - Look also at the additional quizzes on pipelining for laundry and instructions in the same videos series.
 
 The following block schema of a processor can help you (remind that every processor is different) :
 ![](./schema_principe_cpu.jpg)
