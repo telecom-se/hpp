@@ -22,7 +22,7 @@ As a warm-up, we want to get an idea on the architecture of our CPU(s) that is a
 
 Take the example of the micro architectureof a 2019 intel-based mac notebook :
 
-![](./img/die-mac2019.png)
+![](./die-mac2019.png)
 
 As a large number of modern processors, its architecture uses three level of cache : Level 1 (L1), Level 2 (L2), and Level 3 (L3 -- sometimes: Last Level Cache (LLC)). This is a very common cache hierarchy architecture.
 
