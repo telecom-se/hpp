@@ -16,7 +16,7 @@ We will build group of *three* students, for each group will be assigned one of 
 
   [//]: # (https://www.generation-nt.com/cerebras-cs1-puce-intelligence-artificielle-actualite-1970635.html)
 
-* [CPU] AMD ThreadRipper
+  * [CPU] AMD ThreadRipper
 
   [//]: # (https://www.generation-nt.com/amd-threadripper-3990x-processeur-64-coeurs-officiel-actualite-1970811.html)
 
@@ -45,12 +45,15 @@ We will build group of *three* students, for each group will be assigned one of 
   [//]: # (https://www.generation-nt.com/amd-renoir-apu-configuration-actualite-1971528.html)
 
   * TPU
+
   [//]: # (https://en.wikipedia.org/wiki/Tensor_processing_unit)
 
   * KPU
+
   [//]: # (https://www.seeedstudio.com/blog/2019/09/12/get-started-with-k210-hardware-and-programming-environment/)
 
   * NVIDIA Xavier
+
   [//]: # (https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-agx-xavier/)
 
 ### Algorithms & Data Structures
@@ -83,18 +86,18 @@ We will build group of *three* students, for each group will be assigned one of 
 
   * Spectre Attack
 
-  [//]: # (https://en.wikipedia.org/wiki/Spectre_(security_vulnerability))
+  [//]: # (https://en.wikipedia.org/wiki/Spectre_%28security_vulnerability%29)
 
   * Meltdown Attack
 
-  [//]: # (https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability))
+  [//]: # (https://en.wikipedia.org/wiki/Meltdown_%28security_vulnerability%29)
 
   * ForeShadow Attack
 
-  [//]: # (https://en.wikipedia.org/wiki/Foreshadow_(security_vulnerability))
+  [//]: # (https://en.wikipedia.org/wiki/Foreshadow_%28security_vulnerability%29)
 
   * Spoiler Attack
-  [//]: # (https://en.wikipedia.org/wiki/Spoiler_(security_vulnerability))
+  [//]: # (https://en.wikipedia.org/wiki/Spoiler_%28security_vulnerability%29)
 
   * ??? Faille Récente Positive Technology
   [//]: # (https://www.phonandroid.com/intel-5-generations-de-cpu-sont-vises-par-une-faille-catastrophique-impossible-a-corriger.html)
