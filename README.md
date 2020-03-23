@@ -45,6 +45,6 @@ HPP Project:
 ## Labs materials
 
 - [Mechanical sympathy](./lab1/README.md)
+- [Mechanical sympathy / SIMD](./lab2/README.md)
 - [New hardware for HPP](./lab3/README.md)
-- [Mechanical sympathy / SIMD](./lab1simd/README.md)
 - [HPP Project](./project/README.md)
