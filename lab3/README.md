@@ -97,6 +97,7 @@ We will build group of *three* students, for each group will be assigned one of 
   [//]: # (https://en.wikipedia.org/wiki/Foreshadow_%28security_vulnerability%29)
 
   * Spoiler Attack
+  
   [//]: # (https://en.wikipedia.org/wiki/Spoiler_%28security_vulnerability%29)
 
   * ??? Faille Récente Positive Technology
