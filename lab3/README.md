@@ -13,9 +13,11 @@ We will build group of *three* students, for each group will be assigned one of 
 
 ### Material
   * [CPU] Cerebras
+  
   [//]: # (https://www.generation-nt.com/cerebras-cs1-puce-intelligence-artificielle-actualite-1970635.html)
+  
   * [CPU] AMD ThreadRipper
-  [//]: # (https://www.generation-nt.com/amd-threadripper-3990x-processeur-64-coeurs-officiel-actualite-1970811.html)
+  [//]: <> (https://www.generation-nt.com/amd-threadripper-3990x-processeur-64-coeurs-officiel-actualite-1970811.html)
   * [CPU] Intel Intel Core i9-10900K
   [//]: # (https://www.generation-nt.com/intel-core-i9-10900k-processeur-performance-actualite-1971767.html)
   * [CPU] DEC Alpha
