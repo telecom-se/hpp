@@ -9,7 +9,7 @@ Disclaimer: The rules of virus propagation and the generated data are **fictiona
 The coronavirus hit many european countries. 
 These countries generated CSV files to help us to understand the virus propagation. 
 The good news for the data analysts is that we have a list of hundred of thousands reported infected cases, and for most of the case we know from whom the case was contracted (some cases are though reported to be contracted from "unknown" person). 
-That means that for a person p, we known that either that person contracted the virus from p_j where j in the popluation size of the given country
+That means that for a person `p` , we known that either that person contracted the virus from `p_j` where `j` in the popluation of the country reporting contamination cases.
 
 
 In our program, we want to identify the chain of contamination with the highest importance. 
