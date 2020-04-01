@@ -82,12 +82,9 @@ We will build group of *three* students, for each group will be assigned one of 
   [//]: # (https://en.wikipedia.org/wiki/Row_hammer)
   [//]: # (https://www.nolimitsecu.fr/rowhammer/)
 
-  * Spectre Attack
+  * Spectre Attack &  Meltdown Attack
   
   [//]: # (https://en.wikipedia.org/wiki/Spectre_%28security_vulnerability%29)
-
-  * Meltdown Attack
-  
   [//]: # (https://en.wikipedia.org/wiki/Meltdown_%28security_vulnerability%29)
 
   * ForeShadow Attack
