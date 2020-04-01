@@ -18,7 +18,7 @@ We will build group of *three* students, for each group will be assigned one of 
   [//]: # (https://www.generation-nt.com/amd-threadripper-3990x-processeur-64-coeurs-officiel-actualite-1970811.html)
   [//]: # (https://www.generation-nt.com/amd-renoir-apu-configuration-actualite-1971528.html)
   
-  * [CPU] Architectures AMD contemporaines: Intel Intel Core i9-10900K
+  * [CPU] Architectures Intel contemporaines: Intel Core i9-10900K
   
   [//]: # (https://www.generation-nt.com/intel-core-i9-10900k-processeur-performance-actualite-1971767.html)
 
