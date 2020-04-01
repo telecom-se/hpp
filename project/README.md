@@ -9,7 +9,7 @@ Disclaimer: The rules of virus propagation and the generated data are **fictiona
 The coronavirus hit many european countries. 
 These countries generated CSV files to help us to understand the virus propagation. 
 The good news for the data analysts is that we have a list of hundred of thousands reported infected cases, and for most of the case we know from whom the case was contracted (some cases are though reported to be contracted from "unknown" person). 
-That means that for a person `p` , we known that either that person contracted the virus from `p_j` where `j` in the population of the country reporting contamination cases.
+That means that for a person `p` , we known that either that person contracted the virus from `p_j` where `j` in the population of the country reporting contamination cases.  
 
 
 In our program, we want to identify the chain of contamination with the highest importance. 
@@ -17,7 +17,7 @@ Especially, we are asked by the european union parliament to report the top-3 mo
 
 ### Computing the importance of a contamination chain
 
-We do not know really how long people are contagious. Scientists have provided you a rough model to estimate the importance of a chain of contaminations. 
+We do not know really how long people are contagious. Scientists have provided you a rough model to estimate the importance of a chain of contaminations.  
 
 Basically, a case is considered important with a score of 10 in its 7 first days (168 exactly, inclusive).
 Between 7 days (168 hours, exclusive) and 14 days (336 days, inclusive), the case is considered with an importance score of 4.
@@ -35,7 +35,7 @@ person_name : surname and name of the infected person.
 person_age : age in years of that person (floored, e.g. 23 years, 10 months 3 days old person will be recorded as 23 years old) 
 diagnosed_ts : diagnosed time of coronavirus infection (supposed datetime when the person was supposed to be infected).
 contaminated_by : the `person_id` of the person who contaminated this person. The string `unknown` means that this person is the root of a chain of contagions.
-```
+```  
 
 _Remark_: Yes, the dataset include names (see `person_name` field). Yes, this goes against all good privacy practices. 
 Why include it then ? Remember that these are fictional data: this field is added in this fictional toy project for you to more easily read and debug your program.
@@ -59,7 +59,7 @@ top1_country_origin, top1_chain_root_person_id; top2_country_origin, top2_chain_
 
 ```
 
-Where `topx_country_origin` is the country code where this chain started, and `top1_chain_root_person_id` is the root of that contagious chain (so that we can later reconstruct the chain). 
+Where `topx_country_origin` is the country code where this chain started, and `top1_chain_root_person_id` is the root of that contagious chain (so that we can later reconstruct the chain).   
 The actual score of the contagious chain, as well as the content of that chain, is not supposed to be part of the output.
 
 
@@ -70,9 +70,9 @@ Consider the *French* dataset as follows :
 1, "Cerise", "Dupond", "21/01/1963", 1584540000, "unknown"
 2, "Hervé", "Renoir", "11/03/1971", 1584540000, "unknown"
 ```
-Notes:
-1584540000 : 03/18/2020 @ 2:00pm (UTC)
-1584712800 : 03/20/2020 @ 2:00pm (UTC)
+Notes:  
+1584540000 : 03/18/2020 @ 2:00pm (UTC)  
+1584712800 : 03/20/2020 @ 2:00pm (UTC)  
 
 Consider the *Italian* dataset as follows :
 ```
@@ -80,40 +80,40 @@ Consider the *Italian* dataset as follows :
 4, "Marco", "Guili", "06/01/1956", 1585324800, "unknown"
 5, "Stella", "Capelli", "21/01/1949", 1587312000, "4"
 ```
-Notes:
-1584558000 : 03/19/2020 @ 7:00pm (UTC)
-1585324800 : 03/27/2020 @ 4:00pm (UTC)
-1587312000 : 04/19/2020 @ 4:00pm (UTC)
+Notes:  
+1584558000 : 03/19/2020 @ 7:00pm (UTC)  
+1585324800 : 03/27/2020 @ 4:00pm (UTC)  
+1587312000 : 04/19/2020 @ 4:00pm (UTC)  
 
 
 Consider the *Spanish* dataset as follows :
 ```
 6, "Ricardo", "Rodriguez", "03/10/1964", 1587052800, "4"
 ```
-Notes:
-1587052800 : 04/16/2020 @ 4:00pm (UTC)
+Notes:  
+1587052800 : 04/16/2020 @ 4:00pm (UTC)  
 
-What should happens is what follows :
+What should happens is what follows :  
 
-1- Process event 1 : 
+1- Process event 1 :   
 The program parses each file concurrently. The first event to be processed is the first from France (oldest one - case `person_id` 1)
 After this event is processed, the output file contains :
 ```
 France, 1
 ```
 
-2- Process event second oldest event :
+2- Process event second oldest event :  
 The program pops the first event from Italy (second oldest event). 
 It is linked to the chain started by person Cerise Dupont, which is less than 7 days old: that chain got a score of `10+10=20`. 
-no other chain exists. 
+no other chain exists.   
 Therefore, after this event is processed, the output file contains :
 ```
 France, 1 <-- that was the previous output that we still have in the output file
 France, 1 <-- this is what we generate as top 10
 ```
 
-3- Process next event
-The program pops the second event from France. It is an event being the root of a new chain of contamination. 
+3- Process next event:  
+The program pops the second event from France. It is an event being the root of a new chain of contamination.   
 The previous chain still got a score of importance of `20`, and the new one starting with user 2 has the starting score of `10`.
 Therefore, after this event is processed, the output file contains :
 ```
@@ -122,11 +122,11 @@ France, 1 <-- that was the previous output that we still have in the output file
 France, 1; France, 2 <-- this is what we generate as top 10 for this event
 ```
 
-4- Process next event
-This is the second event from Italy. 
-It is a new chain of contamination (it starts at score 10).
-All three previous event falls into the after 7 days and before 14 days case : they count as 4 each and no longer 10.
-As a consequence, chain starting by `France, 1` got a score of 8, the chain starting by `France, 2` got a score of 4. 
+4- Process next event  
+This is the second event from Italy.   
+It is a new chain of contamination (it starts at score 10).  
+All three previous event falls into the after 7 days and before 14 days case : they count as 4 each and no longer 10.  
+As a consequence, chain starting by `France, 1` got a score of 8, the chain starting by `France, 2` got a score of 4.   
 Therefore, after this event is processed, the output file contains :
 ```
 France, 1
@@ -148,13 +148,13 @@ Italy, 2; France, 1; France, 2
 Spain, 1<-- this is what we generate as top 10 for this event
 ```
 
-5- Process last event
-We have next to consider the last event (3rd case in Italy). 
+5- Process last event  
+We have next to consider the last event (3rd case in Italy).   
 That event is supposed to be contamination from `person_id` 4, which no longer concern an active chain of contaminations. 
 Consequently, it shall be considered as a root case for a new contamination chain (illustration of Rule 4).
 This event happens three days after the last Italian case therefore they both remain at a score of 10. 
 When there is a draw, the oldest chain comes first (illustration of Rule 6).
-Therefore, after this event is processed, the output file contains :
+Therefore, after this event is processed, the output file contains :  
 ```
 France, 1
 France, 1
@@ -164,22 +164,22 @@ Spain, 1
 Spain, 1; Italy 3<-- this is what we generate as top 10 for this event
 ```
 
-You can see that it is not trivial to be sure that your program works as expected. 
-Your first duty (see below) will be to create MORE unit tests and CHECK them on PAPER. 
+You can see that it is not trivial to be sure that your program works as expected.   
+Your first duty (see below) will be to create MORE unit tests and CHECK them on PAPER.   
 I insist, this must not be underestimated. It can be trivial to write a lightning fast solution that solves only half of the cases. 
 In such cases you would be optimising an algorithm that would be useless !
 
 
 ## Additional rules and edge cases
 
-Some rules to make it more accessible:
-Rule 0 - Team of 3 persons and the delivery must be a maven Java project with JVM compatibility set to version 8. 
-Rule 1 - It is FORBIDDEN to make a program that will first read all files from all countries, store all the information in memory, and then starts to process it. We do not know in advance the number of cases, it is likely that it may not fits into memory (the real data contains many more informations about cases, and as the number of cases follow an exponential growth, we have to make sure that our program will not easily run out of memory).
-Rule 2 - Consequently, your program is not allowed to run more than 5 threads (using all 5 threads is part of the ultimate solution : it is just a upper bound given in the project), and you are not allowed to use more than 4Gb of RAM. **@GUILLAUME : on devrait rajouter un champs texte (ex: champs expliquant comment la contamination a eu lieu ?) afin que le bean soit plus lourd en mémoire et éviter le brute force tout en mémoire interdit ici ?**
-Rule 3 - We consider that we can contract the virus from a person from another country (virus does not stop at frontiers...). So be careful if you are thinking of processing each country in its own thread (which is not impossible but required extra exchange of read-only informations between threads). 
-Rule 4 - If a chain of contamination reach the score 0, it is considered ended (regardless if other people are later reported to be contaminated by someone in this chain - this allows us to free up, if needed, that chain). Ultimately, if a new case appears to be connected to a case from a chain of contamination of score 0, the new case has to be considered as the root of another new chain of contamination. 
-Rule 5 - In input files, all string date are considered UTC time.
-Rule 6 - In case f a draw of importance score between two chain of contamination, the oldest one has priority (arbitrary choice, everyone has to follow that one).
+Some rules to make it more accessible:  
+`Rule 0` - Team of 3 persons and the delivery must be a maven Java project with JVM compatibility set to version 8.   
+`Rule 1` - It is FORBIDDEN to make a program that will first read all files from all countries, store all the information in memory, and then starts to process it. We do not know in advance the number of cases, it is likely that it may not fits into memory (the real data contains many more informations about cases, and as the number of cases follow an exponential growth, we have to make sure that our program will not easily run out of memory).  
+`Rule 2` - Consequently, your program is not allowed to run more than 5 threads (using all 5 threads is part of the ultimate solution : it is just a upper bound given in the project), and you are not allowed to use more than 4Gb of RAM. **@GUILLAUME : on devrait rajouter un champs texte (ex: champs expliquant comment la contamination a eu lieu ?) afin que le bean soit plus lourd en mémoire et éviter le brute force tout en mémoire interdit ici ?**  
+`Rule 3` - We consider that we can contract the virus from a person from another country (virus does not stop at frontiers...). So be careful if you are thinking of processing each country in its own thread (which is not impossible but required extra exchange of read-only informations between threads).   
+`Rule 4` - If a chain of contamination reach the score 0, it is considered ended (regardless if other people are later reported to be contaminated by someone in this chain - this allows us to free up, if needed, that chain). Ultimately, if a new case appears to be connected to a case from a chain of contamination of score 0, the new case has to be considered as the root of another new chain of contamination.   
+`Rule 5` - In input files, all string date are considered UTC time.  
+`Rule 6` - In case f a draw of importance score between two chain of contamination, the oldest one has priority (arbitrary choice, everyone has to follow that one).  
 
 
 
