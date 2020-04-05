@@ -12,6 +12,10 @@ bin/
 *.war
 *.ear
 
+# Python Generator
+**/__pycache__
+resources/generator/[A-Z]*.csv
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
