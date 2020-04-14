@@ -127,13 +127,6 @@ We will be using a simple LinkedList that we provide below :
 
 Each cell holds a 4-`int` 's array along the pointer to the next cell. This is the pointer we will be using to travers the linkedlist sequentially.
 
-### Linkedlist in a contiguous memory space
-
-> Task : Provide a method to build a `Liste`of `2^k`bytes. (provided each cell contains 5 `ìnt`s, that is 4 `int`'s for the array and one as the pointer to the next cell), the number of cells is `2^k / 4 / 5` (derived from previous tasks).
-In order to realize this task, you have to make sure that all cells lies in a contiguous memory space. To perform this, it is possible to create an array of `size`Liste elements (the elements will be contiguous as property of an array). Then you can wire each cells to the next one in the array so that you can later measure the traversal of the linkedlist using its pointers `next`, while being sure that all elements are contiguous.
-
-> Task : Observe the execution time for `k = {20 .. 32}`
-
 
 ### LinkedList in a non-contiguous space
 
