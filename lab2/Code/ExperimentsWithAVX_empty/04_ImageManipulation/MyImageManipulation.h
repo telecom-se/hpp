@@ -12,7 +12,7 @@ using namespace std::chrono;
 
 class MyImageManipulation : public ImageManipulation {
 
-public: 
+public:
     MyImageManipulation();
 
     static const int MAX_TIMING_ITERATIONS;

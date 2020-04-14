@@ -5,11 +5,11 @@ int main(int argc, char** argv)
     string srcImage  = "../big_image1.jpg";
     string destImage = "../big_image2.jpg";  /* MUST BE OF THE SAME SIZE!!!!*/
 
-	MyImageManipulation manip;
+    MyImageManipulation manip;
 
     bool ok = manip.setImageSrc(srcImage);
 
-	if (ok) {
+    if (ok) {
         //// DEBUG
         //cout << ImageManipulation::MAX_CHANTYPE << endl;
         //cout << SCALE << endl;
@@ -114,5 +114,5 @@ int main(int argc, char** argv)
 
     }
 
-	return 0;
+    return 0;
 }

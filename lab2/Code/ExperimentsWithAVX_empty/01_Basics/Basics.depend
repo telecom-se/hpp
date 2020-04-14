@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1555417053 source:./ExperimentsWithAVX_empty/01_Basics/FusedMultAdd.cpp
+	<iostream>
+	<string>
+	<immintrin.h>
+	<ctime>
+	<ratio>
+	<chrono>
+	<thread>

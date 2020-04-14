@@ -12,16 +12,16 @@ using namespace std;
 // Compute Mandelbrot (Basic C++ with objects)
 #include <complex>
 void mandelbrotCPU(float x1, float y1, float x2, float y2, int width, int height, int maxIters, unsigned short *image) {
-	float dx = (x2-x1)/width, dy = (y2-y1)/height;
-	for (int j = 0; j < height; j++)
-		for (int i = 0; i < width; i++)
-		{
-			complex<float> c (x1+dx*i, y1+dy*j), z(0,0);
-			unsigned short count = 0;
-			while ((count++ < maxIters) && (norm(z) < 4.0))
-				z = z*z+c;
-			*image++ = count;
-		}
+    float dx = (x2-x1)/width, dy = (y2-y1)/height;
+    for (int j = 0; j < height; j++)
+        for (int i = 0; i < width; i++)
+        {
+            complex<float> c (x1+dx*i, y1+dy*j), z(0,0);
+            unsigned short count = 0;
+            while ((count++ < maxIters) && (norm(z) < 4.0))
+                z = z*z+c;
+            *image++ = count;
+        }
 }
 
 // Compute Mandelbrot (Basic C++ with simple floats)
@@ -30,7 +30,7 @@ void mandelbrotCPU2(float x1, float y1, float x2, float y2, int width, int heigh
 }
 
 // Compute Mandelbrot with SSE
-void mandelbrotSSE(float x1, float y1, float x2, float y2, int width, int height, int maxIters, unsigned short *image) { 
+void mandelbrotSSE(float x1, float y1, float x2, float y2, int width, int height, int maxIters, unsigned short *image) {
     // TODO: implement
 }
 
@@ -69,12 +69,12 @@ void displayImage(string title, unsigned short *image, int size) {
 
 int main(int argc, char **argv)
 {
-	int size = 200;
+    int size = 200;
 
-	unsigned short *image1 = new unsigned short[size*size];
-	unsigned short *image2 = new unsigned short[size*size];
-	unsigned short *image3 = new unsigned short[size*size];
-	unsigned short *image4 = new unsigned short[size*size];
+    unsigned short *image1 = new unsigned short[size*size];
+    unsigned short *image2 = new unsigned short[size*size];
+    unsigned short *image3 = new unsigned short[size*size];
+    unsigned short *image4 = new unsigned short[size*size];
 
     mandelbrotCPU(0.29768f, 0.48364f, 0.29778f, 0.48354f, size, size, 4096, image1);
     cout << "displaying CPU" << endl;
@@ -92,8 +92,8 @@ int main(int argc, char **argv)
     cout << "displaying AVX" << endl;
     displayImage("AVX", image4, size);
 
-	delete [] image1;
-	delete [] image2;
-	delete [] image3;
-	delete [] image4;
+    delete [] image1;
+    delete [] image2;
+    delete [] image3;
+    delete [] image4;
 }

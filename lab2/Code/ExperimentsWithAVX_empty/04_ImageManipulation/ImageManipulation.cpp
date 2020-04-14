@@ -117,4 +117,3 @@ void ImageManipulation::displayMinMax(const Mat &img) {
     minMaxLoc(img, &minVal, &maxVal);
     cout << "minVal: " << minVal << "   // maxVal: " << maxVal << endl;
 }
-

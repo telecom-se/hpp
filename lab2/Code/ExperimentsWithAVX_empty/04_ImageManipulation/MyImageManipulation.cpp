@@ -19,7 +19,7 @@ long MyImageManipulation::timeMethod(void (MyImageManipulation::*methodToBeTimed
         totalDuration += (long)duration.count();
 
         // Uncomment to keep the last execution of the method as a side effect of timing the method
-//		if (i!=MAX_TIMING_ITERATIONS-1) { 
+//      if (i!=MAX_TIMING_ITERATIONS-1) {
         this->recoverSrcImage();
         //        }
     }

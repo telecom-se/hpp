@@ -7,6 +7,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="TimeTesting.h" />
     <ClInclude Include="ImageManipulation.h" />
     <ClInclude Include="MyImageManipulation.h" />
   </ItemGroup>

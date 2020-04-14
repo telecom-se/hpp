@@ -29,7 +29,7 @@ int main() {
     alignas(4) float b[4] = { 5.0f, 6.0f, 7.0f, 8.0f };
     alignas(4) float c[4] = { 9.0f, 10.0f, 11.0f, 12.0f };
     alignas(4) float res[4] = { 0.0f, 0.0f, 0.0f, 0.0f };
- 
+
     //// Basic
     basic(a, b, c, res);
     printRes("BAS", res/*, time1, time2*/);
