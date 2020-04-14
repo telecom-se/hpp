@@ -116,17 +116,6 @@ __Here we will discuss pipeline stalling (bubbles) and NUMA accesses__
 
 In this part we will be interested in traversing a linked list in a sequential manner for varying cell size in bytes. We will study the impact of traversing a linkedlist that lies in a contiguous memory space with respect to a a linkedlist that lies in a noncontiguous space. Remember that traversing a linkedlist is not prefetched by current CPUs -- although you can see [some proposal in the academic literature](Dependence Based Prefetching for Linked Data Structures).
 
-### Our linkedlist
-
-We will be using a simple LinkedList that we provide below :
-
-	class Liste {
-		int[] array = { 1, 2, 3, 4 };
-		Liste next;
-	}
-
-Each cell holds a 4-`int` 's array along the pointer to the next cell. This is the pointer we will be using to travers the linkedlist sequentially.
-
 
 ### LinkedList in a non-contiguous space
 
