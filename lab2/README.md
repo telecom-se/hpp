@@ -125,16 +125,16 @@ The following instructions are provided for VisualStudio, because you already wo
 - Goals:
   - Manipulate images: fill with 0 (black), fill with configurable color, fade to 0, fade to color, fade to another image.
     /Fading/ is a linear & progressive transition from une color towards another. It works as follows: `nouvelle_couleur = alpha*source_color + (1-alpha)*target_color`.
-  - Compare execution times with/without "multimédia" instructions.
+  - Compare execution times with/without "multimedia" instructions.
 - At your disposal:
-  - A class `ImageManipulation` with multiple "pure virtual" methods => you will implment these methods in a derived class `ImageManipulation`.
+  - A class `ImageManipulation` with multiple "pure virtual" methods => you will implment these methods in a derived class `MyImageManipulation`.
   - `VisualTesting.cpp` file to test your methods visually: display the images.
   - `TimeTesting.cpp` file to execute & time multiples executions of your methods (NOTE: this file is initially "out" of the project, not to conflict with the `main()` in `VisualTesting.cpp`).
   - Images are stored in OpenCV's format: `Mat` using representation `CV32FC4` (4 channels of 1 float=32bits=4bytes) in RGBA mode.
   - To help you, we defined folowing types:
     - `chanType`  (=`float`)  : type to store 1 channel of a pixel.
     - `pixelType` (=`Vec4f`)  : OpenCV's format to represent a pixel (4 floats)
--  - NOTE: to access/set a pixel, you can use `cv::Mat::at<Vec4b>(line, col)` as it returns a **réference** on the pixel at coordinates (line, col).
+-  - NOTE: to access/set a pixel, you can use `cv::Mat::at<Vec4b>(line, col)` as it returns a **reference** on the pixel at coordinates (line, col).
     - `sseType`   (=`__m128`) : format to work with SSE registers.
     - `avxType`   (=`__m256`) : format to work with AVX registers.
   - And following consts:
@@ -169,7 +169,7 @@ The following instructions are provided for VisualStudio, because you already wo
 
 
 ### Ex5: Opening: Limits of SIMD
-> **Task** Now that you are experts in "multimédia"/SIMD programming, give a list of some limits of data parallelization.
+> **Task** Now that you are experts in "multimedia"/SIMD programming, give a list of some limits of data parallelization.
 
 > **Task** What would be the  characteristics of an algorithm that would be hard to parallelize with SIMD?
 
