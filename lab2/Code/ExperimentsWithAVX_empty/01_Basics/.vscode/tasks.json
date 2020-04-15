@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-march=haswell",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            },
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "Run",
+            "command": "${fileDirname}/${fileBasenameNoExtension}",
+            "problemMatcher": [],
+            "group": "build"
+        }
+    ]
+}

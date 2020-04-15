@@ -1,0 +1,71 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        },
+        {
+            "name": "run",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64",
+            "compilerArgs": [
+                "-march=haswell",
+                "-llibopencv_aruco ",
+                "-llibopencv_bgsegm ",
+                "-llibopencv_bioinspired ",
+                "-llibopencv_calib3d ",
+                "-llibopencv_ccalib ",
+                "-llibopencv_core ",
+                "-llibopencv_datasets ",
+                "-llibopencv_dpm ",
+                "-llibopencv_face ",
+                "-llibopencv_features2d ",
+                "-llibopencv_flann ",
+                "-llibopencv_freetype ",
+                "-llibopencv_fuzzy ",
+                "-llibopencv_hdf ",
+                "-llibopencv_highgui ",
+                "-llibopencv_imgcodecs ",
+                "-llibopencv_imgproc ",
+                "-llibopencv_line_descriptor ",
+                "-llibopencv_ml ",
+                "-llibopencv_objdetect ",
+                "-llibopencv_optflow ",
+                "-llibopencv_phase_unwrapping ",
+                "-llibopencv_photo ",
+                "-llibopencv_plot ",
+                "-llibopencv_reg ",
+                "-llibopencv_rgbd ",
+                "-llibopencv_saliency ",
+                "-llibopencv_shape ",
+                "-llibopencv_stereo ",
+                "-llibopencv_stitching ",
+                "-llibopencv_structured_light ",
+                "-llibopencv_superres ",
+                "-llibopencv_surface_matching ",
+                "-llibopencv_text ",
+                "-llibopencv_video ",
+                "-llibopencv_videoio ",
+                "-llibopencv_videostab ",
+                "-llibopencv_viz ",
+                "-llibopencv_ximgproc ",
+                "-llibopencv_xobjdetect ",
+                "-llibopencv_xphoto"
+            ]
+        }
+    ],
+    "version": 4
+}
