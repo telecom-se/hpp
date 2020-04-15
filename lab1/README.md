@@ -302,3 +302,7 @@ An update short introduction is available [here](http://www.baeldung.com/java-mi
 [GeorgiaTech High Performance Computer Architecture lectures](https://www.youtube.com/results?search_query=Georgia+Tech+-+HPCA%3A+Part+1)
 
 [Cache Memories, Cache Complexity, Marc Moreno Maza](http://www.csd.uwo.ca/~moreno/HPC-Slides/Cache_Complexity.pdf)
+
+### JMH
+[Java Performance Tuning Guide](http://java-performance.info/jmh/)
+[JMH Jenkov tutorial](http://tutorials.jenkov.com/java-performance/jmh.html)
