@@ -114,25 +114,7 @@ __Here we will discuss pipeline stalling (bubbles) and NUMA accesses__
 
 ## Read Walks using linked list
 
-In this part we will be interested in traversing a linked list in a sequential manner for varying cell size in bytes. We will study the impact of traversing a linkedlist that lies in a contiguous memory space with respect to a a linkedlist that lies in a noncontiguous space. Remember that traversing a linkedlist is not prefetched by current CPUs -- although you can see [some proposal in the academic literature](Dependence Based Prefetching for Linked Data Structures).
-
-### Our linkedlist
-
-We will be using a simple LinkedList that we provide below :
-
-	class Liste {
-		int[] array = { 1, 2, 3, 4 };
-		Liste next;
-	}
-
-Each cell holds a 4-`int` 's array along the pointer to the next cell. This is the pointer we will be using to travers the linkedlist sequentially.
-
-### Linkedlist in a contiguous memory space
-
-> Task : Provide a method to build a `Liste`of `2^k`bytes. (provided each cell contains 5 `ìnt`s, that is 4 `int`'s for the array and one as the pointer to the next cell), the number of cells is `2^k / 4 / 5` (derived from previous tasks).
-In order to realize this task, you have to make sure that all cells lies in a contiguous memory space. To perform this, it is possible to create an array of `size`Liste elements (the elements will be contiguous as property of an array). Then you can wire each cells to the next one in the array so that you can later measure the traversal of the linkedlist using its pointers `next`, while being sure that all elements are contiguous.
-
-> Task : Observe the execution time for `k = {20 .. 32}`
+In this part we will be interested in traversing a linked list in a sequential manner for varying cell size in bytes. We will study the impact of traversing a linkedlist that lies in a noncontiguous space. Remember that traversing a linkedlist is not prefetched by current CPUs -- although you can see [some proposal in the academic literature](Dependence Based Prefetching for Linked Data Structures).
 
 
 ### LinkedList in a non-contiguous space
@@ -280,7 +262,7 @@ An update short introduction is available [here](http://www.baeldung.com/java-mi
 5. Add another benchmark in your project that will do just the same operation but using a `LinkedList` implementation for the List on which we want to compute the mean.
 
 6. Analyze
-   1. For each benchmarked solution (with `ArrayList` and with `LinkedList`), plot in MS Excel the operations per seconds with respect to the number of item in the list. Add the linear regression serie in each graph (hint: if you do not know how to add the linear regression in an Excel graph, you can refer to [this](http://www-physique.u-strasbg.fr/~udp/articles/www-clepsydre/Excel-how-to-II.pdf)).
+   1. For each benchmarked solution (with `ArrayList` and with `LinkedList`), plot in MS Excel the number of seconds needed to run each scenario with respect to the number of item in the list. Add the linear regression serie in each graph (hint: if you do not know how to add the linear regression in an Excel graph, you can refer to [this](http://www-physique.u-strasbg.fr/~udp/articles/www-clepsydre/Excel-how-to-II.pdf)).
   2. Answer the following questions :
     1. Does the complexities of each method seems linear from an empirical point of view ?
     2. Why did you receive an out of memory exception for the solution using LinkedList for smaller values of `n` that when it starts to occur for the solution using `ArrayList` ?
@@ -307,15 +289,16 @@ An update short introduction is available [here](http://www.baeldung.com/java-mi
 
 
 ### About CPU counters
-
 [Intel architectures for software developers Vol 3B, p297](http://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-software-developer-vol-3b-part-2-manual.html)
 
 
 ### About branch prediction :
-
 [Branch prediction : performance of some mergesort implementations](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-172-performance-engineering-of-software-systems-fall-2010/video-lectures/lecture-5-performance-engineering-with-profiling-tools/MIT6_172F10_lec05.pdf)
 
 ### Lectures
-
 [GeorgiaTech High Performance Computer Architecture lectures](https://www.youtube.com/results?search_query=Georgia+Tech+-+HPCA%3A+Part+1)
+[Cache Memories, Cache Complexity, Marc Moreno Maza](http://www.csd.uwo.ca/~moreno/HPC-Slides/Cache_Complexity.pdf)
 
+### JMH
+[Java Performance Tuning Guide](http://java-performance.info/jmh/)  
+[JMH Jenkov tutorial](http://tutorials.jenkov.com/java-performance/jmh.html)
