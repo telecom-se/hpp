@@ -304,5 +304,5 @@ An update short introduction is available [here](http://www.baeldung.com/java-mi
 [Cache Memories, Cache Complexity, Marc Moreno Maza](http://www.csd.uwo.ca/~moreno/HPC-Slides/Cache_Complexity.pdf)
 
 ### JMH
-[Java Performance Tuning Guide](http://java-performance.info/jmh/)
+[Java Performance Tuning Guide](http://java-performance.info/jmh/)  
 [JMH Jenkov tutorial](http://tutorials.jenkov.com/java-performance/jmh.html)
