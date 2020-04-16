@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "01_Basics"
+		},
+		{
+			"path": "02_MatrixMultiplication"
+		},
+		{
+			"path": "03_Mandelbrot"
+		},
+		{
+			"path": "04_ImageManipulation"
+		}
+	],
+	"settings": {}
+}
