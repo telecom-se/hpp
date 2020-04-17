@@ -54,47 +54,47 @@ a youtube video that explains how to install the tool.
 
 - A code editor
   - Code::Blocks [install the version that includes the compiler (MinGW-32bits)]
-    [DWL] https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-20.03mingw-setup.exe
-    [REF] http://www.codeblocks.org/downloads
-    [YT!] https://www.youtube.com/watch?v=aS5_jrIbKmA
+    - [DWL] https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-20.03mingw-setup.exe
+    - [REF] http://www.codeblocks.org/downloads
+    - [YT!] https://www.youtube.com/watch?v=aS5_jrIbKmA
 
   - QtCreator [requires a Qt account] (during install, select Qt5>MinGW-64bits and MinGW-64bits compiler)
-    [DWL] https://www.qt.io/download-qt-installer
-    [REF] http://qt.io/
-    [YT!] TODO https://www.youtube.com/watch?v=XpRAaw-vZNU
+    - [DWL] https://www.qt.io/download-qt-installer
+    - [REF] http://qt.io/
+    - [YT!] TODO https://www.youtube.com/watch?v=XpRAaw-vZNU
 
   - VSCode [requires 1. an external compiler & 2. the C/C++ extension]
-    [DWL] https://az764295.vo.msecnd.net/stable/a9f8623ec050e5f0b44cc8ce8204a1455884749f/VSCodeUserSetup-x64-1.44.1.exe
-    [REF] https://code.visualstudio.com/Download
-    [DWL] https://github.com/microsoft/vscode-cpptools/releases/download/0.27.0/cpptools-win32.vsix [can be installed from within VSCode!]
-    [REF] https://github.com/microsoft/vscode-cpptools/releases/
-    [YT!] https://www.youtube.com/watch?v=DIw02CaEusY
+    - [DWL] https://az764295.vo.msecnd.net/stable/a9f8623ec050e5f0b44cc8ce8204a1455884749f/VSCodeUserSetup-x64-1.44.1.exe
+    - [REF] https://code.visualstudio.com/Download
+    - [DWL] https://github.com/microsoft/vscode-cpptools/releases/download/0.27.0/cpptools-win32.vsix [can be installed from within VSCode!]
+    - [REF] https://github.com/microsoft/vscode-cpptools/releases/
+    - [YT!] https://www.youtube.com/watch?v=DIw02CaEusY
 
 -  OpenCV 3.4.x (**ATTENTION il s'agit d'une version spéciale compilée pour MinGW**)
    - 64bits
-     [DWL] https://github.com/huihut/OpenCV-MinGW-Build/archive/OpenCV-3.4.8-x64.zip
+     - [DWL] https://github.com/huihut/OpenCV-MinGW-Build/archive/OpenCV-3.4.8-x64.zip
    - 32bits
-     [DWL] https://github.com/huihut/OpenCV-MinGW-Build/archive/OpenCV-3.4.9.zip
-   [REF] https://github.com/huihut/OpenCV-MinGW-Build
+     - [DWL] https://github.com/huihut/OpenCV-MinGW-Build/archive/OpenCV-3.4.9.zip
+   - [REF] https://github.com/huihut/OpenCV-MinGW-Build
 
 - [*If your IDE does not include one*] C/C++ compiler
   - GCC / MinGW
-    [REF] http://mingw.org/category/wiki/download
+    - [REF] http://mingw.org/category/wiki/download
     - 64 bits
-      [DWL] https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe/download
-      [REF] https://mingw-w64.org/doku.php/download
+      - [DWL] https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe/download
+      - [REF] https://mingw-w64.org/doku.php/download
     - 32 bits
-      [DWL] https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/
-      [REF] https://osdn.net/projects/mingw/releases/p15522
-    [YT!] https://www.youtube.com/watch?v=sXW2VLrQ3Bs [you can uncheck ada/fortran/objc installation]
+      - [DWL] https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/
+      - [REF] https://osdn.net/projects/mingw/releases/p15522
+    - [YT!] https://www.youtube.com/watch?v=sXW2VLrQ3Bs [you can uncheck ada/fortran/objc installation]
 
 # Configuration of the tools
 
 Whatever the tools you have installed, you'll need to configure:
 1. The compiler
-   a. to use the special SIMD instructions (i.e. compile for an
+   1. to use the special SIMD instructions (i.e. compile for an
    architecture that is more evolved than the default i386)
-   b. to find the OpenCV's include/header (.h) files
+   2. to find the OpenCV's include/header (.h) files
 2. The linker:
    - to find the OpenCV's (`.dll`/`.so`) libraries files
 
@@ -123,7 +123,7 @@ options you'll have to configure with your IDE.
 
 Right click on project > "Build Options" > **Select the whole project** (NOT Release/Debug)
 
-+ For the compiler (1a. architecture)
++ For the compiler (1.1. architecture)
   - Select "Compiler Settings" tab
   - You could set it in the "Compiler Flags" panel
   - But there is no "Haswell" architecture choice, => in "Other compiler options" panel, add `-march=haswell`
@@ -147,7 +147,7 @@ the configs in it.
 
 You'll add a few lines to this file.
 
-+ For the compiler (1a. architecture)
++ For the compiler (1.1. architecture)
   `QMAKE_CXXFLAGS += -march=haswell`
 
 
@@ -155,7 +155,7 @@ You'll add a few lines to this file.
   `INCLUDES += -I/usr/include/opencv2/`
 
 + For the linker (2. libs)
-  ```
+```
   LIBS += -L/usr/lib/x86_64-linux-gnu/ \
              -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_calib3d -lopencv_ccalib -lopencv_core -lopencv_datasets -lopencv_dpm -lopencv_face -lopencv_features2d -lopencv_flann -lopencv_freetype -lopencv_fuzzy -lopencv_hdf -lopencv_highgui -lopencv_imgcodecs -lopencv_imgproc -lopencv_line_descriptor -lopencv_ml -lopencv_objdetect -lopencv_optflow -lopencv_phase_unwrapping -lopencv_photo -lopencv_plot -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_shape -lopencv_stereo -lopencv_stitching -lopencv_structured_light -lopencv_superres -lopencv_surface_matching -lopencv_text -lopencv_video -lopencv_videoio -lopencv_videostab -lopencv_viz -lopencv_ximgproc -lopencv_xobjdetect -lopencv_xphoto
 ```
@@ -168,7 +168,7 @@ You'll add a few lines to this file.
   VSCode will generally automatically detect the include path
 
 
-+ For the compiler (1a. architecture) & For the linker (2. libs)
++ For the compiler (1.1. architecture) & For the linker (2. libs)
 
   + You need to create a `.vscode/tasks.json` and a
   `.vscode/launch.json` file in the project dir. VSCode will generally
@@ -243,7 +243,7 @@ You'll add a few lines to this file.
 
 ## Visual Studio [BEWARE: Create a Windows Console Application]
 
-+ For the compiler (1a. architecture)
++ For the compiler (1.1. architecture)
   + Go to "Project" > "Properties" > "Configuration Properties" > "C/C++" > "Code Generation"
   + "Enable Enhanced Instruction Set" or append /arch:SSE (or /arch:SSE2) in "Command Line" > "Additional Options".
 
@@ -257,3 +257,12 @@ You'll add a few lines to this file.
   + In "Configuration", select "All Configurations"
   + In "Linker" > "Input" > "Additional Dependencies"
 
+
+
+## Other Tips & Tricks
+
++ if you use cmake
+```
+set(GCC_COVERAGE_COMPILE_FLAGS "-march=haswell")
+set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")
+```
