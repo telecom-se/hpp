@@ -55,17 +55,19 @@ a youtube video that explains how to install the tool.
 - A code editor
   - Code::Blocks [install the version that includes the compiler (MinGW-32bits)]
     [DWL] https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-20.03mingw-setup.exe
-    [REF] TODO
+    [REF] http://www.codeblocks.org/downloads
     [YT!] https://www.youtube.com/watch?v=aS5_jrIbKmA
 
-  - QtCreator [requires a Qt account] (during install, select MinGW-64bits compiler and MinGW-64bits@Qt5 libs)
+  - QtCreator [requires a Qt account] (during install, select Qt5>MinGW-64bits and MinGW-64bits compiler)
     [DWL] https://www.qt.io/download-qt-installer
     [REF] http://qt.io/
     [YT!] TODO https://www.youtube.com/watch?v=XpRAaw-vZNU
 
   - VSCode [requires 1. an external compiler & 2. the C/C++ extension]
-    [DWL] TODO
-    [REF] TODO
+    [DWL] https://az764295.vo.msecnd.net/stable/a9f8623ec050e5f0b44cc8ce8204a1455884749f/VSCodeUserSetup-x64-1.44.1.exe
+    [REF] https://code.visualstudio.com/Download
+    [DWL] https://github.com/microsoft/vscode-cpptools/releases/download/0.27.0/cpptools-win32.vsix [can be installed from within VSCode!]
+    [REF] https://github.com/microsoft/vscode-cpptools/releases/
     [YT!] https://www.youtube.com/watch?v=DIw02CaEusY
 
 -  OpenCV 3.4.x (**ATTENTION il s'agit d'une version spéciale compilée pour MinGW**)
@@ -82,9 +84,9 @@ a youtube video that explains how to install the tool.
       [DWL] https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe/download
       [REF] https://mingw-w64.org/doku.php/download
     - 32 bits
-      [DWL] TODO
-      [REF] TODO
-    [YT!] TODO
+      [DWL] https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/
+      [REF] https://osdn.net/projects/mingw/releases/p15522
+    [YT!] https://www.youtube.com/watch?v=sXW2VLrQ3Bs [you can uncheck ada/fortran/objc installation]
 
 # Configuration of the tools
 
