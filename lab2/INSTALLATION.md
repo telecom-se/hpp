@@ -269,7 +269,7 @@ You'll add a few lines to this file.
 
 + QtCreator
   + At the bottom of the Debugger view, there's a panel with a table with the name of your file, a line number and nan address.
-    [screenshot](../resources/figures/Qtcreator.png)
+    [screenshot](../resources/figures/QtCreator.png)
   + Right click on this line and select "Open Disassembler at 0x....."
 
 + Code::Blocks
