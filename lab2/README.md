@@ -84,13 +84,7 @@ We will use C++ because it is easier to access low-level instructions in this la
 
 > **Task** Finish the `main()` function in order to test your functions and verify that you actually get the same & correct matrix multiplication results with the 3 methods.
 
-> **Task** Have a look at what your compiler generated in the first case ("normal" C) and compare with your own code [Works for Code::Blocks and Visual Studio]:
-  - Add a Break Point where the computation is done in the "normal" C code (i.e. without intrinsic)
-  - Run your application in debug mode
-  - When the debugger stops on the  Break Point
-    + *Right click in the code window > Goto to disassembly* (Visual Studio)
-    + *Menu Debug > Debugging Windows > Assembly*
-
+> **Task** Have a look at what your compiler generated in the first case ("normal" C) and compare with your own code (see [How to acess assembly code](./INSTRUCTIONS.md#accessing-the-assembly-code)
 > **Task** Search the internet to find how to configure your compiler so that it directly optimizes the generated code.
   - Test the solution you just found by displaying again the assembly code
 

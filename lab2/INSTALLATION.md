@@ -261,7 +261,30 @@ You'll add a few lines to this file.
 
 ## Other Tips & Tricks
 
-+ if you use cmake
+### Accessing the assembly code
+
+- Add a Break Point where you want to get the assembly
+- Run your application in debug mode until thi point
+- When the debugger stops on the  Break Point, follow the steps below according to the tool you use.
+
++ QtCreator
+  + At the bottom of the Debugger view, there's a panel with a table with the name of your file, a line number and nan address.
+    [screenshot](../resources/figures/Qtcreator.png)
+  + Right click on this line and select "Open Disassembler at 0x....."
+
++ Code::Blocks
+  + Menu "Debug" > "Debugging Windows" > "Assembly"
+
++ Visual Studio
+  + Right click in the "code window" > "Goto to disassembly" (Visual Studio)
+
++ VSCode
+  + does not seem to support the feature
+    + You're supposed to be able to use `-exec disassembly` in the "debugger console" but that did not work for me.
+      https://github.com/Microsoft/vscode-cpptools/issues/206#issuecomment-245776970
+    + Under Linux you could show disassembly with the external tool `nemiver`
+
+### Using cmake
 ```
 set(GCC_COVERAGE_COMPILE_FLAGS "-march=haswell")
 set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")
