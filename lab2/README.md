@@ -13,7 +13,7 @@ In the labs part, we will write & optimize source codes that use the Intel's arc
 
 We will use C++ because it is easier to access low-level instructions in this language as compared to Java. Indeed, Java runs on the JVM, which abstracts the actual instruction set of the physical machine that we want to use in the SIMD labs.
 
-In the end you'll submit ([here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)) your code for Ex4 "ImageManipulation".
+**In the end you'll submit ([here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)) your code for Ex4 "ImageManipulation".**
 
 ## Lab
 
