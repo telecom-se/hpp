@@ -1,4 +1,4 @@
-#include "MyImageManipulation.h"
+#include "MyImageManipulation.hpp"
 
 MyImageManipulation::MyImageManipulation() : ImageManipulation() {
 }

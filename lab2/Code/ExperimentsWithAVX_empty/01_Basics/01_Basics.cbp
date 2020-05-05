@@ -48,9 +48,6 @@
 			</Target>
 		</Build>
 		<Unit filename="FusedMultAdd.cpp" />
-		<Extensions>
-			<code_completion />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

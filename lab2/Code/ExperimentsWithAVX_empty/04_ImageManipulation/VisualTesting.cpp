@@ -1,6 +1,6 @@
-#include "MyImageManipulation.h"
+#include "MyImageManipulation.hpp"
 
-int main(int argc, char** argv)
+int main2(int argc, char** argv)
 {
     string srcImage  = "../big_image1.jpg";
     string destImage = "../big_image2.jpg";  /* MUST BE OF THE SAME SIZE!!!!*/

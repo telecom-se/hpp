@@ -5,7 +5,7 @@
 #include <ratio>
 #include <chrono>
 
-#include "ImageManipulation.h"
+#include "ImageManipulation.hpp"
 
 using namespace std::chrono;
 
