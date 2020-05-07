@@ -212,7 +212,7 @@ _Finally, it is obvious but better made explicit that teachers will take into ac
 There are some contraints:
 
 + Team of 3 to 4 persons (you choose your colleagues)
-+ You can share code using GitHub or GitLab (but please )
++ You can share code using GitHub or GitLab (but please add the teachers as members of the team)
 + The solution has to be a maven Java project
 + The hardware requirements are 4 CORES, 8Gb RAM (you cannot store all information into memory ...)
 
