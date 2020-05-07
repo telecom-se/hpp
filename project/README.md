@@ -207,6 +207,14 @@ We can provide git repositories if needed, just ask Guillaume or Christophe.
 
 _Finally, it is obvious but better made explicit that teachers will take into account for passing the difficulties raised by not being altogether in the same classroom._
 
+## Rules
+
+There are some contraints:
+
++ Team of 3 to 4 persons (you choose your colleagues)
++ You can share code using GitHub or GitLab (but please add the teachers as members of the team)
++ The solution has to be a maven Java project
++ The hardware requirements are 4 CORES, 8Gb RAM (you cannot store all information into memory ...)
 
 ## Group of students
 
