@@ -52,7 +52,7 @@ void timeFadeImages(ImageManipulation& manip) {
     displayTime("fadeToImageAVX", time);
 }
 
-int main(int argc, char** argv)
+int main2(int argc, char** argv)
 {
     string filename = "../big_image1.jpg";
     MyImageManipulation manip;
