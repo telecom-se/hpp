@@ -207,6 +207,11 @@ We can provide git repositories if needed, just ask Guillaume or Christophe.
 
 _Finally, it is obvious but better made explicit that teachers will take into account for passing the difficulties raised by not being altogether in the same classroom._
 
+## Data
+
+The data to play with can be found here:
+https://lufi.alolise.org/r/CXBqX4GrMo#LejcX86p3f+1QPdrBP1eDx3kQBiPciZaxEr7d3e58Oc=
+
 ## Rules
 
 There are some contraints:
