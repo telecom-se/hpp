@@ -20,3 +20,4 @@ resources/generator/[A-Z]*.csv
 hs_err_pid*
 
 **/.DS_STORE
+**/GeneratedFiles/*.{csv,zip}
