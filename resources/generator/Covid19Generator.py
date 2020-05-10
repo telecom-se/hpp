@@ -29,10 +29,26 @@ from Covid19Utils import Covid19Utils
 random.seed(42)
 
 # Total number of patients to generate
-MAX_PATIENTS = 12_000
+OUT_DIR = "GeneratedFiles/"
 
-# Names of the countries
-COUNTRIES = [ 'China', 'Italy', 'Spain', 'France', 'USA', 'Germany', 'Brazil', 'NKorea' ] 
+# Total number of patients to generate
+#MAX_PATIENTS = 1_000
+MAX_PATIENTS = 2_000_000
+
+# Stages of infection.
+## Influences:
+## - the % of most recent patents susceptible to be source of infection
+## - the probability to put the new patient in a given country
+#INFECTION_STAGES = [ 100, 1_000, 5_000, 10_000, 25_000 ]
+INFECTION_STAGES = [ 100, 1_000, 5_000, 10_000, 25_000 ]
+
+# Rate of patient for with the source of infection is 'unknown'
+#UNKNOWN_RATE = .20
+UNKNOWN_RATE = .20
+
+# Names of the countries MUST ALWAYS BE OF SIZE 8!!!
+#COUNTRIES = [ 'China', 'Italy', 'Spain', 'France', 'USA', 'Germany', 'Brazil', 'NKorea' ]
+COUNTRIES = [ 'Italy', 'Spain', 'France', 'China', 'USA', 'Germany', 'Brazil', 'NKorea' ]
 # Stores nb infections in each country
 infections_by_country = { k: 0 for k in COUNTRIES }
 # Stores prob of infections in each country
@@ -49,56 +65,55 @@ REASONS_PLACE = [ 'en ville', 'à la campagne', 'au marché', 'en grande surface
 
 def select_infectors(pid): # DONE2
     """Defines which % of the least recently infected patients are the source of the infection for new patients"""
-    if pid<100: 
+    if pid<INFECTION_STAGES[0]:
         infectors = 0  # all patients are infectious
-    elif pid<1_000:
+    elif pid<INFECTION_STAGES[1]:
         infectors = round(.25*pid)   # last 75% are infectious  ## 75<.<750  # TODO: BEWARE, THERE ARE DROPDOWNS IN THE NB OF INFECTORS DURING THE STEPPING :{
-    elif pid<5_000: 
+    elif pid<INFECTION_STAGES[2]:
         infectors = round(.5*pid)    # 50 last % are            ## 500<.<2500
-    elif pid<10_000:
+    elif pid<INFECTION_STAGES[3]:
         infectors = round(.75*pid)   # 25 last %                ## 1250<.<7500
     else:
         infectors = round(.90*pid)   # 10 last %                ## >1000
     return((infectors,pid))
 
-### TODO HERE: DOES NOT WORK
-EPSILON = .1
 def compute_country_probas(pid, infections_by_country): # DONE3
     """At the begining: try to simulate actual countries
     Then, the more a country already has patients, the more a new patient is supposed to be added in its stats."""
     probas = { k: 0 for k in COUNTRIES }
-    if pid<100:
-        probas['China'] = 1.
-    elif pid<1_000:
-        probas['China'] = .75
-        probas['Italy'] = .25
-    elif pid<5_000:
-        probas['China'] = .50
-        probas['Italy'] = .50
-    elif pid<10_000:  # TODO: ensure sum(probas)=1.
-        probas['China']  = .10
-        probas['Italy']  = .50
-        probas['Spain']  = .25
-        probas['France'] = .15
-    elif pid<25_000:
-        probas['China']  = .05
-        probas['Italy']  = .325
-        probas['Spain']  = .325
-        probas['France'] = .20
-        probas['USA']     = .03
-        probas['Germany'] = .03
-        probas['Brazil']  = .03
-        probas['NKorea']  = .01
-    else:
-        probas['China']  = .01
-        probas['Italy']  = .30
-        probas['Spain']  = .30
-        probas['France'] = .25
-        probas['USA']     = .07
-        probas['Germany'] = .03
-        probas['Brazil']  = .03
-        probas['NKorea']  = .01
-### TOTALLY STUPID: I generate new proba based on what I have generated previously (=== OLD PROBAs!!!!)
+    if pid<INFECTION_STAGES[0]:
+        probas[COUNTRIES[0]] = 1.
+    elif pid<INFECTION_STAGES[1]:
+        probas[COUNTRIES[0]] = .75
+        probas[COUNTRIES[1]] = .25
+    elif pid<INFECTION_STAGES[2]:
+        probas[COUNTRIES[0]] = .50
+        probas[COUNTRIES[1]] = .25
+        probas[COUNTRIES[2]] = .25
+    elif pid<INFECTION_STAGES[3]:  # TODO: ensure sum(probas)=1.
+        probas[COUNTRIES[0]] = .25
+        probas[COUNTRIES[1]] = .30
+        probas[COUNTRIES[2]] = .30
+        probas[COUNTRIES[3]] = .15
+    elif pid<INFECTION_STAGES[4]:
+        probas[COUNTRIES[0]]  = .05
+        probas[COUNTRIES[1]]  = .325
+        probas[COUNTRIES[2]]  = .325
+        probas[COUNTRIES[3]]  = .20
+        probas[COUNTRIES[4]]  = .03
+        probas[COUNTRIES[5]]  = .03
+        probas[COUNTRIES[6]]  = .03
+        probas[COUNTRIES[7]]  = .01
+    else: # for very large files (more the INFECTION_STAGES[4] patients)
+        probas[COUNTRIES[0]]  = .01
+        probas[COUNTRIES[1]]  = .30
+        probas[COUNTRIES[2]]  = .30
+        probas[COUNTRIES[3]]  = .25
+        probas[COUNTRIES[4]]  = .07
+        probas[COUNTRIES[5]]  = .03
+        probas[COUNTRIES[6]]  = .03
+        probas[COUNTRIES[7]]  = .01
+### OLD TOTALLY STUPID CODE: I generated new proba based on what I have generated previously (=== OLD PROBAs!!!!)
 #    total_infections = make_changes
 #    probas = { k: v/total_infections for k, v in sorted(infections_by_country.items(), key=lambda item: item[1]) }
     return(probas)
@@ -125,7 +140,10 @@ class Patient:
         self.diag_ts = Covid19Utils.datetime2epoch(diag_time) # converts in long (date since epoch)
         # more chances to be infected by recent patients (id is also the number of patients generated until now :) )
         first, last = select_infectors(pid);  # DONE2
-        self.cont_by = random.randint(first, last)
+        if (random.randint(0,99)/100.<UNKNOWN_RATE):         # for UNKNOWN_RATE patients, source is known
+            self.cont_by = 'unknown'
+        else:
+            self.cont_by = str(random.randint(first, last))  # for the others, it's within the last infected, depending on INFECTION_STAGE
         self.cont_reason = REASONS_TYPE[random.randint(0, len(REASONS_TYPE)-1)] + \
                            " avec " + REASONS_WITH[random.randint(0, len(REASONS_WITH)-1)] + " " + \
                            REASONS_PLACE[random.randint(0, len(REASONS_PLACE)-1)]
@@ -144,31 +162,33 @@ class Patient:
 timesequence = datetime.datetime(2020,1,1, 0,0,0,0, pytz.utc)
 # Simulates exponential growth: The more patients there are, the more frequent are the infections (<=>lower is the time_offset between 2 subsequent patients)
 time_offset = 24*3600 # initial time-to-next-infection (pid0->pid1) : 24hrs
-# When to make changes: decrement the time_offset & recompute countries infection probas 
+# When to make changes: decrement the time_offset & recompute countries infection probas
 make_changes = 100
 
 DEBUG = False
+#DEBUG = True
 if __name__ == "__main__":
     # Creates country files
     country_files = {}
     for c in COUNTRIES:
-        country_files[c] = open(c+".csv", "w")
-
-    # Initialize country probas
-    probas_by_country = compute_country_probas(0, infections_by_country)
+        country_files[c] = open(OUT_DIR+"/"+c+".csv", "w")
 
     # Generate patients
     for patient_id in range(0, MAX_PATIENTS):
+        # Initialize country probas
+        probas_by_country = compute_country_probas(patient_id, infections_by_country)
+        if DEBUG: print("> PROBAS_BY_COUNTRY="+str(probas_by_country))
+
         # Generate a patient
         patient = Patient(patient_id, timesequence)
-    
+
         # Select a country
         country = Covid19Utils.biased_random(probas_by_country)  # DONE3
         if DEBUG: print("> Adding new patient " + str(patient) + " into " + country + " file...")
         # actually write the patient data in the correct CSV file
         country_files[country].write(patient.__csv__());
         infections_by_country[country] += 1
-        
+
         # Prepare next iteration
         timesequence = Covid19Utils.epoch2datetime(Covid19Utils.datetime2epoch(timesequence)+(time_offset))
         if (patient_id % make_changes == 0):
