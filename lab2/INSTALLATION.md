@@ -100,7 +100,7 @@ Whatever the tools you have installed, you'll need to configure:
 
 I'll try below to provide the instruction for each tool.
 
-# Compilation Manuelle
+# Manual Compilation
 
 For reference, I give you below the format of the commandline that you
 would have to write if you would compile manually, as it provides the
