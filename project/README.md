@@ -236,3 +236,6 @@ May, 25th, 2020
 | 1      |  VERON - OLLE - ANASTASSIADES - SOLANE   |  | |
 | 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    |  | |
 | 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  |  | |
+| 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  |  | |
+| 5      |  NEDDAY - BOUHRIZ - SOLTANA  |  | |
+
