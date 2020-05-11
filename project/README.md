@@ -56,12 +56,12 @@ The input format for a country is:
 At any new recorded cases, we want to output the top-3 longest contagious chain as follows:
 
 ```
-top1_country_origin, top1_chain_root_person_id; top2_country_origin, top2_chain_root_person_id; top3_country_origin, top3_chain_root_person_id
+top1_country_origin, top1_chain_root_person_id, top1_chain_score; top2_country_origin, top2_chain_root_person_id, top2_chain_score; top3_country_origin, top3_chain_root_person_id, top3_chain_score
 
 ```
 
-Where `topx_country_origin` is the country code where this chain started, and `top1_chain_root_person_id` is the root of that contagious chain (so that we can later reconstruct the chain).
-The actual score of the contagious chain, as well as the content of that chain, is not supposed to be part of the output.
+Where `topx_country_origin` is the country code where this chain started, and `topx_chain_root_person_id` is the root of that contagious chain (so that we can later reconstruct the chain), and `topx_chain_score` is the score of that chain.
+The actual content of that chain is not supposed to be part of the output.
 
 
 ### An example
@@ -100,7 +100,7 @@ What should happens is what follows:
 The program parses each file concurrently. The first event to be processed is the first from France (oldest one - case `person_id` 1)
 After this event is processed, the output file contains:
 ```
-France, 1
+France, 1, 10
 ```
 
 2- Process event second oldest event:
@@ -109,8 +109,8 @@ It is linked to the chain started by person Cerise Dupont, which is less than 7 
 no other chain exists.
 Therefore, after this event is processed, the output file contains:
 ```
-France, 1 <-- that was the previous output that we still have in the output file
-France, 1 <-- this is what we generate as top 10
+France, 1, 10 <-- that was the previous output that we still have in the output file
+France, 1, 20 <-- this is what we generate as top 3
 ```
 
 3- Process next event:
@@ -118,10 +118,13 @@ The program pops the second event from France. It is an event being the root of 
 The previous chain still got a score of importance of `20`, and the new one starting with user 2 has the starting score of `10`.
 Therefore, after this event is processed, the output file contains:
 ```
-France, 1 <-- that was the previous output that we still have in the output file (event 1)
-France, 1 <-- that was the previous output that we still have in the output file (event 2)
-France, 1; France, 2 <-- this is what we generate as top 10 for this event
+France, 1, 10 <-- that was the previous output that we still have in the output file (event 1)
+France, 1, 20 <-- that was the previous output that we still have in the output file (event 2)
+France, 1, 20; France, 2, 10 <-- this is what we generate as top 3 for this event
 ```
+
+Meaning : a first chain starting with user `1` and score `20`, and another chain starting at user with id `2`of score `10`.
+
 
 4- Process next event
 This is the second event from Italy.
@@ -130,10 +133,10 @@ All three previous event falls into the after 7 days and before 14 days case: th
 As a consequence, chain starting by `France, 1` got a score of 8, the chain starting by `France, 2` got a score of 4.
 Therefore, after this event is processed, the output file contains:
 ```
-France, 1
-France, 1
-France, 1; France, 2
-Italy, 4; France, 1; France, 2 <-- this is what we generate as top 10 for this event
+France, 1, 10
+France, 1, 20
+France, 1, 20; France, 2, 10
+Italy, 4, 10; France, 1, 8; France, 2, 4 <-- this is what we generate as top 3 for this event
 ```
 
 5- Process next event
@@ -142,11 +145,11 @@ Its timestamp is `04/16/2020 @ 4:00pm (UTC)`.
 All previous cases falls to score 0. Only that case remains.
 Therefore, after this event is processed, the output file contains:
 ```
-France, 1
-France, 1
-France, 1; France, 2
-Italy, 4; France, 1; France, 2
-Spain, 1<-- this is what we generate as top 10 for this event
+France, 1, 10
+France, 1, 20
+France, 1, 20; France, 2, 10
+Italy, 4, 10; France, 1, 8; France, 2, 4
+Spain, 1, 10<-- this is what we generate as top 3 for this event
 ```
 
 6- Process last event
@@ -157,12 +160,12 @@ This event happens three days after the last Italian case therefore they both re
 When there is a draw, the oldest chain comes first (illustration of Rule 6).
 Therefore, after this event is processed, the output file contains:
 ```
-France, 1
-France, 1
-France, 1; France, 2
-Italy, 4; France, 1; France, 2
-Spain, 1
-Spain, 1; Italy 3<-- this is what we generate as top 10 for this event
+France, 1, 10
+France, 1, 20
+France, 1, 20; France, 2, 10
+Italy, 4, 10; France, 1, 8; France, 2, 4
+Spain, 1, 10
+Spain, 1, 10; Italy 3, 10<-- this is what we generate as top 3 for this event
 ```
 
 You can see that it is not trivial to be sure that your program works as expected.
