@@ -239,4 +239,5 @@ May, 25th, 2020
 | 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  |  | |
 | 5      |  NEDDAY - BOUHRIZ - SOLTANA  |  | |
 | 6      |  ZDRADA - CALERO - CAGLAR  |  | |
+| 7      |  DROGO - HOUDELET  |  | |
 
