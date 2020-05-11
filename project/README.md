@@ -56,12 +56,12 @@ The input format for a country is:
 At any new recorded cases, we want to output the top-3 longest contagious chain as follows:
 
 ```
-top1_country_origin, top1_chain_root_person_id; top2_country_origin, top2_chain_root_person_id; top3_country_origin, top3_chain_root_person_id
+top1_country_origin, top1_chain_root_person_id, top1_chain_score; top2_country_origin, top2_chain_root_person_id, top2_chain_score; top3_country_origin, top3_chain_root_person_id, top3_chain_score
 
 ```
 
-Where `topx_country_origin` is the country code where this chain started, and `top1_chain_root_person_id` is the root of that contagious chain (so that we can later reconstruct the chain).
-The actual score of the contagious chain, as well as the content of that chain, is not supposed to be part of the output.
+Where `topx_country_origin` is the country code where this chain started, and `topx_chain_root_person_id` is the root of that contagious chain (so that we can later reconstruct the chain), and `topx_chain_score` is the score of that chain.
+The actual content of that chain is not supposed to be part of the output.
 
 
 ### An example
@@ -69,11 +69,11 @@ The actual score of the contagious chain, as well as the content of that chain, 
 Consider the *French* dataset as follows:
 ```
 1, "Cerise", "Dupond", "21/01/1963", 1584540000, "unknown"
-2, "Hervé", "Renoir", "11/03/1971", 1584540000, "unknown"
+2, "Hervé", "Renoir", "11/03/1971", 1584712800, "unknown"
 ```
-Notes:
-1584540000: 03/18/2020 @ 2:00pm (UTC)
-1584712800: 03/20/2020 @ 2:00pm (UTC)
+Notes:  
+1584540000: 03/18/2020 @ 2:00pm (UTC)  
+1584712800: 03/20/2020 @ 2:00pm (UTC)  
 
 Consider the *Italian* dataset as follows:
 ```
@@ -81,18 +81,18 @@ Consider the *Italian* dataset as follows:
 4, "Marco", "Guili", "06/01/1956", 1585324800, "unknown"
 5, "Stella", "Capelli", "21/01/1949", 1587312000, "4"
 ```
-Notes:
-1584558000: 03/19/2020 @ 7:00pm (UTC)
-1585324800: 03/27/2020 @ 4:00pm (UTC)
-1587312000: 04/19/2020 @ 4:00pm (UTC)
+Notes:  
+1584558000: 03/19/2020 @ 7:00pm (UTC)  
+1585324800: 03/27/2020 @ 4:00pm (UTC)  
+1587312000: 04/19/2020 @ 4:00pm (UTC)  
 
 
 Consider the *Spanish* dataset as follows:
 ```
 6, "Ricardo", "Rodriguez", "03/10/1964", 1587052800, "4"
 ```
-Notes:
-1587052800: 04/16/2020 @ 4:00pm (UTC)
+Notes:  
+1587052800: 04/16/2020 @ 4:00pm (UTC)  
 
 What should happens is what follows:
 
@@ -100,7 +100,7 @@ What should happens is what follows:
 The program parses each file concurrently. The first event to be processed is the first from France (oldest one - case `person_id` 1)
 After this event is processed, the output file contains:
 ```
-France, 1
+France, 1, 10
 ```
 
 2- Process event second oldest event:
@@ -109,8 +109,8 @@ It is linked to the chain started by person Cerise Dupont, which is less than 7 
 no other chain exists.
 Therefore, after this event is processed, the output file contains:
 ```
-France, 1 <-- that was the previous output that we still have in the output file
-France, 1 <-- this is what we generate as top 10
+France, 1, 10 <-- that was the previous output that we still have in the output file
+France, 1, 20 <-- this is what we generate as top 3
 ```
 
 3- Process next event:
@@ -118,10 +118,13 @@ The program pops the second event from France. It is an event being the root of 
 The previous chain still got a score of importance of `20`, and the new one starting with user 2 has the starting score of `10`.
 Therefore, after this event is processed, the output file contains:
 ```
-France, 1 <-- that was the previous output that we still have in the output file (event 1)
-France, 1 <-- that was the previous output that we still have in the output file (event 2)
-France, 1; France, 2 <-- this is what we generate as top 10 for this event
+France, 1, 10 <-- that was the previous output that we still have in the output file (event 1)
+France, 1, 20 <-- that was the previous output that we still have in the output file (event 2)
+France, 1, 20; France, 2, 10 <-- this is what we generate as top 3 for this event
 ```
+
+Meaning : a first chain starting with user `1` and score `20`, and another chain starting at user with id `2`of score `10`.
+
 
 4- Process next event
 This is the second event from Italy.
@@ -130,10 +133,10 @@ All three previous event falls into the after 7 days and before 14 days case: th
 As a consequence, chain starting by `France, 1` got a score of 8, the chain starting by `France, 2` got a score of 4.
 Therefore, after this event is processed, the output file contains:
 ```
-France, 1
-France, 1
-France, 1; France, 2
-Italy, 2; France, 1; France, 2 <-- this is what we generate as top 10 for this event
+France, 1, 10
+France, 1, 20
+France, 1, 20; France, 2, 10
+Italy, 4, 10; France, 1, 8; France, 2, 4 <-- this is what we generate as top 3 for this event
 ```
 
 5- Process next event
@@ -142,14 +145,14 @@ Its timestamp is `04/16/2020 @ 4:00pm (UTC)`.
 All previous cases falls to score 0. Only that case remains.
 Therefore, after this event is processed, the output file contains:
 ```
-France, 1
-France, 1
-France, 1; France, 2
-Italy, 2; France, 1; France, 2
-Spain, 1<-- this is what we generate as top 10 for this event
+France, 1, 10
+France, 1, 20
+France, 1, 20; France, 2, 10
+Italy, 4, 10; France, 1, 8; France, 2, 4
+Spain, 1, 10<-- this is what we generate as top 3 for this event
 ```
 
-5- Process last event
+6- Process last event
 We have next to consider the last event (3rd case in Italy).
 That event is supposed to be contamination from `person_id` 4, which no longer concern an active chain of contaminations.
 Consequently, it shall be considered as a root case for a new contamination chain (illustration of Rule 4).
@@ -157,12 +160,12 @@ This event happens three days after the last Italian case therefore they both re
 When there is a draw, the oldest chain comes first (illustration of Rule 6).
 Therefore, after this event is processed, the output file contains:
 ```
-France, 1
-France, 1
-France, 1; France, 2
-Italy, 2; France, 1; France, 2
-Spain, 1
-Spain, 1; Italy 3<-- this is what we generate as top 10 for this event
+France, 1, 10
+France, 1, 20
+France, 1, 20; France, 2, 10
+Italy, 4, 10; France, 1, 8; France, 2, 4
+Spain, 1, 10
+Spain, 1, 10; Italy 3, 10<-- this is what we generate as top 3 for this event
 ```
 
 You can see that it is not trivial to be sure that your program works as expected.
@@ -174,30 +177,35 @@ In such cases you would be optimising an algorithm that would be useless!
 ## Additional rules and edge cases
 
 Some rules to make it more accessible:
-`Rule 0` - Team of 3 persons and the delivery must be a maven Java project with JVM compatibility set to version 8.
-`Rule 1` - It is **FORBIDDEN** to make a program that will first read all files from all countries, store all the information in memory, and then starts to process it. We do not know in advance the number of cases, it is likely that it may not fits into memory (the real data contains many more information about cases, and as the number of cases follow an exponential growth, we have to make sure that our program will not easily run out of memory).
-`Rule 2` - Consequently, your program is not allowed to run more than 5 threads (using all 5 threads is part of the ultimate solution: it is just a upper bound given in the project), and you are not allowed to use more than 4Gb of RAM.
-`Rule 3` - We consider that we can contract the virus from a person from another country (virus does not stop at frontiers...). So be careful if you are thinking of processing each country in its own thread (which is not impossible but required extra exchange of read-only information between threads).
-`Rule 4` - If a chain of contamination reach the score 0, it is considered ended (regardless if other people are later reported to be contaminated by someone in this chain - this allows us to free up, if needed, that chain). Ultimately, if a new case appears to be connected to a case from a chain of contamination of score 0, the new case has to be considered as the root of another new chain of contamination.
-`Rule 5` - In input files, all string date are considered UTC time.
-`Rule 6` - In case f a draw of importance score between two chain of contamination, the oldest one has priority (arbitrary choice, everyone has to follow that one).
+`Rule 0` - Team of 3 persons and the delivery must be a maven Java project with JVM compatibility set to version 8.  
+
+`Rule 1` - It is **FORBIDDEN** to make a program that will first read all files from all countries, store all the information in memory, and then starts to process it. We do not know in advance the number of cases, it is likely that it may not fits into memory (the real data contains many more information about cases, and as the number of cases follow an exponential growth, we have to make sure that our program will not easily run out of memory).  
+
+`Rule 2` - Consequently, your program is not allowed to run more than 5 threads (using all 5 threads is part of the ultimate solution: it is just a upper bound given in the project), and you are not allowed to use more than 4Gb of RAM.  
+
+`Rule 3` - We consider that we can contract the virus from a person from another country (virus does not stop at frontiers...). So be careful if you are thinking of processing each country in its own thread (which is not impossible but required extra exchange of read-only information between threads).  
+
+`Rule 4` - If a chain of contamination reach the score 0, it is considered ended (regardless if other people are later reported to be contaminated by someone in this chain - this allows us to free up, if needed, that chain). Ultimately, if a new case appears to be connected to a case from a chain of contamination of score 0, the new case has to be considered as the root of another new chain of contamination.  
+
+`Rule 5` - In input files, all string date are considered UTC time.  
+
+`Rule 6` - In case of a draw of importance score between two chain of contamination, the oldest one has priority (arbitrary choice, everyone has to follow that one).  
 
 
 
 ## Your job
 
-1- Write down (write words!) more unit tests. This will give you a better understanding of the problem, as well as a larger tests set for later unit testing.
-2- Design (draw circles, squares, patatoïds...!) an architecture for your program
-3- Implement your unit test set (our tests + yours from step 1). In practice: Given three input files, check that the generated output file is the same as the one that is expected.
-4- Implement (write code!) a first naïce solution but one that pass all tests (make something simple, but which works and build from that)
-5- Optimize your code: devise solutions to make your code faster while still satisfying the unit tests. Observer, benchmark, think, iterate, reimplement (rinse and repeat)._Hint: multithreading and choices of data structures should be your primary source of optimisation at first._
+1- Write down (write words!) more unit tests. This will give you a better understanding of the problem, as well as a larger tests set for later unit testing.  
+2- Design (draw circles, squares, patatoïds...!) an architecture for your program.  
+3- Implement your unit test set (our tests + yours from step 1). In practice: Given three input files, check that the generated output file is the same as the one that is expected.  
+4- Implement (write code!) a first naïce solution but one that pass all tests (make something simple, but which works and build from that). 
+5- Optimize your code: devise solutions to make your code faster while still satisfying the unit tests. Observer, benchmark, think, iterate, reimplement (rinse and repeat)._Hint: multithreading and choices of data structures should be your primary source of optimisation at first._  
 
 
 ## What you will deliver
 
-- A- Documentation on *your* additional unit test set (4pts)
-- B- Slides to present your naive program architecture, and than what you did to improve it, report performances of your program (4pts)
-- C- Demonstration of your program and browsing your source code at defense day (program architecture in practice, comments, conception, clarity, implementation of unit tests set) + including questions/answer from teachers (12pt)
+- A- Documentation on *your* additional unit test set (4pts). 
+- B- Demonstration of your program and browsing your source code at defense day (program architecture in practice, comments, conception, clarity, implementation of unit tests set) + including questions/answer from teachers (16pt)
 
 As always, we want FIRST a program that we are sure to be correct through unit testing, and only SECOND optimizations.
 A project that is faster but for which we are not sure that all cases works fine (including edges cases) will be regarded lower than a slower solution but with maximum functionality coverage.
@@ -233,12 +241,11 @@ May, 25th, 2020
 
 | Grp nb | List of students  | Defence | How to get the code |
 | ------ | ------------------ | ----------------- | ------- |
-| 1      |  x / y / z   |  | |
-| 2      |  x / y / z    |  | |
-| 3      |  x / y / z  |  | |
-| 4      |  x / y / z  |  | |
-| 5      |  x / y / z   |  | |
-| 6      |  x / y / z   |  | |
-| 7      |  x / y / z   |  | |
-| 8      |  x / y / z  |  | |
-| 9      |  x / y / z     |  | |
+| 1      |  VERON - OLLE - ANASTASSIADES - SOLANE   |  | |
+| 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    |  | |
+| 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  |  | |
+| 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  |  | |
+| 5      |  NEDDAY - BOUHRIZ - SOLTANA - ABOUZAÏD  |  | |
+| 6      |  ZDRADA - CALERO - CAGLAR  |  | |
+| 7      |  DROGO - HOUDELET  |  | |
+
