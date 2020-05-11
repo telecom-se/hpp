@@ -192,18 +192,17 @@ Some rules to make it more accessible:
 
 ## Your job
 
-1- Write down (write words!) more unit tests. This will give you a better understanding of the problem, as well as a larger tests set for later unit testing.
-2- Design (draw circles, squares, patatoïds...!) an architecture for your program
-3- Implement your unit test set (our tests + yours from step 1). In practice: Given three input files, check that the generated output file is the same as the one that is expected.
-4- Implement (write code!) a first naïce solution but one that pass all tests (make something simple, but which works and build from that)
-5- Optimize your code: devise solutions to make your code faster while still satisfying the unit tests. Observer, benchmark, think, iterate, reimplement (rinse and repeat)._Hint: multithreading and choices of data structures should be your primary source of optimisation at first._
+1- Write down (write words!) more unit tests. This will give you a better understanding of the problem, as well as a larger tests set for later unit testing.  
+2- Design (draw circles, squares, patatoïds...!) an architecture for your program.  
+3- Implement your unit test set (our tests + yours from step 1). In practice: Given three input files, check that the generated output file is the same as the one that is expected.  
+4- Implement (write code!) a first naïce solution but one that pass all tests (make something simple, but which works and build from that). 
+5- Optimize your code: devise solutions to make your code faster while still satisfying the unit tests. Observer, benchmark, think, iterate, reimplement (rinse and repeat)._Hint: multithreading and choices of data structures should be your primary source of optimisation at first._  
 
 
 ## What you will deliver
 
-- A- Documentation on *your* additional unit test set (4pts)
-- B- Slides to present your naive program architecture, and than what you did to improve it, report performances of your program (4pts)
-- C- Demonstration of your program and browsing your source code at defense day (program architecture in practice, comments, conception, clarity, implementation of unit tests set) + including questions/answer from teachers (12pt)
+- A- Documentation on *your* additional unit test set (4pts). 
+- B- Demonstration of your program and browsing your source code at defense day (program architecture in practice, comments, conception, clarity, implementation of unit tests set) + including questions/answer from teachers (16pt)
 
 As always, we want FIRST a program that we are sure to be correct through unit testing, and only SECOND optimizations.
 A project that is faster but for which we are not sure that all cases works fine (including edges cases) will be regarded lower than a slower solution but with maximum functionality coverage.
