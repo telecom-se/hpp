@@ -238,4 +238,5 @@ May, 25th, 2020
 | 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  |  | |
 | 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  |  | |
 | 5      |  NEDDAY - BOUHRIZ - SOLTANA  |  | |
+| 6      |  ZDRADA - CALERO - CAGLAR  |  | |
 
