@@ -175,11 +175,17 @@ In such cases you would be optimising an algorithm that would be useless!
 
 Some rules to make it more accessible:
 `Rule 0` - Team of 3 persons and the delivery must be a maven Java project with JVM compatibility set to version 8.  
+
 `Rule 1` - It is **FORBIDDEN** to make a program that will first read all files from all countries, store all the information in memory, and then starts to process it. We do not know in advance the number of cases, it is likely that it may not fits into memory (the real data contains many more information about cases, and as the number of cases follow an exponential growth, we have to make sure that our program will not easily run out of memory).  
+
 `Rule 2` - Consequently, your program is not allowed to run more than 5 threads (using all 5 threads is part of the ultimate solution: it is just a upper bound given in the project), and you are not allowed to use more than 4Gb of RAM.  
+
 `Rule 3` - We consider that we can contract the virus from a person from another country (virus does not stop at frontiers...). So be careful if you are thinking of processing each country in its own thread (which is not impossible but required extra exchange of read-only information between threads).  
+
 `Rule 4` - If a chain of contamination reach the score 0, it is considered ended (regardless if other people are later reported to be contaminated by someone in this chain - this allows us to free up, if needed, that chain). Ultimately, if a new case appears to be connected to a case from a chain of contamination of score 0, the new case has to be considered as the root of another new chain of contamination.  
+
 `Rule 5` - In input files, all string date are considered UTC time.  
+
 `Rule 6` - In case f a draw of importance score between two chain of contamination, the oldest one has priority (arbitrary choice, everyone has to follow that one).  
 
 
