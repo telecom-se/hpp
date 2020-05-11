@@ -186,7 +186,7 @@ Some rules to make it more accessible:
 
 `Rule 5` - In input files, all string date are considered UTC time.  
 
-`Rule 6` - In case f a draw of importance score between two chain of contamination, the oldest one has priority (arbitrary choice, everyone has to follow that one).  
+`Rule 6` - In case of a draw of importance score between two chain of contamination, the oldest one has priority (arbitrary choice, everyone has to follow that one).  
 
 
 
