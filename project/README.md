@@ -235,10 +235,4 @@ May, 25th, 2020
 | ------ | ------------------ | ----------------- | ------- |
 | 1      |  VERON - OLLE - ANASTASSIADES - SOLANE   |  | |
 | 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    |  | |
-| 3      |  x / y / z  |  | |
-| 4      |  x / y / z  |  | |
-| 5      |  x / y / z   |  | |
-| 6      |  x / y / z   |  | |
-| 7      |  x / y / z   |  | |
-| 8      |  x / y / z  |  | |
-| 9      |  x / y / z     |  | |
+| 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  |  | |
