@@ -133,7 +133,7 @@ Therefore, after this event is processed, the output file contains:
 France, 1
 France, 1
 France, 1; France, 2
-Italy, 2; France, 1; France, 2 <-- this is what we generate as top 10 for this event
+Italy, 4; France, 1; France, 2 <-- this is what we generate as top 10 for this event
 ```
 
 5- Process next event
@@ -145,11 +145,11 @@ Therefore, after this event is processed, the output file contains:
 France, 1
 France, 1
 France, 1; France, 2
-Italy, 2; France, 1; France, 2
+Italy, 4; France, 1; France, 2
 Spain, 1<-- this is what we generate as top 10 for this event
 ```
 
-5- Process last event
+6- Process last event
 We have next to consider the last event (3rd case in Italy).
 That event is supposed to be contamination from `person_id` 4, which no longer concern an active chain of contaminations.
 Consequently, it shall be considered as a root case for a new contamination chain (illustration of Rule 4).
@@ -160,7 +160,7 @@ Therefore, after this event is processed, the output file contains:
 France, 1
 France, 1
 France, 1; France, 2
-Italy, 2; France, 1; France, 2
+Italy, 4; France, 1; France, 2
 Spain, 1
 Spain, 1; Italy 3<-- this is what we generate as top 10 for this event
 ```
