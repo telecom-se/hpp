@@ -69,11 +69,11 @@ The actual score of the contagious chain, as well as the content of that chain, 
 Consider the *French* dataset as follows:
 ```
 1, "Cerise", "Dupond", "21/01/1963", 1584540000, "unknown"
-2, "Hervé", "Renoir", "11/03/1971", 1584540000, "unknown"
+2, "Hervé", "Renoir", "11/03/1971", 1584712800, "unknown"
 ```
-Notes:
-1584540000: 03/18/2020 @ 2:00pm (UTC)
-1584712800: 03/20/2020 @ 2:00pm (UTC)
+Notes:  
+1584540000: 03/18/2020 @ 2:00pm (UTC)  
+1584712800: 03/20/2020 @ 2:00pm (UTC)  
 
 Consider the *Italian* dataset as follows:
 ```
@@ -81,18 +81,18 @@ Consider the *Italian* dataset as follows:
 4, "Marco", "Guili", "06/01/1956", 1585324800, "unknown"
 5, "Stella", "Capelli", "21/01/1949", 1587312000, "4"
 ```
-Notes:
-1584558000: 03/19/2020 @ 7:00pm (UTC)
-1585324800: 03/27/2020 @ 4:00pm (UTC)
-1587312000: 04/19/2020 @ 4:00pm (UTC)
+Notes:  
+1584558000: 03/19/2020 @ 7:00pm (UTC)  
+1585324800: 03/27/2020 @ 4:00pm (UTC)  
+1587312000: 04/19/2020 @ 4:00pm (UTC)  
 
 
 Consider the *Spanish* dataset as follows:
 ```
 6, "Ricardo", "Rodriguez", "03/10/1964", 1587052800, "4"
 ```
-Notes:
-1587052800: 04/16/2020 @ 4:00pm (UTC)
+Notes:  
+1587052800: 04/16/2020 @ 4:00pm (UTC)  
 
 What should happens is what follows:
 
