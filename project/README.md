@@ -237,7 +237,7 @@ May, 25th, 2020
 | 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    |  | |
 | 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  |  | |
 | 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  |  | |
-| 5      |  NEDDAY - BOUHRIZ - SOLTANA  |  | |
+| 5      |  NEDDAY - BOUHRIZ - SOLTANA - ABOUZAÏD  |  | |
 | 6      |  ZDRADA - CALERO - CAGLAR  |  | |
 | 7      |  DROGO - HOUDELET  |  | |
 
