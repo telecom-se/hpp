@@ -234,7 +234,7 @@ May, 25th, 2020
 | Grp nb | List of students  | Defence | How to get the code |
 | ------ | ------------------ | ----------------- | ------- |
 | 1      |  VERON - OLLE - ANASTASSIADES - SOLANE   |  | |
-| 2      |  x / y / z    |  | |
+| 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    |  | |
 | 3      |  x / y / z  |  | |
 | 4      |  x / y / z  |  | |
 | 5      |  x / y / z   |  | |
