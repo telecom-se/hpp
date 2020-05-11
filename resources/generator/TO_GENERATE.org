@@ -3,6 +3,26 @@
 
 NOT DONE: That means that for a person p , we known that either that person contracted the virus from p_j where j in the population of the country reporting contamination cases.
 
+==== NEW CODE (> 2020_05_11)
+
+* 20 lines
+** COUNTRIES = [ 'Italy', 'Spain', 'France' ]
+** MAX_PATIENTS = 20
+** UNKNOWN_RATE = .20
+
+* 5000 lines
+** COUNTRIES = [ 'Italy', 'Spain', 'France' ]
+** MAX_PATIENTS = 5_000
+** UNKNOWN_RATE = .20
+
+* 1 000 000 lines
+** COUNTRIES = [ 'Italy', 'Spain', 'France' ]
+** MAX_PATIENTS = 1_000_000
+** UNKNOWN_RATE = .20
+
+
+=== OLD CODE (< 2020_05_11)
+
 * 20 lines
 ** COUNTRIES = [ 'Italy', 'Spain', 'France', 'China', 'USA', 'Germany', 'Brazil', 'NKorea' ]
 ** MAX_PATIENTS = 20
