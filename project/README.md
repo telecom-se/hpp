@@ -219,7 +219,8 @@ _Finally, it is obvious but better made explicit that teachers will take into ac
 
 The data to play with can be found here:
 [](https://lufi.alolise.org/r/CXBqX4GrMo#LejcX86p3f+1QPdrBP1eDx3kQBiPciZaxEr7d3e58Oc=)
-https://lufi.alolise.org/r/Dw_6JjCk6V#MDrCBp9M+j6SElYhIqi9ziuvIA1uSTb1wWXS1KL0w2M=
+[](https://lufi.alolise.org/r/Dw_6JjCk6V#MDrCBp9M+j6SElYhIqi9ziuvIA1uSTb1wWXS1KL0w2M=)
+[data.zip](./data.zip)
 
 ## Rules
 
