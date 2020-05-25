@@ -244,7 +244,7 @@ May, 25th, 2020
 | Grp nb | List of students  | Defence | How to get the code |
 | ------ | ------------------ | ----------------- | ------- |
 | 1      |  VERON - OLLE - ANASTASSIADES - SOLANE   | 9h30 | https://gitlab.com/ApoSkunz/project_hpp |
-| 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    | 9h50 | |
+| 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    | 9h50 | https://github.com/raptorouz/HPP-Project/ |
 | 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  | 10h10 | |
 | 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  | 10h30 | |
 | 5      |  NEDDAY - BOUHRIZ - SOLTANA - ABOUZAÏD  | 10h50 | |
