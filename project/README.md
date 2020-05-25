@@ -247,7 +247,7 @@ May, 25th, 2020
 | 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    | 9h50 | https://github.com/raptorouz/HPP-Project/ |
 | 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  | 10h10 | https://gitlab.com/DarkInesis/hpp (master (basic) et optimzedversion) |
 | 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  | 10h30 | https://gitlab.com/Flammespectrum/hpp-project |
-| 5      |  NEDDAY - BOUHRIZ - SOLTANA - ABOUZAÏD  | 10h50 | |
+| 5      |  NEDDAY - BOUHRIZ - SOLTANA - ABOUZAÏD  | 10h50 | https://github.com/lailaab97/project-HPP |
 | 6      |  ZDRADA - CALERO - CAGLAR  | 11h10 | |
 | 7      |  DROGO - HOUDELET  | 11h30 | |
 
