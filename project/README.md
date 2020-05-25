@@ -243,11 +243,11 @@ May, 25th, 2020
 
 | Grp nb | List of students  | Defence | How to get the code |
 | ------ | ------------------ | ----------------- | ------- |
-| 1      |  VERON - OLLE - ANASTASSIADES - SOLANE   |  | |
-| 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    |  | |
-| 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  |  | |
-| 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  |  | |
-| 5      |  NEDDAY - BOUHRIZ - SOLTANA - ABOUZAÏD  |  | |
-| 6      |  ZDRADA - CALERO - CAGLAR  |  | |
-| 7      |  DROGO - HOUDELET  |  | |
+| 1      |  VERON - OLLE - ANASTASSIADES - SOLANE   | 9h30 | |
+| 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    | 9h50 | |
+| 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  | 10h10 | |
+| 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  | 10h30 | |
+| 5      |  NEDDAY - BOUHRIZ - SOLTANA - ABOUZAÏD  | 10h50 | |
+| 6      |  ZDRADA - CALERO - CAGLAR  | 11h10 | |
+| 7      |  DROGO - HOUDELET  | 11h30 | |
 
