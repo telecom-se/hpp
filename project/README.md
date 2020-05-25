@@ -248,6 +248,6 @@ May, 25th, 2020
 | 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  | 10h10 | https://gitlab.com/DarkInesis/hpp (master (basic) et optimzedversion) |
 | 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  | 10h30 | https://gitlab.com/Flammespectrum/hpp-project |
 | 5      |  NEDDAY - BOUHRIZ - SOLTANA - ABOUZAÏD  | 10h50 | https://github.com/lailaab97/project-HPP |
-| 6      |  ZDRADA - CALERO - CAGLAR  | 11h10 | |
+| 6      |  ZDRADA - CALERO - CAGLAR  | 11h10 | Branche master sans multithreading : https://github.com/kamilcglr/hpp_project_gr6/tree/master Branche dev avec mutithreading : https://github.com/kamilcglr/hpp_project_gr6/tree/dev |
 | 7      |  DROGO - HOUDELET  | 11h30 | |
 
