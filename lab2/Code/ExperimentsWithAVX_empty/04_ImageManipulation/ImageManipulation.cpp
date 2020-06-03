@@ -40,7 +40,8 @@ bool ImageManipulation::setImageDest(string filename) {
 
 
 void ImageManipulation::displayImage(string title) {
-    namedWindow(title, WINDOW_AUTOSIZE); // Create a window
+    namedWindow(title,  cv::WINDOW_NORMAL); // Create a window
+    resizeWindow(title, 640, 480);
     imshow(title, _imageSrc); // Show our image inside the created window.
     waitKey(0); // Wait for any keystroke in the window
     destroyWindow(title); //destroy the created window
