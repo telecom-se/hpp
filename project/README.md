@@ -218,7 +218,9 @@ _Finally, it is obvious but better made explicit that teachers will take into ac
 ## Data
 
 The data to play with can be found here:
-https://lufi.alolise.org/r/CXBqX4GrMo#LejcX86p3f+1QPdrBP1eDx3kQBiPciZaxEr7d3e58Oc=
+[](https://lufi.alolise.org/r/CXBqX4GrMo#LejcX86p3f+1QPdrBP1eDx3kQBiPciZaxEr7d3e58Oc=)
+[](https://lufi.alolise.org/r/Dw_6JjCk6V#MDrCBp9M+j6SElYhIqi9ziuvIA1uSTb1wWXS1KL0w2M=)
+[data.zip](./data.zip)
 
 ## Rules
 
@@ -241,11 +243,11 @@ May, 25th, 2020
 
 | Grp nb | List of students  | Defence | How to get the code |
 | ------ | ------------------ | ----------------- | ------- |
-| 1      |  VERON - OLLE - ANASTASSIADES - SOLANE   |  | |
-| 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    |  | |
-| 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  |  | |
-| 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  |  | |
-| 5      |  NEDDAY - BOUHRIZ - SOLTANA - ABOUZAÏD  |  | |
-| 6      |  ZDRADA - CALERO - CAGLAR  |  | |
-| 7      |  DROGO - HOUDELET  |  | |
+| 1      |  VERON - OLLE - ANASTASSIADES - SOLANE   | 9h30 | https://gitlab.com/ApoSkunz/project_hpp |
+| 2      |  ORTOLANO - VOGLIMACCI - GORMOND - YAMMINE    | 9h50 | https://github.com/raptorouz/HPP-Project/ |
+| 3      |  ALAMI IDRISSI - DEDIER - QUEFFELEC - VIELLE-CARRE  | 10h10 | https://gitlab.com/DarkInesis/hpp (master (basic) et optimzedversion) |
+| 4      |  FERLAY - ARNETTE - MALLEN - LAIGUILLON  | 10h30 | https://gitlab.com/Flammespectrum/hpp-project |
+| 5      |  NEDDAY - BOUHRIZ - SOLTANA - ABOUZAÏD  | 10h50 | https://github.com/lailaab97/project-HPP |
+| 6      |  ZDRADA - CALERO - CAGLAR  | 11h10 | Branche master sans multithreading : https://github.com/kamilcglr/hpp_project_gr6/tree/master Branche dev avec mutithreading : https://github.com/kamilcglr/hpp_project_gr6/tree/dev |
+| 7      |  DROGO - HOUDELET  | 11h30 | https://github.com/Richard-Drogo/HPP_Coronavirus_Project |
 
