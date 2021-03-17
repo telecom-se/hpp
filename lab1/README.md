@@ -54,13 +54,13 @@ Read: [this](https://en.wikipedia.org/wiki/CPU_cache#/media/File:Cache,associati
 
 > Task : Connect the dots: Watch the following awesome videos on CPU pipeline :   
 
-[Pipelining concept](https://www.youtube.com/watch?v=otSXgSp-8EY&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP&index=60). 
+- [Pipelining concept](https://www.youtube.com/watch?v=otSXgSp-8EY&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP&index=60). 
 
-[Pipelining in a processor](https://www.youtube.com/watch?v=eVRdfl4zxfI&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP&index=61). 
+- [Pipelining in a processor](https://www.youtube.com/watch?v=eVRdfl4zxfI&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP&index=61). 
 
-[Pipeline stalls](https://www.youtube.com/watch?v=ltRlHzOSOzY&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP&index=67). 
+- [Pipeline stalls](https://www.youtube.com/watch?v=ltRlHzOSOzY&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP&index=67). 
 
-[Pipeline flushes](https://www.youtube.com/watch?v=mGlwrbEtMOs&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP&index=68). 
+- [Pipeline flushes](https://www.youtube.com/watch?v=mGlwrbEtMOs&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP&index=68). 
 
 - Look also at the additional quizzes on pipelining for laundry and instructions in the same videos series.
 
