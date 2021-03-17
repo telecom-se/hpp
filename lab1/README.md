@@ -42,7 +42,7 @@ Read: [Go through this](https://www.geeksforgeeks.org/translation-lookaside-buff
 > Task: What are the usual way to associate cache lines with the main memory ?
 Read: [this](https://en.wikipedia.org/wiki/CPU_cache#/media/File:Cache,associative-fill-both.png)
 
-> Task: Do you remmenber the difference between a process and a thread and therefore bewteen mutli-threading and mutli-processing ?
+> Task: Do you remember the difference between a process and a thread and therefore bewteen mutli-threading and mutli-processing ?
 
 > Task : What is hyperthreading ?  
 
