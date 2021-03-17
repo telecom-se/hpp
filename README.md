@@ -12,4 +12,5 @@ Each year lectures, exercices, solutions and assignments are stored in dedicated
 - [2016-2017 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2016-2017)
 - [2017-2018 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2017-2018)
 - [2018-2019 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2018-2019)
-- [2019-2020 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2019-2020) (latest)
+- [2019-2020 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2019-2020)
+- [2020-2021 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2020-2021) (latest)
