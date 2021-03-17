@@ -15,6 +15,7 @@ The real questions are :
 - Last but not least : **Why do these low-level considerations are of the utmost practical interest for the programmer ?**
 
 In what follows, different programming activities will make your observe and then conclude on answers to those questions.
+** Write down your notes in a document, you will need to submit it along your code for the mechanical sympathy part**
 
 ## Who is actually executing your instructions?
 
@@ -49,6 +50,9 @@ Read: [this](https://en.wikipedia.org/wiki/CPU_cache#/media/File:Cache,associati
 > Task : Why all this matters ? (_we will discuss some numbers every programmers should know_)
 
 > Task : Create a simple block diagram of your processor, including all its cores, all level of cache, main memory and disk. Add latency and size numbers.
+The following block schema of a processor can help you (remind that every processor is different) :
+![](./schema_principe_cpu.jpg)
+
 
 ## At execution time
 
@@ -64,17 +68,6 @@ Read: [this](https://en.wikipedia.org/wiki/CPU_cache#/media/File:Cache,associati
 
 - Look also at the additional quizzes on pipelining for laundry and instructions in the same videos series.
 
-The following block schema of a processor can help you (remind that every processor is different) :
-![](./schema_principe_cpu.jpg)
-
-
-> Draw a 5-stages pipeline where to instructions are in that order : 1) load something from memory in register 1, add 1 to R1 and store result in register 2, add 1 to register 2 and store it in register 3. What is a a pipeline stall (aka bubble) ? 
-The instructions sequence can be written as : 
-```
-LW R1, ... // load somthing (...) into R1
-ADD R1, R2, 1 // add 1 to R2 and store it into R1
-ADD R2, R3, 1 // add 1 to R3 and store it into R2
-```
 
 > What are modern numbers of pipeline stages ? 
 
