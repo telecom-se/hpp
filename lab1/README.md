@@ -27,13 +27,30 @@ Take the example of the micro architectureof a 2019 intel-based mac notebook :
 As a large number of modern processors, its architecture uses three level of cache : Level 1 (L1), Level 2 (L2), and Level 3 (L3 -- sometimes: Last Level Cache (LLC)). This is a very common cache hierarchy architecture.
 
 > Task : What is your processor ? What is its cache hierarchy ? What are the sizes and latencies of each data storage units (cache and main memory) ?
+> 
+We will here review the vuilding blocks of the architecture of a CPU, caches and memory, along the main concepts to understand. 
+
+> Task : What is the virtual memory and what is a cache line ?
+For virtual memory : link should help you](https://medium.com/@SravanthiSinha/all-about-the-virtual-memory-1c8a3cf306b7)
+For cache lines, this [link should help you](https://medium.com/software-design/why-software-developers-should-care-about-cpu-caches-8da04355bb8a).
+
+> Task: What is the purpose of the Translation Lookaside Buffer ?
+Read: [Go through this](https://www.geeksforgeeks.org/translation-lookaside-buffer-tlb-in-paging/)
+
+> Task : The link above illustrated how array design impact performances. But the algorithm itself also matters. Discover [Amdahl's law](https://en.wikipedia.org/wiki/Amdahl%27s_law)
+
+> Task: What are the usual way to associate cache lines with the main memory ?
+Read: [this](https://en.wikipedia.org/wiki/CPU_cache#/media/File:Cache,associative-fill-both.png)
+
+> Task: Do you remmenber the difference between a process and a thread and therefore bewteen mutli-threading and mutli-processing ?
+
+> Task : What is hyperthreading ?  
+
+> Task : Why all this matters ? (_we will discuss some numbers every programmers should know_)
 
 > Task : Create a simple block diagram of your processor, including all its cores, all level of cache, main memory and disk. Add latency and size numbers.
 
-> Task : Why does it matter ? (_we will discuss some numbers every programmers should know_)
-
-> Task : What is the virtual memory and what is a cache line ?
-This [link should help you](https://medium.com/software-design/why-software-developers-should-care-about-cpu-caches-8da04355bb8a).
+## At execution time
 
 > Task : Connect the dots: Watch the following awesome videos on CPU pipeline : [pipelining](https://www.youtube.com/watch?v=zN5lg91v40g&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP&index=16), [Pipelining in a processor](https://www.youtube.com/watch?v=otSXgSp-8EY&index=60&list=PLAwxTw4SYaPmqpjgrmf4-DGlaeV0om4iP) - Look also at the additional quizzes on pipelining for laundry and instructions in the same videos series.
 
