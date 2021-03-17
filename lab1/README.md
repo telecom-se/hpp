@@ -28,10 +28,10 @@ As a large number of modern processors, its architecture uses three level of cac
 
 > Task : What is your processor ? What is its cache hierarchy ? What are the sizes and latencies of each data storage units (cache and main memory) ?
 > 
-We will here review the vuilding blocks of the architecture of a CPU, caches and memory, along the main concepts to understand. 
+We will here review the building blocks of the architecture of a CPU, caches and memory, along the main concepts to understand. 
 
 > Task : What is the virtual memory and what is a cache line ?
-For virtual memory : link should help you](https://medium.com/@SravanthiSinha/all-about-the-virtual-memory-1c8a3cf306b7)
+For virtual memory : link should help you](https://medium.com/@SravanthiSinha/all-about-the-virtual-memory-1c8a3cf306b7) 
 For cache lines, this [link should help you](https://medium.com/software-design/why-software-developers-should-care-about-cpu-caches-8da04355bb8a).
 
 > Task: What is the purpose of the Translation Lookaside Buffer ?
