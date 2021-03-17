@@ -32,14 +32,15 @@ The two instructors for this course are :
 You will have a total of 5 marks as follows (each colour in the previous organization table leads to notation).
 
 HPP course:
-- [100%] Your code on mechanical sympathy delivered for the 30th April 2020 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
-- [25%] Your code on SIMD (ex4) delivered for the 30th April 2020 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593) (it is therefore a bonus)
-- [0%] Your slides for your defense on new hardaware for HPP on the 7th May 2020 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=16924)
+- [75%] Your code on mechanical sympathy delivered for the 20th April 2021 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
+- [25%] Your presentation on new hardware for HPP for the 15th May 2021 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=16924)
+- [25%] Your code on SIMD (ex4) delivered for the 30th April 2021 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593) (it is therefore a bonus)
+- [0%] Your slides for your defense on new hardaware for HPP on the 25th May 2021 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=16924)
 
 
 HPP Project:
-- [50%] Your code for the project delivered for the 25th May 2020 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13594)
-- [50%] Your defense for the HPP project on the 25th May 2020 (no slides, presentation of architecture and results on your computer)
+- [50%] Your code for the project delivered for the 25th May 2021 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13594)
+- [50%] Your defense for the HPP project on the 25th May 2021 (no slides, presentation of architecture and results on your computer)
 
 
 ## Labs materials
