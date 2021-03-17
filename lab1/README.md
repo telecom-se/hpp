@@ -47,6 +47,8 @@ Read: [this](https://en.wikipedia.org/wiki/CPU_cache#/media/File:Cache,associati
 
 > Task : What is hyperthreading ?  
 
+> Side remarks: on multi-threadfing and multi-processing in Python [here](https://medium.com/mindful-engineering/multithreading-multiprocessing-in-python3-f6314ab5e23f)
+
 > Task : Why all this matters ? (_we will discuss some numbers every programmers should know_)
 
 > Task : Create a simple block diagram of your processor, including all its cores, all level of cache, main memory and disk. Add latency and size numbers.
