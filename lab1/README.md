@@ -52,9 +52,6 @@ Read: [this](https://en.wikipedia.org/wiki/CPU_cache#/media/File:Cache,associati
 > Task : Why all this matters ? (_we will discuss some numbers every programmers should know_)
 
 > Task : Create a simple block diagram of your processor, including all its cores, all level of cache, main memory and disk. Add latency and size numbers.
-The following block schema of a processor can help you (remind that every processor is different) :
-![](./schema_principe_cpu.jpg)
-
 
 ## At execution time
 
@@ -72,6 +69,9 @@ The following block schema of a processor can help you (remind that every proces
 
 
 > What are modern numbers of pipeline stages ? 
+
+PS: The following block schema of a processor can help you (remind that every processor is different) :
+![](./schema_principe_cpu.jpg)
 
 
 
