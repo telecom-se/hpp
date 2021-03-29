@@ -1,9 +1,6 @@
-# Module FISE2 - HPP 2018-2019
+# Module FISE2 - HPP
 
 ## Introduction to the SIMD lab
-
-Refs pour 2020-2021: 
-https://stackoverflow.blog/2020/07/08/improving-performance-with-simd-intrinsics-in-three-use-cases/?utm_source=Iterable&utm_medium=email&utm_campaign=the_overflow_newsletter
 
 In this lab, we will study the SIMD technology ("Single Instruction Multiple Data), which allows to execute an  **identical** operation (add, substract...) on **several data** at the same time.
 

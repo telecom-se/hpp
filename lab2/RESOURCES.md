@@ -75,3 +75,7 @@
     alignas(4) float a[4] = { 1.0f, 2.0f, 3.0f, 4.0f };```
 
   NOTE: There are other alignment instructions (that you may find in various forums), but they are often specific to a compiler. Thus, prefer the portable method above.
+
+## Example usage of SIMD
+
+- https://stackoverflow.blog/2020/07/08/improving-performance-with-simd-intrinsics-in-three-use-cases/
