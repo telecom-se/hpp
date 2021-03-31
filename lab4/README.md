@@ -33,6 +33,7 @@ one of the following topics:
     + [Other consoles] (https://www.copetti.org/writings/consoles/)
     + [Rhea Processors](https://www.anandtech.com/show/16072/sipearl-lets-rhea-design-leak-72x-zeus-cores-4x-hbm2e-46-ddr5)
     + [Apple](https://www.osnews.com/story/133140/apple-m1-microarchitecture-research/) [M1](https://lemire.me/blog/2021/03/17/apples-m1-processor-and-the-full-128-bit-integer-product/)
+    + [ARMv9](https://www.zdnet.fr/actualites/arm-presente-son-architecture-armv9-et-sa-feuille-de-route-39920331.htm)
   - GPUs
     + [Xe](https://www.generation-nt.com/intel-gpu-xe-hpc-technologies-actualite-1984648.html)-[HPC](https://www.tomsguide.com/news/intel-just-revealed-xe-hpg-gpu-specs-should-nvidia-worry)/[HPG](https://www.generation-nt.com/intel-dg2-xe-hpg-carte-graphique-gaming-caracteristiques-actualite-1985783.html)
     [](https://www.generation-nt.com/intel-xe-hpg-architecture-graphique-carte-gaming-teaser-actualite-1986282.html)
