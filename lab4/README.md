@@ -58,6 +58,7 @@ one of the following topics:
   + Password cracking with [Rainbow Tables](https://en.wikipedia.org/wiki/Rainbow_table)
   + [Spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)) and [Meltdown](https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)) attacks & mitigation
   + [MDS](https://en.wikipedia.org/wiki/Microarchitectural_Data_Sampling) [attacks](https://www.ghacks.net/2019/05/15/mds-tool-find-out-if-you-are-vulnerable-to-microarchitectural-data-sampling-attacks-mds/) & mitigation
+  + [Speculation](https://blog.can.ac/2021/03/22/speculating-x86-64-isa-with-one-weird-trick/) & Related Attacks
 
 ## Topics
 
