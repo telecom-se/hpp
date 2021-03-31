@@ -30,6 +30,7 @@ one of the following topics:
     + [Gate-all-around transistor](https://www.cnet.com/news/samsung-beats-chip-rivals-with-gate-all-around-speed-boosting-tech/)
   - CPUs: Other architectures
     + [Playstation2 Architecture](https://www.copetti.org/writings/consoles/playstation-2/)
+    + [Neo Geo](https://www.ajworld.net/neogeodev/beginner/)
     + [Other consoles] (https://www.copetti.org/writings/consoles/)
     + [Rhea Processors](https://www.anandtech.com/show/16072/sipearl-lets-rhea-design-leak-72x-zeus-cores-4x-hbm2e-46-ddr5)
     + [Apple](https://www.osnews.com/story/133140/apple-m1-microarchitecture-research/) [M1](https://lemire.me/blog/2021/03/17/apples-m1-processor-and-the-full-128-bit-integer-product/)
