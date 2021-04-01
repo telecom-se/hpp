@@ -32,10 +32,10 @@ The two instructors for this course are :
 You will have a total of 5 marks as follows (each colour in the previous organization table leads to notation).
 
 HPP course:
-- [50%] Your code on mechanical sympathy delivered for the 20th April 2021 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
-- [25%] Your code on SIMD (ex4) delivered for the **15th (22?) April 2021** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
+- [50%] Your code on mechanical sympathy delivered for the **20th April 2021** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
+- [25%] Your code on Multi-Threading delivered for the **??? 2021** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
 - [25%] Your presentation on new hardware for HPP for the **29th April 2021** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=16924)
-
+- [+25%] Your code on SIMD (exercice 4) delivered for the **15th April 2021** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593) [] <> (15-> 22?)
 
 HPP Project:
 - [50%] Your code for the project delivered for the 25th May 2021 [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13594)
