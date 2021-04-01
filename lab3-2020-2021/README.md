@@ -80,6 +80,7 @@ While you are free to propose your own agenda for these presentations, you must 
 - Provide illustrative tasks where that technology excels and report what can be the gain in such settings (in the best situation for which it has been designed, what can be gained ?)
 - Provide as much links as possible with topics with have seen during the lectures (Branch Prediction, Multi-Threading, SIMD,...)
 
+Presentation and slides can be done in English or French, as you prefer.
 
 ## Assignments
 
