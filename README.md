@@ -44,7 +44,7 @@ HPP Project:
 
 ## Labs materials
 
-- [Mechanical sympathy](./lab1/README.md)
-- [Mechanical sympathy / SIMD](./lab2/README.md)
-- [New hardware for HPP](./lab3/README.md)
+- [Mechanical sympathy](./lab1-MechanicalSympathy/README.md)
+- [Mechanical sympathy / SIMD](./lab2-SIMD/README.md)
+- [Emerging technologies in HPP](./lab3-2020-2021/README.md)
 - [HPP Project](./project/README.md)
