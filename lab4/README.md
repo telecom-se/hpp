@@ -18,7 +18,7 @@ Thanks to this approach, you'll be able to acquire *both* a deep
 understanding of one of these HPP subjects *and* a broad overview of
 HPP.
 
-We will create groups of 2 students, for each group will be assigned
+We will create groups of 2 students (*), for each group will be assigned
 one of the following topics:
 
 - Other forms of computing
@@ -61,6 +61,8 @@ one of the following topics:
   + [MDS](https://en.wikipedia.org/wiki/Microarchitectural_Data_Sampling) [attacks](https://www.ghacks.net/2019/05/15/mds-tool-find-out-if-you-are-vulnerable-to-microarchitectural-data-sampling-attacks-mds/) & mitigation
   + [Speculation](https://blog.can.ac/2021/03/22/speculating-x86-64-isa-with-one-weird-trick/) & Related Attacks
 
+(*) All members of the groups are supposed to work equally. If we (teachers) detect that the work was not distributed equally between the members of a group, we reserve the right to differentiate the grades in this group.
+
 ## Topics
 
 The session on the 1rst & 15th of April are made for you to research and understand your assigned topic as a group.
@@ -79,19 +81,14 @@ While you are free to propose your own agenda for these presentations, you must 
 
 ## Assignments
 
-| Grp nb | Assigned topic     | List of students  |
-| ------ | ------------------ | ----------------- |
-| 1      |                    |                   |
-| 2      |                    |                   |
-| 3      |                    |                   |
-| 4      |                    |                   |
-| 5      |                    |                   |
-| 6      |                    |                   |
-| 7      |                    |                   |
-| 8      |                    |                   |
-| 9      |                    |                   |
-| 10     |                    |                   |
-| 11     |                    |                   |
-| 12     |                    |                   |
-
-
+| Grp nb | Assigned topic                     | List of students                       |
+| ------ | ------------------                 | -----------------                      |
+| 1      | Apple M1                           | Alexis DEGRANGE + Julien Raynal        |
+| 2      | Lockless Algos                     | Pierre Bregnac + Valentin BORDEL       |
+| 3      | Playstation 5                      | Ruben Feliciano + Mathieu SEMIN        |
+| 4      | ARMv9                              | Aurelien Arbaretaz + Alexandre HUMBERT |
+| 5      | DNA Computing (+autres formes?)    | Clément MILLET + Kévin TOURNIÉ         |
+| 6      | Map Reduce                         | Mohamed LEKMAD + Amina ZOUARHI         |
+| 7      | Xe-HPC/HPG                         | Pierre Laclaverie + Julien Chavas      |
+| 8      | Side Channel Attacks               | Jérémy BLANQUINQUE + Clément TACUSSEL  |
+| 9      | Rainbow Tables / Password cracking | Nan Zhou + Jinda Wu                    |
