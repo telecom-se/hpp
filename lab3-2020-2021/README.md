@@ -61,9 +61,9 @@ one of the following topics:
   + [MDS](https://en.wikipedia.org/wiki/Microarchitectural_Data_Sampling) [attacks](https://www.ghacks.net/2019/05/15/mds-tool-find-out-if-you-are-vulnerable-to-microarchitectural-data-sampling-attacks-mds/) & mitigation
   + [Speculation](https://blog.can.ac/2021/03/22/speculating-x86-64-isa-with-one-weird-trick/) & Related Attacks
 
-If none of the topics above you can also pick one within the topics that were proposed (but not studied) last year: [Emerging technologies in HPP 2019-2020](./lab3-2019-2020/README.md).
+If none of the topics above you can also pick one within the topics that were proposed (but not studied) last year: [Emerging technologies in HPP 2019-2020](../lab3-2019-2020/README.md).
 
-(*) All members of a group are supposed to work equally, thus the final grade is supposed to be the same for all members of the group. However, if we (teachers) detect that the work was not distributed equally between the members of a group, we reserve the right to differentiate the grades within this group.
+**(*) All members of a group are supposed to work equally, thus the final grade is supposed to be the same for all members of the group. However, if we (teachers) detect that the work was not distributed equally between the members of a group, we reserve the right to differentiate the grades within this group.**
 
 ## Topics
 
