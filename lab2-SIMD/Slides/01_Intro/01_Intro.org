@@ -4,14 +4,14 @@
 
 
 # ### Hack to make title on several lines
-#+BEAMER_HEADER: \title[HPP -- SIMD]{High Performance Programming\\SIMD -- MMX/SSE/AVX}
+#+BEAMER_HEADER: \title[HPP -- SIMD -- Intro]{High Performance Programming\\SIMD Intro -- MMX/SSE/AVX}
 #+BEAMER_HEADER: \subtitle{FISE2-INFO2}
-#+TITLE: High Performance Programming -- SIMD
+#+TITLE: High Performance Programming -- SIMD -- Intro
 #+AUTHOR: Guillaume MULLER
 #+EMAIL: guillaume.muller@telecom-st-etienne.fr
 #+DATE: \today
-#+DESCRIPTION: High Performance Programming -- SIMD
-#+KEYWORDS: High-Performance Programming SIMD MMX SSE AVX
+#+DESCRIPTION: High Performance Programming -- SIMD -- Intro
+#+KEYWORDS: High-Performance Programming SIMD Introduction MMX SSE AVX
 #+LANGUAGE: en
 #+OPTIONS: toc:nil      ## remove Table Of Content
 #+OPTIONS: H:2          ## With H:1, *=slides || with H:2, *=sections
