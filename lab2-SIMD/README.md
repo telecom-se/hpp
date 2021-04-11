@@ -5,8 +5,8 @@
 In this lab, we will study the SIMD technology ("Single Instruction Multiple Data), which allows to execute an  **identical** operation (add, substract...) on **several data** at the same time.
 
 The slides for the Lecture part are available by following the links below:
-- [Introduction slides](./Slides/slides_Intro.pdf)
-- [SIMD slides](./Slides/slides_SIMD.pdf) (Based on the original work from Omur MULTU [slides](http://www.archive.ece.cmu.edu/~ece447/s15/doku.php?id=schedule) [videos](https://www.youtube.com/watch?v=zLP_X4wyHbY&list=PL5PHm2jkkXmi5CxxI7b3JCL1TWybTDtKq))
+- [Introduction slides](./Slides/01_Intro/01_Intro.pdf)
+- [SIMD slides](./Slides/02_VectorProc/02_slides_SIMD_VectorProc.pdf) (Based on the original work from Omur MULTU [slides](http://www.archive.ece.cmu.edu/~ece447/s15/doku.php?id=schedule) [videos](https://www.youtube.com/watch?v=zLP_X4wyHbY&list=PL5PHm2jkkXmi5CxxI7b3JCL1TWybTDtKq))
 - [SSE/AVX slides](./Slides/slides_SSE.pdf) ([Based on the original work from Markus PÜSCHEL](http://www-oldurls.inf.ethz.ch/personal/markusp/teaching/263-2300-ETH-spring11/course.html))
 
 In the labs part, we will write & optimize source codes that use the Intel's architecture, thus implement the MMX/SSE/AVX variant of SIMD.
