@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "4_ImageManipulation", "04_ImageManipulation\ImageManipulation.vcxproj", "{32C0F7F3-D6F0-4771-8846-12F7F1860EFD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04_ImageManipulation", "04_ImageManipulation\ImageManipulation.vcxproj", "{32C0F7F3-D6F0-4771-8846-12F7F1860EFD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1_Basics", "01_Basics\Basics.vcxproj", "{2EFB65A2-8C49-4C02-9BDA-DDBDB17C4768}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_Basics", "01_Basics\Basics.vcxproj", "{2EFB65A2-8C49-4C02-9BDA-DDBDB17C4768}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2_MatrixMultiplication", "02_MatrixMultiplication\MatrixMultiplication.vcxproj", "{F4DC64FA-4815-4BA7-8C1B-5E89BD0003C2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_MatrixMultiplication", "02_MatrixMultiplication\MatrixMultiplication.vcxproj", "{F4DC64FA-4815-4BA7-8C1B-5E89BD0003C2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3_MandelbrotSSEAVX", "03_Mandelbrot\Mandelbrot.vcxproj", "{CB24169A-C096-49A5-ABBA-E58E20B2F33C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03_MandelbrotSSEAVX", "03_Mandelbrot\Mandelbrot.vcxproj", "{CB24169A-C096-49A5-ABBA-E58E20B2F33C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -40,7 +40,7 @@ bool ImageManipulation::setImageDest(string filename) {
 
 
 void ImageManipulation::displayImage(string title) {
-    namedWindow(title,  cv::WINDOW_NORMAL); // Create a window
+    namedWindow(title, WINDOW_NORMAL); // Create a window
     resizeWindow(title, 640, 480);
     imshow(title, _imageSrc); // Show our image inside the created window.
     waitKey(0); // Wait for any keystroke in the window
@@ -146,4 +146,3 @@ void ImageManipulation::displayMinMax(const Mat &img) {
     minMaxLoc(img, &minVal, &maxVal);
     cout << "minVal: " << minVal << "   // maxVal: " << maxVal << endl;
 }
-

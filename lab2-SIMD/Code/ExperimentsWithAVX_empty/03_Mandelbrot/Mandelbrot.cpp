@@ -57,7 +57,7 @@ void mandelbrotAVX(float x1, float y1, float x2, float y2, int width, int height
 using namespace cv;
 void displayImage(string title, unsigned short *image, int size) {
     // Transform image to OpenCV type
-    Mat colored(size, size*2, CV_8UC1, image, Mat::AUTO_STEP/*sizeof(unsigned short)*size*/);  //HACK: unsigned short = 2U = 2*8 = 16 bits => devrait être size*size*CV16
+    Mat colored(size, size*2, CV_8UC1, image, Mat::AUTO_STEP/*sizeof(unsigned short)*size*/);  //HACK: unsigned short = 2U = 2*8 = 16 bits => should be size*size*CV16
     applyColorMap(colored, colored, COLORMAP_JET);
     // Show the image & wait for keypress
     namedWindow(title);
