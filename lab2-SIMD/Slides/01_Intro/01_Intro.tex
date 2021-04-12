@@ -1,6 +1,7 @@
-% Created 2021-04-11 Sun 15:10
+% Created 2021-04-12 Mon 08:50
 % Intended LaTeX compiler: pdflatex
 \documentclass[presentation]{beamer}
+\usepackage{listings}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -89,29 +90,29 @@ tabsize=2
 \usetheme{default}
 \author{Guillaume MULLER}
 \date{\today}
-\title{High Performance Programming -- SIMD}
-\title[HPP -- SIMD]{High Performance Programming\\SIMD -- MMX/SSE/AVX}
+\title{High Performance Programming -- SIMD -- Intro}
+\title[HPP -- SIMD -- Intro]{High Performance Programming\\SIMD Intro -- MMX/SSE/AVX}
 \subtitle{FISE2-INFO2}
 \hypersetup{
  pdfauthor={Guillaume MULLER},
- pdftitle={High Performance Programming -- SIMD},
- pdfkeywords={High-Performance Programming SIMD MMX SSE AVX},
- pdfsubject={High Performance Programming -- SIMD},
- pdfcreator={Emacs 26.3 (Org mode 9.1.9)}, 
+ pdftitle={High Performance Programming -- SIMD -- Intro},
+ pdfkeywords={High-Performance Programming SIMD Introduction MMX SSE AVX},
+ pdfsubject={High Performance Programming -- SIMD -- Intro},
+ pdfcreator={Emacs 26.3 (Org mode 9.4.5)}, 
  pdflang={English}}
 \begin{document}
 
 \maketitle
 
 \section*{}
-\label{sec:orgdeabeb3}
+\label{sec:orgb241b26}
 
-\begin{frame}[label={sec:orgf83580f}]{Why having HPP lectures in FISE2? Why HPP?}
+\begin{frame}[label={sec:orgdd476bd}]{Why having HPP lectures in FISE2? Why HPP?}
 \pause
 \begin{block}{Classical approach to HPP = distribute on cluster}
 \begin{itemize}
 \item What if the initial code is inefficient?
-\item \(\Rightarrow\) optimize locally first!
+\item \(\Rightarrow\) Optimize locally / Think parallel
 \end{itemize}
 \pause
 \end{block}
@@ -129,7 +130,7 @@ tabsize=2
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org2b61602}]{Why SIMD/MMX/SSE/AVX?}
+\begin{frame}[label={sec:orgc8a6a15}]{Why SIMD/MMX/SSE/AVX?}
 \begin{block}{Task Parallelism}
 \begin{itemize}
 \item Execute coarse-grained pieces of code on \(\neq\) pieces of hardware
@@ -155,7 +156,7 @@ tabsize=2
 \end{frame}
 
 
-\begin{frame}[label={sec:orgc26ed8f}]{"Ça dépend" ("ça dépasse"?)}
+\begin{frame}[label={sec:org5519ebd}]{"Ça dépend" ("ça dépasse"?)}
 \definecolor{myblue}{HTML}{9999FF}
 \scalebox{.72}{
 \begin{tikzpicture}[x=3cm,y=1.5cm]
@@ -183,7 +184,7 @@ tabsize=2
 \end{block}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:org7246555}]{"Reminder"}
+\begin{frame}[label={sec:orgb1a1d2b},fragile]{"Reminder"}
  \begin{center}
 \includegraphics[width=.8\textwidth]{./images/cpu.png}
 \end{center}
