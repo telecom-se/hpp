@@ -106,7 +106,11 @@ By measuring the time before running your code traversing the array, and compute
 
 2) CPU time using `jvisualvm`.
 
-Along your JDK comes a nice tools to profile your running java program which is called `jvisualvm`. If you got the the `bin`folder of your installed JVM, you can launch it from there. For profiling CPU, the basis of what we'll need are [here](https://blogs.oracle.com/nbprofiler/entry/profiling_with_visualvm_part_1). 
+Along your JDK comes a nice tools to profile your running java program which is called `jvisualvm`. If you got the the `bin`folder of your installed JVM, you can launch it from there. 
+
+If you don't find it, you can downlaod it as a standalone from [here](https://visualvm.github.io)
+
+For profiling CPU, the basis of what we'll need are [here](https://blogs.oracle.com/nbprofiler/entry/profiling_with_visualvm_part_1). 
 
 > Task : Explain the difference between the two ways of measuring elapsed time.
 
