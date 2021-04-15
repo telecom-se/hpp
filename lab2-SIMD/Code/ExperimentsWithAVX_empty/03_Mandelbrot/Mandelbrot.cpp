@@ -6,6 +6,8 @@
 
 // TODO: include AVX intrinsics
 
+#include "utils.hpp" // Utility functions to extract values from __m128&__m256i
+
 using namespace std;
 
 
