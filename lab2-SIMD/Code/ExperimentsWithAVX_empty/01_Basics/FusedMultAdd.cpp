@@ -34,6 +34,11 @@ void printRes(string title, float res[4]/*, high_resolution_clock::time_point ti
     cout << title /*<< " (" << (time2 - time1).count() << "): "*/ << res[0] << " " << res[1] << " " << res[2] << " " << res[3] << endl;
 }
 
+// Trucs qui peuvent aller mal => crash de l'appli sans plus d'explications:
+  // - Alignement : alignas(4) float a[4]; -> float __declspec(align(4)) a[4]; ?
+  // - Stockage des tableaux "constants" sur la pile/tas (VC2015)
+  // - Type cpu (-march haswell => -march native?)
+  // - Temps d'execution à 0 => données déjà en cache (ou pas assez de tours de boucle) => clean projet / run in debug, then run normal again
 int main() {
     alignas(4) float a[4] = { 1.0f, 2.0f, 3.0f, 4.0f };
     alignas(4) float b[4] = { 5.0f, 6.0f, 7.0f, 8.0f };
