@@ -116,3 +116,30 @@ int main(int argc, char** argv)
 
   return 0;
 }
+
+
+// Final fading "animation"
+int main_final(int argc, char** argv) {
+    string srcImage  = "../big_image1.jpg";
+    string destImage = "../big_image2.jpg";  /* MUST BE OF THE SAME SIZE!!!!*/
+
+    MyImageManipulation manip;
+
+    bool ok1 = manip.setImageSrc(srcImage);
+    bool ok2 = manip.setImageDest(srcImage);
+
+    if (ok1 && ok2) {
+        // More fun testing
+        manip.setImageSrc(srcImage);
+        manip.backupSrcImage();
+        manip.setImageDest(destImage);
+        for(float alpha = 1.0 ; alpha > 0.0 ; alpha-=.05) {
+            cout << "Computing image" << "\n";
+            manip.setAlpha(alpha);
+            manip.fadeToImageAVX();
+            cout << "Displaying image" << "\n";
+            manip.displayImage("AVX Animation - " + to_string(alpha), 500);
+            manip.recoverSrcImage();
+        }
+    }
+}
