@@ -140,7 +140,7 @@ __Here we will discuss pipeline stalling (bubbles) and NUMA accesses__
 
 ## Read Walks using linked list
 
-In this part we will be interested in traversing a linked list in a sequential manner for varying cell size in bytes. We will study the impact of traversing a linkedlist that lies in a noncontiguous space. Remember that traversing a linkedlist is not prefetched by current CPUs -- although you can see [some proposal in the academic literature](Dependence Based Prefetching for Linked Data Structures).
+In this part we will be interested in traversing a linked list in a sequential manner for varying cell size in bytes. We will study the impact of traversing a linkedlist that lies in a noncontiguous space. Remember that traversing a linkedlist is not prefetched by current CPUs -- although you can see [some proposal in the academic literature](https://dl.acm.org/doi/10.1145/291069.291034).
 
 
 ### LinkedList in a non-contiguous space
