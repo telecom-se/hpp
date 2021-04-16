@@ -1,0 +1,23 @@
+#+STARTUP: showall indent
+#  --- Use C-c C-c to reload this ---
+#+TODO: TODO(t) LATER(l) CANCELLED(c) DELEGATED(d) | DONE(o)
+
+* 2019-2020
+** TODO INSTALLATION.md => illustration with animated Gifs?
+** DONE Installations of software
+** DONE Access to assembly code
+
+* 2020-2021
+** Sujet
+*** DONE Access Dissass sous QtCreator
++ https://doc.qt.io/qtcreator/creator-debug-mode.html#viewing-disassembled-code
+*** DONE Ordre des couleurs
+**** setTargetColor: RGBA
+**** en mémoire: BGRA
+**** dans les registres: ARGB
+
+** Code Empty + Code Solution
+*** DONE MyImageManipulation::timeMethod() à mettre dans ImageManipulation::timeMethod()
+
+** Code Solution
+*** DONE FadeToZero normal: chanType -> pixelType

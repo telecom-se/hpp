@@ -1,3 +1,0 @@
-- INSTALLATION.md => Animated Gif
-  - Installations of software
-  - Access to assembly code
