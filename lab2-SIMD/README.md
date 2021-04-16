@@ -139,6 +139,10 @@ We will use C++ because it is easier to access low-level instructions in this la
   - `VisualTesting.cpp` file to test your methods visually: display the images.
   - `TimeTesting.cpp` file to execute & time multiple executions of your methods (NOTE: this file should initially be "out" of the project, not to conflict with the `main()` in `VisualTesting.cpp`).
   - Images are stored in OpenCV's format: `Mat` using representation `CV32FC4` (4 channels of 1 float=32bits=4bytes) in RGBA mode.
+    - Unfortunately, the order of color channels is not always the same in registers, in my code and in OpenCV's code, so here is the correct order for each:
+      - My code (`setTargetColor`): RGBA
+      - In memory (OpenCV's `Mat` object): BGRA
+      - In vector registers (`_mm_set/load_ps`): ARGB
   - To help you, we defined folowing types:
     - `chanType`  (=`float`)  : type to store 1 channel of a pixel.
     - `pixelType` (=`Vec4f`)  : OpenCV's format to represent a pixel (4 floats)
@@ -150,7 +154,8 @@ We will use C++ because it is easier to access low-level instructions in this la
     - `NB_CHANTYPE_IN_128`    : number of elements of type `chanType` that we can store in a SSE register (`__m128`) = 128bits/`sizeof`(`float`=4bytes) = 4 `float`s = 4 channels = 1 pixel
     - `NB_CHANTYPE_IN_256`    : number of elements of type `chanType` that we can store in a AVX register (`__m256`) = 256bits/`sizeof`(`float`=4bytes) = 8 `float`s = 8 channels = 2 pixels
     - `MAX_TIMING_ITERATIONS` : number of repetitions used to time each method
-  - NOTE: [The project is configured to use the OpenCV library](https://www.opencv-srf.com/2017/11/install-opencv-with-visual-studio.html). Find adequate configuration for your IDE or ask the teacher.
+
+- NOTE: [The project is configured to use the OpenCV library](https://www.opencv-srf.com/2017/11/install-opencv-with-visual-studio.html). Find adequate configuration for your IDE or ask the teacher.
 
 > **Task** Intuitively, what performance gains would you expect?
 
