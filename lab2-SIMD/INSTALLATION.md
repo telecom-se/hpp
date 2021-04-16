@@ -271,6 +271,7 @@ You'll add a few lines to this file.
   + At the bottom of the Debugger view, there's a panel with a table with the name of your file, a line number and nan address.
     [screenshot](../resources/figures/QtCreator.png)
   + Right click on this line and select "Open Disassembler at 0x....."
+  + Also See: https://doc.qt.io/qtcreator/creator-debug-mode.html#viewing-disassembled-code
 
 + Code::Blocks
   + Menu "Debug" > "Debugging Windows" > "Assembly"
