@@ -77,6 +77,8 @@
   NOTE: There are other alignment instructions (that you may find in various forums), but they are often specific to a compiler. Thus, prefer the portable method above.
 
 ## Additional resources
+- SIMD for C++ Devs
+  - http://const.me/articles/simd/simd.pdf
 - Examples of real-life usage of SIMD:
   - https://stackoverflow.blog/2020/07/08/improving-performance-with-simd-intrinsics-in-three-use-cases/
 - Synthesis of everything we've seen so far in HPP:
