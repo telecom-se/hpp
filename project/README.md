@@ -149,7 +149,7 @@ France, 1, 10
 France, 1, 20
 France, 1, 20; France, 2, 10
 Italy, 4, 10; France, 1, 8; France, 2, 4
-Spain, 1, 10<-- this is what we generate as top 3 for this event
+Spain, 6, 10<-- this is what we generate as top 3 for this event
 ```
 
 6- Process last event
@@ -164,8 +164,8 @@ France, 1, 10
 France, 1, 20
 France, 1, 20; France, 2, 10
 Italy, 4, 10; France, 1, 8; France, 2, 4
-Spain, 1, 10
-Spain, 1, 10; Italy 3, 10<-- this is what we generate as top 3 for this event
+Spain, 6, 10
+Spain, 6, 10; Italy 3, 10<-- this is what we generate as top 3 for this event
 ```
 
 You can see that it is not trivial to be sure that your program works as expected.
