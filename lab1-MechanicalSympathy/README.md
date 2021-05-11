@@ -210,6 +210,8 @@ Compare execution time when the tbale is sorted when you compile with or without
 
 > Task (optional) : What happen in the C++ version if the data are in a 2D array (int[][]) with the `-O3` flag ?
 
+> Task (optional) :  be brave and dive into a [modern benchmark about branch predictions](https://blog.cloudflare.com/branch-predictor/#footnotes)
+
 ## On optimization automation
 
 Until now, what we have discovered suggest that the developer must be aware on how he/she store and traverse data, which implies a careful trade-off between data layout and algorithms being used.
