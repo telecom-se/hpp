@@ -53,6 +53,12 @@ Read: [this](https://en.wikipedia.org/wiki/CPU_cache#/media/File:Cache,associati
 
 > Task : Create a simple block diagram of your processor, including all its cores, all level of cache, main memory and disk. Add latency and size numbers.
 
+If you are using Linux, it's payback time :) Try:
+```
+sudo apt install hwloc 
+lstopo 
+```
+
 ## At execution time
 
 > Task : Connect the dots: Watch the following awesome videos on CPU pipeline :   
