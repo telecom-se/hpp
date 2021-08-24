@@ -144,6 +144,8 @@ Or, you are more cleaver and you make an array of the first `(2^k / 4 -1 - 1` in
 > Task : Run both a sequential and random walk of the array (for instance for k = 24) and observe CPU cycles using the [perf](https://perf.wiki.kernel.org/index.php/Main_Page) Linux tool installed on your machines.
 __Here we will discuss pipeline stalling (bubbles) and NUMA accesses__
 
+Note: even `perf`is [not perfect](https://www.uninformativ.de/blog/postings/2021-08-19/0/POSTING-en.html)! 
+
 ## Read Walks using linked list
 
 In this part we will be interested in traversing a linked list in a sequential manner for varying cell size in bytes. We will study the impact of traversing a linkedlist that lies in a noncontiguous space. Remember that traversing a linkedlist is not prefetched by current CPUs -- although you can see [some proposal in the academic literature](https://dl.acm.org/doi/10.1145/291069.291034).
