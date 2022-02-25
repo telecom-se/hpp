@@ -1,6 +1,6 @@
 # Module FISE2 - HPP
 
-This year agenda is located in [2020-2021 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2020-2021)
+This year agenda is located in [2021-2022 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2021-2022)
 
 ## Versions
 
@@ -13,4 +13,5 @@ Each year lectures, exercices, solutions and assignments are stored in dedicated
 - [2017-2018 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2017-2018)
 - [2018-2019 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2018-2019)
 - [2019-2020 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2019-2020)
-- [2020-2021 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2020-2021) (latest)
+- [2020-2021 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2020-2021)
+- [2021-2022 branch in github.com/telecom-se/hpp](https://github.com/telecom-se/hpp/tree/2021-2022) (latest)
