@@ -33,12 +33,12 @@ You will have a total of 5 marks as follows (each color in the previous organiza
 
 HPP course:
 - [25%] Your code on "SIMD" (exercice 4) delivered for the **31rst March 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13598)
-- [25%] Your presentation on "Emerging Technologies for HPP" (named "New Hardware" in the diagram) for the **6th April 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=27349)
+- [25%] Your presentation on "Emerging Technologies for HPP" (named "New Hardware" in the diagram) for the **6th April 2022** [here](https://mootse.telecom-st-etienne.fr/mod/workshop/view.php?id=27349)
 - [25%] Your code on "Mechanical Sympathy" delivered for the **2nd May 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
 - [25%] Your code on "Multi-Threading" delivered for the **3rd May 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
 
 HPP Project:
-- [50%] Your code for the project delivered for the **12th May 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13594)
+- [50%] Your code for the project delivered for the **12th May 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=17102)
 - [50%] Your defense for the HPP project on the **12th May 2022** (a few slides to introduce the architecture of your solution and your results, then the rest directly on your computer)
 
 
