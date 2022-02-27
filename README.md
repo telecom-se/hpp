@@ -32,7 +32,7 @@ The two instructors for this course are:
 You will have a total of 5 marks as follows (each color in the previous organization table leads to notation).
 
 HPP course:
-- [25%] Your code on "SIMD" (exercice 4) delivered for the **1rst April 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
+- [25%] Your code on "SIMD" (exercice 4) delivered for the **31rst March 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
 - [25%] Your presentation on "Emerging Technologies for HPP" (named "New Hardware" in the diagram) for the **6th April 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=16924)
 - [25%] Your code on "Mechanical Sympathy" delivered for the **2nd May 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
 - [25%] Your code on "Multi-Threading" delivered for the **3rd May 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
