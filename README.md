@@ -32,8 +32,8 @@ The two instructors for this course are:
 You will have a total of 5 marks as follows (each color in the previous organization table leads to notation).
 
 HPP course:
-- [25%] Your code on "SIMD" (exercice 4) delivered for the **31rst March 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
-- [25%] Your presentation on "Emerging Technologies for HPP" (named "New Hardware" in the diagram) for the **6th April 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=16924)
+- [25%] Your code on "SIMD" (exercice 4) delivered for the **31rst March 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13598)
+- [25%] Your presentation on "Emerging Technologies for HPP" (named "New Hardware" in the diagram) for the **6th April 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=27349)
 - [25%] Your code on "Mechanical Sympathy" delivered for the **2nd May 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
 - [25%] Your code on "Multi-Threading" delivered for the **3rd May 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
 
@@ -44,7 +44,8 @@ HPP Project:
 
 ## Labs materials
 
-- [SIMD](./lab2-SIMD/README.md)
-- [Emerging technologies in HPP](./lab3-2020-2021/README.md)
-- [Mechanical Sympathy](./lab1-MechanicalSympathy/README.md)
+- [SIMD](./lab1-SIMD/README.md)
+- [Emerging technologies in HPP](./lab2-EmergingTech/README.md)
+- [Mechanical Sympathy](./lab3-MechanicalSympathy/README.md)
+- [Advanced Multi-Threading](./lab3-MultiThreading/README.md)
 - [HPP Project](./project/README.md)
