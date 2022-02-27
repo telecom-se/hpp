@@ -47,5 +47,5 @@ HPP Project:
 - [SIMD](./lab1-SIMD/README.md)
 - [Emerging technologies in HPP](./lab2-EmergingTech/README.md)
 - [Mechanical Sympathy](./lab3-MechanicalSympathy/README.md)
-- [Advanced Multi-Threading](./lab3-MultiThreading/README.md)
+- [Advanced Multi-Threading](./lab4-MultiThreading/README.md)
 - [HPP Project](./project/README.md)
