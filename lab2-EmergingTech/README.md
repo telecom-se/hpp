@@ -25,10 +25,11 @@ one of the following topics:
 
 - **Hardware**
   - **New forms of computing**
-     - [New forms](https://www.youtube.com/watch?v=xNDInhRni_c): [Neuromorphic](https://www.zdnet.fr/actualites/intel-lance-la-deuxieme-generation-de-sa-puce-neuromorphique-loihi-39930129.htm), [Quantum](https://www.zdnet.fr/actualites/intel-lance-la-deuxieme-generation-de-sa-puce-neuromorphique-loihi-39930129.htm) [2](https://www.youtube.com/watch?v=maZnwuGxAA8), [Organic](https://www.youtube.com/watch?v=F7REp0Y9edA), [Light](https://www.youtube.com/watch?v=pBL6YyXL1lc&t=2693s), etc.
+     - [New forms](https://www.youtube.com/watch?v=xNDInhRni_c): [Neuromorphic](https://www.zdnet.fr/actualites/intel-lance-la-deuxieme-generation-de-sa-puce-neuromorphique-loihi-39930129.htm) [2](https://www.quantamagazine.org/ai-overcomes-stumbling-block-on-brain-inspired-hardware-20220217/), [Quantum](https://www.zdnet.fr/actualites/intel-lance-la-deuxieme-generation-de-sa-puce-neuromorphique-loihi-39930129.htm) [2](https://www.youtube.com/watch?v=maZnwuGxAA8), [Organic](https://www.youtube.com/watch?v=F7REp0Y9edA), [Light](https://www.youtube.com/watch?v=pBL6YyXL1lc&t=2693s), etc.
 
   - **CPUs**
       - [Intel CPUs' evolution](https://www.phoronix.com/scan.php?page=news_item&px=ADL-To-SNB-Kaveri-Benchmarks) and [future](https://www.numerama.com/tech/729285-quest-ce-que-lere-angstrom-des-processeurs-promise-par-intel.html) [...](https://www.inpact-hardware.com/article/2765/idaville-intel-se-prepare-a-remplacer-ses-xeon-d) [Aurora](https://www.generation-nt.com/intel-aurora-supercalculateur-2-exaflops-actualite-1994108.html) [...](https://www.phoronix.com/scan.php?page=news_item&px=Intel-ORM-Code-Samples) [Alder/Raptor Lake](https://www.generation-nt.com/intel-alder-lake-hx-processeur-raptor-lake-actualite-1989156.html) [Meteor Lake](https://www.generation-nt.com/intel-meteor-lake-gravure-7-nm-actualite-1988503.html) [Tiger Lake](https://www.zdnet.fr/actualites/intel-presente-sa-nouvelle-generation-de-processeurs-tiger-lake-h-39922523.htm)
+      - [Intel Xeon e-cores](https://www.nextinpact.com/article/49876/intel-xeon-e-cores-falcon-shores-projet-endgame-et-compression-materielle-av1), [2](https://www.cnet.com/tech/computing/intel-shows-off-the-chip-technology-thatll-power-your-pc-in-2025/), [3](https://slashdot.org/story/22/02/18/108214/intel-discloses-multi-generation-xeon-scalable-roadmap-new-e-core-only-xeons-in-2024)
       - [AMD's evolution & furture](https://www.generation-nt.com/amd-epyc-genoa-zen-4-sp5-caracteristiques-actualite-1991392.html) [EPYC Zen 4](https://www.inpact-hardware.com/article/2555/bergamo-amd-preparerait-epyc-zen-4-a-128-curs-different-genoa)
       - [Google's "Whitechapel" chip (Pixel 6)](https://www.osnews.com/story/133254/pixel-6-will-be-powered-by-new-google-made-whitechapel-chip/)
       - Snapdragon's [future](https://hardware.slashdot.org/story/21/11/16/1624239/qualcomms-next-gen-cpu-for-pcs-will-take-on-apples-m-series-chips-in-2023) [8 Gen1](https://www.tomsguide.com/news/snapdragon-8-gen-1) , [G3x Gen 1](https://www.tomsguide.com/news/snapdragon-g3x-gen-1) and [8cx Gen3](https://www.01net.com/actualites/qualcomm-lance-deux-nouvelles-puces-arm-pour-pc-et-s-attaquera-au-m1-d-apple-fin-2022-2052078.html) ([Lien 2](https://www.generation-nt.com/qualcomm-snapdragon-8cx-gen-3-puce-arm-pc-portable-actualite-1995414.html))
@@ -60,6 +61,8 @@ one of the following topics:
       - [DDR5 & Compute Express Link (CXL)](https://www.inpact-hardware.com/article/2464/samsung-annonce-module-ddr5-exploitant-compute-express-link-cxl)
 
 - **Software**
+  - **Language**
+      - [New Programming Language for HPP](https://news.mit.edu/2022/new-programming-language-high-performance-computers-0207)
   - **Data Structures**
       - [Restartable sequences](https://lwn.net/Articles/883104/)
       - [Managing HUGE Java Queues](https://dzone.com/articles/java-creating-terabyte-sized-queues-with-low-laten-1)
@@ -83,6 +86,7 @@ one of the following topics:
       - [Just-in-Time Algorithms](http://eecs.ucf.edu/~dcm/Teaching/COT4810-Spring2011/Literature/JustInTimeCompilation.pdf)
       - [Reservoir Sampling](https://en.wikipedia.org/wiki/Reservoir_sampling)
       - [Extreme HTTP Tuning](https://talawah.io/blog/extreme-http-performance-tuning-one-point-two-million/)
+      - [Optimization of one algorithm](https://tinkering.xyz/fmo-optimization-story/)
 
 - **Security**
   - [Attacks on Apple's M1](https://www.phoronix.com/scan.php?page=news_item&px=Apple-M1-M1RACLES)
