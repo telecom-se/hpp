@@ -38,7 +38,7 @@ one of the following topics:
       - [Moore's Law](https://en.wikipedia.org/wiki/Moore%27s_law) and the [Race for smallest CPUs](https://www.anandtech.com/show/16656/ibm-creates-first-2nm-chip))
       - [Comparison of ARM vs. Intel](https://www.androidauthority.com/arm-vs-x86-key-differences-explained-568718/)
       - [IBM](https://slashdot.org/story/21/09/05/0321217/ibms-new-mainframe-7nm-cpu-telum-16-cores-at-5ghz-virtual-l3-and-l4-cache)
-      - [Apple's M1](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Reverse-Engineering-The-M1.pdf)
+      - [Apple's M1](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Reverse-Engineering-The-M1.pdf) and [M2](https://www.tomsguide.com/news/apple-m2-chip-reportedly-being-tested-ahead-of-tomorrows-apple-event)
       - [ARM v9](https://www.anandtech.com/show/16693/arm-announces-mobile-armv9-cpu-microarchitectures-cortexx2-cortexa710-cortexa510) [2](https://www.phoronix.com/scan.php?page=news_item&px=Arm-Cortex-X2)
       - [Panorama](https://www.osnews.com/story/134410/intel-amd-nvidia-announce-tons-of-new-products/)
       - Sustainable Development with [Passive Machines](https://www.inpact-hardware.com/article/2756/noctua-nh-p1-machine-100-passive-avec-core-i7-11700-cest-possible)
