@@ -25,7 +25,7 @@ one of the following topics:
 
 - **Hardware**
   - **New forms of computing**
-     - [New forms](https://www.youtube.com/watch?v=xNDInhRni_c): [Neuromorphic](https://www.zdnet.fr/actualites/intel-lance-la-deuxieme-generation-de-sa-puce-neuromorphique-loihi-39930129.htm) [2](https://www.quantamagazine.org/ai-overcomes-stumbling-block-on-brain-inspired-hardware-20220217/), [Quantum](https://www.zdnet.fr/actualites/intel-lance-la-deuxieme-generation-de-sa-puce-neuromorphique-loihi-39930129.htm) [2](https://www.youtube.com/watch?v=maZnwuGxAA8), [Organic](https://www.youtube.com/watch?v=F7REp0Y9edA), [Light](https://www.youtube.com/watch?v=pBL6YyXL1lc&t=2693s), [Analogic](https://www.youtube.com/watch?v=GVsUOuSjvcg), etc.
+     - [New forms](https://www.youtube.com/watch?v=xNDInhRni_c): [Neuromorphic](https://www.zdnet.fr/actualites/intel-lance-la-deuxieme-generation-de-sa-puce-neuromorphique-loihi-39930129.htm) [2](https://www.quantamagazine.org/ai-overcomes-stumbling-block-on-brain-inspired-hardware-20220217/), [Quantum](https://www.zdnet.fr/actualites/intel-lance-la-deuxieme-generation-de-sa-puce-neuromorphique-loihi-39930129.htm) [2](https://www.youtube.com/watch?v=maZnwuGxAA8) [3](https://www.zdnet.fr/actualites/alice-bob-passe-une-etape-de-plus-vers-son-ordinateur-quantique-sans-erreur-39938697.htm), [Organic](https://www.youtube.com/watch?v=F7REp0Y9edA), [Light](https://www.youtube.com/watch?v=pBL6YyXL1lc&t=2693s), [Analogic](https://www.youtube.com/watch?v=GVsUOuSjvcg), etc.
 
   - **CPUs**
       - [Intel CPUs' evolution](https://www.phoronix.com/scan.php?page=news_item&px=ADL-To-SNB-Kaveri-Benchmarks) and [future](https://www.numerama.com/tech/729285-quest-ce-que-lere-angstrom-des-processeurs-promise-par-intel.html) [...](https://www.inpact-hardware.com/article/2765/idaville-intel-se-prepare-a-remplacer-ses-xeon-d) [Aurora](https://www.generation-nt.com/intel-aurora-supercalculateur-2-exaflops-actualite-1994108.html) [...](https://www.phoronix.com/scan.php?page=news_item&px=Intel-ORM-Code-Samples) [Alder/Raptor Lake](https://www.generation-nt.com/intel-alder-lake-hx-processeur-raptor-lake-actualite-1989156.html) [Meteor Lake](https://www.generation-nt.com/intel-meteor-lake-gravure-7-nm-actualite-1988503.html) [Tiger Lake](https://www.zdnet.fr/actualites/intel-presente-sa-nouvelle-generation-de-processeurs-tiger-lake-h-39922523.htm)
@@ -38,7 +38,7 @@ one of the following topics:
       - [Moore's Law](https://en.wikipedia.org/wiki/Moore%27s_law) and the [Race for smallest CPUs](https://www.anandtech.com/show/16656/ibm-creates-first-2nm-chip))
       - [Comparison of ARM vs. Intel](https://www.androidauthority.com/arm-vs-x86-key-differences-explained-568718/)
       - [IBM](https://slashdot.org/story/21/09/05/0321217/ibms-new-mainframe-7nm-cpu-telum-16-cores-at-5ghz-virtual-l3-and-l4-cache)
-      - [Apple's M1](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Reverse-Engineering-The-M1.pdf) and [M2](https://www.tomsguide.com/news/apple-m2-chip-reportedly-being-tested-ahead-of-tomorrows-apple-event) [2](https://www.tomsguide.com/news/apple-m2-chip)
+      - [Apple's M1](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Reverse-Engineering-The-M1.pdf), [M1 Ultra](https://www.tomsguide.com/news/apple-m1-ultra-everything-we-know-so-far) [2](https://www.cnet.com/tech/computing/why-the-m1-ultra-is-a-big-deal-apple-shows-the-future-of-chips/) and [M2](https://www.tomsguide.com/news/apple-m2-chip-reportedly-being-tested-ahead-of-tomorrows-apple-event) [2](https://www.tomsguide.com/news/apple-m2-chip)
       - [ARM v9](https://www.anandtech.com/show/16693/arm-announces-mobile-armv9-cpu-microarchitectures-cortexx2-cortexa710-cortexa510) [2](https://www.phoronix.com/scan.php?page=news_item&px=Arm-Cortex-X2)
       - [Panorama](https://www.osnews.com/story/134410/intel-amd-nvidia-announce-tons-of-new-products/)
       - Sustainable Development with [Passive Machines](https://www.inpact-hardware.com/article/2756/noctua-nh-p1-machine-100-passive-avec-core-i7-11700-cest-possible)
@@ -92,6 +92,7 @@ one of the following topics:
 
 - **Security**
   - [Attacks on Apple's M1](https://www.phoronix.com/scan.php?page=news_item&px=Apple-M1-M1RACLES)
+  - [Spectre-BHI](https://lwn.net/Articles/887326/) [2](https://www.phoronix.com/scan.php?page=article&item=spectre-bhi-retpoline&num=1)
   - [RowHammer](https://en.wikipedia.org/wiki/Row_hammer) [2](https://www.wired.com/story/rowhammer-half-double-attack-bit-flips/) [3](https://thehackernews.com/2021/05/google-researchers-discover-new-variant.html) and [BlackSmith Attack](https://thehackernews.com/2021/11/new-blacksmith-exploit-bypasses-current.html)
   - [Multi-Threading and Security](https://utcc.utoronto.ca/~cks/space/blog/tech/SMTSecurityUncertainty)
   - [How to find vulnerabilities](https://vuls.cert.org/confluence/display/Wiki/2021/06/21/Finding+Privilege+Escalation+Vulnerabilities+in+Windows+using+Process+Monitor)
