@@ -23,8 +23,8 @@ The timeframe for the aforementionned activities is as provided by the following
 ![](./resources/figures/orga.png)
 
 The two instructors for this course are:
-- Guillaume Muller <guillaume.muller@univ-st-etienne.fr>
-- Priyanka Rawat <priyanka.rawat@univ-st-etienne.fr>
+- Guillaume Muller ![gm@univ](./resources/gm.png "gm@univ")
+- Priyanka Rawat ![pr@univ](./resources/pr.png "pr@univ")
 
 
 ## Evaluation
@@ -49,4 +49,3 @@ HPP Project:
 - [Mechanical Sympathy](./lab3-MechanicalSympathy/README.md)
 - [Multi-Threading](./lab4-MultiThreading/)
 - [HPP Project](./project/README.md)
-
