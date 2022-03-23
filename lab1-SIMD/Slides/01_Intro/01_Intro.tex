@@ -1,17 +1,15 @@
-% Created 2021-04-12 Mon 08:50
+% Created 2022-03-16 Wed 12:55
 % Intended LaTeX compiler: pdflatex
 \documentclass[presentation]{beamer}
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{grffile}
 \usepackage{longtable}
 \usepackage{wrapfig}
 \usepackage{rotating}
 \usepackage[normalem]{ulem}
 \usepackage{amsmath}
-\usepackage{textcomp}
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
@@ -98,16 +96,16 @@ tabsize=2
  pdftitle={High Performance Programming -- SIMD -- Intro},
  pdfkeywords={High-Performance Programming SIMD Introduction MMX SSE AVX},
  pdfsubject={High Performance Programming -- SIMD -- Intro},
- pdfcreator={Emacs 26.3 (Org mode 9.4.5)}, 
+ pdfcreator={Emacs 26.3 (Org mode 9.5.2)}, 
  pdflang={English}}
 \begin{document}
 
 \maketitle
 
 \section*{}
-\label{sec:orgb241b26}
+\label{sec:org463391e}
 
-\begin{frame}[label={sec:orgdd476bd}]{Why having HPP lectures in FISE2? Why HPP?}
+\begin{frame}[label={sec:org2754b3a}]{Why having HPP lectures in FISE2? Why HPP?}
 \pause
 \begin{block}{Classical approach to HPP = distribute on cluster}
 \begin{itemize}
@@ -130,7 +128,7 @@ tabsize=2
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgc8a6a15}]{Why SIMD/MMX/SSE/AVX?}
+\begin{frame}[label={sec:org2c4cc7f}]{Why SIMD/MMX/SSE/AVX?}
 \begin{block}{Task Parallelism}
 \begin{itemize}
 \item Execute coarse-grained pieces of code on \(\neq\) pieces of hardware
@@ -147,16 +145,24 @@ tabsize=2
 \end{block}
 
 \begin{block}{ ~~}
-\bigskip
+\medskip
+\begin{itemize}
+\item Write a code that is \alert{highly efficient}
+\begin{itemize}
+\item because \alert{highly adapted to hardware}
+\item (thus less portable)
+\end{itemize}
+\end{itemize}
+\medskip \pause
 \begin{itemize}
 \item \emph{Who has already used/programmed a processor \(\neq\) Intel?}
-\bigskip
 \end{itemize}
+\bigskip
 \end{block}
 \end{frame}
 
 
-\begin{frame}[label={sec:org5519ebd}]{"Ça dépend" ("ça dépasse"?)}
+\begin{frame}[label={sec:orga7b25b0}]{"Ça dépend" ("ça dépasse"?)}
 \definecolor{myblue}{HTML}{9999FF}
 \scalebox{.72}{
 \begin{tikzpicture}[x=3cm,y=1.5cm]
@@ -167,10 +173,10 @@ tabsize=2
 
    \node[rnode] (Designer)    at (2,0)  { \parbox{3.5cm}{ \center { \bf Designer } \\ Micro-Architecture } } ;
 
-   \onslide<2-> { \node[rnode] (Past)        at (0,0)  { \parbox{3.5cm}{ \center { \bf \large Past }       \\ { \normal \begin{itemize} \item Needs \item Capacities \item Errors \end{itemize} } } } ; }
-   \onslide<2-> { \node[rnode] (Future)      at (4,0)  { \parbox{3.5cm}{ \center { \bf \large Future }     \\ { \normal \begin{itemize} \item Dreams \item New needs \item New Capacities \end{itemize} } } } ; }
-   \onslide<3-> { \node[rnode] (Users)       at (2,+2) { \parbox{3.5cm}{ \center { \bf \large Users }      \\ { \normal \begin{itemize} \item Developers \item Compilers \end{itemize} } } } ; }
-   \onslide<3-> { \node[rnode] (Electronics) at (2,-2) { \parbox{3.5cm}{ \center { \bf \large Electronics} \\ { \normal \begin{itemize} \item Physical Limits \item Complexity \end{itemize} } } } ; }
+   \onslide<2-> { \node[rnode] (Past)        at (0,0)  { \parbox{3.5cm}{ \center { \bf \large Past }       \\ { \normalsize \begin{itemize} \item Needs \item Capacities \item Errors \end{itemize} } } } ; }
+   \onslide<2-> { \node[rnode] (Future)      at (4,0)  { \parbox{3.5cm}{ \center { \bf \large Future }     \\ { \normalsize \begin{itemize} \item Dreams \item New needs \item New Capacities \end{itemize} } } } ; }
+   \onslide<3-> { \node[rnode] (Users)       at (2,+2) { \parbox{3.5cm}{ \center { \bf \large Users }      \\ { \normalsize \begin{itemize} \item Developers \item Compilers \end{itemize} } } } ; }
+   \onslide<3-> { \node[rnode] (Electronics) at (2,-2) { \parbox{3.5cm}{ \center { \bf \large Electronics} \\ { \normalsize \begin{itemize} \item Physical Limits \item Complexity \end{itemize} } } } ; }
 
    \onslide<2-> { \draw[sarrow] (Past)     -> (Designer) ; }
    \onslide<2-> { \draw[sarrow] (Designer) -> (Future) ; }
@@ -184,7 +190,7 @@ tabsize=2
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgb1a1d2b},fragile]{"Reminder"}
+\begin{frame}[label={sec:orgf7e0255},fragile]{"Reminder"}
  \begin{center}
 \includegraphics[width=.8\textwidth]{./images/cpu.png}
 \end{center}
@@ -206,6 +212,7 @@ tabsize=2
 \item \small Fetch
 \item \small Decode
 \item \small Execute
+\item \small Store
 \item \small \ldots{}
 \end{itemize}
 \end{block}

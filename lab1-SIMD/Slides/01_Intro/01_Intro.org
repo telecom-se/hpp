@@ -132,7 +132,7 @@
   # ### One can include other org files with:
   # #+INCLUDE: "/path/to/chapter2.org" :minlevel 1
 
-* 
+* @@l:@@
 
 ** Why having HPP lectures in FISE2? Why HPP?
    \pause
@@ -161,8 +161,12 @@
     :PROPERTIES:
     :BEAMER_OPT: ignoreheading
     :END:
-    \bigskip
-   - /Who has already used/programmed a processor $\neq$ Intel?/
+    \medskip
+    - Write a code that is *highly efficient*
+      - because *highly adapted to hardware*
+      - (thus less portable)
+    \medskip \pause
+    - /Who has already used/programmed a processor $\neq$ Intel?/
     \bigskip
 
 
@@ -178,10 +182,10 @@
 
          \node[rnode] (Designer)    at (2,0)  { \parbox{3.5cm}{ \center { \bf Designer } \\ Micro-Architecture } } ;
 
-         \onslide<2-> { \node[rnode] (Past)        at (0,0)  { \parbox{3.5cm}{ \center { \bf \large Past }       \\ { \normal \begin{itemize} \item Needs \item Capacities \item Errors \end{itemize} } } } ; }
-         \onslide<2-> { \node[rnode] (Future)      at (4,0)  { \parbox{3.5cm}{ \center { \bf \large Future }     \\ { \normal \begin{itemize} \item Dreams \item New needs \item New Capacities \end{itemize} } } } ; }
-         \onslide<3-> { \node[rnode] (Users)       at (2,+2) { \parbox{3.5cm}{ \center { \bf \large Users }      \\ { \normal \begin{itemize} \item Developers \item Compilers \end{itemize} } } } ; }
-         \onslide<3-> { \node[rnode] (Electronics) at (2,-2) { \parbox{3.5cm}{ \center { \bf \large Electronics} \\ { \normal \begin{itemize} \item Physical Limits \item Complexity \end{itemize} } } } ; }
+         \onslide<2-> { \node[rnode] (Past)        at (0,0)  { \parbox{3.5cm}{ \center { \bf \large Past }       \\ { \normalsize \begin{itemize} \item Needs \item Capacities \item Errors \end{itemize} } } } ; }
+         \onslide<2-> { \node[rnode] (Future)      at (4,0)  { \parbox{3.5cm}{ \center { \bf \large Future }     \\ { \normalsize \begin{itemize} \item Dreams \item New needs \item New Capacities \end{itemize} } } } ; }
+         \onslide<3-> { \node[rnode] (Users)       at (2,+2) { \parbox{3.5cm}{ \center { \bf \large Users }      \\ { \normalsize \begin{itemize} \item Developers \item Compilers \end{itemize} } } } ; }
+         \onslide<3-> { \node[rnode] (Electronics) at (2,-2) { \parbox{3.5cm}{ \center { \bf \large Electronics} \\ { \normalsize \begin{itemize} \item Physical Limits \item Complexity \end{itemize} } } } ; }
 
          \onslide<2-> { \draw[sarrow] (Past)     -> (Designer) ; }
          \onslide<2-> { \draw[sarrow] (Designer) -> (Future) ; }
@@ -218,4 +222,5 @@
     - \small Fetch
     - \small Decode
     - \small Execute
+    - \small Store
     - \small \ldots{}
