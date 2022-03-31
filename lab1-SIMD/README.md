@@ -146,7 +146,7 @@ We will use C++ because it is easier to access low-level instructions in this la
   - To help you, we defined folowing types:
     - `chanType`  (=`float`)  : type to store 1 channel of a pixel.
     - `pixelType` (=`Vec4f`)  : OpenCV's format to represent a pixel (4 floats)
--  - NOTE: to access/set a pixel, you can use `cv::Mat::at<Vec4b>(line, col)` as it returns a **reference** on the pixel at coordinates (line, col).
+-  - NOTE: to access/set a pixel, you can use `cv::Mat::at<pixelType>(line, col)` to access the pixel at position (line, col), or `cv::Mat::ptr<pixelType>(line, col)` which returns a **reference** on the pixel at coordinates (line, col).
     - `sseType`   (=`__m128`) : format to work with SSE registers.
     - `avxType`   (=`__m256`) : format to work with AVX registers.
   - And following consts:
