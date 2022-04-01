@@ -1,4 +1,9 @@
 #include "ImageManipulation.hpp"
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
 
 // DONE : forced convertion of image to type that allows working with round number of pixels in each iteration of the loop
 // NOTE: accessing individual pixels can be done with : mat.at<pixelType/chanType>(r,c) or cv::mat.ptr<pixelType/chanType>(r,c)
@@ -44,6 +49,14 @@ void ImageManipulation::displayImage(string title) {
     resizeWindow(title, 640, 480);
     imshow(title, _imageSrc); // Show our image inside the created window.
     waitKey(0); // Wait for any keystroke in the window
+    destroyWindow(title); //destroy the created window
+}
+
+void ImageManipulation::displayImage(string title, int duration) {
+    namedWindow(title, WINDOW_NORMAL); // Create a window
+    resizeWindow(title, 640, 480);
+    imshow(title, _imageSrc); // Show our image inside the created window.
+    sleep(duration);
     destroyWindow(title); //destroy the created window
 }
 

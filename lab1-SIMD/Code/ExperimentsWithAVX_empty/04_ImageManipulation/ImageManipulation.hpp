@@ -35,6 +35,7 @@ public:
   bool setImageSrc(string filename);
   string getImageSrcType();
   void displayImage(string title);
+  void displayImage(string title, int duration);
 
   long timeMethod(void (ImageManipulation::*methodToBeTimed)());
   void backupSrcImage();
@@ -45,7 +46,7 @@ public:
   virtual void fillWithZeroSSE() = 0;        // use SSE registers
   virtual void fillWithZeroAVX() = 0;        // use AVX registers
 
-  void setTargetColor(double pcR, double pcG, double pcB, double pcA);
+  void setTargetColor(double pcA, double pcR, double pcG, double pcB);
   virtual void fillWithColor() = 0;          // dummy 'for' loop
   virtual void fillWithColorOptimized() = 0; // loop on pointer
   virtual void fillWithColorSSE() = 0;       // use sse registers

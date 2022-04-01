@@ -22,22 +22,10 @@ void sse(float a[4], float b[4], float c[4], float res[4]) {
   // 3. Push back result from register to memory
 }
 
-/* simple optimization with SSE mult+add */
-void sse2(float a[4], float b[4], float c[4], float res[4]) {
-  // TODO: implement
-}
-
-
 /* better optimization with FMA */
 void fma(float a[4], float b[4], float c[4], float res[4]) {
   // TODO: implement
 }
-
-/* better optimization with FMA */
-void fma2(float a[4], float b[4], float c[4], float res[4]) {
-  // TODO: implement
-}
-
 
 /* displays the results & their timing */
 void printRes(string title, float res[4]/*, high_resolution_clock::time_point time1, high_resolution_clock::time_point time2*/) {

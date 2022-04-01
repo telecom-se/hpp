@@ -11,8 +11,8 @@ int main(int argc, char** argv)
 
   if (ok) {
     //// DEBUG
-    //cout << ImageManipulation::MAX_CHANTYPE << endl;
-    //cout << SCALE << endl;
+    // cout << ImageManipulation::MAX_CHANTYPE << endl;
+    // cout << SCALE << endl;
 
     manip.displayImage("ORIGINAL image");
     manip.backupSrcImage();
@@ -142,4 +142,5 @@ int main_final(int argc, char** argv) {
             manip.recoverSrcImage();
         }
     }
+    return 0;
 }
