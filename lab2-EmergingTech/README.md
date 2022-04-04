@@ -124,13 +124,13 @@ Presentation and slides can be done in English or French, as you prefer.
 
 | Grp nb | Assigned topic              | List of students           |
 |--------|-----------------------------|----------------------------|
-| 1      | AMD                         | Franot + Guironnet         |
-| 2      | Quantum                     | Bihan + Kleijn             |
-| 3      | Moore Limits                | Malifarge                  |
-| 4      | LSH                         | Ferra + Zemmiri            |
-| 5      | How to find Vulnerabilities | Perès + Teixeira           |
 | 6      | ADN (storage+computations?) | Palix + Zouine             |
+| 5      | How to find Vulnerabilities | Perès + Teixeira           |
+| 1      | AMD                         | Franot + Guironnet         |
+| 3      | Moore Limits                | Malifarge                  |
 | 7      | Writing VM                  | Dermich + Rahmouni + Sajed |
-| 8      | Neuromorphic                | Ait + Leang                |
+| 2      | Quantum                     | Bihan + Kleijn             |
 | 9      | RowHammer + DDR5            | Bourlet + Lelièvre         |
+| 4      | LSH                         | Ferra + Zemmiri            |
+| 8      | Neuromorphic                | Ait + Leang                |
 | 10     | ?                           | Jaouen?                    |
