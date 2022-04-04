@@ -126,11 +126,11 @@ Presentation and slides can be done in English or French, as you prefer.
 |--------|-----------------------------|----------------------------|
 | 1      | AMD                         | Franot + Guironnet         |
 | 2      | Quantum                     | Bihan + Kleijn             |
-| 3      | Moore Limits                | Malifarge + ?              |
+| 3      | Moore Limits                | Malifarge                  |
 | 4      | LSH                         | Ferra + Zemmiri            |
-| 5      | How to find Vulnerabilities | Peres + Teixeira           |
+| 5      | How to find Vulnerabilities | Perès + Teixeira           |
 | 6      | ADN (storage+computations?) | Palix + Zouine             |
-| 7      |                             | Dermich + Rahmouni + Sajed |
-| 8      |                             |                            |
-| 9      |                             |                            |
-| 10     |                             |                            |
+| 7      | Writing VM                  | Dermich + Rahmouni + Sajed |
+| 8      | Neuromorphic                | Ait + Leang                |
+| 9      | RowHammer + DDR5            | Bourlet + Lelièvre         |
+| 10     | ?                           | Jaouen?                    |
