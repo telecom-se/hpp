@@ -122,15 +122,15 @@ Presentation and slides can be done in English or French, as you prefer.
 
 ## Assignments
 
-| Grp nb | Assigned topic | List of students   |
-|--------|----------------|--------------------|
-| 1      | AMD            | Franot + Guironnet |
-| 2      | Quantum        | Kljein + Bihan     |
-| 3      | Moore Limits   | Malifarge + ?      |
-| 4      | LSH            | Zemmiri + Ferra    |
-| 5      |                |                    |
-| 6      |                |                    |
-| 7      |                |                    |
-| 8      |                |                    |
-| 9      |                |                    |
-| 10     |                |                    |
+| Grp nb | Assigned topic              | List of students   |
+|--------|-----------------------------|--------------------|
+| 1      | AMD                         | Franot + Guironnet |
+| 2      | Quantum                     | Kleijn + Bihan     |
+| 3      | Moore Limits                | Malifarge + ?      |
+| 4      | LSH                         | Zemmiri + Ferra    |
+| 5      | How to find Vulnerabilities | Peres + Teixeira   |
+| 6      | ADN (storage+computations?) | Zouine + Palix     |
+| 7      |                             |                    |
+| 8      |                             |                    |
+| 9      |                             |                    |
+| 10     |                             |                    |
