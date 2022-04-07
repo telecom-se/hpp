@@ -116,7 +116,8 @@ Along your JDK comes a nice tools to profile your running java program which is 
 
 If you don't find it, you can downlaod it as a standalone from [here](https://visualvm.github.io)
 
-For profiling CPU, the basis of what we'll need are [here](https://blogs.oracle.com/nbprofiler/entry/profiling_with_visualvm_part_1). 
+For profiling CPU, the basis of what we'll need are [here](https://www.vneuron.com/2018/01/23/profile-your-java-application-with-visualvm-part-1-of-2). 
+ 
 
 > Task : Explain the difference between the two ways of measuring elapsed time.
 
