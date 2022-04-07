@@ -134,7 +134,7 @@ We want to measure the elapsed time for walking the entire arrays of the followi
 
 We now want to walk `(2^k / 4`) random values from the array (maybe with repetitions). `(2^k / 4)` is the number of `int`'s in the array, so we want to fetch as many `int`from the array while preventing a sequential access. At each iteration, you will be choosing the index `i` of the array cell you want to pick from a pseudo random generator bounded in `[0; 2^k / 4 -1]`. For such generator, looking on stackoverflow can lead you to [interesting piece of code](http://stackoverflow.com/questions/363681/generating-random-integers-in-a-specific-range).
 
-Or, you are more cleaver and you make an array of the first `(2^k / 4 -1 - 1` integer, shuffle that array, and use the value as the next index to fetch.
+Or, you are more clever and you make an array of the first `(2^k / 4 -1 - 1` integer, shuffle that array, and use the value as the next index to fetch.
 
 > Task : Code the random (with possible repetitions) walk of arrays with different values for k, i.e.  `k = {20 .. 32}`.
 
