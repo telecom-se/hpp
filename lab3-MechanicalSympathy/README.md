@@ -215,7 +215,7 @@ What do yo observe and what can you assume ?
 > Now we will implement the C++ version of the algorithm when the data is unsorted.
 Compile it with: `g++ -o main main.cpp` and with `g++ -o main -O3 main.cpp`
 
-Compare execution time when the tbale is sorted when you compile with or without `-O3` option.
+Compare execution time when the table is sorted when you compile with or without `-O3` option.
 
 > Task (optional) : What happen in the C++ version if the data are in a 2D array (int[][]) with the `-O3` flag ?
 
