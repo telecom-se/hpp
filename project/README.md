@@ -205,15 +205,12 @@ Some rules to make it more accessible:
 ## What you will deliver
 
 - A- Documentation on *your* additional unit test set (4pts). 
-- B- Demonstration of your program and browsing your source code at defense day (program architecture in practice, comments, conception, clarity, implementation of unit tests set) + including questions/answer from teachers (16pt)
+- B- Demonstration of your program and browsing your source code during the project defense (program architecture in practice, comments, conception, clarity, implementation of unit tests set) + including questions/answer from teachers (16pt)
 
 As always, we want FIRST a program that we are sure to be correct through unit testing, and only SECOND optimizations.
 A project that is faster but for which we are not sure that all cases works fine (including edges cases) will be regarded lower than a slower solution but with maximum functionality coverage.
 
-We can provide git repositories if needed, just ask Guillaume or Christophe.
-
-
-_Finally, it is obvious but better made explicit that teachers will take into account for passing the difficulties raised by not being altogether in the same classroom._
+We can provide git repositories if needed.
 
 ## Data
 
@@ -236,8 +233,7 @@ There are some contraints:
 
 ### Groups
 
-Defense takes 15 minutes, sharing your screen or sitting around your laptop depending on how the situation will be.
-5 minutes to switch groups.
+Defense takes 15 minutes. 5 minutes to switch groups.
 
 May, 25th, 2020
 
