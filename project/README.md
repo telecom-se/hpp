@@ -9,17 +9,17 @@ Disclaimer: The rules of virus propagation and the generated data are **fictiona
 The coronavirus hit many european countries.
 These countries generated CSV files to help us to understand the virus propagation.
 The good news for the data analysts is that we have a list of hundred of thousands reported infected cases, and for most of the case we know from whom the case was contracted (some cases are though reported to be contracted from "unknown" person).
-That means that for a person `p` , we known that either that person contracted the virus from `p_j` where `j` in the population of the country reporting contamination cases.
+That means that for a person `p` , we known that probably that person contracted the virus from `p_j` where `j` in the population of the country reporting contamination cases.
 
 
 In our program, we want to identify the chain of contamination with the highest importance.
-Especially, we are asked by the european union parliament to report the top-3 more important chain of contaminated persons we can find in the provided datasets any time a new case is reported.
+Especially, we are asked by the european union parliament to report the top-3 most important chains of the contaminated persons we can find in the provided datasets any time a new case is reported.
 
 ### Computing the importance of a contamination chain
 
 We do not know really how long people are contagious. Scientists have provided you a rough model to estimate the importance of a chain of contaminations.
 
-Basically, a case is considered important with a score of 10 in its 7 first days (168 hours exactly, inclusive).
+Basically, a case is considered important with a score of 10 in its first 7 days (168 hours exactly, inclusive).
 Between 7 days (168 hours, exclusive) and 14 days (336 hours, inclusive), the case is considered with an importance score of 4.
 After 14 days (336 hours, exclusive), that case is considered 0 (although it can still participate to a chain of contamination if the overall score of that chain is not 0).
 _This model is not perfect, nor pretend to model or even approximate what happened in real life_.
