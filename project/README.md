@@ -126,7 +126,7 @@ France, 1, 20; France, 2, 10 <-- this is what we generate as top 3 for this even
 Meaning : a first chain starting with user `1` and score `20`, and another chain starting at user with id `2`of score `10`.
 
 
-4- Process next event
+4- Process next event:
 This is the second event from Italy.
 It is a new chain of contamination (it starts at score 10).
 All three previous event falls into the after 7 days and before 14 days case: they count as 4 each and no longer 10.
@@ -139,7 +139,7 @@ France, 1, 20; France, 2, 10
 Italy, 4, 10; France, 1, 8; France, 2, 4 <-- this is what we generate as top 3 for this event
 ```
 
-5- Process next event
+5- Process next event:
 This is the first event from Spain that must be popped out of the remaining events.
 Its timestamp is `04/16/2020 @ 4:00pm (UTC)`.
 All previous cases falls to score 0. Only that case remains.
@@ -152,7 +152,7 @@ Italy, 4, 10; France, 1, 8; France, 2, 4
 Spain, 6, 10<-- this is what we generate as top 3 for this event
 ```
 
-6- Process last event
+6- Process last event:
 We have next to consider the last event (3rd case in Italy).
 That event is supposed to be contamination from `person_id` 4, which no longer concern an active chain of contaminations.
 Consequently, it shall be considered as a root case for a new contamination chain (illustration of Rule 4).
