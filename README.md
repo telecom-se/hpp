@@ -29,7 +29,7 @@ The two instructors for this course are:
 
 ## Evaluation
 
-You will have a total of 5 marks as follows (each color in the previous organization table leads to notation).
+You will have a total of 5 grades as follows (each color in the previous organization table leads to notation).
 
 HPP course:
 - [25%] Your code on "SIMD" (exercice 4) delivered for the **31rst March 2022** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13598)
