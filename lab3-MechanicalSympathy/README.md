@@ -339,3 +339,4 @@ An update short introduction is available [here](http://www.baeldung.com/java-mi
 ### JMH
 [Java Performance Tuning Guide](http://java-performance.info/jmh/)  
 [JMH Jenkov tutorial](http://tutorials.jenkov.com/java-performance/jmh.html)
+[Introduction Java Microbenchmark Harness](https://www.loicmathieu.fr/wordpress/informatique/introduction-a-jmh-java-microbenchmark-harness/)
