@@ -226,7 +226,7 @@ Compare execution time when the table is sorted when you compile with or without
 Until now, what we have discovered suggest that the developer must be aware on how he/she store and traverse data, which implies a careful trade-off between data layout and algorithms being used.
 
 This trade-off require important knowledge and thorough benchmarking to get all the juice out of it.
-Thankfully, part part of these CPU and cache-aware optimization techniques can be automatically optimize, and actually are without you to know until now. You will come to understand in this activity that the code that is actually run as assembly (in C/C++ or Java) is never the code that you actually wrote in your high level language (C/C++ or Java). Quite disturbing, isn't it ? :-)
+Thankfully, part of these CPU and cache-aware optimization techniques can be automatically optimized, and actually are without you knowing until now. You will come to understand in this activity that the code that is actually run as assembly (in C/C++ or Java) is never the code that you actually wrote in your high level language (C/C++ or Java). Quite disturbing, isn't it ? :-)
 
 > Task : You are invited to look at the following automatic optimization techniques (what are they ?) : 
 - Branch prediction (you should now be familiar with this one)
