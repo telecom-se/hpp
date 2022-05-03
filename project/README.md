@@ -198,7 +198,7 @@ Some rules to make it more accessible:
 1- Write down (write words!) more unit tests. This will give you a better understanding of the problem, as well as a larger tests set for later unit testing.  
 2- Design (draw circles, squares, patatoïds...!) an architecture for your program.  
 3- Implement your unit test set (our tests + yours from step 1). In practice: Given three input files, check that the generated output file is the same as the one that is expected.  
-4- Implement (write code!) a first naïce solution but one that pass all tests (make something simple, but which works and build from that). 
+4- Implement (write code!) a first naive solution but one that pass all tests (make something simple, but which works and build from that). 
 5- Optimize your code: devise solutions to make your code faster while still satisfying the unit tests. Observer, benchmark, think, iterate, reimplement (rinse and repeat)._Hint: multithreading and choices of data structures should be your primary source of optimisation at first._  
 
 
