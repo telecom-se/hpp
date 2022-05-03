@@ -94,7 +94,7 @@ Consider the *Spanish* dataset as follows:
 Notes:  
 1587052800: 04/16/2020 @ 4:00pm (UTC)  
 
-What should happens is what follows:
+What should happen is what follows:
 
 1- Process event 1:
 The program parses each file concurrently. The first event to be processed is the first from France (oldest one - case `person_id` 1)
