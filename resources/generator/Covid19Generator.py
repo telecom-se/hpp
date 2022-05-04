@@ -133,7 +133,7 @@ if __name__ == "__main__":
 
     country_files = {}
     for c in COUNTRIES:
-        country_files[c] = open(OUT_DIR+"/"+c+".csv", "w")
+        country_files[c] = open(OUT_DIR+"/"+c+".csv", "w",encoding="utf8")
 
     # Generate patients
     for patient_id in range(0, MAX_PATIENTS):
