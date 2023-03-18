@@ -1,0 +1,226 @@
+#+STARTUP: showall indent
+#  --- Use C-c C-c to reload this ---
+#+TODO: TODO(t) | DONE(o)
+
+
+# ### Hack to make title on several lines
+#+BEAMER_HEADER: \title[HPP -- SIMD -- Intro]{High Performance Programming\\SIMD Intro -- MMX/SSE/AVX}
+#+BEAMER_HEADER: \subtitle{FISE2-INFO2}
+#+TITLE: High Performance Programming -- SIMD -- Intro
+#+AUTHOR: Guillaume MULLER
+#+EMAIL: guillaume.muller@telecom-st-etienne.fr
+#+DATE: \today
+#+DESCRIPTION: High Performance Programming -- SIMD -- Intro
+#+KEYWORDS: High-Performance Programming SIMD Introduction MMX SSE AVX
+#+LANGUAGE: en
+#+OPTIONS: toc:nil      ## remove Table Of Content
+#+OPTIONS: H:2          ## With H:1, *=slides || with H:2, *=sections
+#+OPTIONS: num:nil  ## use itemize vs. enumerate
+#+OPTIONS: comments yes
+
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+
+ # ### Conflicts withthe theme's color redefinition below :{
+ # #+BEAMER_THEME: Warsaw
+#+LATEX_HEADER: \usetheme{Warsaw}
+
+ # ### Already loaded by org-mode
+ # #+LATEX_HEADER: \usepackage[utf8]{inputenc}
+ # #+LATEX_HEADER: \usepackage[T1]{fontenc}
+ # #+LATEX_HEADER: \usepackage{graphicx}        % To insert images
+ # #+LATEX_HEADER: \usepackage[normalem]{ulem}  % For underline/strike
+ # #+LATEX_HEADER: \usepackage{amsmath}         % For mathcal?
+ # #+LATEX_HEADER: \usepackage{amssymb}         % For math symbols?
+ # #+LATEX_HEADER: \usepackage{hyperref}        % For pdf meta info + links?
+ # #+LATEX_HEADER:  \hypersetup{
+ # #+LATEX_HEADER:   pdfauthor={...},
+ # #+LATEX_HEADER:   pdftitle={...},
+ # #+LATEX_HEADER:   pdfkeywords={...},
+ # #+LATEX_HEADER:   pdfsubject={...},
+ # #+LATEX_HEADER:   pdfcreator={Emacs (Org mode)},
+ # #+LATEX_HEADER:   pdflang={English}
+ #  #+LATEX_HEADER: }
+
+#+LATEX_HEADER: \hypersetup{
+#+LATEX_HEADER:   colorlinks=true,%
+#+LATEX_HEADER:   urlcolor=blue,%
+#+LATEX_HEADER:   linkcolor=blue%
+#+LATEX_HEADER: }
+
+#+LATEX_HEADER: \usepackage[gen]{eurosym}    % For € symbol
+#+LATEX_HEADER: \usepackage{wasysym}         % For smileys
+#+LATEX_HEADER: \usepackage{bclogo}          % For bcattention & bccrayon signs
+#+LATEX_HEADER: \usepackage{fontawesome}     % For pretty UTF-8 emojis \faWarning \faExclamationTriangle
+#+LATEX_HEADER: \usepackage{tikz}            % For drawings
+#+LATEX_HEADER: \usetikzlibrary{arrows.meta} % For arrow heads
+#+LATEX_HEADER: \usetikzlibrary{shadows}
+#+LATEX_HEADER: \usepackage{tikzsymbols}     % For Sticky man
+#+LATEX_HEADER: \usepackage{listings}        % To insert Java code listing
+#+LATEX_HEADER: \definecolor{dkgreen}{rgb}{0,0.6,0}  %% Colors for the Java listings
+#+LATEX_HEADER: \definecolor{gray}{rgb}{0.5,0.5,0.5}
+#+LATEX_HEADER: \definecolor{mauve}{rgb}{0.58,0,0.82}
+#+LATEX_HEADER: \lstset{frame=none,          % For Java listings
+#+LATEX_HEADER:   language=java,
+#+LATEX_HEADER:   aboveskip=1mm,
+#+LATEX_HEADER:   belowskip=1mm,
+#+LATEX_HEADER:   showstringspaces=false,
+#+LATEX_HEADER:   columns=flexible,
+#+LATEX_HEADER:   basicstyle={\scriptsize \ttfamily},
+#+LATEX_HEADER:   numbers=left,
+#+LATEX_HEADER:   numberstyle=\scriptsize\color{gray},
+#+LATEX_HEADER:   keywordstyle=\color{blue},
+#+LATEX_HEADER:   commentstyle=\color{dkgreen},
+#+LATEX_HEADER:   stringstyle=\color{mauve},
+#+LATEX_HEADER:   breaklines=true,
+#+LATEX_HEADER:   breakatwhitespace=true,
+#+LATEX_HEADER:   tabsize=2
+#+LATEX_HEADER: }
+
+  # Dark theme based on Warsaw
+#+LATEX_HEADER: \setbeamercolor{normal text}{fg=white,bg=black!90}
+#+LATEX_HEADER: \setbeamercolor{structure}{fg=white} %% TODO Problem with "description" env!
+#+LATEX_HEADER: \setbeamercolor{alerted text}{fg=red!85!black}
+#+LATEX_HEADER: \setbeamercolor{item projected}{use=item,fg=black,bg=item.fg!35}
+#+LATEX_HEADER: \setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
+#+LATEX_HEADER: \setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
+#+LATEX_HEADER: \setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
+#+LATEX_HEADER: \setbeamercolor*{palette quaternary}{use=structure,fg=structure.fg!95!black,bg=black!80}
+#+LATEX_HEADER: \setbeamercolor*{framesubtitle}{fg=white}
+#+LATEX_HEADER: \setbeamercolor*{block title}{parent=structure,bg=black!60}
+#+LATEX_HEADER: \setbeamercolor*{block body}{fg=black,bg=black!10}
+#+LATEX_HEADER: \setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
+#+LATEX_HEADER: \setbeamercolor*{block title example}{parent=example text,bg=black!15}
+
+  # What is the "headline" level that is transformed to a frame?
+#+LATEX_HEADER_FRAME_LEVEL: 1
+#+LATEX_HEADER: \setbeamertemplate{navigation symbols}{}
+#+LATEX_HEADER: \setbeamertemplate{headline}{}
+#+LATEX_HEADER: \addtobeamertemplate{navigation symbols}{}{%
+#+LATEX_HEADER:   \usebeamerfont{footline}%
+#+LATEX_HEADER:   \usebeamercolor[fg]{footline}%
+#+LATEX_HEADER:   \hspace{1em}%
+#+LATEX_HEADER:   \insertframenumber{}/\inserttotalframenumber{}
+#+LATEX_HEADER: }
+
+  # Put a slide with presentation outline before every new section
+#+LATEX_HEADER: \AtBeginSection[]
+#+LATEX_HEADER: {
+#+LATEX_HEADER:   \begin{frame}<beamer>
+#+LATEX_HEADER:     %\frametitle{Outline for section \thesection}
+#+LATEX_HEADER:     \tableofcontents[currentsection]
+#+LATEX_HEADER:   \end{frame}
+#+LATEX_HEADER: }
+
+  # Make items appear one after the other
+  # #+BEAMER: \beamerdefaultoverlayspecification{<+->}
+
+
+#+LATEX_HEADER: \newcommand{\myarrow}[6]{ % size / src / linestyle / text / arrowhead / dest
+#+LATEX_HEADER:   \begin{tikzpicture}[baseline=-0.5ex]{
+#+LATEX_HEADER:       \node[inner sep=0](@1) at (0,0) {#2};
+#+LATEX_HEADER:       \node[inner sep=0](@2) at (#1,0) {#6};
+#+LATEX_HEADER:       \draw [#3,arrows={#5},shorten >= 2pt,shorten <= 2pt] (@1) -- (@2) node[pos=.5,above,inner sep=1pt] { #4 };}
+#+LATEX_HEADER: \end{tikzpicture}\xspace
+#+LATEX_HEADER: }
+
+#+LATEX_HEADER: \def\up#1{$^\text{#1}$}
+#+LATEX_HEADER: \newcommand{\FrFlag}{\includegraphics[height=1.5em]{../images/UML/Lecture1/flag_france.png}}
+#+LATEX_HEADER: \newcommand{\LOTRing}{\includegraphics[height=1.5em]{../images/UML/Lecture1/LOTR_1Ring.png}}
+
+
+  # ### One can include other org files with:
+  # #+INCLUDE: "/path/to/chapter2.org" :minlevel 1
+
+* @@l:@@
+
+** Why having HPP lectures in FISE2? Why HPP?
+   \pause
+*** Classical approach to HPP = distribute on cluster
+    - What if the initial code is inefficient?
+    - $\Rightarrow$ Optimize locally / Think parallel
+   \pause
+*** Current machines already are massively parallel
+    - Multi-Core, Multi-Thread\ldots{}
+   \pause
+*** A large part of optimizations can not be treated automatically
+    - $\Rightarrow$ impossible to rely on tools written by others
+    - $\Rightarrow$ as (future) engineers in CS: mandatory knowledge
+
+** Why SIMD/MMX/SSE/AVX?
+*** Task Parallelism
+    - Execute coarse-grained pieces of code on $\neq$ pieces of hardware
+    - Multi-Cores, *Multi-Threading*\ldots{}
+   \pause
+*** Instruction/Data Parallelism
+    - Tiny pieces of code/data simultaneously on = hardware
+    - *SIMD*
+    \pause
+
+*** @@latex: ~~@@
+    :PROPERTIES:
+    :BEAMER_OPT: ignoreheading
+    :END:
+    \medskip
+    - Write a code that is *highly efficient*
+      - because *highly adapted to hardware*
+      - (thus less portable)
+    \medskip \pause
+    - /Who has already used/programmed a processor $\neq$ Intel?/
+    \bigskip
+
+
+** "Ça dépend" ("ça dépasse"?)
+      #+BEGIN_EXPORT LaTeX
+      \definecolor{myblue}{HTML}{9999FF}
+      \scalebox{.72}{
+      \begin{tikzpicture}[x=3cm,y=1.5cm]
+         %\pgfpointxy{1}{1}
+         % Styles
+         \tikzset{rnode/.style={draw,rectangle,rounded corners=3pt,drop shadow,fill=myblue}}
+         \tikzset{sarrow/.style={very thick,->,>=stealth'}}
+
+         \node[rnode] (Designer)    at (2,0)  { \parbox{3.5cm}{ \center { \bf Designer } \\ Micro-Architecture } } ;
+
+         \onslide<2-> { \node[rnode] (Past)        at (0,0)  { \parbox{3.5cm}{ \center { \bf \large Past }       \\ { \normalsize \begin{itemize} \item Needs \item Capacities \item Errors \end{itemize} } } } ; }
+         \onslide<2-> { \node[rnode] (Future)      at (4,0)  { \parbox{3.5cm}{ \center { \bf \large Future }     \\ { \normalsize \begin{itemize} \item Dreams \item New needs \item New Capacities \end{itemize} } } } ; }
+         \onslide<3-> { \node[rnode] (Users)       at (2,+2) { \parbox{3.5cm}{ \center { \bf \large Users }      \\ { \normalsize \begin{itemize} \item Developers \item Compilers \end{itemize} } } } ; }
+         \onslide<3-> { \node[rnode] (Electronics) at (2,-2) { \parbox{3.5cm}{ \center { \bf \large Electronics} \\ { \normalsize \begin{itemize} \item Physical Limits \item Complexity \end{itemize} } } } ; }
+
+         \onslide<2-> { \draw[sarrow] (Past)     -> (Designer) ; }
+         \onslide<2-> { \draw[sarrow] (Designer) -> (Future) ; }
+         \onslide<3-> { \draw[sarrow] (Users)    -> (Designer) ; }
+         \onslide<3-> { \draw[sarrow] (Designer) -> (Electronics) ; }
+      \end{tikzpicture}
+      }
+      #+END_EXPORT
+
+*** Typical answer in this course
+    :PROPERTIES:
+    :BEAMER_ACT: <4->
+    :END:
+    \center \large "*ça dépend*"
+
+** "Reminder"
+   #+ATTR_LATEX: :width .8\textwidth
+   [[./images/cpu.png]]
+   \pause
+*** Instruction Types
+    :PROPERTIES:
+    :BEAMER_ENV: block
+    :BEAMER_COL: .70
+    :END:
+    - \bf \black Flow :: =IP= / =JMP= \ldots{} \hfill
+    - \bf \black Mem ::  =LD= / =ST= \ldots{}  \hfill
+    - \bf \black Calc :: =ADD= / =SUB= / =MULT= / =DIV= \ldots{} \hfill
+      \pause
+*** Instruction Cycle
+    :PROPERTIES:
+    :BEAMER_ENV: block
+    :BEAMER_COL: .29
+    :END:
+    - \small Fetch
+    - \small Decode
+    - \small Execute
+    - \small Store
+    - \small \ldots{}
