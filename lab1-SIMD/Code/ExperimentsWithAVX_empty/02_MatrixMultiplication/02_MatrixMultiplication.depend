@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1555001648 source:.ExperimentsWithAVX_solution/MatrixMultiplication/MatrixMultiplication.cpp
+	<iostream>
+	<iomanip>
+	<cstdlib>
+	<string>
+	<immintrin.h>
+
+1555001648 source:.ExperimentsWithAVX_solution/02_MatrixMultiplication/MatrixMultiplication.cpp
+	<iostream>
+	<iomanip>
+	<cstdlib>
+	<string>
+	<immintrin.h>
+

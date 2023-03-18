@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1555417053 source:.ExperimentsWithAVX_solution/Basics/FusedMultAdd.cpp
+	<iostream>
+	<string>
+	<immintrin.h>
+	<ctime>
+	<ratio>
+	<chrono>
+	<thread>
+
+1586869487 source:.ExperimentsWithAVX_solution/01_Basics/FusedMultAdd.cpp
+	<iostream>
+	<string>
+	<immintrin.h>
+	<ctime>
+	<ratio>
+	<chrono>
+	<thread>
+
+1588708815 source:/home/gmuller/2019_TSE/Cours/FISE2-HPP/hpp/lab2/Code/ExperimentsWithAVX_empty/01_Basics/FusedMultAdd.cpp
+	<iostream>
+	<string>
+

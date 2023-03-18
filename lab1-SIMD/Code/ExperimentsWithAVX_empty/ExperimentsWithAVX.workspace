@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="01_Basics/Basics.cbp" />
+		<Project filename="02_MatrixMultiplication/MatrixMultiplication.cbp" />
+		<Project filename="03_Mandelbrot/Mandelbrot.cbp" />
+		<Project filename="04_ImageManipulation/ImageManipulation.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
