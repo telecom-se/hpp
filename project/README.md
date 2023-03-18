@@ -223,7 +223,7 @@ The data to play with can be found here:
 
 There are some contraints:
 
-+ Team of 3 persons (you choose your colleagues)
++ Team of 3-4 persons (you choose your colleagues)
 + You can share code using GitHub or GitLab (but please add the teachers as members of the team)
 + The solution has to be a maven Java project
 + The hardware requirements are 4 CORES, 8Gb RAM (you cannot store all information into memory ...)
@@ -235,7 +235,7 @@ There are some contraints:
 
 Defense takes 15-20 minutes. 5 minutes to switch groups.
 
-May, 25th, 2020
+May, Deadline, 2023
 
 | Grp nb | List of students  | Defence | How to get the code |
 | ------ | ------------------ | ----------------- | ------- |
