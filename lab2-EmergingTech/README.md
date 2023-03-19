@@ -125,7 +125,7 @@ Presentation and slides can be done in English or French, as you prefer.
 | Grp nb | Assigned topic              | List of students           |
 |--------|-----------------------------|----------------------------|
 | 6      | ADN (storage+computations?) | S1 + S2                    |
-| 5      | How to find Vulnerabilities | S3 + Teixeira              |
+| 5      | How to find Vulnerabilities | S3 + S4                    |
 | 1      | AMD                         | S5 + S6                    |
 | 3      | Moore Limits                | S7                         |
 | 7      | Writing VM                  | S8 + S9 + S10              |
