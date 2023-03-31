@@ -9,25 +9,17 @@ The instructions below will help you install and configure these tools.
 
 ## Preliminary note
 
-Last year, when everybody could work on the machines provided by TSE,
-everybody used Windows 7 and Visual Studio 2015(?) to do the labs, as
-these software are pre-installed.
+If you use the machines provided by TSE, check the version of Windows (Windows 7 ?)
+and Visual Studio 2015(or 2019) that you need to do the labs. Visual Studio Code might be pre-installed 
+otherwise you may install the lastest version on the machine.
 
-This year, because of the COVID-19 crisis, we are all at home, some
-with very bad internet connexion, others with bad computers.
-
-Unfortunately, to install Visual Studio, you need:
-- A large band connexion (VS2019 requires downloading ~20GB!)
-- A stable connexion (VS2019's installer does not know how to recover
-  from network interruptions and re-downloads most packages when this
-  occurs, thus the installation is endless with a bad network)
+If you use your personal laptop, ensure that your laptop is equipped with the following.
 - A well equiped computer (VS2019 requires at least 2GB RAM...)
 - Windows (i.e. at least additional 4GB RAM...)
 
-As a consequence, I have adapted the labs and they now can be done
-under Windows or Linux with very lightweight software (~200MB).
+In general the labs have been adapted to work under Windows or Linux with very lightweight software (~200MB).
 
-I have personally solved the labs under the following environments:
+You can execute your lab work under the following environments:
 - Text/Code Editor + Manual compilation
 - Code::Blocks
 - QtCreator
