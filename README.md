@@ -30,7 +30,7 @@ Instructor for this course :
 You will have a total of 5 grades as follows (each color in the previous organization table leads to notation).
 
 HPP course:
-- [25%] Your code on "SIMD" (Exercice 4) delivered for the ** 12 April 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13598)
+- [25%] Your code on "SIMD" (Exercice 4) delivered for the **12 April 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13598)
 - [25%] Your presentation on "Emerging Technologies for HPP" ("New Hardware for HPP") for the **7 April 2023** [here](https://mootse.telecom-st-etienne.fr/mod/workshop/view.php?id=27349)
 - [25%] Your code on "Mechanical Sympathy" delivered for the **2 May 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
 - [25%] Your code on "Multi-Threading" delivered for the **4 May 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
