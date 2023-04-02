@@ -11,7 +11,7 @@ The instructions below will help you install and configure these tools.
 
 If you use the machines provided by TSE, check the version of Windows (Windows 7 ?)
 and Visual Studio 2015(or 2019) that you need to do the labs. Visual Studio Code might be pre-installed 
-otherwise you may install the lastest version on the machine.
+otherwise you may install the latest version on the machine.
 
 If you use your personal laptop, ensure that your laptop is equipped with the following.
 - A well equiped computer (VS2019 requires at least 2GB RAM...)
