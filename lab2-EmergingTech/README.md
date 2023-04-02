@@ -105,10 +105,10 @@ If none of the topics above suits you, you can propose something else, but you m
 
 ## Topics
 
-The sessions on the 4th of April are made for you to research and understand your assigned topic as a group.
+The sessions on the 5th of April are made for you to research and understand your assigned topic as a group.
 
 The session on the 6th of April is made for you to present your assigned topic to the rest of the class.
-To this end, you will provide a [slide deck](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=16924) for an oral presentation of 15 minutes.
+To this end, you will provide a [slide deck](https://mootse.telecom-st-etienne.fr/mod/workshop/view.php?id=27349) for an oral presentation of 15 minutes.
 
 While you are free to propose your own agenda for these presentations, you must provide the following information to the audience for your assigned topic:
 - How does the technology/framework works?
