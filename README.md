@@ -30,14 +30,14 @@ Instructor for this course :
 You will have a total of 5 grades as follows (each color in the previous organization table leads to notation).
 
 HPP course:
-- [25%] Your code on "SIMD" (exercice 4) delivered for the ** xxx2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13598)
-- [25%] Your presentation on "Emerging Technologies for HPP" (named "New Hardware" in the diagram) for the **xx April 2023** [here](https://mootse.telecom-st-etienne.fr/mod/workshop/view.php?id=27349)
-- [25%] Your code on "Mechanical Sympathy" delivered for the **xxx May 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
-- [25%] Your code on "Multi-Threading" delivered for the **xxx May 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
+- [25%] Your code on "SIMD" (Exercice 4) delivered for the ** 12 April 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13598)
+- [25%] Your presentation on "Emerging Technologies for HPP" ("New Hardware for HPP") for the **7 April 2023** [here](https://mootse.telecom-st-etienne.fr/mod/workshop/view.php?id=27349)
+- [25%] Your code on "Mechanical Sympathy" delivered for the **2 May 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13592)
+- [25%] Your code on "Multi-Threading" delivered for the **4 May 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
 
 HPP Project:
-- [50%] Your code for the project delivered for the **X May 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=17102)
-- [50%] Your defense for the HPP project on the **X May 2023** (a few slides to introduce the architecture of your solution and your results, then the rest directly on your computer)
+- [50%] Your code for the project delivered for the **20 May 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=17102)
+- [50%] Your defense for the HPP project on the **24 May 2023** (a few slides to introduce the architecture of your solution and your results, then the rest directly on your computer)
 
 
 ## Labs materials
