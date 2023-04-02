@@ -19,7 +19,8 @@ Most of the Labs will be offered in **Java** as this is the language you have le
 
 ## Organization
 
-The timeframe for the aforementionned activities is as provided on Mootse.
+The timeframe for the aforementionned activities is as provided by the following picture:
+![](./resources/figures/Organisation_module_HPP_FISE2_2023.JPG)
 
 Instructor for this course :
 - Priyanka Rawat ![pr@univ](./resources/pr.png "pr@univ")
