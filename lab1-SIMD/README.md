@@ -155,7 +155,7 @@ We will use C++ because it is easier to access low-level instructions in this la
     - `NB_CHANTYPE_IN_256`    : number of elements of type `chanType` that we can store in a AVX register (`__m256`) = 256bits/`sizeof`(`float`=4bytes) = 8 `float`s = 8 channels = 2 pixels
     - `MAX_TIMING_ITERATIONS` : number of repetitions used to time each method
 
-- NOTE: [The project is configured to use the OpenCV library](https://www.opencv-srf.com/2017/11/install-opencv-with-visual-studio.html). Find adequate configuration for your IDE or ask the teacher.
+- NOTE: [The project is configured to use the OpenCV library](https://www.opencv-srf.com/2017/11/install-opencv-with-visual-studio.html). Find adequate configuration for your IDE.
 
 > **Task** Intuitively, what performance gains would you expect?
 
