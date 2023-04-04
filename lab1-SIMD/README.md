@@ -106,7 +106,7 @@ We will use C++ because it is easier to access low-level instructions in this la
   - A function `mandelbrotCPU()` that generates the picture of the Mandelbrot set in a "clean" C++ code, using objects to represent complex numbers.
   - A function `displayImage()` to display the generated images.
   - A function `main()` that calls the various functions you will write to generate the Mandelbrot set and display them on screen.
-  - NOTE: [The project is configured to use the OpenCV library](https://www.opencv-srf.com/2017/11/install-opencv-with-visual-studio.html). Find the adequate configuration for your own IDE or ask me.
+  - NOTE: [The project is configured to use the OpenCV library](https://www.opencv-srf.com/2017/11/install-opencv-with-visual-studio.html). Find the adequate configuration for your own IDE.
     - Look where this library is installed.
     - Modify the environment variables/project's configuration so that is compiles & run.
 
