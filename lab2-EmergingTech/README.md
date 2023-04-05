@@ -124,13 +124,14 @@ Presentation and slides can be done in English or French, as you prefer.
 
 | Grp nb | Assigned topic              | List of students           |
 |--------|-----------------------------|----------------------------|
-| 6      | ADN (storage+computations?) | S1 + S2                    |
-| 5      | How to find Vulnerabilities | S3 + S4                    |
-| 1      | AMD                         | S5 + S6                    |
-| 3      | Moore Limits                | S7                         |
-| 7      | Writing VM                  | S8 + S9 + S10              |
-| 2      | Quantum                     | S11 + S12                  |
-| 9      | RowHammer + DDR5            | S13 + S14                  |
-| 4      | LSH                         | S16 + S16                  |
-| 8      | Neuromorphic                | S18 + S17                  |
-| 10     | ?                           | S?                         |
+| 1      | RowHammer Atatck            | Théo - Tibo                |
+| 2      | DDR5 et CXL                 | Damien - Gregoire          |
+| 3      | Writing VM                  | Omar - Adnane              |
+| 4      | NVIDIA Lovlace              | Axel - Arthur              |
+| 5      | AMD CPU                     | Cyril - Mathieu            |
+| 6      | Sentry-II: geo-crossing     | Orson - Nicolas            |
+| 7      | Managing HUGE Java Queues   | Nathan - Rochdi            |
+| 8      | Reservoir Sampling          |   Tanguy - Hugo            |
+| 9      | Code coloring               |   Cédric - Corentin        |
+| 10     | Locally Sensitive Hashing   |    Guillaume - Pierre      |
+| 11     |       AMD's GPU             |    Mathilde - Diane        |
