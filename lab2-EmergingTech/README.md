@@ -124,14 +124,14 @@ Presentation and slides can be done in English or French, as you prefer.
 
 | Grp nb | Assigned topic              | List of students           |
 |--------|-----------------------------|----------------------------|
-| 1      | RowHammer Atatck            | Théo - Tibo                |
-| 2      | DDR5 et CXL                 | Damien - Gregoire          |
+| 1      | RowHammer Attack            | Théo - Tibo                |
+| 2      | DDR5 et CXL                 | Damien - Grégoire          |
 | 3      | Writing VM                  | Omar - Adnane              |
-| 4      | NVIDIA Lovlace              | Axel - Arthur              |
-| 5      | AMD CPU                     | Cyril - Mathieu            |
+| 4      | NVIDIA Lovelace             | Axel - Arthur             |
+| 5      | AMD CPU                     | Cyril - Matthieu           |
 | 6      | Sentry-II: geo-crossing     | Orson - Nicolas            |
 | 7      | Managing HUGE Java Queues   | Nathan - Rochdi            |
 | 8      | Reservoir Sampling          |   Tanguy - Hugo            |
 | 9      | Code coloring               |   Cédric - Corentin        |
 | 10     | Locally Sensitive Hashing   |    Guillaume - Pierre      |
-| 11     |       AMD's GPU             |    Mathilde - Diane        |
+| 11     |       AMD GPU               |    Mathilde - Diane        |
