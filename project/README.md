@@ -210,7 +210,7 @@ Some rules to make it more accessible:
 As always, we want FIRST a program that we are sure to be correct through unit testing, and only SECOND optimizations.
 A project that is faster but for which we are not sure that all cases works fine (including edges cases) will be regarded lower than a slower solution but with maximum functionality coverage.
 
-We can provide git repositories if needed.
+
 
 ## Data
 
