@@ -235,7 +235,7 @@ There are some contraints:
 
 Defense takes 15-20 minutes. 5 minutes to switch groups.
 
-May, Deadline, 2023
+24 May, Deadline, 2023
 
 | Grp nb | List of students  | Defence | How to get the code |
 | ------ | ------------------ | ----------------- | ------- |
