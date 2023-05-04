@@ -37,7 +37,7 @@ HPP course:
 - [25%] Your code on "Multi-Threading" delivered for the **4 May 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=13593)
 
 HPP Project:
-- [50%] Your code for the project delivered for the **20 May 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=17102)
+- [50%] Your code for the project delivered for the **21 May 2023** [here](https://mootse.telecom-st-etienne.fr/mod/assign/view.php?id=17102)
 - [50%] Your defense for the HPP project on the **24 May 2023** (a few slides to introduce the architecture of your solution and your results, then the rest directly on your computer)
 
 
