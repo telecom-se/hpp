@@ -233,7 +233,7 @@ There are some contraints:
 
 ### Groups
 
-Defense takes 15-20 minutes. 5 minutes to switch groups.
+Defense takes 15-20 minutes.
 
 24 May, Deadline, 2023
 
