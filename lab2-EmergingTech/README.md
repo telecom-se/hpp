@@ -124,16 +124,16 @@ While you are free to propose your own agenda for these presentations, you must 
  <! -- 
 | Grp nb | Assigned topic              | List of students           |
 |--------|-----------------------------|----------------------------|
-| 1      | RowHammer Attack            | Théo - Tibo                |
-| 2      | DDR5 et CXL                 | Damien - Grégoire          |
-| 3      | Writing VM                  | Omar - Adnane              |
-| 4      | NVIDIA Lovelace             | Axel - Arthur             |
-| 5      | AMD CPU                     | Cyril - Matthieu           |
-| 6      | Sentry-II: geo-crossing     | Orson - Nicolas            |
-| 7      | Managing HUGE Java Queues   | Nathan - Rochdi            |
-| 8      | Reservoir Sampling          |   Tanguy - Hugo            |
-| 9      | Code coloring               |   Cédric - Corentin        |
-| 10     | Locally Sensitive Hashing   |    Guillaume - Pierre      |
-| 11     |       AMD GPU               |    Mathilde - Diane        |
+| 1      | RowHammer Attack            | xxx              |
+| 2      | DDR5 et CXL                 |xxxx         |
+| 3      | Writing VM                  | xx            |
+| 4      | NVIDIA Lovelace             | xx            |
+| 5      | AMD CPU                     | xx           |
+| 6      | Sentry-II: geo-crossing     | xx        |
+| 7      | Managing HUGE Java Queues   | xx        |
+| 8      | Reservoir Sampling          |   xx           |
+| 9      | Code coloring               |   xx        |
+| 10     | Locally Sensitive Hashing   |   xx     |
+| 11     |       AMD GPU               |   xx       |
 
 --->
