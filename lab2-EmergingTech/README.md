@@ -121,7 +121,7 @@ While you are free to propose your own agenda for these presentations, you must 
 **Presentation and slides can be done in English or French, as you prefer.**
 
 ## Assignments
-
+ <! -- 
 | Grp nb | Assigned topic              | List of students           |
 |--------|-----------------------------|----------------------------|
 | 1      | RowHammer Attack            | Théo - Tibo                |
@@ -135,3 +135,5 @@ While you are free to propose your own agenda for these presentations, you must 
 | 9      | Code coloring               |   Cédric - Corentin        |
 | 10     | Locally Sensitive Hashing   |    Guillaume - Pierre      |
 | 11     |       AMD GPU               |    Mathilde - Diane        |
+
+--->
