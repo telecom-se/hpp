@@ -120,9 +120,9 @@ While you are free to propose your own agenda for these presentations, you must 
 
 **Presentation and slides can be done in English or French, as you prefer.**
 
- <! -- ## Assignments
+ ## Assignments
 
-| Grp nb | Assigned topic              | List of students           |
+ <! --| Grp nb | Assigned topic              | List of students           | -->
 |--------|-----------------------------|----------------------------|
 | 1      | RowHammer Attack            | xxx              |
 | 2      | DDR5 et CXL                 |xxxx         |
@@ -134,6 +134,6 @@ While you are free to propose your own agenda for these presentations, you must 
 | 8      | Reservoir Sampling          |   xx           |
 | 9      | Code coloring               |   xx        |
 | 10     | Locally Sensitive Hashing   |   xx     |
-| 11     |       AMD GPU               |   xx       |
+ <! --| 11     |       AMD GPU               |   xx       |-->
 
--->
+
