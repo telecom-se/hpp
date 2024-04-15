@@ -108,7 +108,7 @@ If none of the topics above suits you, you can propose something else, but you m
 The sessions on the 5th of April are made for you to research and understand your assigned topic as a group.
 
 The session on the 6th of April is made for you to present your assigned topic to the rest of the class.
-To this end, you will provide a [slide deck] <!--(https://mootse.telecom-st-etienne.fr/mod/workshop/view.php?id=27349)--> for an oral presentation of 15 minutes.
+To this end, you will provide a [slide deck on Mootse] <!--(https://mootse.telecom-st-etienne.fr/mod/workshop/view.php?id=27349)--> for an oral presentation of 15 minutes.
 
 While you are free to propose your own agenda for these presentations, you must provide the following information to the audience for your assigned topic:
 - How does the technology/framework works?
@@ -120,8 +120,8 @@ While you are free to propose your own agenda for these presentations, you must 
 
 **Presentation and slides can be done in English or French, as you prefer.**
 
-## Assignments
- <! -- 
+ <! -- ## Assignments
+
 | Grp nb | Assigned topic              | List of students           |
 |--------|-----------------------------|----------------------------|
 | 1      | RowHammer Attack            | xxx              |
@@ -136,4 +136,4 @@ While you are free to propose your own agenda for these presentations, you must 
 | 10     | Locally Sensitive Hashing   |   xx     |
 | 11     |       AMD GPU               |   xx       |
 
---->
+-->
