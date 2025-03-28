@@ -1,0 +1,48 @@
+#+STARTUP: showall indent
+#+TODO: TODO(t) LATER(l) CANCELLED(c) DELEGATED(d) | DONE(o) + C-c C-c
+
+NOT DONE: That means that for a person p , we known that either that person contracted the virus from p_j where j in the population of the country reporting contamination cases.
+
+==== NEW CODE (> 2020_05_11)
+
+* 20 lines
+** COUNTRIES = [ 'Italy', 'Spain', 'France' ]
+** MAX_PATIENTS = 20
+** UNKNOWN_RATE = .20
+
+* 5000 lines
+** COUNTRIES = [ 'Italy', 'Spain', 'France' ]
+** MAX_PATIENTS = 5_000
+** UNKNOWN_RATE = .20
+
+* 1 000 000 lines
+** COUNTRIES = [ 'Italy', 'Spain', 'France' ]
+** MAX_PATIENTS = 1_000_000
+** UNKNOWN_RATE = .20
+
+
+=== OLD CODE (< 2020_05_11)
+
+* 20 lines
+** COUNTRIES = [ 'Italy', 'Spain', 'France', 'China', 'USA', 'Germany', 'Brazil', 'NKorea' ]
+** MAX_PATIENTS = 20
+** INFECTION_STAGES = [ 5, 10, 5_000, 10_000, 25_000 ]
+** UNKNOWN_RATE = .20
+
+* 5000 lines
+** COUNTRIES = [ 'Italy', 'Spain', 'France', 'China', 'USA', 'Germany', 'Brazil', 'NKorea' ]
+** MAX_PATIENTS = 5_000
+** INFECTION_STAGES = [ 100, 1_000, 5_000, 10_000, 25_000 ]
+** UNKNOWN_RATE = .20
+
+* 1 000 000 lines
+** COUNTRIES = [ 'Italy', 'Spain', 'France', 'China', 'USA', 'Germany', 'Brazil', 'NKorea' ]
+** MAX_PATIENTS = 2_000_000  <-- some will go in other countries' files
+** INFECTION_STAGES = [ 100, 1_000, 5_000, 10_000, 25_000 ]
+** UNKNOWN_RATE = .20
+
+* Mine 1 000 000 lines, more countries, starts in China
+** COUNTRIES = [ 'China', 'Italy', 'Spain', 'France', 'USA', 'Germany', 'Brazil', 'NKorea' ]
+** MAX_PATIENTS = 1_000_000
+** INFECTION_STAGES = [ 100, 1_000, 5_000, 10_000, 25_000 ]
+** UNKNOWN_RATE = .40
