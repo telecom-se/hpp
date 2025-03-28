@@ -233,9 +233,9 @@ There are some contraints:
 
 ### Groups
 
-Defense takes 15-20 minutes.
+Defense takes 20 minutes.
 
-24 May, Deadline, 2023
+28 May, Deadline, 2025
 
 | Grp nb | List of students  | Defence | How to get the code |
 | ------ | ------------------ | ----------------- | ------- |
