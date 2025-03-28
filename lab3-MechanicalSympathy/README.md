@@ -15,7 +15,7 @@ The real questions are :
 - Last but not least : **Why do these low-level considerations are of the utmost practical interest for the programmer ?**
 
 In what follows, different programming activities will make your observe and then conclude on answers to those questions.
-** Write down your notes in a document, you will need to submit it along your code for the mechanical sympathy part**
+**Write down your notes in a document, you will need to submit it along your code for the mechanical sympathy part**
 
 ## Who is actually executing your instructions?
 
