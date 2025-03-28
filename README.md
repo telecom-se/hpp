@@ -20,7 +20,7 @@ Most of the Labs will be offered in **Java** as this is the language you have le
 ## Organization
 
 The timeframe for the aforementionned activities is as provided by the following picture:
-![](./resources/figures/org2025.png.PNG)
+![](./resources/figures/org2025.pr.new.PNG)
 
 Instructor for this course :
 - Priyanka Rawat ![pr@univ](./resources/pr.png "pr@univ")
