@@ -2,7 +2,7 @@
 
 ## Introduction to this course
 
-This course introduces paradigms, concepts and tools for creating and benchmarking high-performance computer programs.
+This course introduces paradigms, concepts and tools for **creating and benchmarking high-performance computer programs**.
 For the past years, the trend has been to scale by distributing applications to different servers.
 While this is of the utmost practical interest for large-scale applications, it also comes with a significant I/O penalty as we will see in this module.
 
