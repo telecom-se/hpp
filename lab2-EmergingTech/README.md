@@ -124,16 +124,16 @@ While you are free to propose your own agenda for these presentations, you must 
  
 | Grp nb | Assigned topic              | List of students           |
 |--------|-----------------------------|----------------------------|
-| 1      | ??            | xxx              |
-| 2      | ??                    |xxxx         |
-| 3      | ??                  | xx            |
-| 4      | ??                | xx            |
-| 5      | ??                      | xx           |
-| 6      | ??        | xx        |
-| 7      | ??      | xx        |
-| 8      | ??            |   xx           |
-| 9      | ??                 |   xx        |
-| 10     | ??     |   xx     |
-| 11     |      ??                |   xx       |
+| 1      |    Cerebras 2        | Maud et Clément              |
+| 2      | Comp ARM vs. INTEL                    |Nassera et Lauriane        |
+| 3      | Ext HTTP Tuning                | Rim et Assia            |
+| 4      | Kalman Filter           | Ikram et Boutania           |
+| 5      | Attacks on Apple's M1                     | Marieme et Assia       |
+| 6      | Neuromorphic 2     | Walid et Saad    |
+| 7      | Loc Sensitive Hashing      | Vivien et Antoine      |
+| 8      | Moore's law ..           |   Théa et Noé           |
+| 9      | Snapdragon           |   Mohamed et Walid       |
+| 10     | Resrvoir Sampling    |   Younès et Aymane   |
+
 
 
