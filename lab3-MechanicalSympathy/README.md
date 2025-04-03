@@ -236,7 +236,7 @@ Thankfully, part of these CPU and cache-aware optimization techniques can be aut
 - Thread Local Storage
 - Dead code elimination
 
-[A good starting point](http://blog.takipi.com/java-on-steroids-5-super-useful-jit-optimization-techniques/).
+[A good starting point](https://www.javacodegeeks.com/2016/08/java-steroids-5-super-useful-jit-optimization-techniques.html).
 
 Can you see some similitudes for instructions from what we have observed on data layout in the array and linkedlist use case, speaking of CPU and cache friendliness ?
 
